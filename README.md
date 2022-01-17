@@ -1,5 +1,5 @@
 # Courier
-Anime, Manga, and Light Novel Tracking Application for Windows
+Anime, Manga, and Light Novel Tracking Application for Windows.
 
 <br>
 
