@@ -1,5 +1,5 @@
 # Courier
-Anime, Manga, and Light Novel Tracking Application for Windows. Manage your anime, manga, and light novels all in one app.
+Anime, Manga, and Light Novel Tracking Application for Windows. Manage your Anime, Manga, and Light Novels all in one app.
 
 # Getting Started
 [Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
