@@ -25,3 +25,8 @@ Languages:  JavaScript, HTML, CSS
 Framework:  Electron
 API Query:  GraphQL
 </pre>
+
+# Contributing
+Courier is an open-source project and any help on improving it would be greatly appreciated. 
+<br>
+If you would like to contribute on this project, open up issues or create pull requests on any new features/bugs/issues.
