@@ -1,3 +1,5 @@
+# Getting Started
+
 How to run or install Courier?
 1) The release section is on the right side of the main repository page, which contains all the necessary files to run or install Courier.
 2) Download whichever files you need from the release. For example, if you want to install it on your computer, then get the installer file.
