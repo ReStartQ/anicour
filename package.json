@@ -1,8 +1,8 @@
 {
   "name": "courier",
   "productName": "Courier",
-  "version": "0.0.1",
-  "description": "Anime, manga, and light novel desktop tracking application",
+  "version": "0.1.0",
+  "description": "Anime, manga, and light novel tracking application for windows",
   "main": "main.js",
   "scripts": {
     "start": "set NODE_ENV=development && electron .",
@@ -23,7 +23,7 @@
       "allowToChangeInstallationDirectory": true
     }
   },
-  "author": "Kevin Hoang",
+  "author": "ReStartQ",
   "license": "ISC",
   "devDependencies": {
     "electron": "^11.2.1",
