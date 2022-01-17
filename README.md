@@ -9,6 +9,7 @@ Anime, Manga, and Light Novel Tracking Application for Windows.
 
 # Preview
 
+<br>
 
 ![MAIN WINDOW](https://github.com/ReStartQ/Courier/blob/main/Preview/MainWindowPreview.png)
 <br>
