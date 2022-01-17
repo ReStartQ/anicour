@@ -1,0 +1,36 @@
+{
+  "name": "courier",
+  "productName": "Courier",
+  "version": "0.0.1",
+  "description": "Anime, manga, and light novel desktop tracking application",
+  "main": "main.js",
+  "scripts": {
+    "start": "set NODE_ENV=development && electron .",
+    "build-installer": "set NODE_ENV=production && electron-builder"
+  },
+  "build":{
+    "appId": "courier",
+    "win":{
+      "target": ["nsis"],
+      "icon": "icons/Courier-App-Icon-1.1.ico"
+    },
+    "nsis":{
+      "installerIcon": "icons/Courier-App-Icon-1.1.ico",
+      "uninstallerIcon": "icons/Courier-App-Icon-1.1.ico",
+      "uninstallDisplayName": "Courier",
+      "license": "LICENSE.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "author": "Kevin Hoang",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.14.5"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "node-fetch": "^2.6.1"
+  }
+}

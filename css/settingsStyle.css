@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;   
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+* button{
+    background-color: #1e3247;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+* input{
+    background-color: #121212;
+}
+
+* select{
+    background-color: #121212;
+}
+
+
+#settingsAccount button:hover{
+    background-color: #1b5492;
+}
+
+#settingsAppearance button:hover{
+    background-color: #1b5492;
+}
+#settingsStartUp button:hover{
+    background-color: #1b5492;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 21fr 1fr;
+    grid-template-rows: 1fr 21fr 1fr;
+    height: 100vh;
+    background-color: #262626;
+}
+
+#settingsNotice{
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+.mySettings{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    overflow: hidden;
+    background-color: #343434;
+}
+
+#settingsAccount{
+    grid-column: 2/3;
+
+
+    margin-left: 1em;
+    padding: 0;
+}
+#userTokenInput{
+    width: 80%;
+}
+
+#settingsAppearance{
+    grid-column: 2/3;
+
+
+    margin-left: 1em;
+}
+
+#settingsStartUp{
+    grid-column: 2/3;
+
+    margin-left: 1em;
+}
+
+#settingsSideBar{
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    background-color: #292929;
+    
+}
+
+#settingsSideBar{
+    background-color: #292929;
+    border: 0;
+    border-radius: 0;
+}
+
+
+#settingsSideBar .active:hover{
+    background-color: #1164bd;
+}
+
+#settingsSideBar .sideBarButtons:hover{
+    background-color: #284666;
+}
+
+
+.saveOptions{
+    grid-row: 8/9;
+    display: flex;
+    width: 100px;
+    height:25px;
+    align-items: center;
+    margin:auto;
+}
+
+.saveButtons{
+    background-color: #1e3247;
+}
+
+#defaultListSettings{
+
+}
+#defaultListNameSettings{
+
+}
+.adultContentPref{
+
+}
+
+.vndbContentPref{
+    grid-row: 3/4;
+    grid-column: 3/5;
+    display: none;
+}
+
+#applyButton{
+    background-color: #1e3247;
+}
+
+#applyButton:hover{
+    background-color: #1164bd;
+}
+
+
+.sideBarButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929;
+    border: 0px;
+}
+
+.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1164bd;
+    border: 0px;
+}
+
+
+.sideBarButtonImages{
+    height: 1em;
+    width: 1em;
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    margin-right: .5em;
+}
+
+
+
+
+/*display on or off to edit the setting tabs*/
+#settingsAccount{
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8,1fr);
+    padding: 1em;
+    background-color: #343434;
+}
+#settingsAppearance{
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8,1fr);
+    padding: 1em;
+    background-color: #343434;
+}
+#settingsStartUp{
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8,1fr);
+    padding: 1em;
+    background-color: #343434;
+}
+
+#accountButton{
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#startUpButton{
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#appearanceButton{
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#headerAccount{
+    font-size: 36px;
+}
+
+.headers{
+    font-size: 36px;
+}
+
+#defaultSortAnime{
+    display: none;
+}
+#defaultSortMangaLN{
+    display: none;
+}
