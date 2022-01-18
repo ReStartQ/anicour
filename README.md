@@ -4,7 +4,7 @@ Courier is an Anime, Manga, and Light Novel Tracking Application for Windows.
 It uses [AniList](https://anilist.co/home) to help manage and track your Anime, Manga, and Light Novels all in one app.  
 
 # Getting Started
-[Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
+[Download Help](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 <br>
 [Setup Help](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
 
