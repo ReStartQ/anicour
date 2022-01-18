@@ -1,5 +1,5 @@
 # Setup Help
-(**An account on AniList is required for Courier to function properly**)
+**(Note: An account on AniList is required for Courier to function properly)**
 
 
 1) The first time you launch Courier, a settings window should pop up. 
