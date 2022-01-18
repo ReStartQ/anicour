@@ -42,4 +42,4 @@
 
 ![main window](https://github.com/ReStartQ/Courier/blob/main/Preview/MainWindowPreview.png)
 
-![icon](https://github.com/ReStartQ/Courier/blob/main/icons/Courier%20App%20Icon%201-01.png)
+
