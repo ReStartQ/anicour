@@ -1,7 +1,7 @@
-# Transfering anime/manga lists from myAnimeList to AniList
+# Transfering anime/manga lists from MyAnimeList to AniList
 
-1) Transfering your lists from myAnimeList to AniList requires the export of your xml file from myAnimeList. <br>
-   To export your xml file, use myAnimeList's [export service](http://myanimelist.net/panel.php?go=export).
+1) Transfering your lists from MyAnimeList to AniList requires the export of your xml file from MyAnimeList. <br>
+   To export your xml file, use MyAnimeList's [export service](http://myanimelist.net/panel.php?go=export).
    
 ![exportMyAnimeList](https://github.com/ReStartQ/Courier/blob/main/Preview/exportMyAnimeList.png)   
 
