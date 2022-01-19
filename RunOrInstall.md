@@ -4,7 +4,7 @@
 ![Release Preview](https://github.com/ReStartQ/Courier/blob/main/Preview/ReleasePreview.png)
 
 1) The release section is on the right side of the main repository page, which contains all the necessary files to run or install Courier.
-2) Click on the latest release.
+2) Click on the latest [releases](https://github.com/ReStartQ/Courier/releases)
 
 
 # How to run or install Courier?
