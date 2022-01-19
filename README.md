@@ -13,7 +13,8 @@ An engaging and friendly user experience for updating your anime/manga/light nov
 [Run or Install Help](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 <br>
 [Setup Help](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
-
+<br>
+[Transfer MyAnimeList to AniList](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md)
 
 
 ## Preview
