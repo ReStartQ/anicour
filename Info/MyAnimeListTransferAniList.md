@@ -5,7 +5,7 @@
    
 ![exportMyAnimeList](https://github.com/ReStartQ/Courier/blob/main/Preview/exportMyAnimeList.png)   
 
-2) The file format will be compressed, so you will need to extract it with an extracting tool such as winzip, winrar, etc.
+2) The file will be compressed, so you will need to extract it with an extracting tool such as winzip, winrar, etc.
 3) To import it to AniList, use the import feature on the website's settings page. 
 
 ![importAniList](https://github.com/ReStartQ/Courier/blob/main/Preview/importAniList.png)
