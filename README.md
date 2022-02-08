@@ -10,11 +10,11 @@ An engaging and friendly user experience for updating your anime/manga/light nov
 ## Getting Started
 [Releases](https://github.com/ReStartQ/Courier/releases)
 <br>
-[Run or Install Help](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
+[Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 <br>
-[Setup Help](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
+[Setup](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
 <br>
-[Transfer MyAnimeList to AniList](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md)
+[Transfering MyAnimeList to AniList](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md)
 
 
 ## Preview
