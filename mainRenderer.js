@@ -359,7 +359,7 @@ function setTitlePreference(value){
 }
 
 //ipcRenderer 
-ipcRenderer.on('asynchronous-message', function (evt, message) {
+ipcRenderer.on('asynchronous-message', async function (evt, message) {
     if (message=='animeListView'){
         document.getElementById("animeListButton").click();
     }
@@ -376,6 +376,7 @@ ipcRenderer.on('asynchronous-message', function (evt, message) {
         document.getElementById("sidebarSearchButton").click();
     }
     else if(Array.isArray(message)==true&&message.length>=10&&message.length<=11){
+        
         console.log(message);
         let animeFlag=false;
         let mangaFlag=false;
@@ -550,6 +551,7 @@ function sendSettingsData(){
 async function sendRefreshData(){
     ipcRenderer.send("msg","refresh");
     await refreshList();
+
 }
 
 function resetPageCounter(){
@@ -8535,7 +8537,6 @@ $(".tabcontent").on("click", async function(event){
         let myMediaChapterTotalNull = false;
         let myMediaVolumeTotalNull = false;
         let myMediaCompletedTag = false;
-
         if(myMediaBox.getAttribute('data-type')=='ANIME'){
             //check for decimal
             if(myMediaEpisodeInput.includes(".")){
@@ -8593,17 +8594,23 @@ $(".tabcontent").on("click", async function(event){
                 let completedTab = document.getElementById('Completed');
                 completedTab.insertBefore(completedMediaBox, completedTab.firstChild);
                 myMediaBox.remove();
-                saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 reSortMyListAnime();
             }
             else if(myMediaCompletedTag==true&&(myMediaBox.parentElement.id.includes("All")==true||myMediaBox.parentElement.className.includes("filter")==true)){ 
                 //saveMyEntryAnimeCompleteDate(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 moveOthers(myMediaBoxId, 'Completed');
             }
             else{
                 console.log(myMediaBox.getAttribute('data-mystatus'));
-                saveMyEntryAnime(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaEpisodeInput, myMediaScoreInput);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnime(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaEpisodeInput, myMediaScoreInput);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
         else if(myMediaBox.getAttribute('data-type')=='MANGA'&&myMediaBox.getAttribute('data-format')!='NOVEL'){ //if manga
@@ -8679,7 +8686,9 @@ $(".tabcontent").on("click", async function(event){
             //update to API
             if(myMediaCompletedTag==true&&myMediaBox.parentElement.id.includes("All")==false&&myMediaBox.parentElement.className.includes("filter")==false){
                 //saveMyEntryAnime(myMediaBoxId,"COMPLETED",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 //copy and then remove and then put it into watching tab to resort
                 let completedMediaBox = myMediaBox.cloneNode(true);
                 //move, remove and re-sort
@@ -8691,12 +8700,16 @@ $(".tabcontent").on("click", async function(event){
             }
             else if(myMediaCompletedTag==true&&(myMediaBox.parentElement.id.includes("All")==true||myMediaBox.parentElement.className.includes("filter")==true)){ 
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 moveOthers(myMediaBoxId, 'Completed2');
             }
             else{
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="none";
             }
 
         }
@@ -8764,7 +8777,9 @@ $(".tabcontent").on("click", async function(event){
             if(myMediaCompletedTag==true&&myMediaBox.parentElement.id.includes("All")==false&&myMediaBox.parentElement.className.includes("filter")==false){
                 //saveMyEntryAnime(myMediaBoxId,"COMPLETED",myMediaEpisodeInput, myMediaScoreInput);
                 //copy and then remove and then put it into watching tab to resort
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 let completedMediaBox = myMediaBox.cloneNode(true);
                 //move, remove and re-sort
                 //check which one is active to move to the right completed
@@ -8775,12 +8790,16 @@ $(".tabcontent").on("click", async function(event){
             }
             else if(myMediaCompletedTag==true&&(myMediaBox.parentElement.id.includes("All")==true||myMediaBox.parentElement.className.includes("filter")==true)){ 
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 moveOthers(myMediaBoxId, 'Completed3');
             }
             else{
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
     }
@@ -8958,7 +8977,9 @@ $(".filterTabs").on("click", async function(event){
             if(myMediaCompletedTag==true&&myMediaBox.parentElement.id.includes("All")==false&&myMediaBox.parentElement.className.includes("filter")==false){
                 //saveMyEntryAnime(myMediaBoxId,"COMPLETED",myMediaEpisodeInput, myMediaScoreInput);
                 //copy and then remove and then put it into watching tab to resort
-                saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 let completedMediaBox = myMediaBox.cloneNode(true);
                 //move, remove and re-sort
                 //check which one is active to move to the right completed
@@ -8969,12 +8990,16 @@ $(".filterTabs").on("click", async function(event){
             }
             else if(myMediaCompletedTag==true&&(myMediaBox.parentElement.id.includes("All")==true||myMediaBox.parentElement.className.includes("filter")==true)){ 
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnimeCompleteDate(myMediaBoxId,"COMPLETED",myMediaEpisodeInput,myMediaScoreInput,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 moveOthers(myMediaBoxId, 'Completed');
             }
             else{
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryAnime(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaEpisodeInput, myMediaScoreInput);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnime(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaEpisodeInput, myMediaScoreInput);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
         else if(myMediaBox.getAttribute('data-type')=='MANGA'&&myMediaBox.getAttribute('data-format')!='NOVEL'){ //if manga
@@ -9052,7 +9077,9 @@ $(".filterTabs").on("click", async function(event){
             if(myMediaCompletedTag==true&&myMediaBox.parentElement.id.includes("All")==false&&myMediaBox.parentElement.className.includes("filter")==false){
                 //saveMyEntryAnime(myMediaBoxId,"COMPLETED",myMediaEpisodeInput, myMediaScoreInput);
                 //copy and then remove and then put it into watching tab to resort
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 let completedMediaBox = myMediaBox.cloneNode(true);
                 //move, remove and re-sort
                 //check which one is active to move to the right completed
@@ -9063,13 +9090,17 @@ $(".filterTabs").on("click", async function(event){
             }
             else if(myMediaCompletedTag==true&&(myMediaBox.parentElement.id.includes("All")==true||myMediaBox.parentElement.className.includes("filter")==true)){ 
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 moveOthers(myMediaBoxId, 'Completed2');
             }
             else{
                 console.log(myMediaBox.getAttribute('data-mystatus'));
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
         else{ //if novel
@@ -9148,7 +9179,9 @@ $(".filterTabs").on("click", async function(event){
             if(myMediaCompletedTag==true&&myMediaBox.parentElement.id.includes("All")==false&&myMediaBox.parentElement.className.includes("filter")==false){
                 //saveMyEntryAnime(myMediaBoxId,"COMPLETED",myMediaEpisodeInput, myMediaScoreInput);
                 //copy and then remove and then put it into watching tab to resort
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 let completedMediaBox = myMediaBox.cloneNode(true);
                 //move, remove and re-sort
                 //check which one is active to move to the right completed
@@ -9160,12 +9193,16 @@ $(".filterTabs").on("click", async function(event){
             
             else if(myMediaCompletedTag==true&&(myMediaBox.parentElement.id.includes("All")==true||myMediaBox.parentElement.className.includes("filter")==true)){ 
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput, today.getFullYear(), today.getMonth()+1, today.getDate());
-                saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaCompleteDate(myMediaBoxId,"COMPLETED",myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2,today.getFullYear(),today.getMonth()+1,today.getDate());
+                document.getElementById("updatingNotification").style.display="none";
                 moveOthers(myMediaBoxId, 'Completed3');
             }
             else{
                 //saveMyEntryAnime(myMediaBoxId,"CURRENT",myMediaEpisodeInput, myMediaScoreInput);
-                saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryManga(myMediaBoxId,myMediaBox.getAttribute('data-mystatus'),myMediaChapterInput, myMediaVolumeInput, myMediaScoreInput2);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
     }
