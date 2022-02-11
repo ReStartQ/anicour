@@ -638,3 +638,6 @@ body{
   font-size: 14px;
 }
 
+#updatingNotification{
+  display: none;
+}
