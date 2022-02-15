@@ -19,7 +19,7 @@ An engaging and friendly user experience for updating your anime/manga/light nov
 </p>
 
 ## Getting Started
-[Releases](https://github.com/ReStartQ/Courier/releases)
+[Downloads](https://github.com/ReStartQ/Courier/releases)
 <br>
 [Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 <br>
