@@ -25,8 +25,8 @@ The setup .exe file is the installation version of the app that allows for you t
 <br>
 The portable .zip file is a stand alone version of the app that doesn't require installation.
 
-## Account Setup Help
-If you need help setting up your account on the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
+## AniList Account Link Setup Help
+If you need help linking your AniList account to the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
 <br>
 To transfer your anime/manga lists from MyAnimeList to AniList, here are the [steps](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md).
 
