@@ -10,12 +10,15 @@ An engaging and friendly user experience for updating your anime/manga/light nov
 
 <br>
 
-![MAIN WINDOW](https://github.com/ReStartQ/Courier/blob/main/Preview/MainWindowPreview.png)
+
+<p align="center">
+  <a href="#"><img src="https://github.com/ReStartQ/Courier/blob/main/Preview/MainWindowPreview.png" /></a>
+</p>
 
 <br>
 
 <p align="center">
-  <img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ExtraInfoWindowPreview.png" />
+  <a href="#"><img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ExtraInfoWindowPreview.png" /></a>
 </p>
 
 # Downloads
