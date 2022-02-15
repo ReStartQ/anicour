@@ -18,7 +18,7 @@ An engaging and friendly user experience for updating your anime/manga/light nov
   <img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ExtraInfoWindowPreview.png" />
 </p>
 
-## Downloads
+# Downloads
 You can download the app [here](https://github.com/ReStartQ/Courier/releases). Check for the latest version. 
 <br>
 1) Download whichever files you need from the release.  
@@ -26,19 +26,19 @@ You can download the app [here](https://github.com/ReStartQ/Courier/releases). C
 3) There is also a stand alone version of the app that is labeled as portable and does not require installation.
 4) Use the app to track and manage your anime, manga, and light novels.
 
-## AniList Account Link Setup
+# AniList Account Link Setup
 If you need help linking your AniList account to the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
 <br>
 To transfer your anime/manga lists from MyAnimeList to AniList, here are the [steps](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md).
 
-## Contributing
+# Contributing
 Courier is an open-source project and any help on improving it would be greatly appreciated. 
 <br>
 If you would like to contribute to this project, open up issues or create pull requests on any new features/bugs/issues.
 <br>
 Instructions on downloading and setup of the app in a development environment can be found [here](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 
-## Technologies
+# Technologies
 <pre>
 Languages:  JavaScript, HTML, CSS
 Framework:  Electron
