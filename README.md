@@ -18,14 +18,24 @@ An engaging and friendly user experience for updating your anime/manga/light nov
   <img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ExtraInfoWindowPreview.png" />
 </p>
 
-## Getting Started
-[Downloads](https://github.com/ReStartQ/Courier/releases)
+## Downloads
+You can download the app [here](https://github.com/ReStartQ/Courier/releases). Check for the latest version. 
 <br>
-[Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
+The setup .exe file is the installation version of the app that allows for you to install it onto your computer. 
 <br>
-[Setup](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
+The portable .zip file is a stand alone version of the app that doesn't require installation.
+
+## Account Setup Help
+If you need help setting up your account on the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
 <br>
-[Transfering MyAnimeList to AniList](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md)
+To transfer your anime/manga lists from MyAnimeList to AniList, here are the [steps](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md).
+
+## Contributing
+Courier is an open-source project and any help on improving it would be greatly appreciated. 
+<br>
+If you would like to contribute to this project, open up issues or create pull requests on any new features/bugs/issues.
+<br>
+Instructions on downloading and setup of the app in a development environment can be found [here](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 
 ## Technologies
 <pre>
@@ -33,8 +43,3 @@ Languages:  JavaScript, HTML, CSS
 Framework:  Electron
 API Query:  GraphQL
 </pre>
-
-## Contributing
-Courier is an open-source project and any help on improving it would be greatly appreciated. 
-<br>
-If you would like to contribute to this project, open up issues or create pull requests on any new features/bugs/issues.
