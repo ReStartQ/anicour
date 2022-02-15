@@ -21,9 +21,10 @@ An engaging and friendly user experience for updating your anime/manga/light nov
 ## Downloads
 You can download the app [here](https://github.com/ReStartQ/Courier/releases). Check for the latest version. 
 <br>
-The setup .exe file is the installation version of the app that allows for you to install it onto your computer. 
-<br>
-The portable .zip file is a stand alone version of the app that doesn't require installation.
+1) Download whichever files you need from the release.  
+2) If you want to install it on your computer, then get the setup exe file.
+3) There is also a stand alone version of the app that is labeled as portable and does not require installation.
+4) Use the app to track and manage your anime, manga, and light novels.
 
 ## AniList Account Link Setup Help
 If you need help linking your AniList account to the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
