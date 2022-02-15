@@ -12,7 +12,7 @@
 4) Use the app to track and manage your anime, manga, and light novels.
 
 
-# Compiling Courier on my terminal console for development purposes
+# Running Courier on my terminal console in a development environment
 1) Ensure that you have node and npm installed on your computer. You can check if they are installed by typing npm -v and node -v. This will return the version number 
 indicating whether or not you have them installed.
 2) Get the node_modules.zip and Source code(zip or tar.gz) from the repository release
