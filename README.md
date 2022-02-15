@@ -1,6 +1,6 @@
 
 
-<p align="center"><a href="#"><img src="https://github.com/ReStartQ/Courier/blob/main/Preview/CourierBanner.png" alt="drawing" width="640"/></a></p>
+<p align="center"><a href="#"><img src="https://github.com/ReStartQ/Courier/blob/main/Preview/CourierBanner.png" alt="drawing" width="1280"/></a></p>
 
 # Courier
 Courier is an Anime, Manga, and Light Novel Tracker Application for Windows. 
