@@ -44,6 +44,6 @@ Instructions on downloading and setup of the app in a development environment ca
 # Technologies
 <pre>
 Languages:  JavaScript, HTML, CSS
-Framework:  Electron
+Framework:  ElectronJS
 API Query:  GraphQL
 </pre>
