@@ -5,20 +5,8 @@
 # Courier
 Courier is an Anime, Manga, and Light Novel Tracker Application for Windows. 
 <br>
-With the help of [AniList](https://anilist.co/home), this desktop app helps you manage and track Anime, Manga, and Light Novels all in one app.  
+This desktop app helps you manage and track Anime, Manga, and Light Novels from [AniList](https://anilist.co/home), all in one app.  
 An engaging and friendly user experience for updating your anime/manga/light novel lists.
-
-## Getting Started
-[Releases](https://github.com/ReStartQ/Courier/releases)
-<br>
-[Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
-<br>
-[Setup](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
-<br>
-[Transfering MyAnimeList to AniList](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md)
-
-
-## Preview
 
 <br>
 
@@ -30,7 +18,14 @@ An engaging and friendly user experience for updating your anime/manga/light nov
   <img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ExtraInfoWindowPreview.png" />
 </p>
 
-
+## Getting Started
+[Releases](https://github.com/ReStartQ/Courier/releases)
+<br>
+[Run or Install](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
+<br>
+[Setup](https://github.com/ReStartQ/Courier/blob/main/HELP.md)
+<br>
+[Transfering MyAnimeList to AniList](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md)
 
 ## Technologies
 <pre>
