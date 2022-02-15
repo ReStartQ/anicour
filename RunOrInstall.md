@@ -7,12 +7,6 @@
 2) Click on the latest [releases](https://github.com/ReStartQ/Courier/releases)
 
 
-# How to run or install Courier?
-1) Download whichever files you need from the release.  
-2) If you want to install it on your computer, then get the setup exe file.
-3) There is also a stand alone version of the app that is labeled as portable and does not require installation.
-4) Use the application for your tracking purposes.
-
 # How to compile Courier on my terminal console?
 1) Ensure that you have node and npm installed on your computer. You can check if they are installed by typing npm -v and node -v. This will return the version number 
 indicating whether or not you have them installed.
