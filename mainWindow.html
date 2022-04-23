@@ -18,7 +18,7 @@
         <!-- Search bar -->
         <div class="search">
           <input type="search" id="searchBarInput" class="input" placeholder="Filter or search">
-          <button class="searchbutton" id=searchButtonId><img src="icons\svgs\solid\search.svg" class="searchButtonImage"></button>
+          <button class="searchbutton" id=searchButtonId title="Search"><img src="icons\svgs\solid\search.svg" class="searchButtonImage"></button>
         </div>
       </section>
 
@@ -26,8 +26,8 @@
         <!-- Shortcut buttons -->
         <div class="shortcutButtons">
           <button class="listLinks" id="sidebarSearchButton" onclick="swapToSearch()" > <img src="icons\svgs\solid\search.svg" id="sidebarSearchImage"> <div id="searchButtonText">Search</div></button>
-          <button class="refreshButton" id="refreshButtonId"><img src="icons\svgs\solid\sync.svg" id="refreshImage"></button>
-          <button class="settingsButton" id="settingsButtonId"><img src="icons\svgs\solid\cog.svg" class="settingsButtonImage"></button>
+          <button class="refreshButton" id="refreshButtonId" title="Sync with AniList"><img src="icons\svgs\solid\sync.svg" id="refreshImage"></button>
+          <button class="settingsButton" id="settingsButtonId" title="Settings"><img src="icons\svgs\solid\cog.svg" class="settingsButtonImage"></button>
         </div>
         <!-- Buttons that select list type -->
         <div class="listButtons">
@@ -38,8 +38,10 @@
           <button class="listLinks" id="visualNovelListButton" onclick="swapList(4,event)"><img src="icons\svgs\solid\gamepad.svg" id="visualNovelListButtonImage"> <div id="visualNovelListText">Visual Novel List</div></button>
         </div>
 
-        <div id="updatingNotification">
-          Updating...
+        <div id="updateBox">
+          <div id="updatingNotification">
+            Updating...
+          </div>
         </div>
         
       </section>
@@ -90,15 +92,15 @@
             <option value="score">Released</option>
           </select>
 
-          <button id="mySort" onclick="swapBetweenSortButtons(0)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
-          <button id="sortUp" onclick="swapBetweenSortButtons(1)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
-          <button id="sortDown" onclick="swapBetweenSortButtons(2)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
-          <button id="mySort2" onclick="swapBetweenSortButtons(3)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
-          <button id="sortUp2" onclick="swapBetweenSortButtons(4)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
-          <button id="sortDown2" onclick="swapBetweenSortButtons(5)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
-          <button id="mySort3" onclick="swapBetweenSortButtons(6)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
-          <button id="sortUp3" onclick="swapBetweenSortButtons(7)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
-          <button id="sortDown3" onclick="swapBetweenSortButtons(8)" class="sortDirectionButtons"><img src="icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
+          <button id="mySort" onclick="swapBetweenSortButtons(0)" class="sortDirectionButtons" title="Ascending/Descending"><img src="icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
+          <button id="sortUp" onclick="swapBetweenSortButtons(1)" class="sortDirectionButtons" title="Ascending"><img src="icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
+          <button id="sortDown" onclick="swapBetweenSortButtons(2)" class="sortDirectionButtons" title="Descending"><img src="icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
+          <button id="mySort2" onclick="swapBetweenSortButtons(3)" class="sortDirectionButtons" title="Ascending/Descending"><img src="icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
+          <button id="sortUp2" onclick="swapBetweenSortButtons(4)" class="sortDirectionButtons" title="Ascending"><img src="icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
+          <button id="sortDown2" onclick="swapBetweenSortButtons(5)" class="sortDirectionButtons" title="Descending"><img src="icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
+          <button id="mySort3" onclick="swapBetweenSortButtons(6)" class="sortDirectionButtons" title="Ascending/Descending"><img src="icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
+          <button id="sortUp3" onclick="swapBetweenSortButtons(7)" class="sortDirectionButtons" title="Ascending"><img src="icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
+          <button id="sortDown3" onclick="swapBetweenSortButtons(8)" class="sortDirectionButtons" title="Descending"><img src="icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
          </div>
       </section>
 
