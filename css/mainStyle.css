@@ -3,6 +3,7 @@
    padding: 0;   
    box-sizing: border-box;
    font-family: Calibri;
+
 }
 
 /*scrollbar customization*/
@@ -414,7 +415,7 @@ body{
   grid-template-rows: 55px 95px 50px;
   height: 200px;
   width: 250px;
-  border: solid 1px royalblue;
+  border: solid 1px deepskyblue;
   border-radius: 3px;
 }
 
@@ -474,8 +475,9 @@ body{
 .mediaOptions button{
   background-color: #284461;
   border-radius: 5px;
-  border: 1px solid skyblue;
+  border: 1px solid deepskyblue;
 }
+
 
 .mediaOptions button:hover{
   background-color: #085cb6;
@@ -558,6 +560,13 @@ body{
   cursor: pointer;
 }
 
+.addButton:hover{
+  border: 1px solid yellowgreen;
+}
+
+.removeButton:hover{
+  border: 1px solid orangered;
+}
 
 .sortingMenus{
   align-self: flex-end;
@@ -640,4 +649,10 @@ body{
 
 #updatingNotification{
   display: none;
+}
+
+#updateBox{
+  grid-column-end: auto;
+  height: 25px;
+  width: 25px;
 }
