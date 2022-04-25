@@ -504,34 +504,50 @@ ipcRenderer.on('asynchronous-message', async function (evt, message) {
         }
         if(animeFlag==true){
             if(startDateNullFlag==true&&finishDateNullFlag==true){
-                saveMyEntryAnimeAdvanced0(mediaId,myStatus,episodes,score,notes,repeat);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnimeAdvanced0(mediaId,myStatus,episodes,score,notes,repeat);
+                document.getElementById("updatingNotification").style.display="none";
             }
             else{
                 if(finishDateNullFlag==true){
-                    saveMyEntryAnimeAdvanced1(mediaId,myStatus,episodes,score,notes,yearStart,monthStart,dayStart,repeat);
+                    document.getElementById("updatingNotification").style.display="block";
+                    await saveMyEntryAnimeAdvanced1(mediaId,myStatus,episodes,score,notes,yearStart,monthStart,dayStart,repeat);
+                    document.getElementById("updatingNotification").style.display="none";
                 }
                 if(startDateNullFlag==true){
-                    saveMyEntryAnimeAdvanced2(mediaId,myStatus,episodes,score,notes,yearFinish,monthFinish,dayFinish,repeat);
+                    document.getElementById("updatingNotification").style.display="block";
+                    await saveMyEntryAnimeAdvanced2(mediaId,myStatus,episodes,score,notes,yearFinish,monthFinish,dayFinish,repeat);
+                    document.getElementById("updatingNotification").style.display="none";
                 }
             }
             if(startDateNullFlag==false&&finishDateNullFlag==false){
-                saveMyEntryAnimeAdvanced(mediaId,myStatus,episodes,score,notes,yearStart,monthStart,dayStart,yearFinish,monthFinish,dayFinish,repeat);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryAnimeAdvanced(mediaId,myStatus,episodes,score,notes,yearStart,monthStart,dayStart,yearFinish,monthFinish,dayFinish,repeat);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
         if(mangaFlag==true){
             if(startDateNullFlag==true&&finishDateNullFlag==true){
-                saveMyEntryMangaAdvanced0(mediaId,myStatus,chapters, volumes, score,notes,repeat);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaAdvanced0(mediaId,myStatus,chapters, volumes, score,notes,repeat);
+                document.getElementById("updatingNotification").style.display="none";
             }
             else{
                 if(finishDateNullFlag==true){
-                    saveMyEntryMangaAdvanced1(mediaId,myStatus,chapters, volumes, score,notes,yearStart,monthStart,dayStart,repeat);
+                    document.getElementById("updatingNotification").style.display="block";
+                    await saveMyEntryMangaAdvanced1(mediaId,myStatus,chapters, volumes, score,notes,yearStart,monthStart,dayStart,repeat);
+                    document.getElementById("updatingNotification").style.display="none";
                 }
                 if(startDateNullFlag==true){
-                    saveMyEntryMangaAdvanced2(mediaId,myStatus,chapters, volumes,score,notes,yearFinish,monthFinish,dayFinish,repeat);
+                    document.getElementById("updatingNotification").style.display="block";
+                    await saveMyEntryMangaAdvanced2(mediaId,myStatus,chapters, volumes,score,notes,yearFinish,monthFinish,dayFinish,repeat);
+                    document.getElementById("updatingNotification").style.display="none";
                 }
             }
             if(startDateNullFlag==false&&finishDateNullFlag==false){
-                saveMyEntryMangaAdvanced(mediaId,myStatus, chapters, volumes,score,notes,yearStart,monthStart,dayStart,yearFinish,monthFinish,dayFinish,repeat);
+                document.getElementById("updatingNotification").style.display="block";
+                await saveMyEntryMangaAdvanced(mediaId,myStatus, chapters, volumes,score,notes,yearStart,monthStart,dayStart,yearFinish,monthFinish,dayFinish,repeat);
+                document.getElementById("updatingNotification").style.display="none";
             }
         }
     }
@@ -1211,22 +1227,22 @@ async function handleData(myData) {
         
         if(dataStatus=="RELEASING"){
             if(myColorPreference==1){
-                thisMediaBox.style.borderColor="green";
-                thisMediaBoxClone.style.borderColor="green";
+                thisMediaBox.style.borderColor="yellowgreen";
+                thisMediaBoxClone.style.borderColor="yellowgreen";
             }
             else{
-                thisMediaBox.style.borderColor="yellow";
-                thisMediaBoxClone.style.borderColor="yellow";
+                thisMediaBox.style.borderColor="goldenrod";
+                thisMediaBoxClone.style.borderColor="goldenrod";
             }
         }
         if(dataStatus=="NOT_YET_RELEASED"){
             if(myColorPreference==1){
-                thisMediaBox.style.borderColor="red";
-                thisMediaBoxClone.style.borderColor="red";
+                thisMediaBox.style.borderColor="orangered";
+                thisMediaBoxClone.style.borderColor="orangered";
             }
             else{
-                thisMediaBox.style.borderColor="orange";
-                thisMediaBoxClone.style.borderColor="orange";
+                thisMediaBox.style.borderColor="sienna";
+                thisMediaBoxClone.style.borderColor="sienna";
             }
         }
 
@@ -2291,26 +2307,26 @@ async function handleDataFromListCollectionManga(myData){
 
             if(dataStatus=="RELEASING"){
                 if(myColorPreference==1){
-                    thisMediaBox.style.borderColor="green";
-                    thisMediaBoxClone.style.borderColor="green";
-                    thisMediaBoxCloneFilter.style.borderColor="green";
+                    thisMediaBox.style.borderColor="yellowgreen";
+                    thisMediaBoxClone.style.borderColor="yellowgreen";
+                    thisMediaBoxCloneFilter.style.borderColor="yellowgreen";
                 }
                 else{
-                    thisMediaBox.style.borderColor="yellow";
-                    thisMediaBoxClone.style.borderColor="yellow";
-                    thisMediaBoxCloneFilter.style.borderColor="yellow";
+                    thisMediaBox.style.borderColor="goldenrod";
+                    thisMediaBoxClone.style.borderColor="goldenrod";
+                    thisMediaBoxCloneFilter.style.borderColor="goldenrod";
                 }
             }
             if(dataStatus=="NOT_YET_RELEASED"){
                 if(myColorPreference==1){
-                    thisMediaBox.style.borderColor="red";
-                    thisMediaBoxClone.style.borderColor="red";
-                    thisMediaBoxCloneFilter.style.borderColor="red";
+                    thisMediaBox.style.borderColor="orangered";
+                    thisMediaBoxClone.style.borderColor="orangered";
+                    thisMediaBoxCloneFilter.style.borderColor="orangered";
                 }
                 else{
-                    thisMediaBox.style.borderColor="orange";
-                    thisMediaBoxClone.style.borderColor="orange";
-                    thisMediaBoxCloneFilter.style.borderColor="orange";
+                    thisMediaBox.style.borderColor="sienna";
+                    thisMediaBoxClone.style.borderColor="sienna";
+                    thisMediaBoxCloneFilter.style.borderColor="sienna";
                 }
             }
 
@@ -2822,26 +2838,26 @@ async function handleDataFromListCollection(myData){ //handle data Anime list
             
             if(dataStatus=="RELEASING"){
                 if(myColorPreference==1){
-                    thisMediaBox.style.borderColor="green";
-                    thisMediaBoxClone.style.borderColor="green";
-                    thisMediaBoxCloneFilter.style.borderColor="green";
+                    thisMediaBox.style.borderColor="yellowgreen";
+                    thisMediaBoxClone.style.borderColor="yellowgreen";
+                    thisMediaBoxCloneFilter.style.borderColor="yellowgreen";
                 }
                 else{
-                    thisMediaBox.style.borderColor="yellow";
-                    thisMediaBoxClone.style.borderColor="yellow";
-                    thisMediaBoxCloneFilter.style.borderColor="yellow";
+                    thisMediaBox.style.borderColor="goldenrod";
+                    thisMediaBoxClone.style.borderColor="goldenrod";
+                    thisMediaBoxCloneFilter.style.borderColor="goldenrod";
                 }
             }
             if(dataStatus=="NOT_YET_RELEASED"){
                 if(myColorPreference==1){
-                    thisMediaBox.style.borderColor="red";
-                    thisMediaBoxClone.style.borderColor="red";
-                    thisMediaBoxCloneFilter.style.borderColor="red";
+                    thisMediaBox.style.borderColor="orangered";
+                    thisMediaBoxClone.style.borderColor="orangered";
+                    thisMediaBoxCloneFilter.style.borderColor="orangered";
                 }
                 else{
-                    thisMediaBox.style.borderColor="orange";
-                    thisMediaBoxClone.style.borderColor="orange";
-                    thisMediaBoxCloneFilter.style.borderColor="orange";
+                    thisMediaBox.style.borderColor="sienna";
+                    thisMediaBoxClone.style.borderColor="sienna";
+                    thisMediaBoxCloneFilter.style.borderColor="sienna";
                 }
             }
 
@@ -4126,10 +4142,10 @@ function sortMyListAnime(sortType,sortWay){ //first value is for type(1) or seas
         removeAllChildNodes(watchingTab);
         //sort it by season ascending or descending depending on sortway value
         if (sortWay==1){//if ascending
-            myArray.sort(compareAscendingSeason);
+            myArray.sort(compareAscendingReleaseDate);
         }
         else{ //if descending
-            myArray.sort(compareDescendingSeason);
+            myArray.sort(compareDescendingReleaseDate);
         }
         //adding back to DOM
         for(let i = 0; i<mediaBoxCountWatching; i++){
@@ -4146,10 +4162,10 @@ function sortMyListAnime(sortType,sortWay){ //first value is for type(1) or seas
         removeAllChildNodes(completedTab);
         //sort it by season ascending or descending depending on sortway value
         if (sortWay==1){//if ascending
-            myArray.sort(compareAscendingSeason);
+            myArray.sort(compareAscendingReleaseDate);
         }
         else{ //if descending
-            myArray.sort(compareDescendingSeason);
+            myArray.sort(compareDescendingReleaseDate);
         }
         //adding back to DOM
         for(let i = 0; i<mediaBoxCountCompleted; i++){
@@ -4166,10 +4182,10 @@ function sortMyListAnime(sortType,sortWay){ //first value is for type(1) or seas
         removeAllChildNodes(onHoldTab);
         //sort it by season ascending or descending depending on sortway value
         if (sortWay==1){//if ascending
-            myArray.sort(compareAscendingSeason);
+            myArray.sort(compareAscendingReleaseDate);
         }
         else{ //if descending
-            myArray.sort(compareDescendingSeason);
+            myArray.sort(compareDescendingReleaseDate);
         }
         //adding back to DOM
         for(let i = 0; i<mediaBoxCountOnHold; i++){
@@ -4184,10 +4200,10 @@ function sortMyListAnime(sortType,sortWay){ //first value is for type(1) or seas
         removeAllChildNodes(droppedTab);
         //sort it by season ascending or descending depending on sortway value
         if (sortWay==1){//if ascending
-            myArray.sort(compareAscendingSeason);
+            myArray.sort(compareAscendingReleaseDate);
         }
         else{ //if descending
-            myArray.sort(compareDescendingSeason);
+            myArray.sort(compareDescendingReleaseDate);
         }
         //adding back to DOM
         for(let i = 0; i<mediaBoxCountDropped; i++){
@@ -4204,10 +4220,10 @@ function sortMyListAnime(sortType,sortWay){ //first value is for type(1) or seas
         removeAllChildNodes(planToWatchTab);
         //sort it by season ascending or descending depending on sortway value
         if (sortWay==1){//if ascending
-            myArray.sort(compareAscendingSeason);
+            myArray.sort(compareAscendingReleaseDate);
         }
         else{ //if descending
-            myArray.sort(compareDescendingSeason);
+            myArray.sort(compareDescendingReleaseDate);
         }
         //adding back to DOM
         for(let i = 0; i<mediaBoxCountPlanToWatch; i++){
@@ -4223,10 +4239,10 @@ function sortMyListAnime(sortType,sortWay){ //first value is for type(1) or seas
         removeAllChildNodes(allTab);
         //sort it by season ascending or descending depending on sortway value
         if (sortWay==1){//if ascending
-            myArray.sort(compareAscendingSeason);
+            myArray.sort(compareAscendingReleaseDate);
         }
         else{ //if descending
-            myArray.sort(compareDescendingSeason);
+            myArray.sort(compareDescendingReleaseDate);
         }
         //adding back to DOM
         for(let i = 0; i<mediaBoxCountAll; i++){
