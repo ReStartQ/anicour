@@ -25,7 +25,7 @@ A fast and engaging way to update your anime/manga/light novel lists with a coup
 You can download the app [here](https://github.com/ReStartQ/Courier/releases). Check for the latest version. 
 <br>
 1) Download whichever files you need from the release.  
-2) If you want to install it on your computer, then get the setup exe file.
+2) If you want to install it on your computer, then get the setup exe file. (Recommended)
 3) There is also a stand alone version of the app that is labeled as portable and does not require installation.
 4) Use the app to track and manage your anime, manga, and light novels.
 
