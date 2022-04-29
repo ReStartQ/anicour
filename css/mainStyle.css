@@ -471,6 +471,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 3px;
 }
 .mediaOptions button{
   background-color: #284461;
@@ -496,6 +497,7 @@ body{
   overflow-y: auto;
   padding-left: 5px;
   padding-right: 5px;
+  border-radius: 3px;
 }
 .mediaInfo{
   font-family: Calibri;
@@ -511,6 +513,7 @@ body{
   justify-content: center;
   list-style-type: none;
   padding:5px;
+  border-radius: 3px;
 }
 
 /*altSearch-mainContent Section*/
