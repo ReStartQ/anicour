@@ -32,14 +32,13 @@
   <img src="https://github.com/ReStartQ/Courier/blob/main/Preview/TokenSave.png" />
 </p>
 
-5) If you logged into the wrong account on AniList, then you can always reset the login with the button next to it.
+5) Finally, restart/reload(Ctrl+R) the application to apply your settings and begin your tracking journey.
+
+![main window](https://github.com/ReStartQ/Courier/blob/main/Preview/MainWindowPreview.png)
+
+# Reset Account Login
+If you logged into the wrong account on AniList, then you can always reset the login with the button next to it.
 
 <p align="center">
   <img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ResetLogin.png" />
 </p>
-
-6) Finally, restart/reload(Ctrl+R) the application to apply your settings and begin your tracking journey.
-
-![main window](https://github.com/ReStartQ/Courier/blob/main/Preview/MainWindowPreview.png)
-
-
