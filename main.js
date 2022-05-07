@@ -3,7 +3,6 @@ const url = require('url');
 const path = require('path');
 const fetch = require('node-fetch');
 const { emit } = require('process');
-const shell = require('electron');
 
 const {app, ipcMain, BrowserWindow, Menu} = electron;
 
@@ -29,7 +28,7 @@ app.on('ready', ()=> {
   });
   //load html into window
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'mainWindow.html'),
+    pathname: path.join(__dirname, 'src/mainWindow.html'),
     protocol: 'file:',
     slashes: true
   }));
@@ -112,7 +111,7 @@ function createInfoWindow(){
   addWindow.setMenuBarVisibility(false);
   //load html into window
   addWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'infoWindow.html'),
+    pathname: path.join(__dirname, 'src/infoWindow.html'),
     protocol: 'file:',
     slashes: true
   }));
@@ -139,7 +138,7 @@ function createSettingWindow(){
   settingWindow.setMenuBarVisibility(false);
   //load html into window
   settingWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'settingWindow.html'),
+    pathname: path.join(__dirname, 'src/settingWindow.html'),
     protocol: 'file:',
     slashes: true
   }));
@@ -168,7 +167,7 @@ function createInfoWindow2(){
   addWindow2.setMenuBarVisibility(false);
   //load html into window
   addWindow2.loadURL(url.format({
-    pathname: path.join(__dirname, 'infoWindow2.html'),
+    pathname: path.join(__dirname, 'src/infoWindow2.html'),
     protocol: 'file:',
     slashes: true
   }));
@@ -194,7 +193,7 @@ function createUpdateWindow(){
   updateWindow.setMenuBarVisibility(false);
   //load html into window
   updateWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'updateWindow.html'),
+    pathname: path.join(__dirname, 'src/updateWindow.html'),
     protocol: 'file:',
     slashes: true
   }));
@@ -281,7 +280,7 @@ if (process.platform == 'darwin'){
 
 
 // Add developer tool items if not in production
-if (process.env.NODE_ENV.trim() !== 'production'){
+/*if (process.env.NODE_ENV.trim() !== 'production'){
   mainMenuTemplate.push({
     label: 'Developer tools',
     submenu:[
@@ -295,6 +294,6 @@ if (process.env.NODE_ENV.trim() !== 'production'){
       }
     ]
   });
-}
+}*/
 
 

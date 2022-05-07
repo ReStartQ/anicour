@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier</title>
+    <link rel="stylesheet" type="text/css" href="../css/mainStyle.css" as="style">
+    <link rel="preload" href="mainRenderer.js" as="script">
+
+    <script type='text/javascript' src="mainRenderer.js" defer></script>
+    <script type='text/javascript' src='../main.js' defer></script>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+  </head>
+  <body>
+    <section class="container">
+
+      <section class="top">
+        <!-- Search bar -->
+        <div class="search">
+          <input type="search" id="searchBarInput" class="input" placeholder="Filter or search">
+          <button class="searchbutton" id=searchButtonId title="Search"><img src="..\icons\svgs\solid\search.svg" class="searchButtonImage"></button>
+        </div>
+      </section>
+
+      <section class="sidebar">
+        <!-- Shortcut buttons -->
+        <div class="shortcutButtons">
+          <button class="listLinks" id="sidebarSearchButton" onclick="swapToSearch()" > <img src="..\icons\svgs\solid\search.svg" id="sidebarSearchImage"> <div id="searchButtonText">Search</div></button>
+          <button class="refreshButton" id="refreshButtonId" title="Sync with AniList"><img src="..\icons\svgs\solid\sync.svg" id="refreshImage"></button>
+          <button class="settingsButton" id="settingsButtonId" title="Settings"><img src="..\icons\svgs\solid\cog.svg" class="settingsButtonImage"></button>
+        </div>
+        <!-- Buttons that select list type -->
+        <div class="listButtons">
+          <!-- Buttons that select list type -->
+          <button class="listLinks" id="animeListButton" onclick="swapList(1,event)"> <img src="..\icons\svgs\regular\play-circle.svg" id="animeListButtonImage"> <div id="animeListText">Anime List</div> </button>
+          <button class="listLinks" id="mangaListButton" onclick="swapList(2,event)"> <img src="..\icons\svgs\solid\book-open.svg" id="mangaListButtonImage"> <div id="mangaListText">Manga List</div></button>
+          <button class="listLinks" id="lightNovelListButton" onclick="swapList(3,event)"><img src="..\icons\svgs\solid\book.svg" id="lightNovelListButtonImage"> <div id="lightNovelText">Light Novel List</div></button>
+          <button class="listLinks" id="visualNovelListButton" onclick="swapList(4,event)"><img src="..\icons\svgs\solid\gamepad.svg" id="visualNovelListButtonImage"> <div id="visualNovelListText">Visual Novel List</div></button>
+        </div>
+
+        <div id="updateBox">
+          <div id="updatingNotification">
+            Updating...
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- Tab buttons on the list -->
+      <section class="listLabelButtons" id="myListLabelButtons">
+        <button class="tablinks" id="WatchingButton" onclick="openTab(event,'Watching')">Watching</button>
+        <button class="tablinks" id="ReadingButton" onclick="openTab(event,'Reading')">Reading</button>
+        <button class="tablinks" id="PlayingButton" onclick="openTab(event,'Playing')">Playing</button>
+        <button class="tablinks" id="CompletedButton" onclick="openTab(event,'Completed')">Completed</button>
+        <button class="tablinks" id="OnHoldButton" onclick="openTab(event,'On hold')">On hold</button>
+        <button class="tablinks" id="DroppedButton" onclick="openTab(event,'Dropped')">Dropped</button>
+        <button class="tablinks" id="PlanToWatchButton" onclick="openTab(event,'Plan to watch')">Plan to watch</button>
+        <button class="tablinks" id="PlanToReadButton" onclick="openTab(event,'Plan to read')">Plan to read</button>
+        <button class="tablinks" id="PlanToPlayButton" onclick="openTab(event,'Plan to play')">Plan to play</button>
+        <button class="tablinks" id="AllButton" onclick="openTab(event,'All')">All</button>
+
+        <div id="tabCount"></div>
+        
+        <div class=sortingMenus>
+          <select name="SortAnime" id="SortAnime" >
+            <option value="" disabled selected hidden>Sort By</option>
+            <option value="title">Title</option>
+            <option value="episode progress">Episode Progress</option>
+            <option value="score">Score</option>
+            <option value="type">Type</option>
+            <option value="season">Season</option>
+          </select>
+          <select name="SortMangaLightNovels" id="SortManga">
+            <option value="" disabled selected hidden>Sort By</option>
+            <option value="title">Title</option>
+            <option value="chapter progress" >Chapter Progress</option>
+            <option value="volume progress">Volume Progress</option>
+            <option value="score">Score</option>
+            <option value="released">Release Date</option>
+          </select>
+          <select name="SortLightNovels" id="SortLN">
+            <option value="" disabled selected hidden>Sort By</option>
+            <option value="title">Title</option>
+            <option value="chapter progress" >Chapter Progress</option>
+            <option value="volume progress">Volume Progress</option>
+            <option value="score">Score</option>
+            <option value="released">Release Date</option>
+          </select>
+          <select name="SortVisualNovels" id="SortVN">
+            <option value="" disabled selected hidden>Sort By</option>
+            <option value="score">Title</option>
+            <option value="title">Rating</option>
+            <option value="season">Popularity</option>
+            <option value="score">Released</option>
+          </select>
+
+          <button id="mySort" onclick="swapBetweenSortButtons(0)" class="sortDirectionButtons" title="Ascending/Descending"><img src="..\icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
+          <button id="sortUp" onclick="swapBetweenSortButtons(1)" class="sortDirectionButtons" title="Ascending"><img src="..\icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
+          <button id="sortDown" onclick="swapBetweenSortButtons(2)" class="sortDirectionButtons" title="Descending"><img src="..\icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
+          <button id="mySort2" onclick="swapBetweenSortButtons(3)" class="sortDirectionButtons" title="Ascending/Descending"><img src="..\icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
+          <button id="sortUp2" onclick="swapBetweenSortButtons(4)" class="sortDirectionButtons" title="Ascending"><img src="..\icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
+          <button id="sortDown2" onclick="swapBetweenSortButtons(5)" class="sortDirectionButtons" title="Descending"><img src="..\icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
+          <button id="mySort3" onclick="swapBetweenSortButtons(6)" class="sortDirectionButtons" title="Ascending/Descending"><img src="..\icons\svgs\solid\sort.svg" class="ascendingDescendingImages"></button>
+          <button id="sortUp3" onclick="swapBetweenSortButtons(7)" class="sortDirectionButtons" title="Ascending"><img src="..\icons\svgs\solid\sort-amount-up-alt.svg" class="ascendingDescendingImages"></button>
+          <button id="sortDown3" onclick="swapBetweenSortButtons(8)" class="sortDirectionButtons" title="Descending"><img src="..\icons\svgs\solid\sort-amount-down.svg" class="ascendingDescendingImages"></button>
+         </div>
+      </section>
+
+
+      <section id="myFilterLabels">
+        
+      </section>
+
+
+      <section class="searchListLabelButtons" id="mySearchListLabelButtons">
+        <button class="searchTabLinks" id="searchAllButton" onclick="openSearchTab(event,'mySearchTab')">All</button>
+        <button class="searchTabLinks" id="searchAnimeButton" onclick="openSearchTab(event,'mySearchAnimeTab')">Anime</button>
+        <button class="searchTabLinks" id="searchMangaButton" onclick="openSearchTab(event,'mySearchMangaTab')">Manga</button>
+        <button class="searchTabLinks" id="searchLightNovelButton" onclick="openSearchTab(event,'mySearchLightNovelTab')">Light Novels</button>
+        <!--<button class="searchTabLinks" onclick="openSearchTab(event,'mySearchVisualNovelTab')">Visual Novels</button>-->
+      </section>
+
+      <!-- Main Content -->
+      <section class="mainContent" id="myMainContent">
+        <div class="theList" id="myList">
+          <!-- Tab content -->
+          <!--AnimeList-->
+          <div id="All" class="tabcontent">
+            
+          </div>
+
+          <div id="Watching" class="tabcontent">
+
+          </div>
+          <div id="Completed" class="tabcontent">
+
+          </div>
+          <div id="On hold" class="tabcontent">
+
+          </div>
+          <div id="Dropped" class="tabcontent">
+
+          </div>
+          <div id="Plan to watch" class="tabcontent">
+
+          </div>
+          <!--MangaList-->
+          <div id="All2" class="tabcontent">
+
+          </div>
+          <div id="Reading" class="tabcontent">
+
+          </div>
+          <div id="Completed2" class="tabcontent">
+
+          </div>
+          <div id="On hold2" class="tabcontent">
+
+          </div>
+          <div id="Dropped2" class="tabcontent">
+
+          </div>
+          <div id="Plan to read" class="tabcontent">
+
+          </div>
+          <!--Light Novel List-->
+          <div id="All3" class="tabcontent">
+
+          </div>
+          <div id="Reading2" class="tabcontent">
+
+          </div>
+          <div id="Completed3" class="tabcontent">
+
+          </div>
+          <div id="On hold3" class="tabcontent">
+
+          </div>
+          <div id="Dropped3" class="tabcontent">
+
+          </div>
+          <div id="Plan to read2" class="tabcontent">
+
+          </div>
+          <!--Visual Novel List-->
+          <div id="All4" class="tabcontent">
+            All4
+          </div>
+          <div id="Playing" class="tabcontent">
+            Playing
+          </div>
+          <div id="Completed4" class="tabcontent">
+            Completed4
+          </div>
+          <div id="On hold4" class="tabcontent">
+            On hold4
+          </div>
+          <div id="Dropped4" class="tabcontent">
+            Dropped4
+          </div>
+          <div id="Plan to play" class="tabcontent">
+            Plan to play
+          </div>
+
+        </div>
+
+        <section class="searchList" id="mySearchList">
+          <!--Search Tabs-->
+          <div class="searchTab" id="mySearchAnimeTab" >
+            
+          </div>
+          <div class="searchTab" id="mySearchMangaTab" >
+            
+          </div>
+          <div class="searchTab" id="mySearchLightNovelTab" >
+            
+          </div>
+          <div class="searchTab" id="mySearchVisualNovelTab" >
+            
+          </div>
+          <div class="searchTab" id="mySearchTab" >
+            
+          </div>
+        </section>
+
+        <section id="myFilterList">
+          <div id="FilterListTab" class="filterTabs">
+            
+          </div>
+        </section>
+
+      </section>
+    </section>
+  </body>
+</html>

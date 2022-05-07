@@ -301,6 +301,7 @@ body{
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -309,7 +310,7 @@ body{
   background-color: #213d57;
   color: aliceblue;
   transition: 0.3s;
-  width: 90px;
+  width: 100px;
   border-radius: 3px;
 }
 
@@ -642,12 +643,14 @@ body{
 }
 
 #tabCount{
-  margin-left: 1rem;
+  margin-left: 20px;
+  margin-right: 5px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 1rem;
+  color: skyblue;
 }
 
 #updatingNotification{
