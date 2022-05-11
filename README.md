@@ -34,12 +34,6 @@ If you need help linking your AniList account to the app, take a look at [this](
 <br>
 To transfer your anime/manga lists from MyAnimeList to AniList, here are the [steps](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md).
 
-# Contributing
-Courier is an open-source project and any help on improving it would be greatly appreciated. 
-<br>
-If you would like to contribute to this project, open up issues or create pull requests on any new features/suggestions/bugs/issues. 
-<br>
-Instructions on downloading and setup of the app in a development environment can be found [here](https://github.com/ReStartQ/Courier/blob/main/RunOrInstall.md)
 
 # Technologies
 <pre>
