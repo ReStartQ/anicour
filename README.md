@@ -21,7 +21,7 @@ A fast and engaging way to update your anime/manga/light novel lists with a coup
   <a href="#"><img src="https://github.com/ReStartQ/Courier/blob/main/Preview/ExtraInfoWindowPreview.png" /></a>
 </p>
 
-# Downloads
+## Downloads
 You can download the app [here](https://github.com/ReStartQ/Courier/releases). Check for the latest version. 
 <br>
 1) Download whichever files you need from the release.  
@@ -31,15 +31,15 @@ You can download the app [here](https://github.com/ReStartQ/Courier/releases). C
 
 Note: There is no auto update function implemented yet, so check back for future releases
 
-# AniList Account Link with the App
+## AniList Account Link with the App
 If you need help linking your AniList account to the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
 <br>
 To transfer your anime/manga lists from MyAnimeList to AniList, here are the [steps](https://github.com/ReStartQ/Courier/blob/main/Info/MyAnimeListTransferAniList.md).
 
-# Contributing
+## Contributing
 Instructions to run in a development environment can be found [here](https://github.com/ReStartQ/courier/blob/main/Info/CompilingDevelopment.md)
 
-# Technologies
+## Technologies
 <pre>
 Languages:  JavaScript, HTML, CSS
 Framework:  ElectronJS
