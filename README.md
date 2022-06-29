@@ -29,7 +29,7 @@ You can download the app [here](https://github.com/ReStartQ/Courier/releases). C
 3) There is also a stand alone version of the app that is labeled as portable and does not require installation.
 4) Use the app to track and manage your anime, manga, and light novels.
 
-Note: There is no auto update function implemented yet, so check back for future releases
+Remeber to check back for future releases
 
 ## AniList Account Link with the App
 If you need help linking your AniList account to the app, take a look at [this](https://github.com/ReStartQ/Courier/blob/main/HELP.md).
