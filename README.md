@@ -3,6 +3,14 @@
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/Courier/blob/main/Preview/CourierBanner.png" alt="drawing" width="1280"/></a></p>
 
 # Courier
+Note: <br>
+I have been working on a complete remake for this app (new code base). 
+<br>
+Courier v0.3.0 is the last version of the old app and will not receive any further updates. 
+<br>
+Please wait for the new app, which is expected to be released later this year (late 2023)
+
+<br>
 Courier is an Anime, Manga, and Light Novel Tracker Application for Windows. 
 <br>
 This desktop app helps you manage and track Anime, Manga, and Light Novels from [AniList](https://anilist.co/home), all in one app.  
