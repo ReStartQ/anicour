@@ -154,9 +154,9 @@ export default function MediaCard({ props }: any) {
                 year: today.getFullYear(),
               }
             : {
-                day: null,
-                month: null,
-                year: null,
+                day: myAdvancedInput.completedAt.day,
+                month: myAdvancedInput.completedAt.month,
+                year: myAdvancedInput.completedAt.year,
               },
       }, // Local card reducer state
       advancedMedia: props,
@@ -185,9 +185,9 @@ export default function MediaCard({ props }: any) {
                 year: today.getFullYear(),
               }
             : {
-                day: null,
-                month: null,
-                year: null,
+                day: myAdvancedInput.completedAt.day,
+                month: myAdvancedInput.completedAt.month,
+                year: myAdvancedInput.completedAt.year,
               },
       }, // Local card reducer state
       advancedMedia: props,
