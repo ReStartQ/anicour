@@ -1,3 +1,3 @@
 # anicour-test-upgrade
 
-Anicour Private
+Anicour - Testing auto update
