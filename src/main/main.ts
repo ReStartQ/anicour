@@ -24,6 +24,7 @@ class AppUpdater {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
     autoUpdater.checkForUpdatesAndNotify();
+    autoUpdater.autoInstallOnAppQuit = true;
   }
 }
 
@@ -634,7 +635,7 @@ const createWindow = async () => {
 
   // Remove this if your app does not use auto updates
   // eslint-disable-next-line
-  // new AppUpdater();
+  new AppUpdater();
 };
 
 /**

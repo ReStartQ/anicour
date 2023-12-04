@@ -1,7 +1,7 @@
 {
   "name": "anicour",
-  "version": "1.0.0",
-  "description": "A foundation for scalable desktop apps",
+  "version": "1.0.1",
+  "description": "Anime, Manga, and Light Novel Tracker Desktop Application for Windows. A fast and interactive way for AniList users to track and manage their anime/manga lists. ",
   "license": "GPL-3.0",
   "author": {
     "name": "ReStartQ",

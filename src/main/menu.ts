@@ -252,13 +252,15 @@ export default class MenuBuilder {
         label: 'Help',
         submenu: [
           {
-            label: 'GitHub',
+            label: 'Setup',
             click() {
-              shell.openExternal('https://github.com/restartq/anicour');
+              shell.openExternal(
+                'https://github.com/ReStartQ/anicour/blob/main/help/Setup.md',
+              );
             },
           },
           {
-            label: 'Setup',
+            label: 'GitHub',
             click() {
               shell.openExternal('https://github.com/restartq/anicour');
             },
