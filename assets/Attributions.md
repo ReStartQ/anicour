@@ -1,0 +1,2 @@
+<a href="https://www.flaticon.com/free-icons/gear" title="gear icons">Gear icons created by Freepik - Flaticon</a>
+<a target="_blank" href="https://icons8.com/icon/FqJJi4fvAZtu/lightweight">Lightweight</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

@@ -1,0 +1,5 @@
+.cardGrid::after {
+  content: '';
+  flex: auto;
+  justify-self: 'center';
+}
