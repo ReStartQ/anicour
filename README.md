@@ -1,3 +1,3 @@
 # anicour-test-upgrade
 
-Anicour - new app, still in development 
+Anicour - new app, currently testing auto update
