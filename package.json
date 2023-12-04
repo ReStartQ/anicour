@@ -21,15 +21,13 @@
   },
   "license": "GPL-3.0",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "ReStartQ",
+    "email": "kevin.hoang322@gmail.com"
   },
   "contributors": [
     {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
+      "name": "ReStartQ",
+      "email": "kevin.hoang322@gmail.com"
     }
   ],
   "main": "./src/main/main.ts",
