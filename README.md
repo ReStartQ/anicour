@@ -5,7 +5,7 @@ AniCour is the best anime, manga, and light novel tracking app that helps you di
 <Br />
 
 
-Anicour can: <Br />
+AniCour can: <Br />
 1) Track and manage your anime, manga and light novels
 2) Search anime, manga or light novels
 3) Show you the seasonal anime (from any year).
