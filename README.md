@@ -4,13 +4,14 @@
 AniCour is the best anime, manga, and light novel tracking app that helps you discover, manage and track your media from your desktop. 
 <Br />
 
-Anicour can: <Br />
+
+AniCour can: <Br />
 1) Track and manage your anime, manga and light novels
 2) Search anime, manga or light novels
 3) Show you the seasonal anime (from any year).
-4) Let you watch trailers of anime that might interest you.
-5) Help you stay updated with the latest anime news.
-6) Sort and filter to pinpoint anime, manga and light novels. 
+4) Lets you watch trailers of anime that might interest you.
+5) Keep you updated with the latest anime news.
+6) Sort and filter to assist in pinpointing anime, manga and light novels.
 
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView.png" alt="Hello" /></a></p>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactFiltered.jpg" alt="Hello" /></a></p>
