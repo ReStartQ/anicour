@@ -7,22 +7,27 @@
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourUsernameAndTokenMessage.png" />
 </p>
+
 2) Click on the settings button to open up the settings menu.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourSettingsButton.png" />
 </p>
+
 3) When the button is clicked, a new window showing the settings menu will appear.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourSettingsMenu.png" />
 </p>
+
 4) Get your username from your profile page. Skip this step if you already know your username.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListProfilePage.png" />
 </p>
+
 5) Set your username from AniList into the first input box.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourUsernameInput.png" />
 </p>
+
 6) Now you will need your token. Click on the Get AniList Token button, a login input will show up in your browser or if you are already logged in, then the token should show.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourTokenButton.png" />
@@ -33,14 +38,17 @@
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourTokenPage.png" />
 </p>
+
 7) After you input the token into the token input box click the save button.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourSaveInformation.png" />
 </p>
+
 8) Exit the settings menu and on the main app window click the sync button.
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourSync.png" />
 </p>
+
 9) You have just linked AniList and AniCour together!
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourSetupFinished.png" />
