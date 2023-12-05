@@ -1,7 +1,7 @@
-<p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/banner/AniCour.png" alt="Hello" /></a></p>
+<p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/banner/AniCour.png" alt="Hello" width="1280"/></a></p>
 
 # AniCour
-AniCour is the best anime, manga, and light novel tracking app that helps you discover, manage and track your media from your desktop. 
+AniCour is an anime, manga, and light novel tracking app that helps you discover, manage and track your media from your desktop. 
 <Br />
 
 
