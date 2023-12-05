@@ -28,7 +28,7 @@ const DefaultStatus = () => {
     <Box>
       <FormControl fullWidth>
         <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Default Status for Add to List
+          Status for Add to List
         </InputLabel>
         <NativeSelect
           id="demo-select"

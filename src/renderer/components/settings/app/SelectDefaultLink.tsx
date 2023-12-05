@@ -26,7 +26,7 @@ function SelectDefaultLink() {
     <Box>
       <FormControl fullWidth>
         <InputLabel variant="standard" id="defaultLinkLabel">
-          Default Image Link
+          Image Link
         </InputLabel>
         <NativeSelect
           id="defaultLinkSelect"
