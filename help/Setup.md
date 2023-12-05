@@ -3,6 +3,9 @@
 **(Note: An account on AniList is required to use the list tracking services.)**
 
 
+## (Optional) Transfer your List from MyAnimeList to AniList 
+If you want to transfer your anime/manga lists from MyAnimeList to AniList, the instructions on how to do that are [here](https://github.com/ReStartQ/anicour/blob/main/help/MyAnimeListToAniListTransfer.md). 
+
 1) The first time you launch AniCour, you will be shown this message. 
 <p align="center">
   <img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourUsernameAndTokenMessage.png" />
