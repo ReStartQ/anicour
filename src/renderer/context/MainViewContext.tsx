@@ -13,7 +13,7 @@ export const useMainView = () => {
 export const MainViewContextProvider = ({
   children,
 }: MainViewContextProviderProps) => {
-  const [view, setView] = useState(0);
+  const [view, setView] = useState(window.electron.store.get('defaultView'));
 
   return (
     <MainViewContext.Provider value={{ view, setView }}>

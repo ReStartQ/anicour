@@ -22,6 +22,7 @@ import AccountSection from './services/AccountSection';
 import AdultLabel from './app/AdultLabel';
 import SelectDefaultLink from './app/SelectDefaultLink';
 import DefaultStatus from './app/DefaultStatus';
+import SelectDefaultView from './app/SelectDefaultView';
 
 function SettingsMainTab({ view }: any) {
   if (view === 0) {
@@ -53,6 +54,7 @@ function SettingsMainTab({ view }: any) {
         }}
       >
         <SelectLanguage />
+        <SelectDefaultView />
         <SelectDefaultLink />
         <DefaultStatus />
       </Box>

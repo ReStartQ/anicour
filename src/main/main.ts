@@ -39,7 +39,7 @@ const schema: any = {
   },
   listServiceType: {
     type: 'string',
-    default: 'MyAnimeList',
+    default: 'AniList',
   },
   newsServiceType: {
     type: 'string',
@@ -70,44 +70,16 @@ const schema: any = {
     default: 'Romaji',
   },
   defaultView: {
-    type: 'array',
-    default: [0, 1, 2],
-  },
-  defaultList: {
-    type: 'array',
-    default: [0, 1, 2],
+    type: 'number',
+    default: 0,
   },
   defaultLink: {
     type: 'string',
     default: 'AniList',
   },
-  statusColors: {
-    type: 'string',
-    default: 'rbg',
-  },
-  showListLocation: {
-    type: 'boolean',
-    default: true,
-  },
-  advancedMedia: {
-    type: 'object',
-    default: {},
-  },
-  mediaList: {
-    type: 'object',
-    default: {},
-  },
   isAdult: {
     type: 'boolean',
     default: false,
-  },
-  mediaListMarkings: {
-    type: 'object',
-    default: {},
-  },
-  defaultDateFormat: {
-    type: 'string',
-    default: 'MDY',
   },
   defaultAddStatus: {
     type: 'string',

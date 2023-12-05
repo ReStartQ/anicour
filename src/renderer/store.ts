@@ -128,12 +128,6 @@ myStore.set(isValidStartDateAtom, true);
 export const isValidCompleteDateAtom = atom(true);
 myStore.set(isValidCompleteDateAtom, true);
 
-// can be 'MDY', 'YMD', 'DMY'
-export const defaultDateFormat = atom(
-  window.electron.store.get('defaultDateFormat'),
-);
-myStore.set(defaultDateFormat, window.electron.store.get('defaultDateFormat'));
-
 // 0 = info, 1 = success + add, 2 = success - delete
 export const notificationTypeAtom = atom(0);
 myStore.set(notificationTypeAtom, 0);
