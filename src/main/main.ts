@@ -424,10 +424,10 @@ const createNewSettingsWindow = async () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     parent: mainWindow,
-    // modal: true,
-    // maximizable: false,
-    // minimizable: false,
-    // resizable: false,
+    modal: true,
+    maximizable: false,
+    minimizable: false,
+    resizable: false,
     autoHideMenuBar: true,
   });
 
