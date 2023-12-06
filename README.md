@@ -37,7 +37,7 @@ AniCour can: <Br />
 You can download the app [here](https://github.com/ReStartQ/AniCour/releases). Check for the latest version. 
 <br>
 1) Download the setup file from the latest release and install it on your computer.
-2) The setup file is labeled as AniCour-Setup-X.X.X.exe, where X denotes a number for the version.
+2) The setup file is labeled as AniCour-Setup-x.x.x.exe, where x denotes a number for the version.
    <br/> Ex: AniCour-Setup-1.0.0.exe.
 3) Use the app to track, search, and manage your anime, manga, and light novels.
 
