@@ -1,4 +1,6 @@
 import { Box, Button, Input } from '@mui/material';
+import TokenIcon from '@mui/icons-material/Token';
+import SaveIcon from '@mui/icons-material/Save';
 import { useState } from 'react';
 
 export default function AccountSection() {
@@ -68,6 +70,7 @@ export default function AccountSection() {
           }}
           sx={{ width: '50%' }}
         >
+          <TokenIcon sx={{ mr: '5px' }} />
           Get AniList Token
         </Button>
         <Button
@@ -76,6 +79,7 @@ export default function AccountSection() {
           onClick={handleSave}
           sx={{ width: '50%' }}
         >
+          <SaveIcon sx={{ mr: '5px' }} />
           Save
         </Button>
       </Box>

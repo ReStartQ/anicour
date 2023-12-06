@@ -7,6 +7,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from '@mui/material';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 export default function ResetButton() {
   const [open, setOpen] = React.useState(false);
@@ -30,6 +31,7 @@ export default function ResetButton() {
         onClick={handleClickOpen}
         fullWidth
       >
+        <PowerSettingsNewIcon sx={{ mr: '5px' }} />
         Reset Settings
       </Button>
       <Dialog
@@ -55,6 +57,7 @@ export default function ResetButton() {
             variant="contained"
             color="error"
           >
+            <PowerSettingsNewIcon sx={{ mr: '5px' }} />
             Reset
           </Button>
           <Button onClick={() => handleClose(false)} variant="contained">
