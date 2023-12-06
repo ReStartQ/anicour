@@ -21,7 +21,7 @@ AniCour can: <Br />
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourTrailer.png" alt="Hello" /></a></p>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSearch.png" alt="Hello" /></a></p>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSeasons.png" alt="Hello" /></a></p>
-<p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNews2.png" alt="Hello" /></a></p>
+<p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNews3.png" alt="Hello" /></a></p>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsAdvanced.png" alt="Hello" /></a></p>
 
 ## Downloads
