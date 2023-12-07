@@ -39,12 +39,10 @@ You can download the app [here](https://github.com/ReStartQ/AniCour/releases). C
 1) Download the setup file from the latest release and install it on your computer.
 2) The setup file is labeled as AniCour-Setup-x.x.x.exe, where x denotes a number for the version.
    <br/> Ex: AniCour-Setup-1.0.0.exe.
-3) I also included a compressed file of the same setup exe because some browsers don't like it when you download apps that don't have a code signing certificate.
-   <br/>This option is for people who don't like to see the warning from their browser. To install, extract the zip folder using a program like 7zip and run the setup exe.
-   <br/>
-   The zip folder is labeled as AniCour-Compressed-Setup-x.x.x.zip, where x denotes a number for the version.
+3) The releases also have a compressed file of the same setup exe file because some browsers will give a warning when you download apps that don't have a code signing certificate.
+   <br/> The zip folder is labeled as AniCour-Compressed-Setup-x.x.x.zip, where x denotes a number for the version.
    <br/> Ex: AniCour-Compressed-Setup-1.0.0.exe.
-5) Use the app to track, search, and manage your anime, manga, and light novels.
+4) Use the app to track, search, and manage your anime, manga, and light novels.
 
 ## Setup Help?
 Need help connecting your AniList account to AniCour? You can find the instructions [here](https://github.com/ReStartQ/anicour/blob/main/help/Setup.md). 
