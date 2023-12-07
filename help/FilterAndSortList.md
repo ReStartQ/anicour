@@ -1,8 +1,46 @@
-# List of what you can filter by
-1) Titles (Romaji, English, Native, and synonyms)
-2) Tags
-3) Genres
-4) Studios
-5) Seasons (can be the season, year or both)
-6) Status
-7) Source
+# Filter by list:
+*  Titles (Romaji, English, Native, and synonyms)
+*  Tags
+*  Genres
+*  Studios
+*  Seasons (can be the season, year or both)
+*  Status
+*  Source
+
+# Sort by list:
+## Anime List
+* Status
+* Title
+* Episode Progress
+* Score
+* Type
+* Season
+## Manga List / Light Novel List
+* Status
+* Title
+* Chapter Progress
+* Volume Progress
+* Score
+* Season
+## Search
+### Anime
+* Status
+* Title
+* Episodes
+* Score
+* Type
+* Season
+### Manga / Light Novel
+* Status
+* Title
+* Chapters
+* Volumes
+* Score
+* Season
+## Seasons
+* Next Airing Time
+* Status
+* Title
+* Episodes
+* Score
+* Popularity
