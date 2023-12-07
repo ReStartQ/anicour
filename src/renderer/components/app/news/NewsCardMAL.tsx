@@ -19,8 +19,9 @@ export default function NewsCardMAL({ props, reference, listValue }: any) {
 
   useEffect(() => {
     if (
-      newsLocationY === listValue - 1 ||
-      (newsLocationY === listValue && listValue === 19)
+      (newsLocationY === listValue - 1 ||
+        (newsLocationY === listValue && listValue === 19)) &&
+      newsLocationY !== 0 // added newsLocationY !== 0 to make it so that smaller screens dont scroll to first card
     ) {
       // 19 is max value
       cardRef.current.scrollIntoView({
