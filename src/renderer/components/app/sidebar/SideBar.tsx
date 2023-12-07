@@ -250,6 +250,7 @@ const SideBar = React.memo(() => {
           width: '100%',
           display: 'flex',
           flexDirection: 'row',
+          overflowX: 'hidden',
         }}
       >
         {sidebarValue.sidebar !== 5 ? <ListViewToggle /> : null}
