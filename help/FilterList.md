@@ -1,4 +1,4 @@
-# List of what you can filter
+# List of what you can filter by
 1) Titles (Romaji, English, Native, and synonyms)
 2) Tags
 3) Genres
