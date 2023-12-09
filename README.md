@@ -13,6 +13,7 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 * Watch trailers of anime that might interest you.
 * Stay up to date with the latest anime news.
 
+## Screenshots
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView.png" alt="Hello" /></a></p>
 <br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactFiltered.jpg" alt="Hello" /></a></p>
