@@ -15,12 +15,10 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 
 ## Screenshots
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView.png" alt="Hello" /></a></p>
-<br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactFiltered.jpg" alt="Hello" /></a></p>
-<br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourListView.png" alt="Hello" /></a></p>
-<br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourContextMenu.png" alt="Hello" /></a></p>
+
 <br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourAdvancedInfo2.png" alt="Hello" /></a></p>
 <br>
@@ -31,7 +29,6 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourTrailer.png" alt="Hello" /></a></p>
 <br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNews3.png" alt="Hello" /></a></p>
-<br>
 <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsAdvanced.png" alt="Hello" /></a></p>
 
 ## Downloads
