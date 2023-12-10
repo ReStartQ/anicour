@@ -8,7 +8,7 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 1. [Features](https://github.com/ReStartQ/anicour#Features)
 2. [Screenshots](https://github.com/ReStartQ/anicour#Screenshots)
 3. [Download](https://github.com/ReStartQ/anicour#Download)
-4. [Setup Help?](https://github.com/ReStartQ/anicour#Setup?)
+4. [Setup Help?](https://github.com/ReStartQ/anicour#Setup)
 
 
 ## Features: 
@@ -48,5 +48,5 @@ You can download the app [here](https://github.com/ReStartQ/AniCour/releases). C
    <br /> ***Note: Some browsers may give a warning when you download this setup file as it does not have a code signing certificate.***
 3) Use the app to track, search, and manage your anime, manga, and light novels.
 
-## Setup?
+## Setup
 Need help connecting your AniList account to AniCour? You can find the instructions on how to do that [here](https://github.com/ReStartQ/anicour/blob/main/help/Setup.md). 
