@@ -26,7 +26,9 @@ export default function ListViewToggle() {
           console.log(mainView.view);
         }}
       >
-        <GridViewIcon />
+        <Tooltip title="Grid" placement="top">
+          <GridViewIcon />
+        </Tooltip>
       </ToggleButton>
       <ToggleButton
         value={1}
@@ -37,7 +39,9 @@ export default function ListViewToggle() {
         }}
         // sx={{ maxHeight: '48px', maxWidth: '48px' }}
       >
-        <ViewCompactIcon fontSize="medium" />
+        <Tooltip title="Compact" placement="top">
+          <ViewCompactIcon fontSize="medium" />
+        </Tooltip>
       </ToggleButton>
       <ToggleButton
         value={2}
@@ -48,7 +52,9 @@ export default function ListViewToggle() {
           console.log(mainView.view);
         }}
       >
-        <ListIcon />
+        <Tooltip title="List" placement="top">
+          <ListIcon />
+        </Tooltip>
       </ToggleButton>
     </ToggleButtonGroup>
   );
