@@ -4,7 +4,7 @@
 AniCour is an anime, manga, and light novel tracking app that helps you discover, manage and track your lists from your desktop. 
 
 
-### Table of Contents
+## Table of Contents
 1. [Features](https://github.com/ReStartQ/anicour#Features)
 2. [Screenshots](https://github.com/ReStartQ/anicour#Screenshots)
 3. [Download](https://github.com/ReStartQ/anicour#Download)
