@@ -38,11 +38,15 @@ export default function SearchTab({ props }: any) {
     return <LoadingMessage />;
   }
 
-  if (isError && error.response.status === 400) {
-    return <ErrorCredentials />;
+  if (isError && error.response !== undefined) {
+    if (error.response.status === 400) return <ErrorCredentials />;
   }
 
-  if (isError && error.response.status !== 400) {
+  if (isError && error.response !== undefined) {
+    if (error.response.status !== 400) return <ErrorAPI />;
+  }
+
+  if (isError && error.response === undefined) {
     return <ErrorAPI />;
   }
 

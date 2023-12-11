@@ -32,15 +32,22 @@ const MainTab = memo(({ props }: any) => {
     myToken.AniListToken,
   );
 
+  // console.log(isError);
+  // console.log(error);
   if (isLoading) {
     return <LoadingMessage />;
   }
 
-  if (isError && error.response.status === 400) {
-    return <ErrorCredentials />;
+  if (isError && error.response !== undefined) {
+    if (error.response.status === 400) return <ErrorCredentials />;
   }
 
-  if (isError && error.response.status !== 400) {
+  if (isError && error.response !== undefined) {
+    if (error.response.status !== 400) return <ErrorAPI />;
+  }
+
+  if (isError && error.response === undefined) {
+    console.log('error');
     return <ErrorAPI />;
   }
 
