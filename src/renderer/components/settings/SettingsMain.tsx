@@ -6,7 +6,6 @@ import { keyframes } from '@emotion/react';
 import { useQuery } from '@tanstack/react-query';
 import Axios from 'axios';
 import { useMainView } from '../../context/MainViewContext';
-import { MainContext, useMain } from '../../context/MainContext';
 import SelectLanguage from './lang/SelectLanguage';
 import SelectTheme from './theme/SelectTheme';
 import ThemeToggle from './theme/ThemeToggle';
@@ -79,15 +78,12 @@ function SettingsMainTab({ view }: any) {
 }
 
 export default function SettingsMain({ props }: any) {
-  const mainCards: any = useMain();
   const mainView: any = useMainView();
   const sidebarValue: any = useSidebarButton();
   const myFilter: any = useFilter();
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(48);
   const [more, setMore] = useState(true);
-
-  console.log(mainCards);
 
   return <SettingsMainTab view={sidebarValue.sidebar} />;
 }

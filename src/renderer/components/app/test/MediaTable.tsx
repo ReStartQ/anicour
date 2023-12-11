@@ -18,7 +18,6 @@ import Typography from '@mui/material/Typography';
 import { alpha } from '@mui/material/styles';
 import { visuallyHidden } from '@mui/utils';
 import * as React from 'react';
-import { useMain } from 'renderer/context/MainContext';
 
 interface Data {
   calories: number;
@@ -168,8 +167,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
-
-  const mainCards: any = useMain();
 
   return (
     <TableHead>
