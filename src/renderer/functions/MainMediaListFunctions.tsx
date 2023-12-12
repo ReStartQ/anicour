@@ -1,5 +1,9 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import Axios from 'axios';
+import {
+  getListForCompletedAnime,
+  getListForCompletedManga,
+} from './CheckForListFlags';
 
 export const useMainMediaList = (myUserName: string, myToken: string) =>
   useQuery({
@@ -144,6 +148,8 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
       let animeOnHoldIndex = null;
       let animeDroppedIndex = null;
       let animePlanToWatchIndex = null;
+      let animeSplitCompletedListFlag = false;
+      const animeSplitArray = [];
 
       // sets the indexes
       // eslint-disable-next-line no-plusplus
@@ -153,6 +159,14 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
           myQuery[i].isCustomList === false
         ) {
           animeWatchingIndex = i;
+        } else if (
+          myQuery[i].status === 'COMPLETED' &&
+          myQuery[i].isCustomList === false &&
+          myQuery[i].isSplitCompletedList === true
+        ) {
+          animeCompletedIndex = i;
+          animeSplitCompletedListFlag = true;
+          animeSplitArray.push(i);
         } else if (
           myQuery[i].status === 'COMPLETED' &&
           myQuery[i].isCustomList === false
@@ -290,6 +304,14 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
         headers,
       ).then((res) => res.data.data.MediaListCollection.lists);
 
+      const completedAnimeResult = getListForCompletedAnime(
+        myQuery,
+        animeCompletedIndex,
+        animeSplitCompletedListFlag,
+        animeSplitArray,
+      );
+
+      console.log(completedAnimeResult);
       const myObject: any = {
         anime: {
           animeWatching:
@@ -348,62 +370,7 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   }),
                 )
               : [],
-          animeCompleted:
-            animeCompletedIndex !== null
-              ? await myQuery[animeCompletedIndex].entries.map(
-                  (entry: any, index: any) => ({
-                    id: entry.media.id,
-                    idMal: entry.media.idMal,
-                    private: entry.private,
-                    titleRomaji: entry.media.title.romaji,
-                    titleEnglish: entry.media.title.english,
-                    titleNative: entry.media.title.native,
-                    synonyms: entry.media.synonyms,
-                    season: entry.media.season,
-                    seasonYear: entry.media.seasonYear,
-                    episodes: entry.media.episodes,
-                    chapters: entry.media.chapters,
-                    volumes: entry.media.volumes,
-                    type: entry.media.type,
-                    format: entry.media.format,
-                    image: entry.media.coverImage.large,
-                    imageMedium: entry.media.coverImage.medium,
-                    imageExtraLarge: entry.media.coverImage.extraLarge,
-                    bannerImage: entry.media.bannerImage,
-                    startYear: entry.media.startDate.year,
-                    startMonth: entry.media.startDate.month,
-                    startDay: entry.media.startDate.day,
-                    description: entry.media.description,
-                    genres: entry.media.genres,
-                    tags: entry.media.tags,
-                    status: entry.media.status,
-                    siteUrl: entry.media.siteUrl,
-                    duration: entry.media.duration,
-                    averageScore: entry.media.averageScore,
-                    popularity: entry.media.popularity,
-                    studios: entry.media.studios.edges,
-                    mainStudioIndex: entry.media.studios.edges
-                      .map((e: any) => {
-                        return e.isMain;
-                      })
-                      .indexOf(true),
-                    source: entry.media.source,
-                    meanScore: entry.media.meanScore,
-                    mediaListEntry: entry.media.mediaListEntry,
-                    progress: entry.media.mediaListEntry.progress,
-                    progressVolumes: entry.media.mediaListEntry.progressVolumes,
-                    score: entry.media.mediaListEntry.score,
-                    notes: entry.media.mediaListEntry.notes,
-                    startedAt: entry.media.mediaListEntry.startedAt,
-                    completedAt: entry.media.mediaListEntry.completedAt,
-                    repeat: entry.media.mediaListEntry.repeat,
-                    trailer: entry.media.trailer,
-                    nextAiringEpisode: entry.media.nextAiringEpisode,
-                    location: 'animeCompleted',
-                    key: entry.media.title.romaji + entry.media.id,
-                  }),
-                )
-              : [],
+          animeCompleted: completedAnimeResult,
           animeOnHold:
             animeOnHoldIndex !== null
               ? await myQuery[animeOnHoldIndex].entries.map(
@@ -595,9 +562,12 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
       console.log(myQueryManga);
       let mangaQueryReadingIndex = null;
       let mangaQueryCompletedIndex = null;
+      let lightNovelQueryCompletedIndex = null;
       let mangaQueryPlanToReadIndex = null;
       let mangaQueryDroppedIndex = null;
       let mangaQueryOnHoldIndex = null;
+      let mangaSplitCompletedListFlag = false;
+      const mangaSplitArray = [];
 
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < myQueryManga.length; i++) {
@@ -608,9 +578,28 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
           mangaQueryReadingIndex = i;
         } else if (
           myQueryManga[i].status === 'COMPLETED' &&
+          myQueryManga[i].isCustomList === false &&
+          myQueryManga[i].isSplitCompletedList === true &&
+          myQueryManga[i].name.includes('Manga')
+        ) {
+          mangaQueryCompletedIndex = i;
+          mangaSplitCompletedListFlag = true;
+          mangaSplitArray.push(i);
+        } else if (
+          myQueryManga[i].status === 'COMPLETED' &&
+          myQueryManga[i].isCustomList === false &&
+          myQueryManga[i].isSplitCompletedList === true &&
+          myQueryManga[i].name.includes('Novel')
+        ) {
+          lightNovelQueryCompletedIndex = i;
+          mangaSplitCompletedListFlag = true;
+          mangaSplitArray.push(i);
+        } else if (
+          myQueryManga[i].status === 'COMPLETED' &&
           myQueryManga[i].isCustomList === false
         ) {
           mangaQueryCompletedIndex = i;
+          lightNovelQueryCompletedIndex = i;
         } else if (
           myQueryManga[i].status === 'PLANNING' &&
           myQueryManga[i].isCustomList === false
@@ -628,6 +617,15 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
           mangaQueryDroppedIndex = i;
         }
       }
+
+      const completedMangaResult = getListForCompletedManga(
+        myQueryManga,
+        mangaQueryCompletedIndex,
+        mangaSplitCompletedListFlag,
+        mangaSplitArray,
+      );
+
+      console.log(completedMangaResult);
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < myQueryManga.length; i++) {
         // lists
@@ -706,7 +704,7 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                     myQueryManga[i].entries[j].media.id,
                 });
             }
-            if (i === mangaQueryCompletedIndex) {
+            if (i === lightNovelQueryCompletedIndex) {
               myObject.lightNovels.lightNovelsCompleted =
                 myObject.lightNovels.lightNovelsCompleted.concat({
                   id: myQueryManga[i].entries[j].media.id,
