@@ -102,6 +102,13 @@ export const isFilteredTermOnList = (media: any, filter: any) => {
       return true;
     }
   }
+  if (media.format !== null) {
+    if (
+      getFilteredTerm(media.format).includes(getFilteredTerm(filter)) // || getFilteredTerm(`type:${media.format}`).includes(getFilteredTerm(filter))
+    ) {
+      return true;
+    }
+  }
   return false;
 };
 
