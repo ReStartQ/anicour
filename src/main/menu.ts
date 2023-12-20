@@ -198,6 +198,14 @@ export default class MenuBuilder {
         label: '&File',
         submenu: [
           {
+            label: 'Reset Settings',
+            click: () => {
+              this.mainWindow.webContents.send('updateMainFromSettings', [
+                'resetSettings',
+              ]);
+            },
+          },
+          {
             label: '&Close',
             accelerator: 'Ctrl+W',
             click: () => {
@@ -252,10 +260,26 @@ export default class MenuBuilder {
         label: 'Help',
         submenu: [
           {
+            label: 'Changelog',
+            click() {
+              shell.openExternal(
+                'https://github.com/ReStartQ/anicour/blob/main/CHANGELOG.md',
+              );
+            },
+          },
+          {
             label: 'Setup',
             click() {
               shell.openExternal(
                 'https://github.com/ReStartQ/anicour/blob/main/help/Setup.md',
+              );
+            },
+          },
+          {
+            label: 'Issues',
+            click() {
+              shell.openExternal(
+                'https://github.com/ReStartQ/anicour/issues/new',
               );
             },
           },

@@ -22,6 +22,8 @@ import AdultLabel from './app/AdultLabel';
 import SelectDefaultLink from './app/SelectDefaultLink';
 import DefaultStatus from './app/DefaultStatus';
 import SelectDefaultView from './app/SelectDefaultView';
+import AboutSection from './about/AboutSection';
+import SelectSeasonChange from './app/SelectSeasonChange';
 
 function SettingsMainTab({ view }: any) {
   if (view === 0) {
@@ -54,12 +56,28 @@ function SettingsMainTab({ view }: any) {
       >
         <SelectLanguage />
         <SelectDefaultView />
+        <SelectSeasonChange />
         <SelectDefaultLink />
         <DefaultStatus />
       </Box>
     );
   }
   if (view === 2) {
+    return (
+      <Box
+        sx={{
+          height: 'calc( 100vh )',
+          width: '100%',
+          overflowY: 'auto',
+          gridGap: '10px',
+          padding: '25px',
+        }}
+      >
+        <AboutSection />
+      </Box>
+    );
+  }
+  if (view === 3) {
     return (
       <Box
         sx={{

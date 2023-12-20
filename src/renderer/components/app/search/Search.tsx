@@ -19,7 +19,8 @@ import { getFilteredTerm } from 'renderer/functions/view/FilterFunctions';
 import * as _ from 'lodash';
 import { debounce } from '@mui/material/utils';
 import { useAtom } from 'jotai';
-import { searchPrevAtom } from 'renderer/store';
+import { filterTypeAtom, searchPrevAtom } from 'renderer/store';
+import FilterSelect from './FilterSelect';
 
 const Search = () => {
   const myFilter: any = useFilter();
@@ -28,6 +29,7 @@ const Search = () => {
   const mySearchTerm: any = useSearchTerm();
   const [filter, setFilter] = useState('');
   const [searchPrev, setSearchPrev] = useAtom(searchPrevAtom);
+  const [filterType, setFilterType] = useAtom(filterTypeAtom);
 
   const debounceFunc = debounce((e) => {
     myFilter.setFilter(e.target.value);
@@ -64,6 +66,7 @@ const Search = () => {
             onClick={() => {
               setFilter('');
               myFilter.setFilter('');
+              setFilterType('All');
             }}
           >
             <ClearIcon />

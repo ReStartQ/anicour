@@ -44,6 +44,7 @@ import {
   notificationTypeAtom,
 } from 'renderer/store';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
+import { useCategory } from 'renderer/context/CategoryContext';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -55,6 +56,7 @@ export default function MediaCard({ props }: any) {
   const myAdvancedMedia: any = useAdvancedMedia();
   const myUserName: any = useAniListUsername();
   const myToken: any = useAniListToken();
+  const myCategory: any = useCategory();
 
   const [notificationType, setNotificationType] = useAtom(notificationTypeAtom);
   const [notifcationOpen, setNotificationOpen] = useAtom(notificationOpenAtom);
@@ -158,6 +160,12 @@ export default function MediaCard({ props }: any) {
                 month: myAdvancedInput.completedAt.month,
                 year: myAdvancedInput.completedAt.year,
               },
+        repeat:
+          (myAdvancedInput.completedAt.year !== null ||
+            myAdvancedInput.repeat !== 0) &&
+          myCategory.category !== 1
+            ? myAdvancedInput.repeat + 1
+            : myAdvancedInput.repeat,
       }, // Local card reducer state
       advancedMedia: props,
     };
@@ -189,6 +197,12 @@ export default function MediaCard({ props }: any) {
                 month: myAdvancedInput.completedAt.month,
                 year: myAdvancedInput.completedAt.year,
               },
+        repeat:
+          (myAdvancedInput.completedAt.year !== null ||
+            myAdvancedInput.repeat !== 0) &&
+          myCategory.category !== 1
+            ? myAdvancedInput.repeat + 1
+            : myAdvancedInput.repeat,
       }, // Local card reducer state
       advancedMedia: props,
     };

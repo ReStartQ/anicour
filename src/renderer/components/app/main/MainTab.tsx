@@ -27,6 +27,7 @@ const MainTab = memo(({ props }: any) => {
   const myTitle: any = useTitle();
   const myToken: any = useAniListToken();
   const myUsername: any = useAniListUsername();
+
   const { isLoading, isError, error, data, refetch }: any = useMainMediaList(
     myUsername.AniListUsername,
     myToken.AniListToken,

@@ -15,9 +15,12 @@ import ListItemText from '@mui/material/ListItemText';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import AccessibilityIcon from '@mui/icons-material/Accessibility';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import InfoIcon from '@mui/icons-material/Info';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import { useAtom } from 'jotai';
+import { appVersionAtom } from 'renderer/store';
 import { useTheme } from '../../context/ThemeContext';
 import SettingsMain from './SettingsMain';
 import { useSidebarButton } from '../../context/SidebarContext';
@@ -44,27 +47,34 @@ function SideIcons({ view }: any) {
     return <SettingsApplicationsIcon />;
   }
   if (view === 2) {
+    return <InfoIcon />;
+  }
+  if (view === 3) {
     return <PowerSettingsNewIcon />;
   }
   return <></>;
 }
 
-const getSettingTitle = (type: any) => {
+const getSettingTitle = (type: any, appVersion: any) => {
   switch (type) {
     case 0:
       return 'Services';
     case 1:
       return 'Application';
     case 2:
+      return `About`;
+    case 3:
       return 'Reset';
     default:
-      return 'Account';
+      return 'Settings';
   }
 };
 export default function Settings() {
   const myTheme: any = useTheme();
 
   const sidebarValue: any = useSidebarButton();
+  const [appVersion, setAppVersion] = useAtom(appVersionAtom);
+
   return (
     <ThemeProvider theme={myTheme.theme ? darkTheme : lightTheme}>
       <Box sx={{ display: 'flex' }}>
@@ -78,7 +88,7 @@ export default function Settings() {
         >
           <Toolbar>
             <Typography variant="h6" noWrap component="div">
-              {getSettingTitle(sidebarValue.sidebar)}
+              {getSettingTitle(sidebarValue.sidebar, appVersion)}
             </Typography>
           </Toolbar>
         </AppBar>
@@ -97,23 +107,25 @@ export default function Settings() {
           <Toolbar />
           <Divider />
           <List>
-            {['Services', 'Application', 'Reset'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton
-                  onClick={() => {
-                    console.log('settings tab changed');
-                    sidebarValue.setSidebar(index);
-                  }}
-                  selected={sidebarValue.sidebar === index}
-                  dense
-                >
-                  <ListItemIcon>
-                    <SideIcons view={index} />
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            {['Services', 'Application', 'About', 'Reset'].map(
+              (text, index) => (
+                <ListItem key={text} disablePadding>
+                  <ListItemButton
+                    onClick={() => {
+                      console.log('settings tab changed');
+                      sidebarValue.setSidebar(index);
+                    }}
+                    selected={sidebarValue.sidebar === index}
+                    dense
+                  >
+                    <ListItemIcon>
+                      <SideIcons view={index} />
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              ),
+            )}
           </List>
           <Divider />
         </Drawer>

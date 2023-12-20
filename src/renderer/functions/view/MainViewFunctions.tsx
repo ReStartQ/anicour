@@ -6,6 +6,8 @@ import { memo, useEffect, useMemo, useState } from 'react';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useSort } from 'renderer/context/SortContext';
+import { filterTypeAtom } from 'renderer/store';
+import { useAtom } from 'jotai';
 import { getFilteredTabData, isFilteredTermOnList } from './FilterFunctions';
 import { sortMyListAnime, sortMyListManga } from '../sort/sortMainFunctions';
 import { useMainMediaList } from '../MainMediaListFunctions';
@@ -71,6 +73,7 @@ export const MainCategoryView = memo(
   ({ category, sidebar, mainView, filter, sort, title }: any) => {
     const myToken: any = useAniListToken();
     const myUsername: any = useAniListUsername();
+    const [filterType, setFilterType] = useAtom(filterTypeAtom);
 
     const { isLoading, isError, error, data, refetch }: any = useMainMediaList(
       myUsername.AniListUsername,
@@ -84,7 +87,7 @@ export const MainCategoryView = memo(
         getFilteredTabData(category, sidebar, data),
       )
         .filter((media: any) => {
-          return isFilteredTermOnList(media, filter);
+          return isFilteredTermOnList(media, filter, filterType);
         })
         .map((media: any, index: any) => {
           return (
@@ -106,7 +109,7 @@ export const MainCategoryView = memo(
         getFilteredTabData(category, sidebar, data),
       )
         .filter((media: any) => {
-          return isFilteredTermOnList(media, filter);
+          return isFilteredTermOnList(media, filter, filterType);
         })
         .map((media: any, index: any) => {
           return (
@@ -128,7 +131,7 @@ export const MainCategoryView = memo(
         getFilteredTabData(category, sidebar, data),
       )
         .filter((media: any) => {
-          return isFilteredTermOnList(media, filter);
+          return isFilteredTermOnList(media, filter, filterType);
         })
         .map((media: any, index: any) => {
           return (

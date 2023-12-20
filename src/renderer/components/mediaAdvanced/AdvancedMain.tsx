@@ -34,7 +34,7 @@ export default function AdvancedMain({ props }: any) {
         width: '100%',
         display: 'grid',
         gridTemplateColumns: '250px 564px', // 844 - 10 -20 = 814
-        gridTemplateRows: '55px 215px 50px 40px 191px', // 611 - 40 - 20 = 551
+        gridTemplateRows: '55px 232px 33px 40px 210px', // 611 - 40 - 20 = 551
         gridGap: '10px',
         padding: '15px',
       }}

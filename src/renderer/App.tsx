@@ -88,6 +88,7 @@ import {
 import { AdvancedMoreInfoContextProvider } from './context/advanced/AdvancedMoreInfoContext';
 import { AdvancedThemeSongsContextProvider } from './context/advanced/AdvancedThemeSongContext';
 import {
+  appResetDialogOpenAtom,
   myStore,
   notificationAltOpenAtom,
   notificationMediaNamesAtom,
@@ -99,6 +100,8 @@ import NewsPage from './components/app/news/NewsPage';
 import NewsTabANN from './components/app/news/NewsTabANN';
 import { getTitle } from './functions/view/TitlePreferenceFunctions';
 import { getSnackbarType } from './functions/edit/componentTypes';
+import FilterSelect from './components/app/search/FilterSelect';
+import ResetMenuApp from './components/app/etc/ResetMenuApp';
 
 declare module '@mui/joy/styles' {
   interface PaletteWarningOverrides {
@@ -253,6 +256,7 @@ const Hello = () => {
   const [notifcationMediaNames, setNotificationMediaNames] = useAtom(
     notificationMediaNamesAtom,
   );
+  const [openResetDialog, setOpenResetDialog] = useAtom(appResetDialogOpenAtom);
 
   const handleClose = (event?: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
@@ -341,6 +345,13 @@ const Hello = () => {
           case 'addStatus':
             setDefaultAddStatus(arg[1]);
             break;
+          case 'resetSettings':
+            console.log('settings reset');
+            // setOpenResetDialog(true);
+            window.electron.store.clear();
+            setAniListUsername('');
+            setAniListToken('');
+            break;
           default:
             console.log('test');
         }
@@ -355,6 +366,7 @@ const Hello = () => {
     setAniListToken,
     setAniListUsername,
     setDefaultAddStatus,
+    setOpenResetDialog,
   ]);
 
   /*
@@ -452,6 +464,9 @@ const Hello = () => {
                 </Alert>
               </Snackbar>
             </Box>
+            <Box sx={{ width: 0, height: 0 }}>
+              <ResetMenuApp />
+            </Box>
             <AppBar
               position="fixed"
               sx={{
@@ -464,13 +479,14 @@ const Hello = () => {
             >
               <Toolbar
                 variant="dense"
+                disableGutters
                 sx={{
                   width: '100%',
-                  justifyContent: 'space-between',
+                  justifyContent: 'end',
                 }}
               >
-                <Box />
                 <Search />
+                <FilterSelect />
               </Toolbar>
               <Divider />
             </AppBar>

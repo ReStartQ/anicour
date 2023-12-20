@@ -1,5 +1,7 @@
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
+import { filterTypeAtom } from 'renderer/store';
+import { useAtom } from 'jotai';
 import { useMainMediaList } from '../MainMediaListFunctions';
 import { getFilteredTabData, isFilteredTermOnList } from './FilterFunctions';
 import { sortMyListAnime, sortMyListManga } from '../sort/sortMainFunctions';
@@ -30,13 +32,15 @@ export const MainTableView = (
   sort: any,
   title: any,
 ) => {
+  const [filterType, setFilterType] = useAtom(filterTypeAtom);
+
   if (filter !== '' && sidebar === 0) {
     return sortMyListAnime(
       sort,
       title,
       getFilteredTabData(category, sidebar, data),
     ).filter((media: any) => {
-      return isFilteredTermOnList(media, filter);
+      return isFilteredTermOnList(media, filter, filterType);
     });
   }
   if (filter !== '' && sidebar === 1) {
@@ -45,7 +49,7 @@ export const MainTableView = (
       title,
       getFilteredTabData(category, sidebar, data),
     ).filter((media: any) => {
-      return isFilteredTermOnList(media, filter);
+      return isFilteredTermOnList(media, filter, filterType);
     });
   }
   if (filter !== '' && sidebar === 2) {
@@ -54,7 +58,7 @@ export const MainTableView = (
       title,
       getFilteredTabData(category, sidebar, data),
     ).filter((media: any) => {
-      return isFilteredTermOnList(media, filter);
+      return isFilteredTermOnList(media, filter, filterType);
     });
   }
   if (sidebar === 0 && category === 0) {
@@ -127,6 +131,8 @@ export const SearchTableView = (
   sort: any,
   title: any,
 ) => {
+  const [filterType, setFilterType] = useAtom(filterTypeAtom);
+
   if (filter !== '') {
     return (
       // 140
@@ -136,7 +142,7 @@ export const SearchTableView = (
         category,
         getFilteredTabData(category, sidebar, data),
       ).filter((media: any) => {
-        return isFilteredTermOnList(media, filter);
+        return isFilteredTermOnList(media, filter, filterType);
       })
     );
   }
@@ -164,13 +170,15 @@ export const SeasonTableView = (
   sort: any,
   title: any,
 ) => {
+  const [filterType, setFilterType] = useAtom(filterTypeAtom);
+
   if (filter !== '') {
     return sortSeasons(
       sort,
       title,
       getFilteredTabData(category, sidebar, data),
     ).filter((media: any) => {
-      return isFilteredTermOnList(media, filter);
+      return isFilteredTermOnList(media, filter, filterType);
     });
   }
   if (category === 0) {

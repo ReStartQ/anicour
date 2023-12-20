@@ -3,6 +3,8 @@ import SearchMediaCard from 'renderer/components/app/search/SearchMediaCard';
 import SearchMediaCardCompact from 'renderer/components/app/search/SearchMediaCardCompact';
 import RenderIfVisible from 'react-render-if-visible';
 import { memo } from 'react';
+import { useAtom } from 'jotai';
+import { filterTypeAtom } from 'renderer/store';
 import { getFilteredTabData, isFilteredTermOnList } from './FilterFunctions';
 import sortMySearch from '../sort/sortSearchFunctions';
 
@@ -38,6 +40,8 @@ export const SearchView = memo(({ view, media, index, sort }: any) => {
 
 export const SearchCategoryView = memo(
   ({ category, sidebar, data, filter, mainView, sort, title }: any) => {
+    const [filterType, setFilterType] = useAtom(filterTypeAtom);
+
     if (filter !== '') {
       return (
         // 140
@@ -48,7 +52,7 @@ export const SearchCategoryView = memo(
           getFilteredTabData(category, sidebar, data),
         )
           .filter((media: any) => {
-            return isFilteredTermOnList(media, filter);
+            return isFilteredTermOnList(media, filter, filterType);
           })
           .map((media: any) => {
             return (

@@ -60,6 +60,11 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                                   month
                                   day
                               }
+                              endDate{
+                                year
+                                month
+                                day
+                              }
                               description
                               genres
                               tags {
@@ -230,6 +235,11 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                                     month
                                     day
                                 }
+                                endDate{
+                                  year
+                                  month
+                                  day
+                                }
                                 description
                                 genres
                                 tags {
@@ -339,6 +349,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                     startYear: entry.media.startDate.year,
                     startMonth: entry.media.startDate.month,
                     startDay: entry.media.startDate.day,
+                    endYear: entry.media.endDate.year,
+                    endMonth: entry.media.endDate.month,
+                    endDay: entry.media.endDate.day,
                     description: entry.media.description,
                     genres: entry.media.genres,
                     tags: entry.media.tags,
@@ -396,6 +409,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                     startYear: entry.media.startDate.year,
                     startMonth: entry.media.startDate.month,
                     startDay: entry.media.startDate.day,
+                    endYear: entry.media.endDate.year,
+                    endMonth: entry.media.endDate.month,
+                    endDay: entry.media.endDate.day,
                     description: entry.media.description,
                     genres: entry.media.genres,
                     tags: entry.media.tags,
@@ -452,6 +468,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                     startYear: entry.media.startDate.year,
                     startMonth: entry.media.startDate.month,
                     startDay: entry.media.startDate.day,
+                    endYear: entry.media.endDate.year,
+                    endMonth: entry.media.endDate.month,
+                    endDay: entry.media.endDate.day,
                     description: entry.media.description,
                     genres: entry.media.genres,
                     tags: entry.media.tags,
@@ -508,6 +527,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                     startYear: entry.media.startDate.year,
                     startMonth: entry.media.startDate.month,
                     startDay: entry.media.startDate.day,
+                    endYear: entry.media.endDate.year,
+                    endMonth: entry.media.endDate.month,
+                    endDay: entry.media.endDate.day,
                     description: entry.media.description,
                     genres: entry.media.genres,
                     tags: entry.media.tags,
@@ -662,6 +684,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,
@@ -730,6 +755,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,
@@ -798,6 +826,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,
@@ -866,6 +897,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,
@@ -934,6 +968,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,
@@ -1002,6 +1039,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                 startYear: myQueryManga[i].entries[j].media.startDate.year,
                 startMonth: myQueryManga[i].entries[j].media.startDate.month,
                 startDay: myQueryManga[i].entries[j].media.startDate.day,
+                endYear: myQueryManga[i].entries[j].media.endDate.year,
+                endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                endDay: myQueryManga[i].entries[j].media.endDate.day,
                 description: myQueryManga[i].entries[j].media.description,
                 genres: myQueryManga[i].entries[j].media.genres,
                 tags: myQueryManga[i].entries[j].media.tags,
@@ -1066,6 +1106,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,
@@ -1132,6 +1175,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                 startYear: myQueryManga[i].entries[j].media.startDate.year,
                 startMonth: myQueryManga[i].entries[j].media.startDate.month,
                 startDay: myQueryManga[i].entries[j].media.startDate.day,
+                endYear: myQueryManga[i].entries[j].media.endDate.year,
+                endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                endDay: myQueryManga[i].entries[j].media.endDate.day,
                 description: myQueryManga[i].entries[j].media.description,
                 genres: myQueryManga[i].entries[j].media.genres,
                 tags: myQueryManga[i].entries[j].media.tags,
@@ -1194,6 +1240,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                 startYear: myQueryManga[i].entries[j].media.startDate.year,
                 startMonth: myQueryManga[i].entries[j].media.startDate.month,
                 startDay: myQueryManga[i].entries[j].media.startDate.day,
+                endYear: myQueryManga[i].entries[j].media.endDate.year,
+                endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                endDay: myQueryManga[i].entries[j].media.endDate.day,
                 description: myQueryManga[i].entries[j].media.description,
                 genres: myQueryManga[i].entries[j].media.genres,
                 tags: myQueryManga[i].entries[j].media.tags,
@@ -1258,6 +1307,9 @@ export const useMainMediaList = (myUserName: string, myToken: string) =>
                   startYear: myQueryManga[i].entries[j].media.startDate.year,
                   startMonth: myQueryManga[i].entries[j].media.startDate.month,
                   startDay: myQueryManga[i].entries[j].media.startDate.day,
+                  endYear: myQueryManga[i].entries[j].media.endDate.year,
+                  endMonth: myQueryManga[i].entries[j].media.endDate.month,
+                  endDay: myQueryManga[i].entries[j].media.endDate.day,
                   description: myQueryManga[i].entries[j].media.description,
                   genres: myQueryManga[i].entries[j].media.genres,
                   tags: myQueryManga[i].entries[j].media.tags,

@@ -85,6 +85,10 @@ const schema: any = {
     type: 'string',
     default: 'CURRENT',
   },
+  seasonChange: {
+    type: 'string',
+    default: 'Early',
+  },
 };
 
 const store = new Store({ schema });
@@ -474,7 +478,7 @@ const createNewMediaWindow = async (arg: any) => {
   mediaWindow = new BrowserWindow({
     show: false,
     width: 860,
-    height: 650,
+    height: 666,
     icon: getAssetPath('lightweight-48.png'),
     webPreferences: {
       nodeIntegration: true, // this is for future database use = true
@@ -680,3 +684,8 @@ app
     });
   })
   .catch(console.log);
+
+ipcMain.on('appVersion', async (event, arg: any) => {
+  console.log('appVersion');
+  settingsWindow?.webContents.send('appVersion', [app.getVersion()]);
+});

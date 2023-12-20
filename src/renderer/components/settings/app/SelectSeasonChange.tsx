@@ -1,0 +1,48 @@
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  NativeSelect,
+  Select,
+  SelectChangeEvent,
+} from '@mui/material';
+import { useAtom } from 'jotai';
+import React from 'react';
+import { useAdvancedDefaultLink } from 'renderer/context/advanced/AdvancedDefaultLinkContext';
+import { seasonChangeAtom } from 'renderer/store';
+
+function SelectSeasonChange() {
+  const [seasonChange, setSeasonChange] = useAtom(seasonChangeAtom);
+
+  const handleChange = (event: any) => {
+    setSeasonChange(event.target.value as string);
+    window.electron.store.set('seasonChange', event.target.value);
+    window.electron.ipcRenderer.sendMessage('updateMainFromSettings', [
+      'seasonChange',
+      event.target.value,
+    ]);
+  };
+
+  return (
+    <Box>
+      <FormControl fullWidth>
+        <InputLabel variant="standard" id="defaultLinkLabel">
+          Default Season Change
+        </InputLabel>
+        <NativeSelect
+          id="defaultSeasonChange"
+          value={seasonChange}
+          onChange={handleChange}
+        >
+          <option value="Early">
+            Early (preview new season a month early)
+          </option>
+          <option value="Standard">Standard (standard 3 month seasons)</option>
+        </NativeSelect>
+      </FormControl>
+    </Box>
+  );
+}
+
+export default SelectSeasonChange;

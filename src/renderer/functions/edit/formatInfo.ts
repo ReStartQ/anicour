@@ -118,7 +118,7 @@ export function formatStatus(status: string | null) {
     case 'RELEASING': // 5
       return status[0].toUpperCase() + status.slice(1).toLowerCase();
     case 'NOT_YET_RELEASED': // 4
-      return 'Not Yet Released';
+      return 'Not yet released';
     case 'CANCELLED': // 1
       return status[0].toUpperCase() + status.slice(1).toLowerCase();
     case 'HIATUS': // 3

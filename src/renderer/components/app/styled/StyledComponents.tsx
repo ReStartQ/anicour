@@ -2,7 +2,7 @@ import { Menu, alpha, styled } from '@mui/material';
 
 export const StyledMenu = styled((props: any) => (
   <Menu
-    elevation={0}
+    elevation={1}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
     className="Menu"

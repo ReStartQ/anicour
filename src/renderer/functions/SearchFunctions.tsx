@@ -66,6 +66,11 @@ export const useSearchQuery = (
                   month
                   day
               }
+              endDate{
+                year
+                month
+                day
+              }
               description
               genres
               tags {
@@ -163,6 +168,9 @@ export const useSearchQuery = (
             startYear: entry.startDate.year,
             startMonth: entry.startDate.month,
             startDay: entry.startDate.day,
+            endYear: entry.endDate.year,
+            endMonth: entry.endDate.month,
+            endDay: entry.endDate.day,
             description: entry.description,
             genres: entry.genres,
             tags: entry.tags,
@@ -208,6 +216,9 @@ export const useSearchQuery = (
               startYear: entry.startDate.year,
               startMonth: entry.startDate.month,
               startDay: entry.startDate.day,
+              endYear: entry.endDate.year,
+              endMonth: entry.endDate.month,
+              endDay: entry.endDate.day,
               description: entry.description,
               genres: entry.genres,
               tags: entry.tags,

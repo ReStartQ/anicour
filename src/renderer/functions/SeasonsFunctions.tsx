@@ -103,6 +103,11 @@ export const useSeasonsQuery = (
                   month
                   day
               }
+              endDate{
+                year
+                month
+                day
+              }
               description
               genres
               tags {
@@ -201,6 +206,9 @@ export const useSeasonsQuery = (
             startYear: entry.startDate.year,
             startMonth: entry.startDate.month,
             startDay: entry.startDate.day,
+            endYear: entry.endDate.year,
+            endMonth: entry.endDate.month,
+            endDay: entry.endDate.day,
             description: entry.description,
             genres: entry.genres,
             tags: entry.tags,
@@ -246,6 +254,9 @@ export const useSeasonsQuery = (
               startYear: entry.startDate.year,
               startMonth: entry.startDate.month,
               startDay: entry.startDate.day,
+              endYear: entry.endDate.year,
+              endMonth: entry.endDate.month,
+              endDay: entry.endDate.day,
               description: entry.description,
               genres: entry.genres,
               tags: entry.tags,

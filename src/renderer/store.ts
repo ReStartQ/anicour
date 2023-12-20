@@ -150,3 +150,15 @@ export const statusAddSelectAtom = atom(
   window.electron.store.get('defaultAddStatus'),
 );
 myStore.set(statusAddSelectAtom, window.electron.store.get('defaultAddStatus'));
+
+export const appVersionAtom = atom('0.0.0');
+myStore.set(appVersionAtom, '0.0.0');
+
+export const filterTypeAtom = atom('All');
+myStore.set(filterTypeAtom, 'All');
+
+export const seasonChangeAtom = atom(window.electron.store.get('seasonChange'));
+myStore.set(seasonChangeAtom, window.electron.store.get('seasonChange'));
+
+export const appResetDialogOpenAtom = atom(false);
+myStore.set(appResetDialogOpenAtom, false);

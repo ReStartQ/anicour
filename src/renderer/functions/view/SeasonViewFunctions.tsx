@@ -3,6 +3,8 @@ import { SeasonMediaCard } from 'renderer/components/app/seasons/SeasonMediaCard
 import { Box } from '@mui/material';
 import { memo } from 'react';
 import RenderIfVisible from 'react-render-if-visible';
+import { useAtom } from 'jotai';
+import { filterTypeAtom } from 'renderer/store';
 import { getFilteredTabData, isFilteredTermOnList } from './FilterFunctions';
 import sortSeasons from '../sort/sortSeasonsFunctions';
 
@@ -40,6 +42,8 @@ export const SeasonView = memo(({ view, media, index, sort }: any) => {
 
 export const SeasonCategoryView = memo(
   ({ category, sidebar, data, filter, mainView, sort, title }: any) => {
+    const [filterType, setFilterType] = useAtom(filterTypeAtom);
+
     if (filter !== '') {
       return sortSeasons(
         sort,
@@ -47,7 +51,7 @@ export const SeasonCategoryView = memo(
         getFilteredTabData(category, sidebar, data),
       )
         .filter((media: any) => {
-          return isFilteredTermOnList(media, filter);
+          return isFilteredTermOnList(media, filter, filterType);
         })
         .map((media: any) => {
           return (

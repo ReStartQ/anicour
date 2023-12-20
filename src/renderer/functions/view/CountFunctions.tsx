@@ -1,5 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { memo } from 'react';
+import { useAtom } from 'jotai';
+import { filterTypeAtom } from 'renderer/store';
 import { isFilteredTermOnList } from './FilterFunctions';
 
 export const MainCount = memo(({ sidebar, category, data }: any) => {
@@ -108,6 +110,8 @@ export const MainCount = memo(({ sidebar, category, data }: any) => {
 
 export const FilterCount = memo(
   ({ sidebar, category, data, filterTerm }: any) => {
+    const [filterType, setFilterType] = useAtom(filterTypeAtom);
+
     // main count - anime
     if (sidebar === 0) {
       if (category === 0)
@@ -115,7 +119,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.animeWatching.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -125,7 +129,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.animeCompleted.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -135,7 +139,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.animeOnHold.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -145,7 +149,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.animeDropped.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -156,7 +160,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.animePlanToWatch.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -166,7 +170,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.animeAll.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -179,7 +183,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.mangaReading.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -189,7 +193,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.mangaCompleted.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -199,7 +203,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.mangaOnHold.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -209,7 +213,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.mangaDropped.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -219,7 +223,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.mangaPlanToRead.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -229,7 +233,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.mangaAll.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -242,7 +246,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.lightNovelsReading.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -252,7 +256,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.lightNovelsCompleted.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -262,7 +266,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.lightNovelsOnHold.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -272,7 +276,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.lightNovelsDropped.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -282,7 +286,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.lightNovelsPlanToRead.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -292,7 +296,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.lightNovelsAll.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -305,7 +309,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.anime.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -315,7 +319,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.manga.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -325,7 +329,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.lightNovels.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -335,7 +339,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.all.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -348,7 +352,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.TV.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -358,7 +362,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.OVAONASpecial.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -368,7 +372,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.Movies.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>
@@ -378,7 +382,7 @@ export const FilterCount = memo(
           <Typography fontSize={12}>
             {
               data.All.filter((media: any) => {
-                return isFilteredTermOnList(media, filterTerm);
+                return isFilteredTermOnList(media, filterTerm, filterType);
               }).length
             }
           </Typography>

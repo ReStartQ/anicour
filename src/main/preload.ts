@@ -14,7 +14,8 @@ export type Channels =
   | 'updateMainFromAdvanced'
   | 'updateAdvancedFromMain'
   | 'openExternalLink'
-  | 'adultFlag';
+  | 'adultFlag'
+  | 'appVersion';
 
 const electronHandler = {
   ipcRenderer: {

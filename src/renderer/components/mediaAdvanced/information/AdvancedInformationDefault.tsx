@@ -57,11 +57,15 @@ const AdvancedInformationDefault = () => {
 
   return (
     <Box sx={{ overflowY: 'auto', height: '100%', width: '100%' }}>
-      <Typography fontSize={12}>
-        Type:{' '}
-        {myAdvancedMedia.advancedMedia.format !== null
-          ? formatType(myAdvancedMedia.advancedMedia.format)
-          : '?'}
+      <Typography fontSize={12} noWrap>
+        <Typography fontSize={12} fontWeight="bold" display="inline">
+          Type:{' '}
+        </Typography>
+        <Typography fontSize={12} display="inline" noWrap>
+          {myAdvancedMedia.advancedMedia.format !== null
+            ? formatType(myAdvancedMedia.advancedMedia.format)
+            : '?'}
+        </Typography>
       </Typography>
       {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
         <Typography fontSize={12} noWrap>
@@ -87,6 +91,18 @@ const AdvancedInformationDefault = () => {
           </Typography>
         </Typography>
       ) : null}
+      {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
+        <Typography fontSize={12} noWrap>
+          <Typography fontSize={12} fontWeight="bold" display="inline">
+            Duration:{' '}
+          </Typography>
+          <Typography fontSize={12} display="inline">
+            {myAdvancedMedia.advancedMedia.duration !== null
+              ? `${myAdvancedMedia.advancedMedia.duration} mins / ep`
+              : '?'}
+          </Typography>
+        </Typography>
+      ) : null}
       {myAdvancedMedia.advancedMedia.type === 'MANGA' ? (
         <Typography fontSize={12} noWrap>
           <Typography fontSize={12} fontWeight="bold" display="inline">
@@ -99,19 +115,23 @@ const AdvancedInformationDefault = () => {
           </Typography>
         </Typography>
       ) : null}
-      <Typography fontSize={12}>
-        Status:{' '}
-        <CircleIcon
-          fontSize="inherit"
-          sx={{
-            color: getStatusColor(myAdvancedMedia.advancedMedia.status),
-            pt: '2px',
-            mr: '3px',
-          }}
-        />
-        {myAdvancedMedia.advancedMedia.status !== null
-          ? formatStatus(myAdvancedMedia.advancedMedia.status)
-          : '?'}
+      <Typography fontSize={12} noWrap>
+        <Typography fontSize={12} fontWeight="bold" display="inline">
+          Status:{' '}
+        </Typography>
+        <Typography fontSize={12} display="inline" noWrap>
+          <CircleIcon
+            fontSize="inherit"
+            sx={{
+              color: getStatusColor(myAdvancedMedia.advancedMedia.status),
+              pt: '3px',
+              mr: '3px',
+            }}
+          />
+          {myAdvancedMedia.advancedMedia.status !== null
+            ? formatStatus(myAdvancedMedia.advancedMedia.status)
+            : '?'}
+        </Typography>
       </Typography>
       <Typography fontSize={12} noWrap>
         <Typography fontSize={12} fontWeight="bold" display="inline">
@@ -123,11 +143,15 @@ const AdvancedInformationDefault = () => {
             : '?'}
         </Typography>
       </Typography>
-      <Typography fontSize={12}>
-        Average Score:{' '}
-        {myAdvancedMedia.advancedMedia.averageScore !== null
-          ? `${myAdvancedMedia.advancedMedia.averageScore}%`
-          : '?'}
+      <Typography fontSize={12} noWrap>
+        <Typography fontSize={12} fontWeight="bold" display="inline">
+          Avg Score:{' '}
+        </Typography>
+        <Typography fontSize={12} display="inline" noWrap>
+          {myAdvancedMedia.advancedMedia.averageScore !== null
+            ? `${myAdvancedMedia.advancedMedia.averageScore}%`
+            : '?'}
+        </Typography>
       </Typography>
       {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
         <Typography fontSize={12} noWrap>
@@ -158,6 +182,20 @@ const AdvancedInformationDefault = () => {
           </Typography>
         </Typography>
       )}
+      {myAdvancedMedia.advancedMedia.type === 'MANGA' ? (
+        <Typography fontSize={12} noWrap>
+          <Typography fontSize={12} fontWeight="bold" display="inline">
+            Ended:{' '}
+          </Typography>
+          <Typography fontSize={12} display="inline">
+            {formatReleaseDate(
+              myAdvancedMedia.advancedMedia.endDay,
+              myAdvancedMedia.advancedMedia.endMonth,
+              myAdvancedMedia.advancedMedia.endYear,
+            )}
+          </Typography>
+        </Typography>
+      ) : null}
       <Tooltip
         title={
           myAdvancedMedia.advancedMedia.type === 'ANIME' ? (

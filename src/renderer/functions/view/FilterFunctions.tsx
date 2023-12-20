@@ -14,55 +14,200 @@ export const getFilteredTerm = (term: any) => {
   */
 };
 
-export const isFilteredTermOnList = (media: any, filter: any) => {
-  if (media.titleRomaji !== null) {
-    if (getFilteredTerm(media.titleRomaji).includes(getFilteredTerm(filter))) {
+export const isFilteredTermOnList = (
+  media: any,
+  filter: any,
+  filterType: any,
+) => {
+  if (filterType === 'All') {
+    if (getFilteredTerm(filter) === '') {
       return true;
     }
-  }
-  if (media.titleNative !== null) {
-    if (getFilteredTerm(media.titleNative).includes(getFilteredTerm(filter))) {
-      return true;
-    }
-  }
-  if (media.titleEnglish !== null) {
-    if (getFilteredTerm(media.titleEnglish).includes(getFilteredTerm(filter))) {
-      return true;
-    }
-  }
-  if (media.synonyms !== null) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < media.synonyms.length; i++) {
+    if (media.titleRomaji !== null) {
       if (
-        getFilteredTerm(media.synonyms[i]).includes(getFilteredTerm(filter))
+        getFilteredTerm(media.titleRomaji).includes(getFilteredTerm(filter))
+      ) {
+        return true;
+      }
+    }
+    if (media.titleNative !== null) {
+      if (
+        getFilteredTerm(media.titleNative).includes(getFilteredTerm(filter))
+      ) {
+        return true;
+      }
+    }
+    if (media.titleEnglish !== null) {
+      if (
+        getFilteredTerm(media.titleEnglish).includes(getFilteredTerm(filter))
+      ) {
+        return true;
+      }
+    }
+    if (media.synonyms !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.synonyms.length; i++) {
+        if (
+          getFilteredTerm(media.synonyms[i]).includes(getFilteredTerm(filter))
+        ) {
+          return true;
+        }
+      }
+    }
+    if (media.tags !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.tags.length; i++) {
+        if (
+          getFilteredTerm(media.tags[i].name).includes(getFilteredTerm(filter))
+        ) {
+          return true;
+        }
+      }
+    }
+    if (media.genres !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.genres.length; i++) {
+        if (
+          getFilteredTerm(media.genres[i]).includes(getFilteredTerm(filter))
+        ) {
+          return true;
+        }
+      }
+    }
+    if (media.studios !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.studios.length; i++) {
+        if (
+          getFilteredTerm(media.studios[i].node.name).includes(
+            getFilteredTerm(filter),
+          )
+        ) {
+          return true;
+        }
+      }
+    }
+    if (media.season !== null && media.seasonYear !== null) {
+      if (
+        getFilteredTerm(media.season + media.seasonYear).includes(
+          getFilteredTerm(filter),
+        )
+      ) {
+        return true;
+      }
+    }
+    if (media.seasonYear === null && media.startYear !== null) {
+      if (
+        getFilteredTerm(media.startYear.toString()).includes(
+          getFilteredTerm(filter),
+        )
+      ) {
+        return true;
+      }
+    }
+    if (media.status !== null) {
+      if (
+        getFilteredTerm(formatStatus(media.status)).includes(
+          getFilteredTerm(filter),
+        )
+      ) {
+        return true;
+      }
+    }
+    if (media.source !== null) {
+      if (getFilteredTerm(media.source).includes(getFilteredTerm(filter))) {
+        return true;
+      }
+    }
+    if (media.format !== null) {
+      if (
+        getFilteredTerm(media.format).includes(getFilteredTerm(filter)) // || getFilteredTerm(`type:${media.format}`).includes(getFilteredTerm(filter))
       ) {
         return true;
       }
     }
   }
-  if (media.tags !== null) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < media.tags.length; i++) {
+  if (filterType === 'Title') {
+    if (getFilteredTerm(filter) === '') {
+      return true;
+    }
+    if (media.titleRomaji !== null) {
       if (
-        getFilteredTerm(media.tags[i].name).includes(getFilteredTerm(filter))
+        getFilteredTerm(media.titleRomaji).includes(getFilteredTerm(filter))
       ) {
         return true;
       }
     }
-  }
-  if (media.genres !== null) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < media.genres.length; i++) {
-      if (getFilteredTerm(media.genres[i]).includes(getFilteredTerm(filter))) {
+    if (media.titleNative !== null) {
+      if (
+        getFilteredTerm(media.titleNative).includes(getFilteredTerm(filter))
+      ) {
         return true;
       }
     }
-  }
-  if (media.studios !== null) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < media.studios.length; i++) {
+    if (media.titleEnglish !== null) {
       if (
-        getFilteredTerm(media.studios[i].node.name).includes(
+        getFilteredTerm(media.titleEnglish).includes(getFilteredTerm(filter))
+      ) {
+        return true;
+      }
+    }
+    if (media.synonyms !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.synonyms.length; i++) {
+        if (
+          getFilteredTerm(media.synonyms[i]).includes(getFilteredTerm(filter))
+        ) {
+          return true;
+        }
+      }
+    }
+  }
+  if (filterType === 'Tags') {
+    if (getFilteredTerm(filter) === '') {
+      return true;
+    }
+    if (media.tags !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.tags.length; i++) {
+        if (
+          getFilteredTerm(media.tags[i].name).includes(getFilteredTerm(filter))
+        ) {
+          return true;
+        }
+      }
+    }
+  }
+  if (filterType === 'Genres') {
+    if (getFilteredTerm(filter) === '') {
+      return true;
+    }
+    if (media.genres !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.genres.length; i++) {
+        if (
+          getFilteredTerm(media.genres[i]).includes(getFilteredTerm(filter))
+        ) {
+          return true;
+        }
+      }
+    }
+  }
+  if (filterType === 'Season/Year') {
+    if (getFilteredTerm(filter) === '') {
+      return true;
+    }
+    if (media.season !== null && media.seasonYear !== null) {
+      if (
+        getFilteredTerm(media.season + media.seasonYear).includes(
+          getFilteredTerm(filter),
+        )
+      ) {
+        return true;
+      }
+    }
+    if (media.seasonYear === null && media.startYear !== null) {
+      if (
+        getFilteredTerm(media.startYear.toString()).includes(
           getFilteredTerm(filter),
         )
       ) {
@@ -70,45 +215,61 @@ export const isFilteredTermOnList = (media: any, filter: any) => {
       }
     }
   }
-  if (media.season !== null && media.seasonYear !== null) {
-    if (
-      getFilteredTerm(media.season + media.seasonYear).includes(
-        getFilteredTerm(filter),
-      )
-    ) {
+  if (filterType === 'Studio/Producer') {
+    if (getFilteredTerm(filter) === '') {
       return true;
     }
-  }
-  if (media.seasonYear === null && media.startYear !== null) {
-    if (
-      getFilteredTerm(media.startYear.toString()).includes(
-        getFilteredTerm(filter),
-      )
-    ) {
-      return true;
+    if (media.studios !== null) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < media.studios.length; i++) {
+        if (
+          getFilteredTerm(media.studios[i].node.name).includes(
+            getFilteredTerm(filter),
+          )
+        ) {
+          return true;
+        }
+      }
     }
   }
-  if (media.status !== null) {
-    if (
-      getFilteredTerm(formatStatus(media.status)).includes(
-        getFilteredTerm(filter),
-      )
-    ) {
+  if (filterType === 'Status') {
+    if (getFilteredTerm(filter) === '') {
       return true;
     }
-  }
-  if (media.source !== null) {
-    if (getFilteredTerm(media.source).includes(getFilteredTerm(filter))) {
-      return true;
+    if (media.status !== null) {
+      if (
+        getFilteredTerm(formatStatus(media.status)).includes(
+          getFilteredTerm(filter),
+        )
+      ) {
+        return true;
+      }
     }
   }
-  if (media.format !== null) {
-    if (
-      getFilteredTerm(media.format).includes(getFilteredTerm(filter)) // || getFilteredTerm(`type:${media.format}`).includes(getFilteredTerm(filter))
-    ) {
+  if (filterType === 'Source') {
+    if (getFilteredTerm(filter) === '') {
       return true;
     }
+    if (media.source !== null) {
+      if (getFilteredTerm(media.source).includes(getFilteredTerm(filter))) {
+        return true;
+      }
+    }
   }
+  if (filterType === 'Type') {
+    if (getFilteredTerm(filter) === '') {
+      return true;
+    }
+    if (media.format !== null) {
+      if (
+        getFilteredTerm(media.format).includes(getFilteredTerm(filter)) // || getFilteredTerm(`type:${media.format}`).includes(getFilteredTerm(filter))
+      ) {
+        return true;
+      }
+    }
+  }
+
+  // if no condition true, then false
   return false;
 };
 
