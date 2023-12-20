@@ -15,6 +15,9 @@ Ex: Studio/Producer: TV Tokyo and Type: TV <br />
 - Status
 - Source
 - Type
+## Advanced Filtering
+Here is an image of how to use select a property to filter by.
+
 
 # Sort by list:
 
