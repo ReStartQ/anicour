@@ -1,7 +1,12 @@
 # Filter by list:
 
-**(Note: Some of these filters may crossover with each other. Ex: Studio/Producer: TV Tokyo and Type: TV)**
+Advanced filtering is now available, you can now select what property on the list that you want to filter for. <br />
+By default, it is set everything on this list is filtered. <br />
+Advanced filtering helps with avoiding crossovers between media properties such as: <br />
+Ex: Studio/Producer: TV Tokyo and Type: TV <br />
+**The following is a list of what you can filter by**
 
+- All (All the properties below are filtered for, this is the default state and is set when you first enter the app)
 - Titles (Romaji, English, Native, and synonyms)
 - Tags
 - Genres
@@ -10,6 +15,9 @@
 - Status
 - Source
 - Type
+## Advanced Filtering
+Here is an image of how to use select a property to filter by.
+
 
 # Sort by list:
 
