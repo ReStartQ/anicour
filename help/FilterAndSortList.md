@@ -1,6 +1,10 @@
 # Filter by list:
 
-**(Note: Some of these filters may crossover with each other. Ex: Studio/Producer: TV Tokyo and Type: TV)**
+Advanced filtering is now available, you can now select what property on the list that you want to filter for. <br />
+By default, it is set everything on this list is filtered. <br />
+Advanced filtering helps with avoiding crossovers between media properties such as: <br />
+Ex: Studio/Producer: TV Tokyo and Type: TV
+
 
 - Titles (Romaji, English, Native, and synonyms)
 - Tags
