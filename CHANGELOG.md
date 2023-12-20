@@ -4,7 +4,7 @@
 
 ### Main Changes
 
-- Advanced filtering is now available.
+- Advanced filtering is now available.The filter/sort list has now been updated to include an explanation of how advanced filtering works. The explanation can be found [here](https://github.com/ReStartQ/anicour/blob/main/help/FilterAndSortList.md)
 - Rewatch/reread feature now implemented when updating through grid media cards that are not in completed section.
   (adds to total rereads/rewatches if the media has a complete date or a total repeat count > 0).
 - Preview season early feature is now in the settings menu, default setting is now early season change.
