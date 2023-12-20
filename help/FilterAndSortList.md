@@ -17,7 +17,7 @@ Ex: Studio/Producer: TV Tokyo and Type: TV <br />
 - Type
 ## Advanced Filtering
 Here is an image of how to use select a property to filter by.
-
+<p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourAdvancedFiltering.png" alt="Hello" /></a></p>
 
 # Sort by list:
 
