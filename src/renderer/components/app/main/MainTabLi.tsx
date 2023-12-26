@@ -13,8 +13,9 @@ import ErrorAPI from '../etc/ErrorAPI';
 import ErrorCredentials from '../etc/ErrorCredentials';
 import LoadingMessage from '../etc/LoadingMessage';
 import MainMediaTable from './tables/MainMediaTable';
+import MainTabList from './MainTabList';
 
-const MainTabList = ({ props }: any) => {
+const MainTabLi = ({ props }: any) => {
   const myTitle: any = useTitle();
   const myFilter: any = useFilter();
   const myToken: any = useAniListToken();
@@ -44,27 +45,7 @@ const MainTabList = ({ props }: any) => {
     return <ErrorAPI />;
   }
 
-  return (
-    <Box
-      sx={{
-        height: 'calc(100vh - 110px)',
-        width: '100%',
-        userSelect: 'none',
-        // overflowY: 'auto',
-      }}
-    >
-      <MainMediaTable
-        props={MainTableView(
-          mySidebar.sidebar,
-          myCategory.category,
-          data,
-          myFilter.filter,
-          mySort.sort,
-          myTitle.title,
-        )}
-      />
-    </Box>
-  );
+  return <MainTabList />;
 };
 
-export default MainTabList;
+export default MainTabLi;

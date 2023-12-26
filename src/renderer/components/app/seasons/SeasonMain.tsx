@@ -23,6 +23,8 @@ import isOnline from 'is-online';
 import SeasonCategoryBar from './SeasonCategoryBar';
 import SeasonTab from './SeasonTab';
 import SeasonTabList from './SeasonTabList';
+import HistoryTab from '../history/HistoryTab';
+import SeasonTabLi from './SeasonTabLi';
 
 function SeasonTabView({ view }: any) {
   if (view === 0) {
@@ -41,7 +43,7 @@ function SeasonTabView({ view }: any) {
   if (view === 2) {
     return (
       // 140
-      <SeasonTabList />
+      <SeasonTabLi />
     );
   }
 

@@ -23,6 +23,8 @@ import isOnline from 'is-online';
 import SearchCategoryBar from './SearchCategoryBar';
 import SearchTab from './SearchTab';
 import SearchTabList from './SearchTabList';
+import HistoryTab from '../history/HistoryTab';
+import SearchTabLi from './SearchTabLi';
 
 function SearchTabView({ view }: any) {
   if (view === 0) {
@@ -41,7 +43,7 @@ function SearchTabView({ view }: any) {
   if (view === 2) {
     return (
       // 140
-      <SearchTabList />
+      <SearchTabLi />
     );
   }
 

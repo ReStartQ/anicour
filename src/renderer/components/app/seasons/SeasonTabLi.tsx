@@ -5,28 +5,44 @@ import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
-import { MainTableView } from 'renderer/functions/view/DataTableFunctions';
+import {
+  MainTableView,
+  SearchTableView,
+  SeasonTableView,
+} from 'renderer/functions/view/DataTableFunctions';
 import 'renderer/styles/MainArea.scss';
 import { useSort } from 'renderer/context/SortContext';
 import { useTitle } from 'renderer/context/TitleContext';
-import ErrorAPI from '../etc/ErrorAPI';
-import ErrorCredentials from '../etc/ErrorCredentials';
+import { useSearchTerm } from 'renderer/context/SearchTermContext';
+import { useAdult } from 'renderer/context/AdultContext';
+import { useSeasonInput } from 'renderer/context/SeasonInputContext';
+import { useSeasonsQuery } from 'renderer/functions/SeasonsFunctions';
 import LoadingMessage from '../etc/LoadingMessage';
-import MainMediaTable from './tables/MainMediaTable';
+import ErrorCredentials from '../etc/ErrorCredentials';
+import ErrorAPI from '../etc/ErrorAPI';
+import SeasonMediaTable from './tables/SeasonMediaTable';
+import SeasonTabList from './SeasonTabList';
 
-const MainTabList = ({ props }: any) => {
+const SeasonTabLi = ({ props }: any) => {
   const myTitle: any = useTitle();
   const myFilter: any = useFilter();
   const myToken: any = useAniListToken();
   const myUsername: any = useAniListUsername();
+  const searchTerm: any = useSearchTerm();
   const mySidebar: any = useSidebarButton();
+  const adult: any = useAdult();
   const myCategory: any = useCategory();
   const mySort: any = useSort();
+  const seasonInput: any = useSeasonInput();
+  const myUserName: any = useAniListUsername();
 
-  const { isLoading, isError, error, data, refetch }: any = useMainMediaList(
-    myUsername.AniListUsername,
-    myToken.AniListToken,
-  );
+  const { isLoading, isError, error, data, refetch, dataUpdatedAt }: any =
+    useSeasonsQuery(
+      seasonInput.seasonInput,
+      myToken.AniListToken,
+      myUserName.AniListUsername,
+      adult.adult,
+    );
 
   if (isLoading) {
     return <LoadingMessage />;
@@ -44,27 +60,7 @@ const MainTabList = ({ props }: any) => {
     return <ErrorAPI />;
   }
 
-  return (
-    <Box
-      sx={{
-        height: 'calc(100vh - 110px)',
-        width: '100%',
-        userSelect: 'none',
-        // overflowY: 'auto',
-      }}
-    >
-      <MainMediaTable
-        props={MainTableView(
-          mySidebar.sidebar,
-          myCategory.category,
-          data,
-          myFilter.filter,
-          mySort.sort,
-          myTitle.title,
-        )}
-      />
-    </Box>
-  );
+  return <SeasonTabList />;
 };
 
-export default MainTabList;
+export default SeasonTabLi;

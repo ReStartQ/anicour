@@ -66,6 +66,9 @@ export const MainView = memo(({ view, media, index, filter, sort }: any) => {
       </RenderIfVisible>
     );
   }
+  if (view === 2) {
+    return <></>;
+  }
   return <></>;
 });
 

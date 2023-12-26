@@ -49,13 +49,13 @@ You can download the app [here](https://github.com/ReStartQ/AniCour/releases). C
 1. Download the setup file from the latest release and install it on your computer.
    <br /> **_Note: Some browsers may give a warning or block the download for the exe setup file as it does not have a code signing certificate._**
    <br /> **_To avoid this warning, download the setup zip file instead_**
-2. The setup zip file is labeled as AniCour-Setup-x.x.x.zip, where x denotes a number for the version. 
-   <br/> **Ex: AniCour-Setup-1.4.0.zip** (Recommended)
+2. The setup zip file is labeled as AniCour-Setup-x.x.x.zip, where x denotes a number for the version.
+   <br/> **Ex: AniCour-Setup-1.4.1.zip** (Recommended)
    <br />
-   If you would like to download the exe file directly. That file is labeled as AniCour-Setup-x.x.x.exe. 
-   <br/> **Ex: AniCour-Setup-1.4.0.exe** (Look at note in first step)
-4. Extract the zip file and then run the setup exe file. If you downloaded the exe file directly, then you can just run that setup exe file.
-5. Use the app to track, search, and manage your anime, manga, and light novels.
+   If you would like to download the exe file directly. That file is labeled as AniCour-Setup-x.x.x.exe.
+   <br/> **Ex: AniCour-Setup-1.4.1.exe** (Look at note in first step)
+3. Extract the zip file and then run the setup exe file. If you downloaded the exe file directly, then you can just run that setup exe file.
+4. Use the app to track, search, and manage your anime, manga, and light novels.
 
 ## Setup
 

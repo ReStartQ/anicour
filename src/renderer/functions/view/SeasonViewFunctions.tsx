@@ -37,6 +37,9 @@ export const SeasonView = memo(({ view, media, index, sort }: any) => {
       </RenderIfVisible>
     );
   }
+  if (view === 2) {
+    return <></>;
+  }
   return <></>;
 });
 

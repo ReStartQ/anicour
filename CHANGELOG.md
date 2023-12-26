@@ -1,5 +1,11 @@
 # Changes
 
+## 1.4.1
+
+- Fixed an issue with the list view.
+- Reordered the toolbar's help menu.
+- Made toolbar option for reset settings to reflect changes without having to restart app.
+
 ## 1.4.0
 
 ### Main Changes

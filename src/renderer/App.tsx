@@ -94,6 +94,7 @@ import {
   notificationMediaNamesAtom,
   notificationOpenAtom,
   notificationTypeAtom,
+  seasonChangeAtom,
   statusAddSelectAtom,
 } from './store';
 import NewsPage from './components/app/news/NewsPage';
@@ -256,6 +257,7 @@ const Hello = () => {
   const [notifcationMediaNames, setNotificationMediaNames] = useAtom(
     notificationMediaNamesAtom,
   );
+  const [seasonChange, setSeasonChange] = useAtom(seasonChangeAtom);
   const [openResetDialog, setOpenResetDialog] = useAtom(appResetDialogOpenAtom);
 
   const handleClose = (event?: SyntheticEvent | Event, reason?: string) => {
@@ -351,6 +353,9 @@ const Hello = () => {
             window.electron.store.clear();
             setAniListUsername('');
             setAniListToken('');
+            myTitle.setTitle('Romaji');
+            setDefaultAddStatus('CURRENT');
+            setSeasonChange('Early');
             break;
           default:
             console.log('test');
@@ -367,6 +372,7 @@ const Hello = () => {
     setAniListUsername,
     setDefaultAddStatus,
     setOpenResetDialog,
+    setSeasonChange,
   ]);
 
   /*

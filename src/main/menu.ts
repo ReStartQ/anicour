@@ -260,18 +260,18 @@ export default class MenuBuilder {
         label: 'Help',
         submenu: [
           {
-            label: 'Changelog',
-            click() {
-              shell.openExternal(
-                'https://github.com/ReStartQ/anicour/blob/main/CHANGELOG.md',
-              );
-            },
-          },
-          {
             label: 'Setup',
             click() {
               shell.openExternal(
                 'https://github.com/ReStartQ/anicour/blob/main/help/Setup.md',
+              );
+            },
+          },
+          {
+            label: 'Changelog',
+            click() {
+              shell.openExternal(
+                'https://github.com/ReStartQ/anicour/blob/main/CHANGELOG.md',
               );
             },
           },

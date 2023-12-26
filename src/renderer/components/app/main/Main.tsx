@@ -13,6 +13,8 @@ import MainCategoryBar from './MainCategoryBar';
 import MainTab from './MainTab';
 import MainTabList from './MainTabList';
 import MainTabCompact from './MainTabCompact';
+import HistoryTab from '../history/HistoryTab';
+import MainTabLi from './MainTabLi';
 
 function MainTabView({ view }: any) {
   if (view === 0) {
@@ -30,7 +32,7 @@ function MainTabView({ view }: any) {
   if (view === 2) {
     return (
       // 140
-      <MainTabList />
+      <MainTabLi />
     );
   }
   return <Box />;
