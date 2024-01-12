@@ -44,10 +44,10 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 ## Download and Installation
 
 You can download the app [here](https://github.com/ReStartQ/AniCour/releases). Check for the latest version.
+<br /> **_Note: Some browsers may give a warning or block the download for the exe setup file as it does not have a code signing certificate._**
 <br>
 
 1. Download the setup file from the latest release and install it on your computer.
-   <br /> **_Note: Some browsers may give a warning or block the download for the exe setup file as it does not have a code signing certificate._**
 2. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x denotes a number for the version.
    <br/> **Ex: AniCour-Setup-1.4.2.exe**
 3. When you run the exe file, Windows will give a message like below because there is no code signing certificate, click on "More info" <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourNoCodeSigningInitial.png" alt="Hello" /></a></p>
