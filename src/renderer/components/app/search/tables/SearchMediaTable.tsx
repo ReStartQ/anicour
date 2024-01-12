@@ -46,7 +46,7 @@ import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useSearchTerm } from 'renderer/context/SearchTermContext';
 import { useAdult } from 'renderer/context/AdultContext';
 import { MediaIcons, OnListIcon } from '../../etc/SvgIcons';
-import { StyledMenu } from '../../styled/StyledComponents';
+import { StyledMenu, StyledMenuDark } from '../../styled/StyledComponents';
 import SearchTitleTableBox from './SearchTitleTableBox';
 
 export default function SearchMediaTable({ props }: any) {
@@ -296,7 +296,7 @@ export default function SearchMediaTable({ props }: any) {
               >
                 <MoreHorizIcon className="MenuButtonIcons" />
               </IconButton>
-              <StyledMenu
+              <StyledMenuDark
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -341,7 +341,7 @@ export default function SearchMediaTable({ props }: any) {
                     Add to List
                   </MenuItem>
                 )}
-              </StyledMenu>
+              </StyledMenuDark>
             </div>
           );
         },
@@ -572,7 +572,7 @@ export default function SearchMediaTable({ props }: any) {
               >
                 <MoreHorizIcon className="MenuIcons" />
               </IconButton>
-              <StyledMenu
+              <StyledMenuDark
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -617,7 +617,7 @@ export default function SearchMediaTable({ props }: any) {
                     Add to List
                   </MenuItem>
                 )}
-              </StyledMenu>
+              </StyledMenuDark>
             </Box>
           );
         },

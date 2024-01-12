@@ -45,7 +45,7 @@ import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useSearchTerm } from 'renderer/context/SearchTermContext';
 import { useAdult } from 'renderer/context/AdultContext';
 import { MediaIcons, OnListIcon } from '../../etc/SvgIcons';
-import { StyledMenu } from '../../styled/StyledComponents';
+import { StyledMenu, StyledMenuDark } from '../../styled/StyledComponents';
 import SeasonTitleTableBox from './SeasonTitleTableBox';
 
 export default function SeasonMediaTable({ props }: any) {
@@ -281,7 +281,7 @@ export default function SeasonMediaTable({ props }: any) {
               >
                 <MoreHorizIcon className="MenuButtonIcons" />
               </IconButton>
-              <StyledMenu
+              <StyledMenuDark
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -326,7 +326,7 @@ export default function SeasonMediaTable({ props }: any) {
                     Add to List
                   </MenuItem>
                 )}
-              </StyledMenu>
+              </StyledMenuDark>
             </div>
           );
         },
