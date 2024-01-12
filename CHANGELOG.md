@@ -1,5 +1,11 @@
 # Changes
 
+## 1.4.2
+
+- Made add to list select options go downward and scrollable.
+- Changed list view's menu color for better visibility.
+- Set default All color to white for advanced filtering icon.
+
 ## 1.4.1
 
 - Fixed a rendering issue with the list view.

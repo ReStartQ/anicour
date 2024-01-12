@@ -137,8 +137,8 @@ export default function SearchMediaCard({ props }: any) {
           color={getStatusColor(props.status)}
           noWrap
           gutterBottom
-          sx={{ cursor: 'pointer' }}
-          onClick={() => handleClick(props.titleRomaji)}
+          /* sx={{ cursor: 'pointer' }} */
+          /* onClick={() => handleClick(props.titleRomaji)} */
         >
           {getTitle(titlePreference.title, props)}
         </Typography>

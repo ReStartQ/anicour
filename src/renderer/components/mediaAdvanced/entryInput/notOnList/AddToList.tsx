@@ -97,6 +97,14 @@ export default function AddToList() {
         sx={{ width: '150px' }}
         onChange={onChange}
         color="primary"
+        slotProps={{
+          listbox: {
+            sx: {
+              maxHeight: 145,
+              overflow: 'auto', // required for scrolling
+            },
+          },
+        }}
       >
         <Option value="CURRENT">
           {myAdvancedMedia.advancedMedia.type === 'ANIME'
@@ -112,7 +120,6 @@ export default function AddToList() {
             : 'Plan to Read'}
         </Option>
       </Select>
-
       <Button
         variant="soft"
         size="sm"

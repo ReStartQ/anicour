@@ -16,6 +16,9 @@ export default function EntryInputNotOnList() {
         gridTemplateRows: 'repeat(4, 73px)',
         display: 'flex',
         alignItems: 'center',
+        /* '&:last:child': {
+          paddingBottom: 0,
+        }, */
         justifyContent: 'center',
       }}
     >

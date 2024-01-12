@@ -38,7 +38,7 @@ export default function ProgressStepper({
     <Box
       display="flex"
       flexDirection="column"
-      sx={{ gridColumn: '1/2', userSelect: 'none' }}
+      sx={{ gridColumn: '1/2' /* userSelect: 'none' */ }}
     >
       <Typography fontSize={12} fontWeight="bold">
         {props.type === 'ANIME' ? 'Episodes:' : 'Chapters:'}

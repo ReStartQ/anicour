@@ -40,7 +40,7 @@ import { useAddNewEntryData } from 'renderer/functions/api/mutations/addEntry';
 import { useAtom } from 'jotai';
 import { statusAddSelectAtom } from 'renderer/store';
 import { getMalLink } from 'renderer/functions/edit/getAdjustedSiteLink';
-import { StyledMenu } from '../../styled/StyledComponents';
+import { StyledMenu, StyledMenuDark } from '../../styled/StyledComponents';
 import { MediaIcons } from '../../etc/SvgIcons';
 
 export default function MainMediaTable({ props }: any) {
@@ -289,7 +289,7 @@ export default function MainMediaTable({ props }: any) {
               >
                 <MoreHorizIcon className="MenuButtonIcons" />
               </IconButton>
-              <StyledMenu
+              <StyledMenuDark
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -334,7 +334,7 @@ export default function MainMediaTable({ props }: any) {
                     Add to List
                   </MenuItem>
                 )}
-              </StyledMenu>
+              </StyledMenuDark>
             </div>
           );
         },
@@ -577,7 +577,7 @@ export default function MainMediaTable({ props }: any) {
               >
                 <MoreHorizIcon className="MenuIcons" />
               </IconButton>
-              <StyledMenu
+              <StyledMenuDark
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -622,7 +622,7 @@ export default function MainMediaTable({ props }: any) {
                     Add to List
                   </MenuItem>
                 )}
-              </StyledMenu>
+              </StyledMenuDark>
             </Box>
           );
         },

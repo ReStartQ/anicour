@@ -64,7 +64,7 @@ export default function FilterSelect() {
         >
           <MoreVertIcon
             fontSize="small"
-            sx={{ color: filterType === 'All' ? 'skyblue' : '#ffeb3b' }}
+            sx={{ color: filterType === 'All' ? 'white' : '#ffeb3b' }}
           />
         </IconButton>
       </Tooltip>
