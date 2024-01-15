@@ -22,9 +22,9 @@ export default function sortSeasons(
     case 0:
       return data;
     case 1:
-      return [...data].sort(sortByAiringDateDescending);
-    case 1.5:
       return [...data].sort(sortByAiringDateAscending);
+    case 1.5:
+      return [...data].sort(sortByAiringDateDescending);
     case 2:
       return [...data].sort(sortByStatusAscending);
     case 2.5:

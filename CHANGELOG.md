@@ -1,5 +1,11 @@
 # Changes
 
+## 1.4.3
+
+- Made the default descending sort for Next Airing Time be the earliest time to allow users to easily view the next airing seasonal anime.
+- Changed color of scrollbar to a grayish color.
+- Shortened the height of add to list select options.
+
 ## 1.4.2
 
 - Made add to list select options go downward and scrollable.

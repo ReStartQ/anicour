@@ -100,7 +100,7 @@ export default function AddToList() {
         slotProps={{
           listbox: {
             sx: {
-              maxHeight: 145,
+              maxHeight: 125,
               overflow: 'auto', // required for scrolling
             },
           },
