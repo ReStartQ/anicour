@@ -48,7 +48,7 @@ export default function FilterSelect() {
     <Box sx={{ ml: '3px' }}>
       <Tooltip
         title={
-          filterType === 'All' ? 'Filter by:' : `Filtered by: ${filterType}`
+          filterType === 'All' ? 'Filter by' : `Filtered by: ${filterType}`
         }
         arrow
       >

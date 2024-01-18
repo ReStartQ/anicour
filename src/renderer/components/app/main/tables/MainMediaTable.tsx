@@ -767,7 +767,7 @@ export default function MainMediaTable({ props }: any) {
       density: 'compact',
     },
     rowVirtualizerInstanceRef, // optional
-    rowVirtualizerOptions: { overscan: 5 }, // optionally customize the virtualizer
+    rowVirtualizerOptions: { overscan: 2 }, // optionally customize the virtualizer
   });
 
   return <MaterialReactTable table={myTable} />;

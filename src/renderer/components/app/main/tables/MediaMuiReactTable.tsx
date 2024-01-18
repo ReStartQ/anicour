@@ -158,7 +158,7 @@ export default function MediaMuiReactTable({ props }: any) {
         density: 'compact',
       }}
       rowVirtualizerInstanceRef={rowVirtualizerInstanceRef} // optional
-      rowVirtualizerOptions={{ overscan: 8 }} // optionally customize the virtualizer
+      rowVirtualizerOptions={{ overscan: 2 }} // optionally customize the virtualizer
     />
   );
 }

@@ -1,5 +1,11 @@
 # Changes
 
+## 1.4.4
+
+- Changed color of scrollbar back to blue.
+- Added some spacing for the update button in grid view for a cleaner look.
+- Lowered the overscanning number for virtualizition in list view to help with smoother scrolling.
+
 ## 1.4.3
 
 - Made the default descending sort for Next Airing Time be the earliest time to allow users to easily view the next airing seasonal anime.

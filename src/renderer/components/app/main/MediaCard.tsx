@@ -418,7 +418,7 @@ export default function MediaCard({ props }: any) {
         )}
         <Button
           size="small"
-          sx={{ gridColumn: '1/3', textTransform: 'none' }}
+          sx={{ gridColumn: '1/3', textTransform: 'none', my: '5px' }}
           variant="outlined"
           onClick={handleUpdate}
         >
