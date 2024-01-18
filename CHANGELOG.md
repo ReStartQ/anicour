@@ -4,7 +4,7 @@
 
 - Changed color of scrollbar back to blue.
 - Added some spacing for the update button in grid view for a cleaner look.
-- Lowered the overscanning number for virtualizition in list view to help with smoother scrolling.
+- Lowered the overscanning number for virtualization in list view to help with smoother scrolling.
 
 ## 1.4.3
 
