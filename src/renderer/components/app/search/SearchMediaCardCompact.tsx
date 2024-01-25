@@ -123,17 +123,19 @@ export default function SearchMediaCardCompact({ props }: any) {
           }}
         />
         {props.mediaListEntry !== null ? (
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bgcolor: 'rgba(0, 0, 0, 0.69)',
-              color: 'white',
-            }}
-          >
-            <PlaylistAddCheckCircleIcon />
-          </Box>
+          <Tooltip title="On List" arrow>
+            <PlaylistAddCheckCircleIcon
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                margin: '5px',
+                bgcolor: 'rgba(0, 0, 0, 0.69)',
+                color: 'white',
+                borderRadius: '3px',
+              }}
+            />
+          </Tooltip>
         ) : null}
         <Box
           sx={{

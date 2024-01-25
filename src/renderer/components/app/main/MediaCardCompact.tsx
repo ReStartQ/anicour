@@ -68,20 +68,23 @@ export default function MediaCardCompact({ props }: any) {
           }}
         />
         {props.mediaListEntry.notes !== null ? (
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bgcolor: 'rgba(0, 0, 0, 0.69)',
-              color: 'white',
-              borderBottomRightRadius: '3px',
-              height: '24px',
-              width: '24px',
-            }}
-          >
-            <MediaIcons type={0} />
-          </Box>
+          <Tooltip title={props.mediaListEntry.notes} arrow>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                margin: '5px',
+                bgcolor: 'rgba(0, 0, 0, 0.69)',
+                color: 'white',
+                borderRadius: '3px',
+                height: '25px',
+                width: '25px',
+              }}
+            >
+              <MediaIcons type={0} />
+            </Box>
+          </Tooltip>
         ) : null}
         <Box
           sx={{

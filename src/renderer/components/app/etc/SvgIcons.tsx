@@ -1,10 +1,14 @@
 import { SvgIcon } from '@mui/material';
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
+import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
+import MessageIcon from '@mui/icons-material/Message';
+import CommentIcon from '@mui/icons-material/Comment';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export function MediaIcons({ type }: any) {
   console.log(type);
   if (type === 0) {
+    /*
     return (
       <SvgIcon fontSize="small">
         <svg
@@ -135,10 +139,13 @@ export function MediaIcons({ type }: any) {
         </svg>
       </SvgIcon>
     );
+    */
+    return <CommentIcon />;
   }
 
   if (type === 0.5) {
     // for list table view
+    /*
     return (
       <SvgIcon fontSize="inherit" sx={{ mr: '5px', mt: '1px' }}>
         <svg
@@ -269,6 +276,8 @@ export function MediaIcons({ type }: any) {
         </svg>
       </SvgIcon>
     );
+    */
+    return <CommentIcon fontSize="inherit" sx={{ mr: '5px', mt: '1px' }} />;
   }
 
   return (
@@ -479,7 +488,12 @@ export function OnListIcon({ type }: any) {
     return <PlaylistAddCheckIcon fontSize="small" />;
   }
   if (type === 0.5) {
-    return <CheckCircleIcon sx={{ mr: '5px', mt: '1px' }} fontSize="inherit" />;
+    return (
+      <PlaylistAddCheckCircleIcon
+        sx={{ mr: '5px', mt: '1px' }}
+        fontSize="inherit"
+      />
+    );
   }
   return <SvgIcon />;
 }

@@ -26,7 +26,7 @@ export default function ScoreSelect({
   return (
     <Box display="flex" flexDirection="column" sx={{ gridColumn: '1/2' }}>
       <Typography fontSize={12} fontWeight="bold">
-        Score:{' '}
+        Score{' '}
       </Typography>
       <NativeSelect
         value={advancedInput.score}

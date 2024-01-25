@@ -36,7 +36,7 @@ export default function ProgressVolumesStepper({
     <>
       <Box display="flex" flexDirection="column" sx={{ gridColumn: '2/3' }}>
         <Typography fontSize={12} fontWeight="bold">
-          Volumes:{' '}
+          Volumes{' '}
         </Typography>
         <Box display="flex" flexDirection="row">
           <IconButton

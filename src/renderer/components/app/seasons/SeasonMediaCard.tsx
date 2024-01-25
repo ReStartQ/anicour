@@ -122,20 +122,19 @@ export const SeasonMediaCard = ({ props }: any) => {
           }}
         />
         {props.mediaListEntry !== null ? (
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bgcolor: 'rgba(0, 0, 0, 0.69)',
-              color: 'white',
-              borderBottomRightRadius: '3px',
-              height: '24px',
-              width: '24px',
-            }}
-          >
-            <PlaylistAddCheckCircleIcon />
-          </Box>
+          <Tooltip title="On List" arrow>
+            <PlaylistAddCheckCircleIcon
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                margin: '5px',
+                bgcolor: 'rgba(0, 0, 0, 0.69)',
+                color: 'white',
+                borderRadius: '3px',
+              }}
+            />
+          </Tooltip>
         ) : null}
         {props.nextAiringEpisode !== null ? (
           <Box

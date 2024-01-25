@@ -283,20 +283,23 @@ export default function MediaCard({ props }: any) {
           }}
         />
         {props.mediaListEntry.notes !== null ? (
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              bgcolor: 'rgba(0, 0, 0, 0.69)',
-              color: 'white',
-              borderBottomRightRadius: '3px',
-              height: '24px',
-              width: '24px',
-            }}
-          >
-            <MediaIcons type={0} />
-          </Box>
+          <Tooltip title={props.mediaListEntry.notes} arrow>
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                margin: '5px',
+                bgcolor: 'rgba(0, 0, 0, 0.69)',
+                color: 'white',
+                borderRadius: '3px',
+                height: '25px',
+                width: '25px',
+              }}
+            >
+              <MediaIcons type={0} />
+            </Box>
+          </Tooltip>
         ) : null}
       </CardActionArea>
       <CardContent
@@ -358,7 +361,7 @@ export default function MediaCard({ props }: any) {
         {props.type === 'ANIME' ? (
           <Box sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
             <Typography fontSize={12} fontWeight="bold">
-              Studio:{'  '}
+              Studio{'  '}
             </Typography>
             <Typography fontSize={12} noWrap>
               {props.mainStudioIndex !== -1
@@ -377,7 +380,7 @@ export default function MediaCard({ props }: any) {
         )}
         <Box>
           <Typography fontSize={12} fontWeight="bold">
-            Type:{' '}
+            Type{' '}
           </Typography>
           <Typography fontSize={12} noWrap>
             {props.format !== null ? formatType(props.format) : '?'}
@@ -385,7 +388,7 @@ export default function MediaCard({ props }: any) {
         </Box>
         <Box>
           <Typography fontSize={12} fontWeight="bold">
-            Status:{' '}
+            Status{' '}
           </Typography>
           <Typography fontSize={12} noWrap>
             {props.status !== null ? formatStatus(props.status) : '?'}
@@ -394,7 +397,7 @@ export default function MediaCard({ props }: any) {
         {props.type === 'ANIME' ? (
           <Box>
             <Typography fontSize={12} fontWeight="bold">
-              Season:{' '}
+              Season{' '}
             </Typography>
             <Typography fontSize={12} noWrap>
               {props.season !== null && props.seasonYear !== null
@@ -405,7 +408,7 @@ export default function MediaCard({ props }: any) {
         ) : (
           <Box>
             <Typography fontSize={12} fontWeight="bold">
-              Released:{' '}
+              Released{' '}
             </Typography>
             <Typography fontSize={12} noWrap>
               {formatReleaseDateNumbers(

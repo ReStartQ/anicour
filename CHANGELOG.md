@@ -1,5 +1,13 @@
 # Changes
 
+## 1.4.5
+
+- For currently airing anime, you can now see how many episodes have aired in grid view.
+- Users can now see the notes they write for each media on their list by hovering the comment icon. Added tooltips for notes and on list icons for grid and compact view.
+- Added margin for on list and note icons for a better look.
+- Changed icon for notes from notepad to a comment icon.
+- Removed colons from labels on the main list media cards.
+
 ## 1.4.4
 
 - Changed color of scrollbar back to blue.
