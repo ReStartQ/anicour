@@ -2,9 +2,9 @@
 
 ## 1.4.6
 
--Advanced anime window now shows an info icon w/ tooltip showing number of episodes aired for currently releasing anime.
--Light blue outline will show up when the user is caught up with episodes of currently airing anime.
--Tooltips except for the top sidebar ones are now all outlined blue.
+- Advanced anime window now shows an info icon w/ tooltip showing number of episodes aired for currently releasing anime.
+- Light blue outline will show up when the user is caught up with episodes of currently airing anime.
+- Tooltips except for the top sidebar ones are now all outlined blue.
 
 ## 1.4.5
 
