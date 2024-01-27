@@ -2,10 +2,12 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { IconButton, Tooltip, Typography } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
+import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import { useEffect, useState } from 'react';
 import { formatProgress } from 'renderer/functions/edit/formatInfo';
+import NextAiringEpisodeIndicator from './NextAiringEpisodeIndicator';
 
 export default function ProgressStepper({
   props,
@@ -42,24 +44,7 @@ export default function ProgressStepper({
       sx={{ gridColumn: '1/2' /* userSelect: 'none' */ }}
     >
       {props.nextAiringEpisode !== null ? (
-        <Box display="flex" flexDirection="row">
-          <Typography fontSize={12} fontWeight="bold">
-            {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
-          </Typography>
-          <Tooltip
-            title={
-              props.nextAiringEpisode.episode === 0
-                ? `${props.nextAiringEpisode.episode} episodes aired`
-                : `${props.nextAiringEpisode.episode - 1} episodes aired`
-            }
-            arrow
-            placement="top"
-          >
-            <IconButton size="small" sx={{ padding: 0, ml: 0.5 }}>
-              <InfoIcon sx={{ fontSize: '14px' }} />
-            </IconButton>
-          </Tooltip>
-        </Box>
+        <NextAiringEpisodeIndicator props={props} />
       ) : (
         <Typography fontSize={12} fontWeight="bold">
           {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
@@ -105,3 +90,40 @@ export default function ProgressStepper({
     </Box>
   );
 }
+
+/*
+      {props.nextAiringEpisode !== null ? (
+        <Box display="flex" flexDirection="row">
+          <Typography fontSize={12} fontWeight="bold">
+            {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
+          </Typography>
+          <Tooltip
+            title={
+              props.nextAiringEpisode.episode === 0
+                ? `${props.nextAiringEpisode.episode} episodes aired`
+                : `${props.nextAiringEpisode.episode - 1} episodes aired`
+            }
+            arrow
+            placement="top"
+          >
+            <IconButton size="small" sx={{ padding: 0, ml: 0.5 }}>
+              <InfoIcon
+                sx={{
+                  fontSize: '14px',
+                  color:
+                    props.nextAiringEpisode.episode - 1 <=
+                    props.mediaListEntry.progress
+                      ? '#4CBB17'
+                      : 'white',
+
+                    }}
+                    />
+                  </IconButton>
+                </Tooltip>
+              </Box>
+            ) : (
+              <Typography fontSize={12} fontWeight="bold">
+                {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
+              </Typography>
+            )}
+*/

@@ -1,8 +1,10 @@
-import { FormControl, FormLabel, Input } from '@mui/joy';
+import { FormControl, FormLabel, Input, Tooltip } from '@mui/joy';
 import { forwardRef } from 'react';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { getMaxValueEpisodesOrChapters } from 'renderer/functions/input/InputFunctions';
+import InfoIcon from '@mui/icons-material/Info';
+import { IconButton } from '@mui/material';
 
 export default function ProgressInput() {
   const myAdvancedMedia: any = useAdvancedMedia();
@@ -63,6 +65,47 @@ export default function ProgressInput() {
             `
           : `Chapters:
             `}
+        {myAdvancedMedia.advancedMedia.nextAiringEpisode !== null ? (
+          <Tooltip
+            title={
+              myAdvancedMedia.advancedMedia.nextAiringEpisode.episode === 0
+                ? `${myAdvancedMedia.advancedMedia.nextAiringEpisode.episode} episodes aired`
+                : `${
+                    myAdvancedMedia.advancedMedia.nextAiringEpisode.episode - 1
+                  } episodes aired`
+            }
+            placement="top"
+            variant="outlined"
+            color="primary"
+          >
+            <IconButton
+              size="small"
+              sx={{
+                padding: 0,
+                ml: 0.5,
+                border:
+                  myAdvancedMedia.advancedMedia.nextAiringEpisode.episode - 1 <=
+                  myAdvancedMedia.advancedMedia.mediaListEntry.progress
+                    ? '2px solid deepskyblue'
+                    : null,
+              }}
+            >
+              <InfoIcon
+                sx={{
+                  fontSize: '14px',
+                  /*
+                  color:
+                    myAdvancedMedia.advancedMedia.nextAiringEpisode.episode -
+                      1 <=
+                    myAdvancedMedia.advancedMedia.mediaListEntry.progress
+                      ? '#4CBB17'
+                      : 'white',
+                  */
+                }}
+              />
+            </IconButton>
+          </Tooltip>
+        ) : null}
       </FormLabel>
       <Input
         size="sm"

@@ -1,4 +1,5 @@
-import { CardContent, Tooltip, Typography } from '@mui/material';
+import { Tooltip } from '@mui/joy';
+import { CardContent, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
@@ -33,6 +34,9 @@ export default function AdvancedTitle() {
         title={getTitle(titlePreference.title, myAdvancedMedia.advancedMedia)}
         followCursor
         disableHoverListener={!isOverflowed}
+        variant="outlined"
+        color="primary"
+        size="sm"
       >
         <Typography noWrap fontWeight="bold" ref={textElementRef}>
           {getTitle(titlePreference.title, myAdvancedMedia.advancedMedia)}

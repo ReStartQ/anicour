@@ -1,4 +1,5 @@
-import { Box, CardActionArea, Tooltip } from '@mui/material';
+import { Tooltip } from '@mui/joy';
+import { Box, CardActionArea } from '@mui/material';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useAdvancedDefaultLink } from 'renderer/context/advanced/AdvancedDefaultLinkContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
@@ -11,13 +12,15 @@ export default function AdvancedImage() {
 
   return (
     <Tooltip
+      variant="outlined"
+      color="primary"
       title={
         myAdvancedDefaultLink.advancedDefaultLink === 'AniList'
           ? 'Go to AniList'
           : 'Go to MyAnimeList'
       }
       followCursor
-      placement="bottom-start"
+      placement="right-end"
     >
       <CardActionArea
         sx={{

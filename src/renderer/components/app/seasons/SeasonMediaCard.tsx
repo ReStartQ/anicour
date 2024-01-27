@@ -1,6 +1,6 @@
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
-import { CardActionArea, Tooltip } from '@mui/material';
+import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -23,6 +23,7 @@ import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useAdult } from 'renderer/context/AdultContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
+import { Tooltip } from '@mui/joy';
 import ContextMenu from '../etc/ContextMenu';
 
 export const SeasonMediaCard = ({ props }: any) => {
@@ -84,6 +85,7 @@ export const SeasonMediaCard = ({ props }: any) => {
   return (
     <Card
       variant="outlined"
+      color="primary"
       sx={{
         display: 'grid',
         gridTemplateColumns: '140px 220px',
@@ -122,7 +124,7 @@ export const SeasonMediaCard = ({ props }: any) => {
           }}
         />
         {props.mediaListEntry !== null ? (
-          <Tooltip title="On List" arrow>
+          <Tooltip title="On List" arrow variant="outlined" color="primary">
             <PlaylistAddCheckCircleIcon
               sx={{
                 position: 'absolute',

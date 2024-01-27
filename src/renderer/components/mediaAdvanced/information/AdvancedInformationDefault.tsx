@@ -7,7 +7,6 @@ import {
   CardContent,
   Divider,
   IconButton,
-  Tooltip,
   Typography,
 } from '@mui/material';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
@@ -20,6 +19,7 @@ import {
   formatType,
 } from 'renderer/functions/edit/formatInfo';
 import getStatusColor from 'renderer/functions/StatusFunction';
+import { Tooltip } from '@mui/joy';
 import AdvancedExtraSelect from '../extra/AdvancedExtraSelect';
 
 const AdvancedInformationDefault = () => {
@@ -197,6 +197,8 @@ const AdvancedInformationDefault = () => {
         </Typography>
       ) : null}
       <Tooltip
+        variant="outlined"
+        color="primary"
         title={
           myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
             <>
@@ -266,6 +268,8 @@ const AdvancedInformationDefault = () => {
         )}
       </Tooltip>
       <Tooltip
+        variant="outlined"
+        color="primary"
         title={
           <Typography fontSize={12}>
             <Typography fontSize={12} fontWeight="bold" display="inline">
@@ -322,6 +326,8 @@ const AdvancedInformationDefault = () => {
         </Typography>
       </Tooltip>
       <Tooltip
+        variant="outlined"
+        color="primary"
         title={
           <Typography fontSize={12}>
             <Typography fontSize={12} fontWeight="bold" display="inline">

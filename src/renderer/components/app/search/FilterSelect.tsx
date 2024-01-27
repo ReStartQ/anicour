@@ -7,8 +7,9 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { useAtom } from 'jotai';
 import { filterTypeAtom } from 'renderer/store';
-import { Box, Tooltip } from '@mui/material';
+import { Box } from '@mui/material';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
+import { Tooltip } from '@mui/joy';
 import { StyledMenu } from '../styled/StyledComponents';
 
 const options = [
@@ -51,6 +52,8 @@ export default function FilterSelect() {
           filterType === 'All' ? 'Filter by' : `Filtered by: ${filterType}`
         }
         arrow
+        variant="outlined"
+        color="primary"
       >
         <IconButton
           aria-label="more"

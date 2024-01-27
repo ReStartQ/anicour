@@ -1,6 +1,6 @@
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
-import { CardActionArea, Tooltip } from '@mui/material';
+import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -25,6 +25,7 @@ import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAdult } from 'renderer/context/AdultContext';
 import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
+import { Tooltip } from '@mui/joy';
 import ContextMenu from '../etc/ContextMenu';
 
 export default function SearchMediaCard({ props }: any) {
@@ -106,7 +107,7 @@ export default function SearchMediaCard({ props }: any) {
           }}
         />
         {props.mediaListEntry !== null ? (
-          <Tooltip title="On List" arrow>
+          <Tooltip title="On List" arrow variant="outlined" color="primary">
             <PlaylistAddCheckCircleIcon
               sx={{
                 position: 'absolute',

@@ -1,4 +1,4 @@
-import { CardActionArea, Tooltip, Typography } from '@mui/material';
+import { CardActionArea, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,6 +7,7 @@ import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
+import { Tooltip } from '@mui/joy';
 import ContextMenuAlternative from '../etc/ContextMenuAlternative';
 import ContextMenu from '../etc/ContextMenu';
 import { MediaIcons } from '../etc/SvgIcons';
@@ -68,7 +69,12 @@ export default function MediaCardCompact({ props }: any) {
           }}
         />
         {props.mediaListEntry.notes !== null ? (
-          <Tooltip title={props.mediaListEntry.notes} arrow>
+          <Tooltip
+            title={props.mediaListEntry.notes}
+            arrow
+            variant="outlined"
+            color="primary"
+          >
             <Box
               sx={{
                 position: 'absolute',

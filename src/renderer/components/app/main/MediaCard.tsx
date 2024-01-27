@@ -5,7 +5,6 @@ import {
   IconButton,
   Snackbar,
   SvgIcon,
-  Tooltip,
 } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -45,6 +44,7 @@ import {
 } from 'renderer/store';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { useCategory } from 'renderer/context/CategoryContext';
+import { Tooltip } from '@mui/joy';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -283,7 +283,12 @@ export default function MediaCard({ props }: any) {
           }}
         />
         {props.mediaListEntry.notes !== null ? (
-          <Tooltip title={props.mediaListEntry.notes} arrow>
+          <Tooltip
+            title={props.mediaListEntry.notes}
+            arrow
+            variant="outlined"
+            color="primary"
+          >
             <Box
               sx={{
                 position: 'absolute',
