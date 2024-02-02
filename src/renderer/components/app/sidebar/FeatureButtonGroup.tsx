@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import CachedIcon from '@mui/icons-material/Cached';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HistoryIcon from '@mui/icons-material/History';
-import { ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
+import {
+  ToggleButton,
+  ToggleButtonGroup,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
@@ -18,6 +23,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
+import HtmlTooltip from '../etc/CustomTooltip1';
 
 export default function FeatureButtonGroup() {
   const myToken: any = useAniListToken();
@@ -83,7 +89,16 @@ export default function FeatureButtonGroup() {
       aria-label="text alignment"
       sx={{ flexBasis: '40%' }}
     >
-      <Tooltip title="Sync" placement="top">
+      <HtmlTooltip
+        title={
+          <>
+            <Typography color="inherit" fontSize="14px">
+              Sync
+            </Typography>
+          </>
+        }
+        placement="top"
+      >
         <ToggleButton
           value="center"
           aria-label="centered"
@@ -94,8 +109,17 @@ export default function FeatureButtonGroup() {
         >
           <CachedIcon />
         </ToggleButton>
-      </Tooltip>
-      <Tooltip title="Settings" placement="top">
+      </HtmlTooltip>
+      <HtmlTooltip
+        title={
+          <>
+            <Typography color="inherit" fontSize="14px">
+              Settings
+            </Typography>
+          </>
+        }
+        placement="top"
+      >
         <ToggleButton
           value="left"
           aria-label="left aligned"
@@ -105,7 +129,7 @@ export default function FeatureButtonGroup() {
         >
           <SettingsIcon />
         </ToggleButton>
-      </Tooltip>
+      </HtmlTooltip>
     </ToggleButtonGroup>
   );
 }

@@ -1,10 +1,11 @@
 import RefreshIcon from '@mui/icons-material/Refresh';
-import { IconButton, ToggleButton, Tooltip } from '@mui/material';
+import { IconButton, ToggleButton, Tooltip, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useNews } from 'renderer/context/NewsContext';
 import { useNewsServiceType } from 'renderer/context/NewsServiceTypeContext';
 import { useNewsQuery } from 'renderer/functions/NewsFunctions';
 import isOnline from 'is-online';
+import HtmlTooltip from '../etc/CustomTooltip1';
 
 export default function NewsRefresh({ props }: any) {
   const newsCards: any = useNews();
@@ -34,7 +35,16 @@ export default function NewsRefresh({ props }: any) {
   };
 
   return (
-    <Tooltip title="Refresh News" placement="top">
+    <HtmlTooltip
+      title={
+        <>
+          <Typography color="inherit" fontSize="14px">
+            Refresh News
+          </Typography>
+        </>
+      }
+      placement="top"
+    >
       <ToggleButton
         value="right"
         aria-label="right aligned"
@@ -43,6 +53,6 @@ export default function NewsRefresh({ props }: any) {
       >
         <RefreshIcon />
       </ToggleButton>
-    </Tooltip>
+    </HtmlTooltip>
   );
 }

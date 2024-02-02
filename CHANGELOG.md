@@ -1,5 +1,10 @@
 # Changes
 
+## 1.4.7
+
+- Redesigned the season search menu. The year select is now an input to allow for easier entry. Moved the search bar to the bottom. Colors were changed in the season search menu for the inputs and search.
+- Tooltips for top sidebar are now outlined blue to be a similar style with the rest of the app.
+
 ## 1.4.6
 
 - Advanced anime window now shows an info icon w/ tooltip showing number of episodes aired for currently releasing anime.

@@ -480,7 +480,7 @@ const Hello = () => {
                 display: 'flex',
                 ml: `${drawerWidth}px`,
                 boxSizing: 'border-box',
-                background: '#2E3B55', // original #2E3B55
+                background: '#2E3B55', // original #2E3B55 #102a43 #486581
               }}
             >
               <Toolbar

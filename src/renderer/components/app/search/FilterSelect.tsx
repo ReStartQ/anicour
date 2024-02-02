@@ -1,5 +1,4 @@
 import * as React from 'react';
-import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -7,7 +6,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { useAtom } from 'jotai';
 import { filterTypeAtom } from 'renderer/store';
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { Tooltip } from '@mui/joy';
 import { StyledMenu } from '../styled/StyledComponents';

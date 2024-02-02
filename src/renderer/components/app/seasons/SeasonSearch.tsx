@@ -1,12 +1,16 @@
 import SearchIcon from '@mui/icons-material/Search';
+import { KeyboardArrowDown } from '@mui/icons-material';
 import {
-  Button,
   FormControl,
+  FormLabel,
+  Input,
+  Select,
+  Option,
+  Box,
+  Button,
   IconButton,
-  InputLabel,
-  NativeSelect,
-} from '@mui/material';
-import Box from '@mui/material/Box';
+} from '@mui/joy';
+import { InputLabel, NativeSelect, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useSeasonInput } from 'renderer/context/SeasonInputContext';
 
@@ -32,6 +36,7 @@ export default function SeasonSearch({ props }: any) {
       seasonInput.seasonInput[1],
     ]);
     */
+    console.log('change');
     setMySeason(event.target.value);
   };
 
@@ -42,7 +47,12 @@ export default function SeasonSearch({ props }: any) {
       event.target.value,
     ]);
     */
-    setMyYear(event.target.value);
+    console.log(`change year${event.target.value}`);
+    if (event.target.value > currentYear + 1) {
+      setMyYear(currentYear + 1);
+    } else {
+      setMyYear(event.target.value);
+    }
   };
 
   const handleOnClick = () => {
@@ -50,13 +60,13 @@ export default function SeasonSearch({ props }: any) {
       mySeason !== seasonInput.seasonInput[0] ||
       myYear !== seasonInput.seasonInput[1]
     ) {
-      seasonInput.setSeasonInput([mySeason, myYear]);
+      if (myYear < 1960) {
+        setMyYear(currentYear);
+        seasonInput.setSeasonInput([mySeason, currentYear]);
+      } else {
+        seasonInput.setSeasonInput([mySeason, myYear]);
+      }
     }
-  };
-
-  const handleKeyboard = (e: any) => {
-    console.log(e.key);
-    // e.preventDefault();
   };
 
   return (
@@ -68,23 +78,30 @@ export default function SeasonSearch({ props }: any) {
       flexWrap="wrap"
       gap="10px"
       my="10px"
-      ml="10px"
+      mx="5px"
     >
-      <FormControl sx={{ flexBasis: '42%' }}>
-        <InputLabel
-          variant="standard"
-          htmlFor="uncontrolled-nativeSeasonSelect"
-        >
-          Season
-        </InputLabel>
+      <FormControl>
+        <FormLabel>Season</FormLabel>
         <NativeSelect
           value={mySeason}
           inputProps={{
             name: 'Season',
             id: 'uncontrolled-nativeSeasonSelect',
           }}
+          sx={{
+            border: '1px solid #03a9f4',
+            borderRadius: '5px',
+            mt: '1px',
+            pl: '10px',
+            pr: '10px',
+            color: ' #81d4fa',
+            '&:hover': {
+              backgroundColor: '#1F242F',
+            },
+            backgroundColor: '#0b0d0e',
+          }}
+          disableUnderline
           onChange={handleChange}
-          onKeyDown={handleKeyboard}
         >
           <option value="WINTER" key="WINTER">
             Winter
@@ -100,41 +117,50 @@ export default function SeasonSearch({ props }: any) {
           </option>
         </NativeSelect>
       </FormControl>
-      <FormControl sx={{ flexBasis: '30%' }}>
-        <InputLabel variant="standard" htmlFor="uncontrolled-nativeYearSelect">
-          Year
-        </InputLabel>
-        <NativeSelect
+      <FormControl>
+        <FormLabel>Year</FormLabel>
+        <Input
+          variant="outlined"
+          color="primary"
+          size="md"
+          type="number"
           value={myYear}
-          inputProps={{
-            name: 'Year',
-            id: 'uncontrolled-nativeYearSelect',
-          }}
           onChange={handleChange2}
-          onKeyDown={handleKeyboard}
-        >
-          {years.map((year: any) => {
-            return (
-              <option value={year} key={year}>
-                {year}
-              </option>
-            );
-          })}
-        </NativeSelect>
+          onKeyDown={(evt) =>
+            ['e', 'E', '+', '-', '.'].includes(evt.key) && evt.preventDefault()
+          }
+          sx={{ width: '90px' }}
+          slotProps={{
+            input: {
+              pattern: '[0-9]',
+              min: 1960,
+              max: currentYear + 1,
+              step: 1,
+            },
+          }}
+        />
       </FormControl>
-      <IconButton
-        sx={{
-          flexBasis: '15%',
-          alignSelf: 'flex-end',
-          borderRadius: 1,
-          backgroundColor: '#1873CC',
-          ':hover': { backgroundColor: 'dodgerblue' },
-        }}
+      <Button
         onClick={handleOnClick}
-        size="small"
+        size="sm"
+        color="primary"
+        fullWidth
+        sx={{
+          px: '2px',
+          // height: '28px',
+          // width: '28px',
+          mx: '12px',
+          alignSelf: 'flex-end',
+          mb: '2px',
+          '&:hover': {
+            backgroundColor: '#213963', // #1F242F
+          },
+          backgroundColor: '#142543',
+        }}
+        variant="soft"
       >
-        <SearchIcon fontSize="medium" />
-      </IconButton>
+        <Typography fontSize="16px">Search</Typography>
+      </Button>
     </Box>
   );
 }

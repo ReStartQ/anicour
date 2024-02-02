@@ -1,4 +1,5 @@
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import { KeyboardArrowDown } from '@mui/icons-material';
 import {
   Box,
   Button,
@@ -105,6 +106,7 @@ export default function AddToList() {
             },
           },
         }}
+        indicator={<KeyboardArrowDown />}
       >
         <Option value="CURRENT">
           {myAdvancedMedia.advancedMedia.type === 'ANIME'
