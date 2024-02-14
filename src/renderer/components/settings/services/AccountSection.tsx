@@ -1,7 +1,9 @@
-import { Box, Button, Input } from '@mui/material';
+import { Box, Button, IconButton, Input, Typography } from '@mui/material';
 import TokenIcon from '@mui/icons-material/Token';
 import SaveIcon from '@mui/icons-material/Save';
 import { useState } from 'react';
+import InfoIcon from '@mui/icons-material/Info';
+import HtmlTooltip from 'renderer/components/app/etc/CustomTooltip1';
 
 export default function AccountSection() {
   const [token, setToken] = useState('');
@@ -41,7 +43,7 @@ export default function AccountSection() {
   return (
     <Box display="flex" flexDirection="column" gap="15px">
       <Box> Account Information </Box>
-      <Box>
+      <Box display="flex" flexDirection="row">
         <Input
           placeholder="Username"
           inputProps={ariaLabel}
@@ -49,8 +51,27 @@ export default function AccountSection() {
           spellCheck={false}
           sx={{ width: '100%' }}
         />
+        <HtmlTooltip
+          title={
+            <>
+              <Box
+                component="img"
+                sx={{
+                  height: 300,
+                  width: 600,
+                }}
+                src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListProfilePage.png?raw=true"
+              />
+            </>
+          }
+          placement="left-end"
+        >
+          <IconButton sx={{ ml: 2 }}>
+            <InfoIcon />
+          </IconButton>
+        </HtmlTooltip>
       </Box>
-      <Box>
+      <Box display="flex" flexDirection="row">
         <Input
           placeholder="Token"
           inputProps={ariaLabel}
@@ -58,6 +79,9 @@ export default function AccountSection() {
           spellCheck={false}
           sx={{ width: '100%' }}
         />
+        <IconButton sx={{ ml: 2 }}>
+          <InfoIcon />
+        </IconButton>
       </Box>
       <Box display="flex" flexDirection="row" gap="15px">
         <Button
