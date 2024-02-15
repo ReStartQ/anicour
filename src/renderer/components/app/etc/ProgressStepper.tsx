@@ -56,6 +56,48 @@ export default function ProgressStepper({
     return valueC;
   };
 
+  const getEpisodeOrChapterNumberBuffer = (
+    value: any,
+    valueC: any,
+    type: any,
+    progress: any,
+    nextAiringEpisode: any,
+  ) => {
+    if (type === 'ANIME') {
+      if (value === null) {
+        const num = Math.ceil(progress / 13);
+        if (nextAiringEpisode === null && value === null) {
+          return 0;
+        }
+        if (progress >= 1000) {
+          return 9999;
+        }
+        if (progress >= 100) {
+          return 999;
+        }
+        if (progress === 0) {
+          return 13;
+        }
+        return num * 13 + 1;
+      }
+      return value;
+    }
+    if (valueC === null) {
+      const num = Math.ceil(progress / 26);
+      if (progress >= 1000) {
+        return 9999;
+      }
+      if (progress >= 100) {
+        return 999;
+      }
+      if (progress === 0) {
+        return 13;
+      }
+      return num * 26 + 1;
+    }
+    return valueC;
+  };
+
   const normalise = (value: number, valueC: number, type: any) => {
     if (type === 'ANIME') {
       return (
@@ -189,11 +231,12 @@ export default function ProgressStepper({
           buffer={normalise(
             props.nextAiringEpisode !== null
               ? props.nextAiringEpisode.episode - 1
-              : getEpisodeOrChapterNumber(
+              : getEpisodeOrChapterNumberBuffer(
                   props.episodes,
                   props.chapters,
                   props.type,
                   advancedInput.progress,
+                  props.nextAiringEpisode,
                 ), // this should be episodes or if episodes is null, then default number
             props.chapters,
             props.type,
