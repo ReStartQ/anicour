@@ -1,10 +1,15 @@
 import { Tooltip, Typography } from '@mui/joy';
 import InfoIcon from '@mui/icons-material/Info';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, IconButton } from '@mui/material';
+import MediaProgress from './MediaProgress';
 
 const NextAiringEpisodeIndicator = ({ props }: any) => {
+  const normalise = (value: number) =>
+    ((value - 0) * 100) /
+    (props.episodes !== null ? props.episodes - 0 : 26 - 0);
+
   return (
     <Box display="flex" flexDirection="row">
       <Typography fontSize={12} fontWeight="bold">

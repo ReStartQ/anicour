@@ -312,10 +312,11 @@ export default function MediaCard({ props }: any) {
           gridRow: '1/3',
           gridColumn: '2/3',
           paddingTop: '4px',
+          paddingX: '12px',
           '&:last-child': { pb: '4px' },
           display: 'grid',
           gridTemplateRows: 'repeat(auto-fill, 1fr)',
-          gridTemplateColumns: '94px 94px',
+          gridTemplateColumns: '98px 98px',
         }}
       >
         <Box sx={{ gridColumn: '1/3', display: 'flex', flexDirection: 'row' }}>

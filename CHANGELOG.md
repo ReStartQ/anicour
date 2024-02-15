@@ -1,5 +1,11 @@
 # Changes
 
+## 1.4.8
+
+- Replaced the indicator tooltip with a progress bar for the grid media cards. These progress bars indicate progress towards completing the media and shows the available episodes available. Grid card's information section margin spacing has changed.
+- Buttons for adding or removing progress have been changed to a blue highlighted color.
+- Tooltips for inputting the account information have been added. These tooltips show example images of what to input in the corresponding fields.
+
 ## 1.4.7
 
 - Redesigned the season search menu. The year select is now an input to allow for easier entry. Moved the search bar to the bottom. Colors were changed in the season search menu for the inputs and search.

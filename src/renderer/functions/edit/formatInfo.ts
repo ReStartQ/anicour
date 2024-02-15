@@ -204,6 +204,7 @@ export function formatProgress(
 ) {
   if (type === 'ANIME') {
     if (progress < 1000) {
+      // 3 + 2
       return `${progress} / ${episodes !== null ? episodes : '?'}`;
     }
     if (progress >= 1000 && episodes === null) {

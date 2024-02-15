@@ -1,87 +1,24 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { Tooltip, Typography } from '@mui/material';
+import { IconButton, Tooltip, Typography } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import { useEffect, useState } from 'react';
 import { formatProgress } from 'renderer/functions/edit/formatInfo';
-import { Button, IconButton } from '@mui/joy';
 import NextAiringEpisodeIndicator from './NextAiringEpisodeIndicator';
 import MediaProgress from './MediaProgress';
 
-export default function ProgressStepper({
+export default function ProgressStepperManga({
   props,
   advancedInput,
   inputDispatch,
 }: any) {
   const theme = useTheme();
-
-  const getEpisodeOrChapterNumber = (
-    value: any,
-    valueC: any,
-    type: any,
-    progress: any,
-  ) => {
-    if (type === 'ANIME') {
-      if (value === null) {
-        const num = Math.ceil(progress / 13);
-        if (progress >= 1000) {
-          return 9999;
-        }
-        if (progress >= 100) {
-          return 999;
-        }
-        if (progress === 0) {
-          return 13;
-        }
-        return num * 13 + 1;
-      }
-      return value;
-    }
-    if (valueC === null) {
-      const num = Math.ceil(progress / 26);
-      if (progress >= 1000) {
-        return 9999;
-      }
-      if (progress >= 100) {
-        return 999;
-      }
-      if (progress === 0) {
-        return 13;
-      }
-      return num * 26 + 1;
-    }
-    return valueC;
-  };
-
-  const normalise = (value: number, valueC: number, type: any) => {
-    if (type === 'ANIME') {
-      return (
-        ((value - 0) * 100) /
-        (props.episodes !== null
-          ? props.episodes - 0
-          : getEpisodeOrChapterNumber(
-              props.episodes,
-              props.chapters,
-              props.type,
-              advancedInput.progress,
-            ) - 0)
-      );
-    }
-    return (
-      ((valueC - 0) * 100) /
-      (props.chapters !== null
-        ? props.chapters - 0
-        : getEpisodeOrChapterNumber(
-            props.episodes,
-            props.chapters,
-            props.type,
-            advancedInput.progress,
-          ) - 0)
-    );
-  };
+  const normalise = (value: number) =>
+    ((value - 0) * 100) /
+    (props.episodes !== null ? props.episodes - 0 : 26 - 0);
 
   const handleNext = () => {
     inputDispatch({
@@ -104,8 +41,6 @@ export default function ProgressStepper({
     });
   }, [inputDispatch, props.mediaListEntry.progress]);
 
-  /* <NextAiringEpisodeIndicator props={props} /> */
-
   return (
     <Box
       display="flex"
@@ -113,15 +48,13 @@ export default function ProgressStepper({
       sx={{ gridColumn: '1/2' /* userSelect: 'none' */ }}
     >
       {props.nextAiringEpisode !== null ? (
-        <Typography fontSize={12} fontWeight="bold">
-          {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
-          {/* <NextAiringEpisodeIndicator props={props} /> */}
-        </Typography>
+        <NextAiringEpisodeIndicator props={props} />
       ) : (
         <Typography fontSize={12} fontWeight="bold">
           {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
         </Typography>
       )}
+
       <Box
         display="flex"
         flexDirection="row"
@@ -129,18 +62,10 @@ export default function ProgressStepper({
         sx={{ overflowX: 'auto' }}
       >
         <IconButton
-          size="sm"
-          variant="outlined"
-          color="primary"
+          size="small"
           onClick={handleBack}
           disabled={advancedInput.progress === 0}
-          sx={{
-            m: 0,
-            p: 0,
-            minWidth: 0,
-            '--IconButton-size': '12px',
-            mr: '4px',
-          }}
+          sx={{ m: 0, p: 0, minWidth: 0 }}
         >
           <RemoveIcon fontSize="inherit" />
         </IconButton>
@@ -153,9 +78,7 @@ export default function ProgressStepper({
           )}
         </Typography>
         <IconButton
-          size="sm"
-          variant="outlined"
-          color="primary"
+          size="small"
           onClick={handleNext}
           disabled={
             (props.type === 'ANIME'
@@ -163,42 +86,10 @@ export default function ProgressStepper({
               : advancedInput.progress === props.chapters) ||
             advancedInput.progress === 9999
           }
-          sx={{
-            m: 0,
-            p: 0,
-            minWidth: 0,
-            '--IconButton-size': '12px',
-            ml: '4px',
-          }}
+          sx={{ m: 0, p: 0, minWidth: 0 }}
         >
           <AddIcon fontSize="inherit" />
         </IconButton>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection="row"
-        alignItems="center"
-        sx={{ overflowX: 'auto', my: '3px' }}
-      >
-        <MediaProgress
-          progress={normalise(
-            advancedInput.progress,
-            advancedInput.progress,
-            props.type,
-          )}
-          buffer={normalise(
-            props.nextAiringEpisode !== null
-              ? props.nextAiringEpisode.episode - 1
-              : getEpisodeOrChapterNumber(
-                  props.episodes,
-                  props.chapters,
-                  props.type,
-                  advancedInput.progress,
-                ), // this should be episodes or if episodes is null, then default number
-            props.chapters,
-            props.type,
-          )}
-        />
       </Box>
     </Box>
   );

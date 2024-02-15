@@ -4,6 +4,8 @@ import SaveIcon from '@mui/icons-material/Save';
 import { useState } from 'react';
 import InfoIcon from '@mui/icons-material/Info';
 import HtmlTooltip from 'renderer/components/app/etc/CustomTooltip1';
+import HelpIcon from '@mui/icons-material/Help';
+import CustomToolTipFixedWidth from 'renderer/components/app/etc/CustomTooltipFixedWidth';
 
 export default function AccountSection() {
   const [token, setToken] = useState('');
@@ -42,7 +44,9 @@ export default function AccountSection() {
 
   return (
     <Box display="flex" flexDirection="column" gap="15px">
-      <Box> Account Information </Box>
+      <Box display="flex" flexDirection="row">
+        Account Information{' '}
+      </Box>
       <Box display="flex" flexDirection="row">
         <Input
           placeholder="Username"
@@ -51,25 +55,22 @@ export default function AccountSection() {
           spellCheck={false}
           sx={{ width: '100%' }}
         />
-        <HtmlTooltip
+        <CustomToolTipFixedWidth
           title={
             <>
               <Box
                 component="img"
-                sx={{
-                  height: 300,
-                  width: 600,
-                }}
-                src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListProfilePage.png?raw=true"
+                src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListProfilePageTooltip.png?raw=true"
+                sx={{ width: '550px' }}
               />
             </>
           }
-          placement="left-end"
+          placement="left-start"
         >
           <IconButton sx={{ ml: 2 }}>
-            <InfoIcon />
+            <HelpIcon fontSize="small" />
           </IconButton>
-        </HtmlTooltip>
+        </CustomToolTipFixedWidth>
       </Box>
       <Box display="flex" flexDirection="row">
         <Input
@@ -79,9 +80,21 @@ export default function AccountSection() {
           spellCheck={false}
           sx={{ width: '100%' }}
         />
-        <IconButton sx={{ ml: 2 }}>
-          <InfoIcon />
-        </IconButton>
+        <CustomToolTipFixedWidth
+          title={
+            <>
+              <Box
+                component="img"
+                src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListTokenTooltip.png?raw=true"
+              />
+            </>
+          }
+          placement="left-start"
+        >
+          <IconButton sx={{ ml: 2 }}>
+            <HelpIcon fontSize="small" />
+          </IconButton>
+        </CustomToolTipFixedWidth>
       </Box>
       <Box display="flex" flexDirection="row" gap="15px">
         <Button
