@@ -1,6 +1,5 @@
 import {
   Alert,
-  Button,
   CardActionArea,
   IconButton,
   Snackbar,
@@ -44,7 +43,7 @@ import {
 } from 'renderer/store';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { useCategory } from 'renderer/context/CategoryContext';
-import { Tooltip } from '@mui/joy';
+import { Button, Tooltip } from '@mui/joy';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -312,11 +311,10 @@ export default function MediaCard({ props }: any) {
           gridRow: '1/3',
           gridColumn: '2/3',
           paddingTop: '4px',
-          paddingX: '12px',
           '&:last-child': { pb: '4px' },
           display: 'grid',
-          gridTemplateRows: 'repeat(auto-fill, 1fr)',
-          gridTemplateColumns: '98px 98px',
+          gridTemplateRows: '26px 48px 42px 36px 1fr',
+          gridTemplateColumns: '96px 96px',
         }}
       >
         <Box sx={{ gridColumn: '1/3', display: 'flex', flexDirection: 'row' }}>
@@ -425,14 +423,30 @@ export default function MediaCard({ props }: any) {
             </Typography>
           </Box>
         )}
-        <Button
-          size="small"
-          sx={{ gridColumn: '1/3', textTransform: 'none', my: '5px' }}
-          variant="outlined"
-          onClick={handleUpdate}
+        <Box
+          sx={{
+            gridColumn: '1/3',
+            mt: '3px',
+            mb: '5px',
+          }}
         >
-          Update
-        </Button>
+          <Button
+            size="sm"
+            fullWidth
+            sx={{
+              textTransform: 'none',
+              '&:hover': {
+                backgroundColor: '#0a2744',
+              },
+              py: 0,
+              height: '15px',
+            }}
+            variant="outlined"
+            onClick={handleUpdate}
+          >
+            Update
+          </Button>
+        </Box>
       </CardContent>
       <ContextMenu
         props={props}

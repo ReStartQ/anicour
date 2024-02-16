@@ -177,11 +177,14 @@ export default function ProgressStepper({
           onClick={handleBack}
           disabled={advancedInput.progress === 0}
           sx={{
+            '&:hover': {
+              backgroundColor: '#12467b',
+            },
             m: 0,
             p: 0,
             minWidth: 0,
             '--IconButton-size': '12px',
-            mr: '4px',
+            mr: advancedInput.progress >= 100 ? '2px' : '4px',
           }}
         >
           <RemoveIcon fontSize="inherit" />
@@ -206,11 +209,14 @@ export default function ProgressStepper({
             advancedInput.progress === 9999
           }
           sx={{
+            '&:hover': {
+              backgroundColor: '#12467b',
+            },
             m: 0,
             p: 0,
             minWidth: 0,
             '--IconButton-size': '12px',
-            ml: '4px',
+            ml: advancedInput.progress >= 100 ? '2px' : '4px',
           }}
         >
           <AddIcon fontSize="inherit" />
@@ -241,6 +247,12 @@ export default function ProgressStepper({
             props.chapters,
             props.type,
           )}
+          progressRaw={advancedInput.progress}
+          episodes={props.episodes}
+          chapters={props.chapters}
+          volumes={props.volumes}
+          mediaType={props.type}
+          type={0}
         />
       </Box>
     </Box>

@@ -162,3 +162,6 @@ myStore.set(seasonChangeAtom, window.electron.store.get('seasonChange'));
 
 export const appResetDialogOpenAtom = atom(false);
 myStore.set(appResetDialogOpenAtom, false);
+
+export const notificationOpenSettingsAtom = atom(false);
+export const notificationOpenAltSettingsAtom = atom(false);

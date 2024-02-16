@@ -123,114 +123,130 @@ export function validateMainMediaListForListMediaEntry(
   data: any,
 ) {
   console.log('validate main media list');
-  for (let i = 0; i < listData.anime.animeAll.length; i++) {
-    if (listData.anime.animeAll[i].id === data.advancedMedia.id) {
-      // if found check where it is
-      for (let j = 0; j < listData.anime.animeWatching.length; j++) {
-        if (listData.anime.animeWatching[j].id === data.advancedMedia.id) {
-          return listData.anime.animeWatching[j].mediaListEntry;
+
+  if (typeof listData !== 'undefined') {
+    for (let i = 0; i < listData.anime.animeAll.length; i++) {
+      if (listData.anime.animeAll[i].id === data.advancedMedia.id) {
+        // if found check where it is
+        for (let j = 0; j < listData.anime.animeWatching.length; j++) {
+          if (listData.anime.animeWatching[j].id === data.advancedMedia.id) {
+            return listData.anime.animeWatching[j].mediaListEntry;
+          }
         }
-      }
-      for (let k = 0; k < listData.anime.animeCompleted.length; k++) {
-        if (listData.anime.animeCompleted[k].id === data.advancedMedia.id) {
-          return listData.anime.animeCompleted[k].mediaListEntry;
+        for (let k = 0; k < listData.anime.animeCompleted.length; k++) {
+          if (listData.anime.animeCompleted[k].id === data.advancedMedia.id) {
+            return listData.anime.animeCompleted[k].mediaListEntry;
+          }
         }
-      }
-      for (let l = 0; l < listData.anime.animeOnHold.length; l++) {
-        if (listData.anime.animeOnHold[l].id === data.advancedMedia.id) {
-          return listData.anime.animeOnHold[l].mediaListEntry;
+        for (let l = 0; l < listData.anime.animeOnHold.length; l++) {
+          if (listData.anime.animeOnHold[l].id === data.advancedMedia.id) {
+            return listData.anime.animeOnHold[l].mediaListEntry;
+          }
         }
-      }
-      for (let m = 0; m < listData.anime.animeDropped.length; m++) {
-        if (listData.anime.animeDropped[m].id === data.advancedMedia.id) {
-          return listData.anime.animeDropped[m].mediaListEntry;
+        for (let m = 0; m < listData.anime.animeDropped.length; m++) {
+          if (listData.anime.animeDropped[m].id === data.advancedMedia.id) {
+            return listData.anime.animeDropped[m].mediaListEntry;
+          }
         }
-      }
-      for (let n = 0; n < listData.anime.animePlanToWatch.length; n++) {
-        if (listData.anime.animePlanToWatch[n].id === data.advancedMedia.id) {
-          return listData.anime.animePlanToWatch[n].mediaListEntry;
-        }
-      }
-    }
-  }
-  for (let i = 0; i < listData.manga.mangaAll.length; i++) {
-    if (listData.manga.mangaAll[i].id === data.advancedMedia.id) {
-      // if found check where it is
-      for (let j = 0; j < listData.manga.mangaReading.length; j++) {
-        if (listData.manga.mangaReading[j].id === data.advancedMedia.id) {
-          return listData.manga.mangaReading[j].mediaListEntry;
-        }
-      }
-      for (let k = 0; k < listData.manga.mangaCompleted.length; k++) {
-        if (listData.manga.mangaCompleted[k].id === data.advancedMedia.id) {
-          return listData.manga.mangaCompleted[k].mediaListEntry;
-        }
-      }
-      for (let l = 0; l < listData.manga.mangaOnHold.length; l++) {
-        if (listData.manga.mangaOnHold[l].id === data.advancedMedia.id) {
-          return listData.manga.mangaOnHold[l].mediaListEntry;
-        }
-      }
-      for (let m = 0; m < listData.manga.mangaDropped.length; m++) {
-        if (listData.manga.mangaDropped[m].id === data.advancedMedia.id) {
-          return listData.manga.mangaDropped[m].mediaListEntry;
-        }
-      }
-      for (let n = 0; n < listData.manga.mangaPlanToRead.length; n++) {
-        if (listData.manga.mangaPlanToRead[n].id === data.advancedMedia.id) {
-          return listData.manga.mangaPlanToRead[n].mediaListEntry;
+        for (let n = 0; n < listData.anime.animePlanToWatch.length; n++) {
+          if (listData.anime.animePlanToWatch[n].id === data.advancedMedia.id) {
+            return listData.anime.animePlanToWatch[n].mediaListEntry;
+          }
         }
       }
     }
-  }
-  for (let i = 0; i < listData.lightNovels.lightNovelsAll.length; i++) {
-    if (listData.lightNovels.lightNovelsAll[i].id === data.advancedMedia.id) {
-      // if found check where it is
-      for (let j = 0; j < listData.lightNovels.lightNovelsReading.length; j++) {
-        if (
-          listData.lightNovels.lightNovelsReading[j].id ===
-          data.advancedMedia.id
-        ) {
-          return listData.lightNovels.lightNovelsReading[j].mediaListEntry;
+    for (let i = 0; i < listData.manga.mangaAll.length; i++) {
+      if (listData.manga.mangaAll[i].id === data.advancedMedia.id) {
+        // if found check where it is
+        for (let j = 0; j < listData.manga.mangaReading.length; j++) {
+          if (listData.manga.mangaReading[j].id === data.advancedMedia.id) {
+            return listData.manga.mangaReading[j].mediaListEntry;
+          }
+        }
+        for (let k = 0; k < listData.manga.mangaCompleted.length; k++) {
+          if (listData.manga.mangaCompleted[k].id === data.advancedMedia.id) {
+            return listData.manga.mangaCompleted[k].mediaListEntry;
+          }
+        }
+        for (let l = 0; l < listData.manga.mangaOnHold.length; l++) {
+          if (listData.manga.mangaOnHold[l].id === data.advancedMedia.id) {
+            return listData.manga.mangaOnHold[l].mediaListEntry;
+          }
+        }
+        for (let m = 0; m < listData.manga.mangaDropped.length; m++) {
+          if (listData.manga.mangaDropped[m].id === data.advancedMedia.id) {
+            return listData.manga.mangaDropped[m].mediaListEntry;
+          }
+        }
+        for (let n = 0; n < listData.manga.mangaPlanToRead.length; n++) {
+          if (listData.manga.mangaPlanToRead[n].id === data.advancedMedia.id) {
+            return listData.manga.mangaPlanToRead[n].mediaListEntry;
+          }
         }
       }
-      for (
-        let k = 0;
-        k < listData.lightNovels.lightNovelsCompleted.length;
-        k++
-      ) {
-        if (
-          listData.lightNovels.lightNovelsCompleted[k].id ===
-          data.advancedMedia.id
+    }
+    for (let i = 0; i < listData.lightNovels.lightNovelsAll.length; i++) {
+      if (listData.lightNovels.lightNovelsAll[i].id === data.advancedMedia.id) {
+        // if found check where it is
+        for (
+          let j = 0;
+          j < listData.lightNovels.lightNovelsReading.length;
+          j++
         ) {
-          return listData.lightNovels.lightNovelsCompleted[k].mediaListEntry;
+          if (
+            listData.lightNovels.lightNovelsReading[j].id ===
+            data.advancedMedia.id
+          ) {
+            return listData.lightNovels.lightNovelsReading[j].mediaListEntry;
+          }
         }
-      }
-      for (let l = 0; l < listData.lightNovels.lightNovelsOnHold.length; l++) {
-        if (
-          listData.lightNovels.lightNovelsOnHold[l].id === data.advancedMedia.id
+        for (
+          let k = 0;
+          k < listData.lightNovels.lightNovelsCompleted.length;
+          k++
         ) {
-          return listData.lightNovels.lightNovelsOnHold[l].mediaListEntry;
+          if (
+            listData.lightNovels.lightNovelsCompleted[k].id ===
+            data.advancedMedia.id
+          ) {
+            return listData.lightNovels.lightNovelsCompleted[k].mediaListEntry;
+          }
         }
-      }
-      for (let m = 0; m < listData.lightNovels.lightNovelsDropped.length; m++) {
-        if (
-          listData.lightNovels.lightNovelsDropped[m].id ===
-          data.advancedMedia.id
+        for (
+          let l = 0;
+          l < listData.lightNovels.lightNovelsOnHold.length;
+          l++
         ) {
-          return listData.lightNovels.lightNovelsDropped[m].mediaListEntry;
+          if (
+            listData.lightNovels.lightNovelsOnHold[l].id ===
+            data.advancedMedia.id
+          ) {
+            return listData.lightNovels.lightNovelsOnHold[l].mediaListEntry;
+          }
         }
-      }
-      for (
-        let n = 0;
-        n < listData.lightNovels.lightNovelsPlanToRead.length;
-        n++
-      ) {
-        if (
-          listData.lightNovels.lightNovelsPlanToRead[n].id ===
-          data.advancedMedia.id
+        for (
+          let m = 0;
+          m < listData.lightNovels.lightNovelsDropped.length;
+          m++
         ) {
-          return listData.lightNovels.lightNovelsPlanToRead[n].mediaListEntry;
+          if (
+            listData.lightNovels.lightNovelsDropped[m].id ===
+            data.advancedMedia.id
+          ) {
+            return listData.lightNovels.lightNovelsDropped[m].mediaListEntry;
+          }
+        }
+        for (
+          let n = 0;
+          n < listData.lightNovels.lightNovelsPlanToRead.length;
+          n++
+        ) {
+          if (
+            listData.lightNovels.lightNovelsPlanToRead[n].id ===
+            data.advancedMedia.id
+          ) {
+            return listData.lightNovels.lightNovelsPlanToRead[n].mediaListEntry;
+          }
         }
       }
     }

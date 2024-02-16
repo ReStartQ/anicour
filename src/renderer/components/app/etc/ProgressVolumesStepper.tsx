@@ -71,11 +71,14 @@ export default function ProgressVolumesStepper({
             onClick={handleBack}
             disabled={advancedInput.progressVolumes === 0}
             sx={{
+              '&:hover': {
+                backgroundColor: '#12467b',
+              },
               m: 0,
               p: 0,
               minWidth: 0,
               '--IconButton-size': '12px',
-              mr: '4px',
+              mr: advancedInput.progressVolumes >= 100 ? '2px' : '4px',
             }}
           >
             <RemoveIcon fontSize="inherit" />
@@ -96,11 +99,14 @@ export default function ProgressVolumesStepper({
               advancedInput.progressVolumes === 9999
             }
             sx={{
+              '&:hover': {
+                backgroundColor: '#12467b',
+              },
               m: 0,
               p: 0,
               minWidth: 0,
               '--IconButton-size': '12px',
-              ml: '4px',
+              ml: advancedInput.progress >= 100 ? '2px' : '4px',
             }}
           >
             <AddIcon fontSize="inherit" />
@@ -115,6 +121,12 @@ export default function ProgressVolumesStepper({
           <MediaProgress
             progress={normalise(advancedInput.progressVolumes)}
             buffer={normalise(props.volumes !== null ? props.volumes : 0)}
+            progressRaw={advancedInput.progressVolumes}
+            episodes={props.episodes}
+            chapters={props.chapters}
+            volumes={props.volumes}
+            mediaType={props.type}
+            type={1}
           />
         </Box>
       </Box>

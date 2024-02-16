@@ -6,16 +6,45 @@ import InfoIcon from '@mui/icons-material/Info';
 import HtmlTooltip from 'renderer/components/app/etc/CustomTooltip1';
 import HelpIcon from '@mui/icons-material/Help';
 import CustomToolTipFixedWidth from 'renderer/components/app/etc/CustomTooltipFixedWidth';
+import { useQueryClient } from '@tanstack/react-query';
+import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
+import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
+import { useTestSettings } from 'renderer/functions/TestSettingsFunction';
+import { useAtom } from 'jotai';
+import {
+  notificationOpenAltSettingsAtom,
+  notificationOpenSettingsAtom,
+} from 'renderer/store';
 
 export default function AccountSection() {
   const [token, setToken] = useState('');
   const [username, setUsername] = useState('');
+  const myUsername: any = useAniListUsername();
+  const myToken: any = useAniListToken();
+  const [isSave, setIsSave] = useState(false);
+
+  const queryClient = useQueryClient();
+  const [notifcationAltOpen, setNotificationAltOpen] = useAtom(
+    notificationOpenAltSettingsAtom,
+  );
+  const [notifcationOpen, setNotificationOpen] = useAtom(
+    notificationOpenSettingsAtom,
+  );
+
+  const { data, refetch }: any = useTestSettings(
+    myUsername.AniListUsername,
+    myToken.AniListToken,
+    notifcationAltOpen,
+    setNotificationAltOpen,
+    notifcationOpen,
+    setNotificationOpen,
+  );
 
   const handleReset = () => {
     window.electron.ipcRenderer.sendMessage('resetLogin', ['ping']);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     window.electron.store.set('aniListUsername', username);
     window.electron.store.set('aniListToken', token);
     // send to main
@@ -24,6 +53,12 @@ export default function AccountSection() {
       username,
       token,
     ]);
+    await setIsSave(true);
+    await myUsername.setAniListUsername(username);
+    await myToken.setAniListToken(token);
+
+    await refetch();
+    await setIsSave(false);
   };
 
   const inputChange1 = (e: any) => {
@@ -112,6 +147,7 @@ export default function AccountSection() {
         <Button
           variant="contained"
           color="success"
+          disabled={isSave}
           onClick={handleSave}
           sx={{ width: '50%' }}
         >

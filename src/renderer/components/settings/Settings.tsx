@@ -20,10 +20,19 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import { useAtom } from 'jotai';
-import { appVersionAtom } from 'renderer/store';
-import { useTheme } from '../../context/ThemeContext';
-import SettingsMain from './SettingsMain';
+import {
+  appVersionAtom,
+  notificationOpenAltSettingsAtom,
+  notificationOpenSettingsAtom,
+} from 'renderer/store';
+import { Alert, Snackbar } from '@mui/material';
+import { useQueryClient } from '@tanstack/react-query';
+import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
+import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
+import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useSidebarButton } from '../../context/SidebarContext';
+import SettingsMain from './SettingsMain';
+import { useTheme } from '../../context/ThemeContext';
 
 const drawerWidth = 200;
 
@@ -75,8 +84,88 @@ export default function Settings() {
   const sidebarValue: any = useSidebarButton();
   const [appVersion, setAppVersion] = useAtom(appVersionAtom);
 
+  const queryClient = useQueryClient();
+  const myUsername: any = useAniListUsername();
+  const myToken: any = useAniListToken();
+
+  const { data, refetch } = useMainMediaList(
+    myUsername.AniListUsername,
+    myToken.AniListToken,
+  );
+
+  const [notifcationOpen, setNotificationOpen] = useAtom(
+    notificationOpenSettingsAtom,
+  );
+  const [notifcationAltOpen, setNotificationAltOpen] = useAtom(
+    notificationOpenAltSettingsAtom,
+  );
+
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string,
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setNotificationOpen(false);
+  };
+
+  const handleCloseAlt = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string,
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setNotificationAltOpen(false);
+  };
+
   return (
     <ThemeProvider theme={myTheme.theme ? darkTheme : lightTheme}>
+      <Box sx={{ width: 0, height: 0 }}>
+        <Snackbar
+          open={notifcationAltOpen}
+          autoHideDuration={2000}
+          disableWindowBlurListener
+          onClose={handleCloseAlt}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          key={`bottom-horizontal2-${myToken.AniListToken}`}
+        >
+          <Alert
+            onClose={handleCloseAlt}
+            severity="error"
+            sx={{ width: '100%' }}
+          >
+            Failed to authenticate.
+          </Alert>
+        </Snackbar>
+      </Box>
+      <Box sx={{ width: 0, height: 0 }}>
+        <Snackbar
+          open={notifcationOpen}
+          autoHideDuration={2000}
+          disableWindowBlurListener
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          key={`bottom-horizontal2-${myToken.AniListToken}`}
+        >
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: '100%' }}
+          >
+            Authentication successful.
+          </Alert>
+        </Snackbar>
+      </Box>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar

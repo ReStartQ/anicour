@@ -1,5 +1,12 @@
 # Changes
 
+## 1.4.9
+
+- When saving account information, there is now a notification to show whether the authentication information is valid or not. (Success/Failed to authenticate messages)
+- Grid view list media cards have changed visually (score select, update buttons, progress buttons) to a blue outlined theme.
+- Progress bar now scales in width along with episode/chapter/volume text.
+- Fixed bug for when user tries to sync without correct username/token.
+
 ## 1.4.8
 
 - Replaced the indicator tooltip with a progress bar for the grid media cards. These progress bars indicate progress towards completing the media and shows the available episodes available. Grid card's information section margin spacing has changed.

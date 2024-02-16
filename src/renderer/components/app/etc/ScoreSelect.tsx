@@ -3,6 +3,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { IconButton, NativeSelect, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useEffect, useState } from 'react';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function ScoreSelect({
   props,
@@ -32,11 +33,20 @@ export default function ScoreSelect({
         value={advancedInput.score}
         size="small"
         sx={{
-          width: '45px',
+          pt: '4px',
+          width: '55px',
+          height: '22px',
           fontSize: '12px',
           textAlignLast: 'right',
-          borderRadius: '0px',
+          border: '1px solid #03a9f4',
+          borderRadius: '5px',
+          color: ' #81d4fa',
+          '&:hover': {
+            backgroundColor: '#1F242F',
+          },
+          backgroundColor: '#0b0d0e',
         }}
+        disableUnderline
         onChange={onChange}
       >
         {props.mediaListEntry.score % 1 !== 0 ? (
