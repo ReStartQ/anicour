@@ -95,7 +95,7 @@ export default function AddToList() {
     <Box display="flex" flexDirection="row" gap="10px">
       <Select
         value={statusAddSelect}
-        sx={{ width: '150px' }}
+        sx={{ width: '170px' }}
         onChange={onChange}
         color="primary"
         slotProps={{
