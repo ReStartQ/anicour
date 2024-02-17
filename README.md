@@ -17,18 +17,18 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 
 ## Screenshots
 
-<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView3.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView3.png?raw=True" alt="Hello" /></a></p>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourGridView3.png" />
 <br>
-<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSearch.png?raw=True""><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSearch.png?raw=True" alt="Hello" /></a></p>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourSearch.png" />
 <br>
-<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSeasons.png?raw=True""><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSeasons.png?raw=True" alt="Hello" /></a></p>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourSeasons.png" />
 <br>
-<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactAndList.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactAndList.png?raw=True"  /></a></p>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourCompactAndList.png"  />
 <br>
-<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourAdvancedSideBySide.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourAdvancedSideBySide.png?raw=True" alt="Hello" /></a></p>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourAdvancedSideBySide.png" />
 <br>
 <br>
-<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsSideBySide.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsSideBySide.png?raw=True" alt="Hello" /></a></p>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourNewsSideBySide.png" />
 
 ## Download and Installation
 
@@ -39,9 +39,9 @@ You can download the app [here](https://github.com/ReStartQ/AniCour/releases). C
 1. Download the setup file from the latest release and install it on your computer.
 2. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x denotes a number for the version.
    <br/> **Ex: AniCour-Setup-1.4.9.exe**
-3. When you run the exe file, Windows will give a message like below because there is no code signing certificate, click on "More info" <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourNoCodeSigningInitial.png" alt="Hello" /></a></p>
-4. A new option will appear, "Run anyway". Click on it. <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourNoCodeSigning.png" alt="Hello" /></a></p>
-5. The installer menu will open up to allow you to install it on your computer. <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourInstallationMenu2.png" alt="Hello" /></a></p>
+3. When you run the exe file, Windows will give a message like below because there is no code signing certificate, click on "More info" <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourNoCodeSigningInitial.png" /></a></p>
+4. A new option will appear, "Run anyway". Click on it. <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourNoCodeSigning.png" /></a></p>
+5. The installer menu will open up to allow you to install it on your computer. <p align="center"><a href="#"><img src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniCourInstallationMenu2.png" /></a></p>
 6. Connect your AniList account to the app and use the app to track, search, and manage your anime, manga, and light novels.
 
 ## Setup
