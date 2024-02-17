@@ -157,7 +157,10 @@ export default function ProgressStepper({
       {props.nextAiringEpisode !== null ? (
         <Typography fontSize={12} fontWeight="bold">
           {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
-          {/* <NextAiringEpisodeIndicator props={props} /> */}
+          {/*         <NextAiringEpisodeIndicator
+          props={props}
+          progress={advancedInput.progress}
+          /> */}
         </Typography>
       ) : (
         <Typography fontSize={12} fontWeight="bold">

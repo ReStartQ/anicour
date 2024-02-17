@@ -85,7 +85,7 @@ export default function ProgressInput() {
                 ml: 0.5,
                 border:
                   myAdvancedMedia.advancedMedia.nextAiringEpisode.episode - 1 <=
-                  myAdvancedMedia.advancedMedia.mediaListEntry.progress
+                  myAdvancedInput.advancedInput.progress
                     ? '2px solid deepskyblue'
                     : null,
               }}
