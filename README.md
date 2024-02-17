@@ -17,17 +17,18 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 
 ## Screenshots
 
-<img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView3.png?raw=True" alt="Hello" />
+<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView3.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourGridView3.png?raw=True" alt="Hello" /></a></p>
 <br>
-<img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSearch.png?raw=True" alt="Hello" />
+<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSearch.png?raw=True""><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSearch.png?raw=True" alt="Hello" /></a></p>
 <br>
-<img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSeasons.png?raw=True" alt="Hello" />
+<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSeasons.png?raw=True""><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourSeasons.png?raw=True" alt="Hello" /></a></p>
 <br>
-<img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactAndList.png?raw=True"  />
+<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactAndList.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourCompactAndList.png?raw=True"  /></a></p>
 <br>
-<img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourAdvancedSideBySide.png?raw=True" alt="Hello" />
+<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourAdvancedSideBySide.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourAdvancedSideBySide.png?raw=True" alt="Hello" /></a></p>
 <br>
-<img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsSideBySide.png?raw=True" alt="Hello" />
+<br>
+<p align="center"><a href="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsSideBySide.png?raw=True"><img src="https://github.com/ReStartQ/anicour/blob/main/images/readme/AniCourNewsSideBySide.png?raw=True" alt="Hello" /></a></p>
 
 ## Download and Installation
 
