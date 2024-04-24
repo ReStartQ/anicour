@@ -21,6 +21,7 @@ import LoadingMessage from '../etc/LoadingMessage';
 import ErrorCredentials from '../etc/ErrorCredentials';
 import ErrorAPI from '../etc/ErrorAPI';
 import SeasonMediaTable from './tables/SeasonMediaTable';
+import SeasonTanstackTable from './tables/SeasonTanstackTable';
 
 const SeasonTabList = ({ props }: any) => {
   const myTitle: any = useTitle();
@@ -68,7 +69,7 @@ const SeasonTabList = ({ props }: any) => {
         // overflowY: 'auto',
       }}
     >
-      <SeasonMediaTable
+      <SeasonTanstackTable
         props={SeasonTableView(
           mySidebar.sidebar,
           myCategory.category,

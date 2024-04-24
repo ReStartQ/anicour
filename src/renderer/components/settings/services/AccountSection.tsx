@@ -85,6 +85,11 @@ export default function AccountSection() {
       <Box display="flex" flexDirection="row">
         <Input
           placeholder="Username"
+          defaultValue={
+            myUsername.AniListUsername !== ''
+              ? myUsername.AniListUsername
+              : null
+          }
           inputProps={ariaLabel}
           onChange={inputChange1}
           spellCheck={false}

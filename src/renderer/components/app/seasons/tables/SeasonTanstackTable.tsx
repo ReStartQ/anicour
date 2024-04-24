@@ -1,7 +1,7 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import '../../../../styles/tables.scss';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 
 import {
   ColumnDef,
@@ -21,46 +21,98 @@ import getStatusColor from 'renderer/functions/StatusFunction';
 import CircleIcon from '@mui/icons-material/Circle';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { IconButton } from '@mui/joy';
+import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
+import { formatStatus } from 'renderer/functions/edit/formatInfo';
+import { useCategory } from 'renderer/context/CategoryContext';
+import { MediaIcons } from '../../etc/SvgIcons';
+import HtmlTooltip from '../../etc/CustomTooltip1';
+import ContextMenu from '../../etc/ContextMenu';
+import TableProgressStepper from '../../etc/table/TableProgressStepper';
+import TableTitleMain from '../../etc/table/TableTitleMain';
+import TableProgressVolumeStepper from '../../etc/table/TableProgressVolumeStepper';
+import TableSeason from '../../etc/table/TableSeason';
+import TableReleased from '../../etc/table/TableReleased';
+import TableStatus from '../../etc/table/TableStatus';
+import TableScore from '../../etc/table/TableScore';
+import TableType from '../../etc/table/TableType';
+import TanstackTableRow from '../../etc/table/TanstackTableRow';
+import TableTitleOther from '../../etc/table/TableTitleOther';
+import TableChapters from '../../etc/table/TableChapters';
+import TableVolumes from '../../etc/table/TableVolumes';
+import TableEpisodes from '../../etc/table/TableEpisodes';
+import TableAverageScore from '../../etc/table/TableAverageScore';
 
-function createData(title: string, date: string) {
-  return { title, date };
-}
-
-const TestRows = [
-  createData('Oregairu', '1/21/2022 04:02:01'),
-  createData('Hyouka', '1/21/2022 04:02:01'),
-  createData('Pokemon', '1/21/2022 04:02:01'),
-  createData('Digimon', '1/21/2022 04:02:01'),
-  createData('Yugioh', '1/21/2022 04:02:01'),
-];
-
-const HistoryTab = ({ props }: any) => {
+// This is a dynamic row height example, which is more complicated, but allows for a more realistic table.
+// See https://tanstack.com/virtual/v3/docs/examples/react/table for a simpler fixed row height example.
+function SeasonTanstackTable({ props, title }: any) {
   const myTitlePreference: any = useTitle();
   const mySidebar: any = useSidebarButton();
+  const myAdvancedMedia: any = useAdvancedMedia();
+  const titlePreference: any = useTitle();
+  const myCategory: any = useCategory();
   const [rowSelection, setRowSelection] = useState({});
 
-  const columns = React.useMemo<any>(
+  const columnsAnime = React.useMemo<any>(
     () => [
       {
+        header: 'Status',
+        id: 'Status',
+        cell: ({ row }: any) => {
+          return <TableStatus row={row} />;
+        },
+        size: 50,
+      },
+      {
         accessorFn: (row: any) => {
-          return (
-            <Typography noWrap fontSize={12}>
-              {getTitle(myTitlePreference.title, row)}
-            </Typography>
-          );
+          return <TableTitleOther row={row} />;
         },
         id: 'Title',
         cell: (info: any) => info.getValue(),
-        header: () => <span>Title</span>,
-        size: 300,
+        // header: () => <span>Title</span>,
+        header: () => 'Title',
+        size: 390,
+      },
+      {
+        accessorFn: (row: any) => {
+          return <TableEpisodes row={row} />;
+        },
+        header: 'Episodes',
+        cell: (info: any) => info.getValue(),
+        size: 80,
+      },
+      {
+        accessorFn: (row: any) => {
+          return <TableAverageScore row={row} />;
+        },
+        header: 'Score',
+        cell: (info: any) => info.getValue(),
+        size: 58,
+      },
+      {
+        accessorFn: (row: any) => {
+          return <TableType row={row} />;
+        },
+        header: 'Type',
+        cell: (info: any) => info.getValue(),
+        size: 72,
+      },
+      {
+        accessorFn: (row: any) => {
+          return <TableSeason row={row} />;
+        },
+        header: 'Season',
+        cell: (info: any) => info.getValue(),
+        size: 94, // 84
       },
     ],
-    [myTitlePreference.title],
+    [],
   );
 
+  // 744 max width
+
   const table = useReactTable({
-    data: TestRows,
-    columns,
+    data: props,
+    columns: columnsAnime,
     state: {
       rowSelection,
     },
@@ -88,7 +140,7 @@ const HistoryTab = ({ props }: any) => {
       navigator.userAgent.indexOf('Firefox') === -1
         ? (element) => element?.getBoundingClientRect().height
         : undefined,
-    overscan: 5,
+    overscan: 3,
   });
 
   // All important CSS styles are included as inline styles for this example. This is not recommended for your code.
@@ -100,7 +152,7 @@ const HistoryTab = ({ props }: any) => {
         style={{
           overflowY: 'auto', // our scrollable table container
           position: 'relative', // needed for sticky header
-          height: 'calc(100vh - 140px)', // should be a fixed height 606 calc(100vh - 134px)
+          height: 'calc(100vh - 124px)', // should be a fixed height 606 calc(100vh - 134px)
           width: '100%',
           borderRadius: '3px',
         }}
@@ -151,47 +203,14 @@ const HistoryTab = ({ props }: any) => {
             {rowVirtualizer.getVirtualItems().map((virtualRow) => {
               const row: any = rows[virtualRow.index] as Row<any>;
               return (
-                <tr
-                  data-index={virtualRow.index} // needed for dynamic row height measurement
-                  ref={(node) => rowVirtualizer.measureElement(node)} // measure dynamic row height
-                  key={row.id}
-                  style={{
-                    display: 'flex',
-                    position: 'absolute',
-                    transform: `translateY(${virtualRow.start}px)`, // this should always be a `style` as it changes on scroll
-                    width: '100%',
-                    background:
-                      rowSelection === row.id
-                        ? 'rgba(9, 152, 218, 0.637)'
-                        : 'none',
-                  }}
-                  onClick={() => {
-                    if (rowSelection === row.id) {
-                      setRowSelection({});
-                    } else {
-                      setRowSelection(row.id);
-                    }
-                    console.log(rowSelection);
-                  }}
-                  // context menu
-                >
-                  {row.getVisibleCells().map((cell: any) => {
-                    return (
-                      <td
-                        key={cell.id}
-                        style={{
-                          display: 'flex',
-                          width: cell.column.getSize(),
-                        }}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </tr>
+                <TanstackTableRow
+                  key={row.original.titleRomaji + row.original.id}
+                  virtualRow={virtualRow}
+                  rowVirtualizer={rowVirtualizer}
+                  row={row}
+                  rowSelection={rowSelection}
+                  setRowSelection={setRowSelection}
+                />
               );
             })}
           </tbody>
@@ -199,5 +218,6 @@ const HistoryTab = ({ props }: any) => {
       </div>
     </div>
   );
-};
-export default HistoryTab;
+}
+
+export default SeasonTanstackTable;

@@ -19,6 +19,7 @@ import SearchMediaTable from './tables/SearchMediaTable';
 import LoadingMessage from '../etc/LoadingMessage';
 import ErrorCredentials from '../etc/ErrorCredentials';
 import ErrorAPI from '../etc/ErrorAPI';
+import SearchTanstackTable from './tables/SearchTanstackTable';
 
 const SearchTabList = ({ props }: any) => {
   const myTitle: any = useTitle();
@@ -30,6 +31,7 @@ const SearchTabList = ({ props }: any) => {
   const adult: any = useAdult();
   const myCategory: any = useCategory();
   const mySort: any = useSort();
+  const titlePreference: any = useTitle();
 
   const { isLoading, isError, error, data, refetch, dataUpdatedAt }: any =
     useSearchQuery(searchTerm.SearchTerm, myToken.AniListToken, adult.adult);
@@ -59,7 +61,7 @@ const SearchTabList = ({ props }: any) => {
         // overflowY: 'auto',
       }}
     >
-      <SearchMediaTable
+      <SearchTanstackTable
         props={SearchTableView(
           mySidebar.sidebar,
           myCategory.category,
@@ -68,6 +70,7 @@ const SearchTabList = ({ props }: any) => {
           mySort.sort,
           myTitle.title,
         )}
+        title={titlePreference}
       />
     </Box>
   );

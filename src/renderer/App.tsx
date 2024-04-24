@@ -103,6 +103,8 @@ import { getTitle } from './functions/view/TitlePreferenceFunctions';
 import { getSnackbarType } from './functions/edit/componentTypes';
 import FilterSelect from './components/app/search/FilterSelect';
 import ResetMenuApp from './components/app/etc/ResetMenuApp';
+import HistoryButton from './components/app/history/HistoryButton';
+import HistoryTab from './components/app/history/HistoryTab';
 
 declare module '@mui/joy/styles' {
   interface PaletteWarningOverrides {
@@ -220,6 +222,9 @@ function CategoryView({ view, newsAdv }: any) {
   }
   if (view === 5 && newsAdv === true) {
     return <NewsButtons />;
+  }
+  if (view === 6) {
+    return <HistoryTab />;
   }
   return <Box />;
 }
@@ -493,6 +498,7 @@ const Hello = () => {
               >
                 <Search />
                 <FilterSelect />
+                {/* <HistoryButton /> */}
               </Toolbar>
               <Divider />
             </AppBar>

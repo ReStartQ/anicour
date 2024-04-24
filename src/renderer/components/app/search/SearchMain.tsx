@@ -232,7 +232,8 @@ export default function SearchMain({ listValue }: any) {
             height: 'calc(100vh)',
             gridColumn: '1/3',
             gridRow: '2/3',
-            padding: '10px',
+            paddingY: myMainView.view === 2 ? '0px' : '10px',
+            paddingX: '10px',
           }}
         >
           <SearchTabView view={myMainView.view} />
@@ -243,7 +244,8 @@ export default function SearchMain({ listValue }: any) {
             height: 'calc(100vh)',
             gridColumn: '1/3',
             gridRow: '2/3',
-            padding: '10px',
+            paddingY: myMainView.view === 2 ? '0px' : '10px',
+            paddingX: '10px',
           }}
         >
           <SearchTabView view={myMainView.view} />
@@ -254,7 +256,8 @@ export default function SearchMain({ listValue }: any) {
             height: 'calc(100vh)',
             gridColumn: '1/3',
             gridRow: '2/3',
-            padding: '10px',
+            paddingY: myMainView.view === 2 ? '0px' : '10px',
+            paddingX: '10px',
           }}
         >
           <SearchTabView view={myMainView.view} />
@@ -265,7 +268,8 @@ export default function SearchMain({ listValue }: any) {
             height: 'calc(100vh)',
             gridColumn: '1/3',
             gridRow: '2/3',
-            padding: '10px',
+            paddingY: myMainView.view === 2 ? '0px' : '10px',
+            paddingX: '10px',
           }}
         >
           <SearchTabView view={myMainView.view} />

@@ -1,5 +1,22 @@
 # Changes
 
+## 1.5.0
+
+### Main Changes
+
+- List view has been upgraded to a new headless ui library. New look, feel, and performance!
+- Row Virtualization is fixed in the list view.
+- List media progress (episode, chapters, volumes) can now be edited while in list view.
+- The context menu is now shown when the user clicks the secondary mouse button in the list view. This is to match the same behavior as the grid and compact view media cards.
+- In the list view, tooltips are now shown when you hover over the a row's status circle, notes, and the on-list icons.
+
+### Other Changes
+
+- Users can now click on images from main app window to move to the next trailer instead of defaulting to the more information/edit part of the advanced view window. (Great for cycling through anime trailers in the seasons tab).
+- When countdown reaches 0 for the cards in season, the timer text will become 'Episode Aired'.
+- Current username is now shown to the user under the setting's account information.
+- Adjusted the width of add to list dropdown for media advanced view.
+
 ## 1.4.9
 
 - When saving account information, there is now a notification to show whether the authentication information is valid or not. (Success/Failed to authenticate messages)

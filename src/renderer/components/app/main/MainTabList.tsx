@@ -13,6 +13,7 @@ import ErrorAPI from '../etc/ErrorAPI';
 import ErrorCredentials from '../etc/ErrorCredentials';
 import LoadingMessage from '../etc/LoadingMessage';
 import MainMediaTable from './tables/MainMediaTable';
+import MainTanstackTable from './tables/MainTanstackTable';
 
 const MainTabList = ({ props }: any) => {
   const myTitle: any = useTitle();
@@ -22,6 +23,7 @@ const MainTabList = ({ props }: any) => {
   const mySidebar: any = useSidebarButton();
   const myCategory: any = useCategory();
   const mySort: any = useSort();
+  const titlePreference = useTitle();
 
   const { isLoading, isError, error, data, refetch }: any = useMainMediaList(
     myUsername.AniListUsername,
@@ -53,6 +55,22 @@ const MainTabList = ({ props }: any) => {
         // overflowY: 'auto',
       }}
     >
+      <MainTanstackTable
+        props={MainTableView(
+          mySidebar.sidebar,
+          myCategory.category,
+          data,
+          myFilter.filter,
+          mySort.sort,
+          myTitle.title,
+        )}
+        title={titlePreference}
+      />
+    </Box>
+  );
+};
+
+/*
       <MainMediaTable
         props={MainTableView(
           mySidebar.sidebar,
@@ -63,8 +81,5 @@ const MainTabList = ({ props }: any) => {
           myTitle.title,
         )}
       />
-    </Box>
-  );
-};
-
+*/
 export default MainTabList;

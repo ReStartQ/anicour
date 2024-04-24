@@ -389,5 +389,14 @@ export const getTimeFormat = (myTime: any) => {
     return 'Episode Aired';
   }
   */
+  if (
+    dDisplay === '' &&
+    hDisplay === '' &&
+    mDisplay === '' &&
+    sDisplay === ''
+  ) {
+    return 'Episode Aired';
+  }
+
   return dDisplay + hDisplay + mDisplay + sDisplay;
 };

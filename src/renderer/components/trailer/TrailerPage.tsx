@@ -144,7 +144,7 @@ export default function TrailerPage({ props }: any) {
               endings: [],
             });
             setInfoType(0);
-            navigate('/media');
+            // navigate('/media');
           }
         }
       },
