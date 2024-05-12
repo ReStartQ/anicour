@@ -50,7 +50,6 @@ export default function FeatureButtonGroupNews() {
           onClick={() => {
             window.electron.ipcRenderer.sendMessage('settings', ['ping']);
           }}
-          disabled
         >
           <SettingsIcon />
         </ToggleButton>

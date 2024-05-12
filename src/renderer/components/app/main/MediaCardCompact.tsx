@@ -8,6 +8,9 @@ import getStatusColor from 'renderer/functions/StatusFunction';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
+import { useCategory } from 'renderer/context/CategoryContext';
+import { useSidebarButton } from 'renderer/context/SidebarContext';
+import RepeatIcon from '@mui/icons-material/Repeat';
 import ContextMenuAlternative from '../etc/ContextMenuAlternative';
 import ContextMenu from '../etc/ContextMenu';
 import { MediaIcons } from '../etc/SvgIcons';
@@ -15,6 +18,8 @@ import { MediaIcons } from '../etc/SvgIcons';
 export default function MediaCardCompact({ props }: any) {
   const titlePreference: any = useTitle();
   const myAdvancedMedia: any = useAdvancedMedia();
+  const myCategory: any = useCategory();
+  const mySidebar: any = useSidebarButton();
 
   const [contextMenu, setContextMenu] = useState<{
     mouseX: number;
@@ -89,6 +94,32 @@ export default function MediaCardCompact({ props }: any) {
               }}
             >
               <MediaIcons type={0} />
+            </Box>
+          </Tooltip>
+        ) : null}
+        {(props.mediaListEntry.repeat > 0 ||
+          props.mediaListEntry.completedAt.year !== null) &&
+        myCategory.category !== 1 ? (
+          <Tooltip
+            title={mySidebar.sidebar === 0 ? `Rewatching` : `Rereading`}
+            arrow
+            variant="outlined"
+            color="primary"
+          >
+            <Box
+              sx={{
+                position: 'absolute',
+                top: props.mediaListEntry.notes === null ? 0 : 30,
+                left: 0,
+                margin: '5px',
+                bgcolor: 'rgba(0, 0, 0, 0.69)',
+                color: 'white',
+                borderRadius: '3px',
+                height: '25px',
+                width: '25px',
+              }}
+            >
+              <RepeatIcon />
             </Box>
           </Tooltip>
         ) : null}

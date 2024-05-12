@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
+import RepeatOnIcon from '@mui/icons-material/RepeatOn';
+import RepeatIcon from '@mui/icons-material/Repeat';
 import StarIcon from '@mui/icons-material/Star';
 import {
   useEffect,
@@ -44,6 +46,7 @@ import {
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { useCategory } from 'renderer/context/CategoryContext';
 import { Button, Tooltip } from '@mui/joy';
+import { useSidebarButton } from 'renderer/context/SidebarContext';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -56,6 +59,7 @@ export default function MediaCard({ props }: any) {
   const myUserName: any = useAniListUsername();
   const myToken: any = useAniListToken();
   const myCategory: any = useCategory();
+  const mySidebar: any = useSidebarButton();
 
   const [notificationType, setNotificationType] = useAtom(notificationTypeAtom);
   const [notifcationOpen, setNotificationOpen] = useAtom(notificationOpenAtom);
@@ -302,6 +306,32 @@ export default function MediaCard({ props }: any) {
               }}
             >
               <MediaIcons type={0} />
+            </Box>
+          </Tooltip>
+        ) : null}
+        {(props.mediaListEntry.repeat > 0 ||
+          props.mediaListEntry.completedAt.year !== null) &&
+        myCategory.category !== 1 ? (
+          <Tooltip
+            title={mySidebar.sidebar === 0 ? `Rewatching` : `Rereading`}
+            arrow
+            variant="outlined"
+            color="primary"
+          >
+            <Box
+              sx={{
+                position: 'absolute',
+                top: props.mediaListEntry.notes === null ? 0 : 30,
+                left: 0,
+                margin: '5px',
+                bgcolor: 'rgba(0, 0, 0, 0.69)',
+                color: 'white',
+                borderRadius: '3px',
+                height: '25px',
+                width: '25px',
+              }}
+            >
+              <RepeatIcon />
             </Box>
           </Tooltip>
         ) : null}

@@ -1,5 +1,16 @@
 # Changes
 
+## 1.5.1
+
+- Changed list table header and container colors.
+- Highlighted list table row color is now darker for better visibility.
+- Notes icon is now matching for all views (grid, compact, list).
+- New repeat icon is now shown to indicate rewatching/rereading media.
+  **Below are the requirements for the repeat icon to show up on a specific media:**
+
+1. The repeat icon will only show on media that are outside of the completed tab.
+2. For a media to be considered rewatching/rereading, the media must have a completed date or have a total rewatch/reread count greater than 0. It only needs to fulfill **ONE** of these requirements **(complete date or count requirement)**.
+
 ## 1.5.0
 
 ### Main Changes

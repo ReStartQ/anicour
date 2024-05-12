@@ -140,7 +140,7 @@ export function MediaIcons({ type }: any) {
       </SvgIcon>
     );
     */
-    return <CommentIcon />;
+    return <MessageIcon />;
   }
 
   if (type === 0.5) {
