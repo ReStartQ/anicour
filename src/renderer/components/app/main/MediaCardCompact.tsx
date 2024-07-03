@@ -2,7 +2,7 @@ import { CardActionArea, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
@@ -11,6 +11,9 @@ import { Tooltip } from '@mui/joy';
 import { useCategory } from 'renderer/context/CategoryContext';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import RepeatIcon from '@mui/icons-material/Repeat';
+import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
+import { nextAiringEpisodeAtom } from 'renderer/store';
+import { useAtom } from 'jotai';
 import ContextMenuAlternative from '../etc/ContextMenuAlternative';
 import ContextMenu from '../etc/ContextMenu';
 import { MediaIcons } from '../etc/SvgIcons';
@@ -20,6 +23,26 @@ export default function MediaCardCompact({ props }: any) {
   const myAdvancedMedia: any = useAdvancedMedia();
   const myCategory: any = useCategory();
   const mySidebar: any = useSidebarButton();
+
+  const [time, setTime] = useState(
+    props.nextAiringEpisode !== null
+      ? props.nextAiringEpisode.timeUntilAiring
+      : null,
+  );
+
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (time !== null && time >= 0 && props.nextAiringEpisode !== null) {
+        // eslint-disable-next-line no-plusplus
+        setTime(getTime(props.nextAiringEpisode.airingAt));
+      }
+    }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [time]);
 
   const [contextMenu, setContextMenu] = useState<{
     mouseX: number;
@@ -141,13 +164,23 @@ export default function MediaCardCompact({ props }: any) {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               display: '-webkit-box',
-              WebkitLineClamp: '2',
+              WebkitLineClamp:
+                props.nextAiringEpisode !== null && nextAiringEpisode === 'Show'
+                  ? '1'
+                  : '2',
               WebkitBoxOrient: 'vertical',
             }}
             color={getStatusColor(props.status)}
           >
             {getTitle(titlePreference.title, props)}
           </Typography>
+          {props.nextAiringEpisode !== null && nextAiringEpisode === 'Show' ? (
+            <Typography variant="body2" fontSize={11} color="aliceblue" noWrap>
+              {`EP${props.nextAiringEpisode.episode}: ${getTimeFormat(
+                props.nextAiringEpisode.airingAt,
+              )}`}
+            </Typography>
+          ) : null}
         </Box>
       </CardActionArea>
       <ContextMenu

@@ -90,6 +90,7 @@ import { AdvancedThemeSongsContextProvider } from './context/advanced/AdvancedTh
 import {
   appResetDialogOpenAtom,
   myStore,
+  nextAiringEpisodeAtom,
   notificationAltOpenAtom,
   notificationMediaNamesAtom,
   notificationOpenAtom,
@@ -265,6 +266,10 @@ const Hello = () => {
   const [seasonChange, setSeasonChange] = useAtom(seasonChangeAtom);
   const [openResetDialog, setOpenResetDialog] = useAtom(appResetDialogOpenAtom);
 
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
+
   const handleClose = (event?: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
@@ -362,6 +367,10 @@ const Hello = () => {
             setDefaultAddStatus('CURRENT');
             setSeasonChange('Early');
             break;
+          case 'nextAiringEpisode':
+            console.log('nextAiringEpisode');
+            setNextAiringEpisode(arg[1]);
+            break;
           default:
             console.log('test');
         }
@@ -376,6 +385,7 @@ const Hello = () => {
     setAniListToken,
     setAniListUsername,
     setDefaultAddStatus,
+    setNextAiringEpisode,
     setOpenResetDialog,
     setSeasonChange,
   ]);

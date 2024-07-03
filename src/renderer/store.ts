@@ -165,3 +165,11 @@ myStore.set(appResetDialogOpenAtom, false);
 
 export const notificationOpenSettingsAtom = atom(false);
 export const notificationOpenAltSettingsAtom = atom(false);
+
+export const nextAiringEpisodeAtom = atom(
+  window.electron.store.get('nextAiringEpisode'),
+);
+myStore.set(
+  nextAiringEpisodeAtom,
+  window.electron.store.get('nextAiringEpisode'),
+);

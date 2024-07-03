@@ -1,5 +1,11 @@
 # Changes
 
+## 1.5.2
+
+- Releasing/Not Yet Released anime list cards now have the next airing episode timer just like the seasonal anime cards.
+- Next Airing Time is now shown as a sort option on the user's anime list.
+- An option has been added settings menu to hide/show the next airing time for anime media cards in the user's anime list. By default the option is set to show.
+
 ## 1.5.1
 
 - Changed list table header and container colors.

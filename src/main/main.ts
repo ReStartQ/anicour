@@ -89,6 +89,10 @@ const schema: any = {
     type: 'string',
     default: 'Early',
   },
+  nextAiringEpisode: {
+    type: 'string',
+    default: 'Show',
+  },
 };
 
 const store = new Store({ schema });

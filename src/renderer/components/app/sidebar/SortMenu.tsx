@@ -13,6 +13,8 @@ import { useCategory } from 'renderer/context/CategoryContext';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useSort } from 'renderer/context/SortContext';
 import { useSortLast } from 'renderer/context/SortLastContext';
+import { useAtom } from 'jotai';
+import { nextAiringEpisodeAtom } from 'renderer/store';
 
 function SortValueIcon({ value, currentSort }: any) {
   if (value === currentSort + 0.5) {
@@ -61,6 +63,62 @@ export default function SortMenu() {
   const sortLast: any = useSortLast();
   const myCategory: any = useCategory();
 
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
+
+  if (sidebar.sidebar === 0 && nextAiringEpisode === 'Show') {
+    // anime list
+    return (
+      <List component="div" disablePadding>
+        {[
+          'Next Airing Time',
+          'Status',
+          'Title',
+          'Episode Progress',
+          'Score',
+          'Type',
+          'Season',
+        ].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton
+              sx={{}}
+              dense
+              onClick={() => {
+                switch (sortValue.sort) {
+                  case index + 1:
+                    sortValue.setSort(index + 1.5);
+                    sortLast.dispatch({
+                      type: 'updateAnimeSort',
+                      payload: index + 1.5,
+                    });
+                    break;
+                  case index + 1.5:
+                    sortValue.setSort(0);
+                    sortLast.dispatch({
+                      type: 'updateAnimeSort',
+                      payload: 0,
+                    });
+                    break;
+                  default:
+                    sortValue.setSort(index + 1);
+                    sortLast.dispatch({
+                      type: 'updateAnimeSort',
+                      payload: index + 1,
+                    });
+                }
+              }}
+            >
+              <ListItemIcon>
+                <SortValueIcon value={sortValue.sort} currentSort={index + 1} />
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    );
+  }
   if (sidebar.sidebar === 0) {
     // anime list
     return (

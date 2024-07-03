@@ -1,6 +1,6 @@
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
-import { filterTypeAtom } from 'renderer/store';
+import { filterTypeAtom, nextAiringEpisodeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
 import { useMainMediaList } from '../MainMediaListFunctions';
 import { getFilteredTabData, isFilteredTermOnList } from './FilterFunctions';
@@ -33,12 +33,16 @@ export const MainTableView = (
   title: any,
 ) => {
   const [filterType, setFilterType] = useAtom(filterTypeAtom);
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
 
   if (filter !== '' && sidebar === 0) {
     return sortMyListAnime(
       sort,
       title,
       getFilteredTabData(category, sidebar, data),
+      nextAiringEpisode,
     ).filter((media: any) => {
       return isFilteredTermOnList(media, filter, filterType);
     });
@@ -62,22 +66,52 @@ export const MainTableView = (
     });
   }
   if (sidebar === 0 && category === 0) {
-    return sortMyListAnime(sort, title, data?.anime.animeWatching);
+    return sortMyListAnime(
+      sort,
+      title,
+      data?.anime.animeWatching,
+      nextAiringEpisode,
+    );
   }
   if (sidebar === 0 && category === 1) {
-    return sortMyListAnime(sort, title, data?.anime.animeCompleted);
+    return sortMyListAnime(
+      sort,
+      title,
+      data?.anime.animeCompleted,
+      nextAiringEpisode,
+    );
   }
   if (sidebar === 0 && category === 2) {
-    return sortMyListAnime(sort, title, data?.anime.animeOnHold);
+    return sortMyListAnime(
+      sort,
+      title,
+      data?.anime.animeOnHold,
+      nextAiringEpisode,
+    );
   }
   if (sidebar === 0 && category === 3) {
-    return sortMyListAnime(sort, title, data?.anime.animeDropped);
+    return sortMyListAnime(
+      sort,
+      title,
+      data?.anime.animeDropped,
+      nextAiringEpisode,
+    );
   }
   if (sidebar === 0 && category === 4) {
-    return sortMyListAnime(sort, title, data?.anime.animePlanToWatch);
+    return sortMyListAnime(
+      sort,
+      title,
+      data?.anime.animePlanToWatch,
+      nextAiringEpisode,
+    );
   }
   if (sidebar === 0 && category === 5) {
-    return sortMyListAnime(sort, title, data?.anime.animeAll);
+    return sortMyListAnime(
+      sort,
+      title,
+      data?.anime.animeAll,
+      nextAiringEpisode,
+    );
   }
   if (sidebar === 1 && category === 0) {
     return sortMyListManga(sort, title, data?.manga.mangaReading);

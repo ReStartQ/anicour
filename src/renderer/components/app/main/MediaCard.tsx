@@ -39,6 +39,7 @@ import {
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
 import { useAtom } from 'jotai';
 import {
+  nextAiringEpisodeAtom,
   notificationMediaNamesAtom,
   notificationOpenAtom,
   notificationTypeAtom,
@@ -47,6 +48,7 @@ import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext
 import { useCategory } from 'renderer/context/CategoryContext';
 import { Button, Tooltip } from '@mui/joy';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
+import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -79,10 +81,30 @@ export default function MediaCard({ props }: any) {
   const { isLoading, isError, error, data, refetch, dateUpdatedAt }: any =
     useMainMediaList(myUserName.AniListUsername, myToken.AniListToken);
 
+  const [time, setTime] = useState(
+    props.nextAiringEpisode !== null
+      ? props.nextAiringEpisode.timeUntilAiring
+      : null,
+  );
+
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
+
   const [myAdvancedInput, inputDispatch] = useReducer(
     AdvancedInputContextReducer,
     props.mediaListEntry,
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (time !== null && time >= 0 && props.nextAiringEpisode !== null) {
+        // eslint-disable-next-line no-plusplus
+        setTime(getTime(props.nextAiringEpisode.airingAt));
+      }
+    }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [time]);
 
   useEffect(() => {
     // every time the mediaListEntry is updated through advanced window, myAdvancedInput is also updated
@@ -285,6 +307,25 @@ export default function MediaCard({ props }: any) {
             maxHeight: '200px',
           }}
         />
+        {props.nextAiringEpisode !== null && nextAiringEpisode === 'Show' ? (
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              bgcolor: 'rgba(0, 0, 0, 0.69)',
+              color: 'white',
+              padding: '10px',
+            }}
+          >
+            <Typography variant="body2" fontSize={11}>
+              {`EP${props.nextAiringEpisode.episode}: ${getTimeFormat(
+                props.nextAiringEpisode.airingAt,
+              )}`}
+            </Typography>
+          </Box>
+        ) : null}
         {props.mediaListEntry.notes !== null ? (
           <Tooltip
             title={props.mediaListEntry.notes}

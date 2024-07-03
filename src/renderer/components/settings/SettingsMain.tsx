@@ -24,6 +24,7 @@ import DefaultStatus from './app/DefaultStatus';
 import SelectDefaultView from './app/SelectDefaultView';
 import AboutSection from './about/AboutSection';
 import SelectSeasonChange from './app/SelectSeasonChange';
+import NextAiringEpisodeMainList from './app/NextAiringEpisodeMainList';
 
 function SettingsMainTab({ view }: any) {
   if (view === 0) {
@@ -59,6 +60,7 @@ function SettingsMainTab({ view }: any) {
         <SelectSeasonChange />
         <SelectDefaultLink />
         <DefaultStatus />
+        <NextAiringEpisodeMainList />
       </Box>
     );
   }

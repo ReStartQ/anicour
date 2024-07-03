@@ -6,7 +6,7 @@ import { memo, useEffect, useMemo, useState } from 'react';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useSort } from 'renderer/context/SortContext';
-import { filterTypeAtom } from 'renderer/store';
+import { filterTypeAtom, nextAiringEpisodeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
 import { getFilteredTabData, isFilteredTermOnList } from './FilterFunctions';
 import { sortMyListAnime, sortMyListManga } from '../sort/sortMainFunctions';
@@ -77,6 +77,9 @@ export const MainCategoryView = memo(
     const myToken: any = useAniListToken();
     const myUsername: any = useAniListUsername();
     const [filterType, setFilterType] = useAtom(filterTypeAtom);
+    const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+      nextAiringEpisodeAtom,
+    );
 
     const { isLoading, isError, error, data, refetch }: any = useMainMediaList(
       myUsername.AniListUsername,
@@ -88,6 +91,7 @@ export const MainCategoryView = memo(
         sort,
         title,
         getFilteredTabData(category, sidebar, data),
+        nextAiringEpisode,
       )
         .filter((media: any) => {
           return isFilteredTermOnList(media, filter, filterType);
@@ -150,94 +154,112 @@ export const MainCategoryView = memo(
         });
     }
     if (sidebar === 0 && category === 0) {
-      return sortMyListAnime(sort, title, data?.anime.animeWatching).map(
-        (media: any, index: any) => {
-          return (
-            <MainView
-              view={mainView}
-              media={media}
-              index={index}
-              sort={sort}
-              key={media.titleRomaji + media.id}
-            />
-          );
-        },
-      );
+      return sortMyListAnime(
+        sort,
+        title,
+        data?.anime.animeWatching,
+        nextAiringEpisode,
+      ).map((media: any, index: any) => {
+        return (
+          <MainView
+            view={mainView}
+            media={media}
+            index={index}
+            sort={sort}
+            key={media.titleRomaji + media.id}
+          />
+        );
+      });
     }
     if (sidebar === 0 && category === 1) {
-      return sortMyListAnime(sort, title, data?.anime.animeCompleted).map(
-        (media: any, index: any) => {
-          return (
-            <MainView
-              view={mainView}
-              media={media}
-              index={index}
-              sort={sort}
-              key={media.titleRomaji + media.id}
-            />
-          );
-        },
-      );
+      return sortMyListAnime(
+        sort,
+        title,
+        data?.anime.animeCompleted,
+        nextAiringEpisode,
+      ).map((media: any, index: any) => {
+        return (
+          <MainView
+            view={mainView}
+            media={media}
+            index={index}
+            sort={sort}
+            key={media.titleRomaji + media.id}
+          />
+        );
+      });
     }
     if (sidebar === 0 && category === 2) {
-      return sortMyListAnime(sort, title, data?.anime.animeOnHold).map(
-        (media: any, index: any) => {
-          return (
-            <MainView
-              view={mainView}
-              media={media}
-              index={index}
-              sort={sort}
-              key={media.titleRomaji + media.id}
-            />
-          );
-        },
-      );
+      return sortMyListAnime(
+        sort,
+        title,
+        data?.anime.animeOnHold,
+        nextAiringEpisode,
+      ).map((media: any, index: any) => {
+        return (
+          <MainView
+            view={mainView}
+            media={media}
+            index={index}
+            sort={sort}
+            key={media.titleRomaji + media.id}
+          />
+        );
+      });
     }
     if (sidebar === 0 && category === 3) {
-      return sortMyListAnime(sort, title, data?.anime.animeDropped).map(
-        (media: any, index: any) => {
-          return (
-            <MainView
-              view={mainView}
-              media={media}
-              index={index}
-              sort={sort}
-              key={media.titleRomaji + media.id}
-            />
-          );
-        },
-      );
+      return sortMyListAnime(
+        sort,
+        title,
+        data?.anime.animeDropped,
+        nextAiringEpisode,
+      ).map((media: any, index: any) => {
+        return (
+          <MainView
+            view={mainView}
+            media={media}
+            index={index}
+            sort={sort}
+            key={media.titleRomaji + media.id}
+          />
+        );
+      });
     }
     if (sidebar === 0 && category === 4) {
-      return sortMyListAnime(sort, title, data?.anime.animePlanToWatch).map(
-        (media: any, index: any) => {
-          return (
-            <MainView
-              view={mainView}
-              media={media}
-              index={index}
-              sort={sort}
-              key={media.titleRomaji + media.id}
-            />
-          );
-        },
-      );
+      return sortMyListAnime(
+        sort,
+        title,
+        data?.anime.animePlanToWatch,
+        nextAiringEpisode,
+      ).map((media: any, index: any) => {
+        return (
+          <MainView
+            view={mainView}
+            media={media}
+            index={index}
+            sort={sort}
+            key={media.titleRomaji + media.id}
+          />
+        );
+      });
     }
     if (sidebar === 0 && category === 5) {
-      return sortMyListAnime(sort, title, data?.anime.animeAll).map(
-        (media: any, index: any) => {
-          return (
-            <MainView
-              view={mainView}
-              media={media}
-              index={index}
-              sort={sort}
-              key={media.titleRomaji + media.id}
-            />
-          );
-        },
-      );
+      return sortMyListAnime(
+        sort,
+        title,
+        data?.anime.animeAll,
+        nextAiringEpisode,
+      ).map((media: any, index: any) => {
+        return (
+          <MainView
+            view={mainView}
+            media={media}
+            index={index}
+            sort={sort}
+            key={media.titleRomaji + media.id}
+          />
+        );
+      });
     }
     if (sidebar === 1 && category === 0) {
       return sortMyListManga(sort, title, data?.manga.mangaReading).map(
