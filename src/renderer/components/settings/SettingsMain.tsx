@@ -25,6 +25,7 @@ import SelectDefaultView from './app/SelectDefaultView';
 import AboutSection from './about/AboutSection';
 import SelectSeasonChange from './app/SelectSeasonChange';
 import NextAiringEpisodeMainList from './app/NextAiringEpisodeMainList';
+import SelectDefaultSeasonsSort from './app/SelectDefaultSeasonsSort';
 
 function SettingsMainTab({ view }: any) {
   if (view === 0) {
@@ -58,6 +59,7 @@ function SettingsMainTab({ view }: any) {
         <SelectLanguage />
         <SelectDefaultView />
         <SelectSeasonChange />
+        <SelectDefaultSeasonsSort />
         <SelectDefaultLink />
         <DefaultStatus />
         <NextAiringEpisodeMainList />

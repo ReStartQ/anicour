@@ -173,3 +173,11 @@ myStore.set(
   nextAiringEpisodeAtom,
   window.electron.store.get('nextAiringEpisode'),
 );
+
+export const defaultSeasonSortAtom = atom(
+  window.electron.store.get('defaultSeasonSort'),
+);
+myStore.set(
+  defaultSeasonSortAtom,
+  window.electron.store.get('defaultSeasonSort'),
+);

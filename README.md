@@ -38,7 +38,7 @@ Downloads can be found [here](https://github.com/ReStartQ/AniCour/releases). Che
 **_Whenever you get a warning message in the browser, you will have to allow for the download with an alternate option that may show up as something like "download suspicious file" (chrome) or "keep file" (edge)._**
 
 1. Download the setup file from the latest releases. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x.x.x denotes the version.
-   <br> **Ex: AniCour-Setup-1.5.2.exe**
+   <br> **Ex: AniCour-Setup-1.5.3.exe**
 2. Run the setup file, Windows will give a message like below, click on "More info" <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigningInitial.png" height="300"/></a></p>
 3. A new option will appear, "Run anyway". Click on it. <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigning.png" height="300"/></a></p>
 4. The installer menu will open up to allow you to install it on your computer. <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourInstallationMenu2.png" height="240"/></a></p>

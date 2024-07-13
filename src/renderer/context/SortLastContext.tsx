@@ -1,3 +1,4 @@
+import { useAtom } from 'jotai';
 import {
   createContext,
   useState,
@@ -5,6 +6,7 @@ import {
   useReducer,
   ReactNode,
 } from 'react';
+import { defaultSeasonSortAtom } from 'renderer/store';
 
 type SortLastContextProviderProps = {
   children: ReactNode;
@@ -17,7 +19,7 @@ const defaultSortLast = {
   searchAnime: 0,
   searchManga: 0,
   searchLightNovels: 0,
-  seasons: 0,
+  seasons: 5,
 };
 
 export const SortLastContext = createContext({});
@@ -71,10 +73,18 @@ export const SortLastContextReducer = (state: any, action: any) => {
 export const SortLastContextProvider = ({
   children,
 }: SortLastContextProviderProps) => {
-  const [sortLast, dispatch] = useReducer(
-    SortLastContextReducer,
-    defaultSortLast,
+  const [defaultSeasonSort, setDefaultSeasonSort] = useAtom(
+    defaultSeasonSortAtom,
   );
+  const [sortLast, dispatch] = useReducer(SortLastContextReducer, {
+    anime: 0,
+    manga: 0,
+    lightNovels: 0,
+    searchAnime: 0,
+    searchManga: 0,
+    searchLightNovels: 0,
+    seasons: defaultSeasonSort,
+  });
 
   return (
     <SortLastContext.Provider value={{ sortLast, dispatch }}>

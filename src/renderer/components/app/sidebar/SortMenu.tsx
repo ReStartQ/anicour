@@ -423,11 +423,11 @@ export default function SortMenu() {
       <List component="div" disablePadding dense>
         {[
           'Next Airing Time',
+          'Popularity',
+          'Score',
           'Status',
           'Title',
           'Episodes',
-          'Score',
-          'Popularity',
         ].map((text, index) => (
           <ListItem key={text} disablePadding dense>
             <ListItemButton

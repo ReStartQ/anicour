@@ -93,6 +93,10 @@ const schema: any = {
     type: 'string',
     default: 'Show',
   },
+  defaultSeasonSort: {
+    type: 'number',
+    default: 2,
+  },
 };
 
 const store = new Store({ schema });

@@ -1,10 +1,16 @@
 # Changes
 
+## 1.5.3
+
+- Sort menu options in seasons list have been rearranged.
+- By default, anime is sorted by popularity in the seasons list section.
+- This default seasons sort can be changed within the settings menu under application.
+
 ## 1.5.2
 
 - Releasing/Not Yet Released anime list cards now have the next airing episode timer just like the seasonal anime cards.
 - Next Airing Time is now shown as a sort option on the user's anime list.
-- An option has been added settings menu to hide/show the next airing time for anime media cards in the user's anime list. By default the option is set to show.
+- An option has been added to the settings menu to hide/show the next airing time for anime media cards in the user's anime list. By default the option is set to show.
 
 ## 1.5.1
 

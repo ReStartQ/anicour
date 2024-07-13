@@ -26,29 +26,29 @@ export default function sortSeasons(
     case 1.5:
       return [...data].sort(sortByAiringDateDescending);
     case 2:
-      return [...data].sort(sortByStatusAscending);
+      return [...data].sort(sortByPopularityDescending);
     case 2.5:
-      return [...data].sort(sortByStatusDescending);
+      return [...data].sort(sortByPopularityAscending);
     case 3:
+      return [...data].sort(sortByAverageScoreDescending);
+    case 3.5:
+      return [...data].sort(sortByAverageScoreAscending);
+    case 4:
+      return [...data].sort(sortByStatusAscending);
+    case 4.5:
+      return [...data].sort(sortByStatusDescending);
+    case 5:
       return [...data].sort((a, b) => {
         return sortByTitleDescending(a, b, titlePreference);
       });
-    case 3.5:
+    case 5.5:
       return [...data].sort((a, b) => {
         return sortByTitleAscending(a, b, titlePreference);
       });
-    case 4:
-      return [...data].sort(sortByEpisodesDescending);
-    case 4.5:
-      return [...data].sort(sortByEpisodesAscending);
-    case 5:
-      return [...data].sort(sortByAverageScoreDescending);
-    case 5.5:
-      return [...data].sort(sortByAverageScoreAscending);
     case 6:
-      return [...data].sort(sortByPopularityDescending);
+      return [...data].sort(sortByEpisodesDescending);
     case 6.5:
-      return [...data].sort(sortByPopularityAscending);
+      return [...data].sort(sortByEpisodesAscending);
     default:
       return data;
   }
