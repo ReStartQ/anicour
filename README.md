@@ -1,4 +1,4 @@
-<p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/banner/AniCourSmall.png" /></a></p>
+<p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/banner/AniCourBannerWide.png" width=100% /></a></p>
 
 # AniCour
 
