@@ -1,4 +1,4 @@
-<p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/banner/AniCourBannerWide.png" width=100% /></a></p>
+<a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/banner/AniCourBannerWide.png" width=100% /></a>
 
 # AniCour
 
@@ -9,11 +9,11 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 - Track and manage your Anime/Manga/Light Novels lists.
 - Search for anime, manga and light novels.
 - Discover new seasonal anime or look back at anime from previous seasons.
-- View your lists how you want to view them (Grid/Compact/List).
+- View your lists Grid/Compact/Listhow you want to view them 
 - Get more advanced information about an anime, manga, or light novel.
 - Watch trailers of anime that might interest you.
 - Stay up to date with the latest anime news.
-- Filter and sort to quickly find anime, manga, and light novels. (Filter/Sort [List](https://github.com/ReStartQ/anicour/blob/main/help/FilterAndSortList.md))
+- [Filter and sort](https://github.com/ReStartQ/anicour/blob/main/help/FilterAndSortList.md) to quickly find anime, manga, and light novels. 
 
 ## Screenshots
 
