@@ -9,7 +9,7 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 - Track and manage your Anime/Manga/Light Novels lists.
 - Search for anime, manga and light novels.
 - Discover new seasonal anime or look back at anime from previous seasons.
-- View your lists Grid/Compact/Listhow you want to view them 
+- Different ways to view your lists. (Grid/Compact/List)
 - Get more advanced information about an anime, manga, or light novel.
 - Watch trailers of anime that might interest you.
 - Stay up to date with the latest anime news.
