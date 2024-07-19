@@ -1,6 +1,6 @@
 # Setup
 
-**(Note: An account on AniList is required to use the list tracking services.)**
+_Note:_ **An account on [AniList](https://anilist.co) is required to use the list tracking services.**
 
 
 ## (Optional) Transfer your Lists from MyAnimeList to AniList 
