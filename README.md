@@ -7,21 +7,22 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 ## Features
 
 - Track and manage your Anime/Manga/Light Novels lists.
-- Search for anime, manga and light novels.
-- Discover new seasonal anime or look back at anime from previous seasons.
-- Different ways to view your lists. (Grid/Compact/List)
-- Get more advanced information about an anime, manga, or light novel.
-- Watch trailers of anime that might interest you.
+- Get more information about an anime, manga or light novel.
+- Watch trailers for anime that interest you.
+- Discover new seasonal anime.
+- Lookup anime from previous seasons.
+- Switch between different ways to view your lists. (Grid/Compact/List)
+- Search anime, manga and light novels.
 - Stay up to date with the latest anime news.
 - [Filter and sort](https://github.com/ReStartQ/anicour/blob/main/help/FilterAndSortList.md) to quickly find anime, manga, and light novels. 
 
 ## Screenshots
 
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourGridView3.png" />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourSearch.png" />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourGridViewSeason.png" />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourSeasonsViewsCropped.png"  />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Advanced/AdvancedCropped.png" />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourGridViewSeason2.png" />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourSeasonsViewsCropped.png"  />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Search/AniCourSearchFull.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/News/NewsCropped.png" />
 
 ## Downloads and Installation
