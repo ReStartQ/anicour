@@ -18,16 +18,12 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 ## Screenshots
 
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourGridView3.png" />
-<br>
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourSearch.png" />
-<br>
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourSeasons.png" />
-<br>
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourGridViewSeason.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourSeasonsViewsCropped.png"  />
-<br>
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Advanced/AdvancedCropped.png" />
-<br>
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/News/NewsCropped.png" />
+
 ## Downloads and Installation
 
 You can download the latest version [here](https://github.com/ReStartQ/AniCour/releases).
