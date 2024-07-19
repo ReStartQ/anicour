@@ -29,23 +29,24 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 <br>
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourNewsSideBySide.png" />
 
-## Downloads and installation
+## Downloads and Installation
 
-Downloads can be found [here](https://github.com/ReStartQ/AniCour/releases). Check for the latest version.
+You can download the latest version [here](https://github.com/ReStartQ/AniCour/releases).
 
-**_Note: Some browsers may give a warning when downloading the setup file as it does not have a code signing certificate._**
-<br>
-**_Whenever you get a warning message in the browser, you will have to allow for the download with an alternate option that may show up as something like "download suspicious file" (chrome) or "keep file" (edge)._**
+_Note:_
+**This app does not use a code signing certificate and the guide below shows how to download/install apps without a certificate.**
 
-1. Download the setup file from the latest releases. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x.x.x denotes the version.
-   <br> **Ex: AniCour-Setup-1.5.3.exe**
-2. Run the setup file, Windows will give a message like below, click on "More info" <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigningInitial.png" height="300"/></a></p>
-3. A new option will appear, "Run anyway". Click on it. <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigning.png" height="300"/></a></p>
-4. The installer menu will open up to allow you to install it on your computer. <p align="center"><a href="#"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourInstallationMenu2.png" height="240"/></a></p>
-5. Connect your AniList account to the app and use the app to track, search, and manage your anime, manga, and light novels.
+1. Download the setup file from the latest releases. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x.x.x will denote the version. 
+   <br> **Example: AniCour-Setup-1.5.3.exe**
+   <br> _Some browsers may give a warning when downloading the setup file as it does not use a code signing certificate._
+   <br> _In this case, to allow the download use the alternate option they provide. (Example: keep file)_
+3. Run the setup file, Windows will give a message like below, click on **"More info"** <p align="center"><a href="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigningInitial.png"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigningInitial.png" height="280"/></a></p>
+4. A new option will appear, **"Run anyway"**. Click on it. <p align="center"><a href="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigning.png"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigning.png" height="280"/></a></p>
+5. The installer menu will open up to allow you to install it on your computer. <p align="center"><a href="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourInstallationMenu2.png"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourInstallationMenu2.png" height="230"/></a></p>
+6. Finally, open the app and connect your AniList account to start your anime tracking journey.
 
-## Setup
+## AniList Setup
 
 **Need help connecting your AniList account to AniCour?**
 
-You can find the instructions on how to do that [here](https://github.com/ReStartQ/anicour/blob/main/help/Setup.md).
+The instructions on how to link your account can be found [here](https://github.com/ReStartQ/anicour/blob/main/help/Setup.md).
