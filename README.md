@@ -7,22 +7,21 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 ## Features
 
 - Track and manage your Anime/Manga/Light Novels lists.
+- Discover new seasonal anime or lookup anime from previous seasons.
 - Get more information about an anime, manga or light novel.
-- Watch trailers for anime that interest you.
-- Discover new seasonal anime.
-- Lookup anime from previous seasons.
-- Switch between different ways to view your lists. (Grid/Compact/List)
-- Search anime, manga and light novels.
+- Watch anime trailers that interest you.
+- Search for anime, manga and light novels.
+- Switch between 3 different ways to view your lists. (Grid/Compact/List)
 - Stay up to date with the latest anime news.
 - [Filter and sort](https://github.com/ReStartQ/anicour/blob/main/help/FilterAndSortList.md) to quickly find anime, manga, and light novels. 
 
 ## Screenshots
 
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourGridView3.png" />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Advanced/AdvancedCropped.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourGridViewSeason2.png" />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Advanced/AdvancedCropped.png" />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Search/SearchCropped.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourSeasonsViewsCropped.png"  />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Search/AniCourSearchFull.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/News/NewsCropped.png" />
 
 ## Downloads and Installation
@@ -30,7 +29,7 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 You can download the latest version [here](https://github.com/ReStartQ/AniCour/releases).
 
 _Note:_
-**This app does not use a code signing certificate and the guide below shows how to download/install apps without a certificate.**
+**This app does not have a code signing certificate and will give a warning message on installation.**
 
 1. Download the setup file from the latest releases. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x.x.x will denote the version. 
    <br> **Example: AniCour-Setup-1.5.3.exe**
