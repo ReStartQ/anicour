@@ -3,15 +3,17 @@
 # AniCour
 
 AniCour is an anime, manga, and light novel tracking app that helps you discover, manage and track your lists from your desktop.
+<br />
+This app utilizes [AniList](https://anilist.co) for its tracking service to keep your anime and manga lists up-to-date.
 
 ## Features
 
 - Track and manage your Anime/Manga/Light Novels lists.
 - Discover new seasonal anime or lookup anime from previous seasons.
+- Switch between 3 different ways to view your lists. (Grid/Compact/List)
+- Search for anime, manga and light novels.
 - Get more information about an anime, manga or light novel.
 - Watch anime trailers that interest you.
-- Search for anime, manga and light novels.
-- Switch between 3 different ways to view your lists. (Grid/Compact/List)
 - Stay up to date with the latest anime news.
 - [Filter and sort](https://github.com/ReStartQ/anicour/blob/main/help/FilterAndSortList.md) to quickly find anime, manga, and light novels. 
 
@@ -19,9 +21,9 @@ AniCour is an anime, manga, and light novel tracking app that helps you discover
 
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/AniCourGridView3.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourGridViewSeason2.png" />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Advanced/AdvancedCropped.png" />
-<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Search/SearchCropped.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/SeasonViews/AniCourSeasonsViewsCropped.png"  />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Search/SearchCropped.png" />
+<img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/Advanced/AdvancedCropped.png" />
 <img src="https://raw.githubusercontent.com/restartq/anicour/main/images/readme/News/NewsCropped.png" />
 
 ## Downloads and Installation
@@ -42,6 +44,6 @@ _Note:_
 
 ## AniList Setup
 
-**Need help connecting your AniList account to AniCour?**
+**Need help connecting your [AniList](https://anilist.co) account to AniCour?**
 
 The instructions on how to link your account can be found [here](https://github.com/ReStartQ/anicour/blob/main/help/Setup.md).
