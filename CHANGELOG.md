@@ -1,5 +1,11 @@
 # Changes
 
+## 1.5.4
+
+- Progress steppers have been improved spacing wise.(For both the grid/list view)
+- Changed padding and margin for score (list view) and score input (grid).
+- Animation for blinking button to help the user to remember to update.
+
 ## 1.5.3
 
 - Sort menu options in seasons list have been rearranged.

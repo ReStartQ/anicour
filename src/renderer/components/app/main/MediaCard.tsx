@@ -508,9 +508,22 @@ export default function MediaCard({ props }: any) {
               textTransform: 'none',
               '&:hover': {
                 backgroundColor: '#0a2744',
+                animation: 'none',
               },
               py: 0,
               height: '15px',
+              '@keyframes backgroundChange': {
+                '0%': { backgroundColor: '#121212' },
+                '50%': { backgroundColor: '#0a2744' },
+                '100%': { backgroundColor: '#121212' },
+              },
+              animation:
+                props.mediaListEntry.progress === myAdvancedInput.progress &&
+                props.mediaListEntry.progressVolumes ===
+                  myAdvancedInput.progressVolumes &&
+                props.mediaListEntry.score === Number(myAdvancedInput.score)
+                  ? 'none'
+                  : 'backgroundChange 2s infinite',
             }}
             variant="outlined"
             onClick={handleUpdate}

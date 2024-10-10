@@ -201,7 +201,7 @@ const TableProgressVolumeStepper = ({ row }: any) => {
   }, [inputDispatch, row.mediaListEntry.progressVolumes]);
 
   return (
-    <Box display="flex" flexDirection="row">
+    <Box display="flex" flexDirection="row" width="100%" alignItems="center">
       <IconButton
         size="sm"
         variant="outlined"
@@ -212,14 +212,17 @@ const TableProgressVolumeStepper = ({ row }: any) => {
           '&:hover': {
             backgroundColor: '#12467b',
           },
-          mr: 0.75,
           p: 0,
           '--IconButton-size': '12px',
         }}
       >
         <RemoveIcon fontSize="inherit" />
       </IconButton>
-      <Typography fontSize={12} noWrap>
+      <Typography
+        fontSize={12}
+        noWrap
+        sx={{ flexGrow: 1, textAlign: 'center' }}
+      >
         {formatProgressVolumes(advancedInput.progressVolumes, row.volumes)}
       </Typography>
       <IconButton
@@ -231,7 +234,6 @@ const TableProgressVolumeStepper = ({ row }: any) => {
           '&:hover': {
             backgroundColor: '#12467b',
           },
-          ml: 0.75,
           p: 0,
           '--IconButton-size': '12px',
         }}
@@ -242,6 +244,9 @@ const TableProgressVolumeStepper = ({ row }: any) => {
       >
         <AddIcon fontSize="inherit" />
       </IconButton>
+      {row.mediaListEntry.progressVolumes === advancedInput.progressVolumes ? (
+        <Box width="16px" ml={0.5} />
+      ) : null}
       <HtmlTooltip title="Update">
         <IconButton
           size="sm"
@@ -256,7 +261,7 @@ const TableProgressVolumeStepper = ({ row }: any) => {
             '&:hover': {
               backgroundColor: '#12467b',
             },
-            ml: 1,
+            ml: 0.5,
             p: 0,
             '--IconButton-size': '12px',
           }}

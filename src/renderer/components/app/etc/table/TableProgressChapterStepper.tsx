@@ -13,7 +13,7 @@ import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useUpdateEntryData } from 'renderer/functions/api/mutations/updateEntry';
 import HtmlTooltip from '../CustomTooltip1';
 
-const TableProgressStepper = ({ row }: any) => {
+const TableProgressChapterStepper = ({ row }: any) => {
   const [advancedInput, inputDispatch] = useReducer(
     AdvancedInputContextReducer,
     row.mediaListEntry,
@@ -283,18 +283,7 @@ const TableProgressStepper = ({ row }: any) => {
   }, [inputDispatch, row.mediaListEntry.progress]);
 
   return (
-    <Box
-      display="flex"
-      flexDirection="row"
-      width={
-        row.type === 'ANIME' &&
-        row.mediaListEntry.progress === advancedInput.progress
-          ? '80%'
-          : '94%'
-      }
-      alignItems="center"
-      pr={row.type === 'ANIME' ? 2 : 0}
-    >
+    <Box display="flex" flexDirection="row" width="100%" alignItems="center">
       <IconButton
         size="sm"
         variant="outlined"
@@ -305,7 +294,6 @@ const TableProgressStepper = ({ row }: any) => {
           '&:hover': {
             backgroundColor: '#12467b',
           },
-          mr: 0.75,
           p: 0,
           '--IconButton-size': '12px',
         }}
@@ -333,7 +321,6 @@ const TableProgressStepper = ({ row }: any) => {
           '&:hover': {
             backgroundColor: '#12467b',
           },
-          ml: 0.75,
           p: 0,
           '--IconButton-size': '12px',
         }}
@@ -346,6 +333,9 @@ const TableProgressStepper = ({ row }: any) => {
       >
         <AddIcon fontSize="inherit" />
       </IconButton>
+      {row.mediaListEntry.progress === advancedInput.progress ? (
+        <Box width="16px" ml={0.5} />
+      ) : null}
       <HtmlTooltip title="Update">
         <IconButton
           size="sm"
@@ -359,7 +349,7 @@ const TableProgressStepper = ({ row }: any) => {
             '&:hover': {
               backgroundColor: '#12467b',
             },
-            ml: 1,
+            ml: 0.5,
             p: 0,
             '--IconButton-size': '12px',
           }}
@@ -372,4 +362,4 @@ const TableProgressStepper = ({ row }: any) => {
   );
 };
 
-export default TableProgressStepper;
+export default TableProgressChapterStepper;

@@ -36,6 +36,7 @@ import TableReleased from '../../etc/table/TableReleased';
 import TableStatus from '../../etc/table/TableStatus';
 import TableScore from '../../etc/table/TableScore';
 import TableType from '../../etc/table/TableType';
+import TableProgressChapterStepper from '../../etc/table/TableProgressChapterStepper';
 
 // This is a dynamic row height example, which is more complicated, but allows for a more realistic table.
 // See https://tanstack.com/virtual/v3/docs/examples/react/table for a simpler fixed row height example.
@@ -125,7 +126,7 @@ function MainTanstackTable({ props, title }: any) {
       },
       {
         accessorFn: (row: any) => {
-          return <TableProgressStepper row={row} />;
+          return <TableProgressChapterStepper row={row} />;
         },
         header: 'Chapter Progress',
         cell: (info: any) => info.getValue(),

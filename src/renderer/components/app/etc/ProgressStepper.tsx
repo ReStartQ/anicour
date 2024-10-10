@@ -153,6 +153,7 @@ export default function ProgressStepper({
       display="flex"
       flexDirection="column"
       sx={{ gridColumn: '1/2' /* userSelect: 'none' */ }}
+      mr={1}
     >
       {props.nextAiringEpisode !== null ? (
         <Typography fontSize={12} fontWeight="bold">
@@ -171,6 +172,7 @@ export default function ProgressStepper({
         display="flex"
         flexDirection="row"
         alignItems="center"
+        width="100%"
         sx={{ overflowX: 'auto' }}
       >
         <IconButton
@@ -187,12 +189,11 @@ export default function ProgressStepper({
             p: 0,
             minWidth: 0,
             '--IconButton-size': '12px',
-            mr: advancedInput.progress >= 100 ? '2px' : '4px',
           }}
         >
           <RemoveIcon fontSize="inherit" />
         </IconButton>
-        <Typography fontSize={12}>
+        <Typography fontSize={12} sx={{ flexGrow: 1, textAlign: 'center' }}>
           {formatProgress(
             props.type,
             advancedInput.progress,
@@ -219,7 +220,6 @@ export default function ProgressStepper({
             p: 0,
             minWidth: 0,
             '--IconButton-size': '12px',
-            ml: advancedInput.progress >= 100 ? '2px' : '4px',
           }}
         >
           <AddIcon fontSize="inherit" />

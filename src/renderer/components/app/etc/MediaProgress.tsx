@@ -74,14 +74,7 @@ const MediaProgress = ({
       color="info"
       sx={{
         border: '1px solid deepskyblue',
-        width: getWidth(
-          progressRaw,
-          episodes,
-          chapters,
-          volumes,
-          mediaType,
-          type,
-        ),
+        width: '100%',
         height: '6px',
         '& .MuiLinearProgress-dashed': {
           animation: 'none',

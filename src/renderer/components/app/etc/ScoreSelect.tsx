@@ -11,6 +11,8 @@ export default function ScoreSelect({
   inputDispatch,
 }: any) {
   const onChange = (e: any) => {
+    console.log(advancedInput);
+    console.log(props);
     inputDispatch({
       type: 'updateScore',
       payload: e.target.value,
@@ -33,7 +35,7 @@ export default function ScoreSelect({
         value={advancedInput.score}
         size="small"
         sx={{
-          pt: '4px',
+          pt: '7px',
           width: '55px',
           height: '22px',
           fontSize: '12px',

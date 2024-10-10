@@ -59,11 +59,21 @@ export default function ProgressVolumesStepper({
 
   return (
     <>
-      <Box display="flex" flexDirection="column" sx={{ gridColumn: '2/3' }}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        sx={{ gridColumn: '2/3' }}
+        mr={1}
+      >
         <Typography fontSize={12} fontWeight="bold">
           Volumes{' '}
         </Typography>
-        <Box display="flex" flexDirection="row">
+        <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          width="100%"
+        >
           <IconButton
             size="sm"
             variant="outlined"
@@ -78,12 +88,11 @@ export default function ProgressVolumesStepper({
               p: 0,
               minWidth: 0,
               '--IconButton-size': '12px',
-              mr: advancedInput.progressVolumes >= 100 ? '2px' : '4px',
             }}
           >
             <RemoveIcon fontSize="inherit" />
           </IconButton>
-          <Typography fontSize={12}>
+          <Typography fontSize={12} sx={{ flexGrow: 1, textAlign: 'center' }}>
             {formatProgressVolumes(
               advancedInput.progressVolumes,
               props.volumes,
@@ -106,7 +115,6 @@ export default function ProgressVolumesStepper({
               p: 0,
               minWidth: 0,
               '--IconButton-size': '12px',
-              ml: advancedInput.progress >= 100 ? '2px' : '4px',
             }}
           >
             <AddIcon fontSize="inherit" />
