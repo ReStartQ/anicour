@@ -4,6 +4,7 @@ import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { flexRender } from '@tanstack/react-table';
 import ContextMenu from '../ContextMenu';
+import DeleteModal from '../DeleteModal';
 
 const TanstackTableRow = ({
   virtualRow,
@@ -14,6 +15,11 @@ const TanstackTableRow = ({
 }: any) => {
   const titlePreference: any = useTitle();
   const myAdvancedMedia: any = useAdvancedMedia();
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   const timer: any = useRef();
 
@@ -136,7 +142,9 @@ const TanstackTableRow = ({
         props={row.original}
         contextMenu={contextMenu}
         setContextMenu={setContextMenu}
+        handleClickOpen={handleClickOpen}
       />
+      <DeleteModal props={row.original} open={open} setOpen={setOpen} />
     </tr>
   );
 };

@@ -1,5 +1,9 @@
 # Changes
 
+## 1.5.5
+
+- Added a delete confirmation popup modal when user clicks the "delete from list" option from the right click context menu.
+
 ## 1.5.4
 
 - Progress steppers have been improved spacing wise.(For both the grid/list view)

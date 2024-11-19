@@ -25,6 +25,7 @@ import { useAdult } from 'renderer/context/AdultContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
 import ContextMenu from '../etc/ContextMenu';
+import DeleteModal from '../etc/DeleteModal';
 
 export const SeasonMediaCard = ({ props }: any) => {
   const titlePreference: any = useTitle();
@@ -33,6 +34,12 @@ export const SeasonMediaCard = ({ props }: any) => {
   const myUserName: any = useAniListUsername();
   const adult: any = useAdult();
   const myAdvancedMedia: any = useAdvancedMedia();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   // this fixes the setQuery not reupdating
   const { data, refetch, dataUpdatedAt } = useSeasonsQuery(
@@ -242,7 +249,9 @@ export const SeasonMediaCard = ({ props }: any) => {
         props={props}
         contextMenu={contextMenu}
         setContextMenu={setContextMenu}
+        handleClickOpen={handleClickOpen}
       />
+      <DeleteModal props={props} open={open} setOpen={setOpen} />
     </Card>
   );
 };

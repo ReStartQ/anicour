@@ -19,6 +19,7 @@ export default function ContextMenu({
   props,
   contextMenu,
   setContextMenu,
+  handleClickOpen,
 }: any) {
   const titlePreference: any = useTitle();
   const myAdvancedMedia: any = useAdvancedMedia();
@@ -88,7 +89,9 @@ export default function ContextMenu({
       mediaListEntry: props.mediaListEntry,
       advancedMedia: props,
     };
-    deleteMutation.mutate(entry);
+    /* Previously, this function could delete by itself. Now it uses a modal to confirm with the user on deletion. */
+    handleClickOpen();
+    // deleteMutation.mutate(entry);
 
     // only send message if successful mutation
     /*
@@ -175,10 +178,10 @@ export default function ContextMenu({
       </MenuItem>
       <Divider />
       {props.mediaListEntry !== null ? (
-        <MenuItem onClick={handleCloseDelete}>Remove from List</MenuItem>
+        <MenuItem onClick={handleCloseDelete}>Delete from list</MenuItem>
       ) : (
         <MenuItem onClick={handleCloseAdd} ref={menuItemRef}>
-          Add to List
+          Add to list
         </MenuItem>
       )}
     </StyledMenu>

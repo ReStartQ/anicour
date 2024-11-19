@@ -14,15 +14,21 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
 import { nextAiringEpisodeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
-import ContextMenuAlternative from '../etc/ContextMenuAlternative';
 import ContextMenu from '../etc/ContextMenu';
 import { MediaIcons } from '../etc/SvgIcons';
+import DeleteModal from '../etc/DeleteModal';
 
 export default function MediaCardCompact({ props }: any) {
   const titlePreference: any = useTitle();
   const myAdvancedMedia: any = useAdvancedMedia();
   const myCategory: any = useCategory();
   const mySidebar: any = useSidebarButton();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   const [time, setTime] = useState(
     props.nextAiringEpisode !== null
@@ -187,7 +193,9 @@ export default function MediaCardCompact({ props }: any) {
         props={props}
         contextMenu={contextMenu}
         setContextMenu={setContextMenu}
+        handleClickOpen={handleClickOpen}
       />
+      <DeleteModal props={props} open={open} setOpen={setOpen} />
     </Card>
   );
 }

@@ -27,6 +27,7 @@ import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
 import ContextMenu from '../etc/ContextMenu';
+import DeleteModal from '../etc/DeleteModal';
 
 export default function SearchMediaCard({ props }: any) {
   const titlePreference: any = useTitle();
@@ -34,6 +35,12 @@ export default function SearchMediaCard({ props }: any) {
   const myToken: any = useAniListToken();
   const adult: any = useAdult();
   const myAdvancedMedia: any = useAdvancedMedia();
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   // this fixes the setQuery not reupdating
   const { data, refetch, dataUpdatedAt } = useSearchQuery(
@@ -268,7 +275,9 @@ export default function SearchMediaCard({ props }: any) {
         props={props}
         contextMenu={contextMenu}
         setContextMenu={setContextMenu}
+        handleClickOpen={handleClickOpen}
       />
+      <DeleteModal props={props} open={open} setOpen={setOpen} />
     </Card>
   );
 }

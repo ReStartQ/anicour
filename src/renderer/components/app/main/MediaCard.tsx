@@ -54,6 +54,7 @@ import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
 import ScoreSelect from '../etc/ScoreSelect';
 import { MediaIcons } from '../etc/SvgIcons';
+import DeleteModal from '../etc/DeleteModal';
 
 export default function MediaCard({ props }: any) {
   const titlePreference: any = useTitle();
@@ -69,6 +70,10 @@ export default function MediaCard({ props }: any) {
     notificationMediaNamesAtom,
   );
   const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   const handleClose = (event?: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
@@ -536,7 +541,9 @@ export default function MediaCard({ props }: any) {
         props={props}
         contextMenu={contextMenu}
         setContextMenu={setContextMenu}
+        handleClickOpen={handleClickOpen}
       />
+      <DeleteModal props={props} open={open} setOpen={setOpen} />
     </Card>
   );
 }
