@@ -1,5 +1,10 @@
 # Changes
 
+## 1.5.6
+
+- Swapped delete and cancel button for the delete modal to be consistent with the other modals. (Primary first, Cancel second)
+- Fixed a bug that allowed a context menu to be opened while the delete modal was open.
+
 ## 1.5.5
 
 - Added a delete confirmation popup modal when user clicks the "delete from list" option from the right click context menu.
