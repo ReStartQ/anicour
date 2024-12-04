@@ -101,7 +101,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
               size="sm"
               variant="outlined"
               color={myCategory.category === 0 ? 'primary' : 'neutral'}
-              sx={{ ml: 0.5 }}
+              sx={{ ml: 1 }}
             >
               0
             </Chip>
@@ -120,7 +120,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
               size="sm"
               variant="outlined"
               color={myCategory.category === 1 ? 'primary' : 'neutral'}
-              sx={{ ml: 0.5 }}
+              sx={{ ml: 1 }}
             >
               0
             </Chip>
@@ -139,7 +139,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
               size="sm"
               variant="outlined"
               color={myCategory.category === 2 ? 'primary' : 'neutral'}
-              sx={{ ml: 0.5 }}
+              sx={{ ml: 1 }}
             >
               0
             </Chip>
@@ -158,7 +158,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
               size="sm"
               variant="outlined"
               color={myCategory.category === 3 ? 'primary' : 'neutral'}
-              sx={{ ml: 0.5 }}
+              sx={{ ml: 1 }}
             >
               0
             </Chip>
@@ -182,7 +182,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 fontWeight="bold"
                 color={myCategory.category === 4 ? 'primary' : 'neutral'}
               >
-                Plan to Watch
+                Planning
               </Typography>
             ) : (
               <Typography
@@ -190,7 +190,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 fontWeight="bold"
                 color={myCategory.category === 4 ? 'primary' : 'neutral'}
               >
-                Plan to Read
+                Planning
               </Typography>
             )}
             <ListItemDecorator>
@@ -198,7 +198,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 size="sm"
                 variant="outlined"
                 color={myCategory.category === 4 ? 'primary' : 'neutral'}
-                sx={{ ml: 0.5 }}
+                sx={{ ml: 1 }}
               >
                 0
               </Chip>
@@ -218,7 +218,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
               size="sm"
               variant="outlined"
               color={myCategory.category === 5 ? 'primary' : 'neutral'}
-              sx={{ ml: 0.5 }}
+              sx={{ ml: 1 }}
             >
               0
             </Chip>
@@ -306,7 +306,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
           <Chip
             size="sm"
             variant="outlined"
-            sx={{ ml: 0.5 }}
+            sx={{ ml: 1 }}
             color={
               myCategory.category === 0
                 ? getCategoryColor(myFilter.filter)
@@ -343,7 +343,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 ? getCategoryColor(myFilter.filter)
                 : 'neutral'
             }
-            sx={{ ml: 0.5 }}
+            sx={{ ml: 1 }}
           >
             <FilterCount
               sidebar={mySidebarValue.sidebar}
@@ -375,7 +375,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 ? getCategoryColor(myFilter.filter)
                 : 'neutral'
             }
-            sx={{ ml: 0.5 }}
+            sx={{ ml: 1 }}
           >
             <FilterCount
               sidebar={mySidebarValue.sidebar}
@@ -407,7 +407,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 ? getCategoryColor(myFilter.filter)
                 : 'neutral'
             }
-            sx={{ ml: 0.5 }}
+            sx={{ ml: 1 }}
           >
             <FilterCount
               sidebar={mySidebarValue.sidebar}
@@ -440,7 +440,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                   : 'neutral'
               }
             >
-              Plan to Watch
+              Planning
             </Typography>
           ) : (
             <Typography
@@ -452,7 +452,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                   : 'neutral'
               }
             >
-              Plan to Read
+              Planning
             </Typography>
           )}
           <ListItemDecorator>
@@ -464,10 +464,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                   ? getCategoryColor(myFilter.filter)
                   : 'neutral'
               }
-              sx={{
-                ml: 0.5,
-                // borderColor: myFilter === '' ? 'neutral' : 'warning.400',
-              }}
+              sx={{ ml: 1 }}
             >
               <FilterCount
                 sidebar={mySidebarValue.sidebar}
@@ -500,7 +497,7 @@ const MainCategoryBar = memo(({ listValue }: any) => {
                 ? getCategoryColor(myFilter.filter)
                 : 'neutral'
             }
-            sx={{ ml: 0.5 }}
+            sx={{ ml: 1 }}
           >
             <FilterCount
               sidebar={mySidebarValue.sidebar}

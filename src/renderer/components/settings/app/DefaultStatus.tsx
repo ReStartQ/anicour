@@ -39,7 +39,7 @@ const DefaultStatus = () => {
           <option value="COMPLETED">Completed</option>
           <option value="PAUSED">On Hold</option>
           <option value="DROPPED">Dropped</option>
-          <option value="PLANNING">Plan to Watch / Plan to Read</option>
+          <option value="PLANNING">Planning</option>
         </NativeSelect>
       </FormControl>
     </Box>

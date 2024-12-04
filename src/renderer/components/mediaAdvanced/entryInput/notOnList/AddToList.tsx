@@ -118,8 +118,8 @@ export default function AddToList() {
         <Option value="DROPPED">Dropped</Option>
         <Option value="PLANNING">
           {myAdvancedMedia.advancedMedia.type === 'ANIME'
-            ? 'Plan to Watch'
-            : 'Plan to Read'}
+            ? 'Planning'
+            : 'Planning'}
         </Option>
       </Select>
       <Button

@@ -1,5 +1,11 @@
 # Changes
 
+## 1.5.7
+
+- Chip counters are now able to go past 9999. If a certain tab on the user's list has more than 9999 entries, it will display as "9999+".
+- Changed label for "Plan to Watch/Plan to Read" into "Planning".
+- Fixed a bug that showed media that was in the "All" tab incorrectly showing the rewatch/reread icon.
+
 ## 1.5.6
 
 - Swapped delete and cancel button for the delete modal to be consistent with the other modals. (Primary first, Cancel second)

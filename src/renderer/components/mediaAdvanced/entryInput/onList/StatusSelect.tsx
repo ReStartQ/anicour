@@ -53,9 +53,9 @@ export default function StatusSelect() {
         <Option value="PAUSED">On Hold</Option>
         <Option value="DROPPED">Dropped</Option>
         {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
-          <Option value="PLANNING">Plan to Watch</Option>
+          <Option value="PLANNING">Planning</Option>
         ) : (
-          <Option value="PLANNING">Plan to Read</Option>
+          <Option value="PLANNING">Planning</Option>
         )}
       </Select>
     </FormControl>

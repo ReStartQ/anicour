@@ -22,7 +22,8 @@ const TableTitleMain = ({ row }: any) => {
       ) : null}
       {(row.mediaListEntry.repeat > 0 ||
         row.mediaListEntry.completedAt.year !== null) &&
-      myCategory.category !== 1 ? (
+      myCategory.category !== 1 &&
+      myCategory.category !== 5 ? (
         <HtmlTooltip
           title={mySidebar.sidebar === 0 ? 'Rewatching' : 'Rereading'}
         >

@@ -128,7 +128,8 @@ export default function MediaCardCompact({ props }: any) {
         ) : null}
         {(props.mediaListEntry.repeat > 0 ||
           props.mediaListEntry.completedAt.year !== null) &&
-        myCategory.category !== 1 ? (
+        myCategory.category !== 1 &&
+        myCategory.category !== 5 ? (
           <Tooltip
             title={mySidebar.sidebar === 0 ? `Rewatching` : `Rereading`}
             arrow

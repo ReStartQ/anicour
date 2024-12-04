@@ -168,7 +168,7 @@ const MainFilterCategoryBar = memo(({ listValue }: any) => {
               fontWeight="bold"
               color={myCategory.category === 4 ? 'primary' : 'neutral'}
             >
-              Plan to Watch
+              Planning
             </Typography>
           ) : (
             <Typography
@@ -176,7 +176,7 @@ const MainFilterCategoryBar = memo(({ listValue }: any) => {
               fontWeight="bold"
               color={myCategory.category === 4 ? 'primary' : 'neutral'}
             >
-              Plan to Read
+              Planning
             </Typography>
           )}
           <ListItemDecorator>
