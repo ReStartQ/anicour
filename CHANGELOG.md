@@ -1,10 +1,8 @@
-# Changes
-
 ## 1.5.7
 
-- Chip counters are now able to go past 9999. If a certain tab on the user's list has more than 9999 entries, it will display as "9999+".
-- Changed label for "Plan to Watch/Plan to Read" into "Planning".
-- Fixed a bug that showed media that was in the "All" tab incorrectly showing the rewatch/reread icon.
+- Changed label for "Plan to Watch/Plan to Read" to "Planning".
+- Max chip count value has been changed to allow for any value.
+- Fixed a bug that showed media in the "All" tab incorrectly displaying the rewatch/reread icon.
 
 ## 1.5.6
 
