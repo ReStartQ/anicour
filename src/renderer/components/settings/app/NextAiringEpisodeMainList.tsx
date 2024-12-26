@@ -21,7 +21,7 @@ function NextAiringEpisodeMainList() {
     <Box>
       <FormControl fullWidth>
         <InputLabel variant="standard">
-          Show next airing episode on the user&apos;s anime list
+          Next Airing Episode (Main List)
         </InputLabel>
         <NativeSelect
           id="defaultNextAiringEpisode"

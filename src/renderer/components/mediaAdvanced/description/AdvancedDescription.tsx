@@ -18,6 +18,7 @@ const AdvancedDescription = () => {
         border: '1px solid SteelBlue',
         // paddingTop: '4px',
       }}
+      variant="outlined"
     >
       <CardContent sx={{ height: '100%', '&:last-child': { pb: '16px' } }}>
         <Box sx={{ height: '100%', overflowY: 'auto', pr: '10px' }}>

@@ -1,24 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useFilter } from 'renderer/context/FilterContext';
-import { keyframes } from '@emotion/react';
-import { useQuery } from '@tanstack/react-query';
-import Axios from 'axios';
+import { Divider, Grid, IconButton, Typography } from '@mui/material';
+import HelpIcon from '@mui/icons-material/Help';
 import { useMainView } from '../../context/MainViewContext';
 import SelectLanguage from './lang/SelectLanguage';
-import SelectTheme from './theme/SelectTheme';
-import ThemeToggle from './theme/ThemeToggle';
-import SelectNews from './services/SelectNews';
-import TestButton from './TestButton';
 import ResetButton from './reset/ResetButton';
-import TokenInput from './services/TokenInput';
-import UsernameInput from './services/UsernameInput';
-import TokenButton from './services/TokenButton';
-import ResetLoginButton from './services/ResetLoginButton';
-import SaveButton from './etc/SaveButton';
 import AccountSection from './services/AccountSection';
-import AdultLabel from './app/AdultLabel';
 import SelectDefaultLink from './app/SelectDefaultLink';
 import DefaultStatus from './app/DefaultStatus';
 import SelectDefaultView from './app/SelectDefaultView';
@@ -26,19 +15,46 @@ import AboutSection from './about/AboutSection';
 import SelectSeasonChange from './app/SelectSeasonChange';
 import NextAiringEpisodeMainList from './app/NextAiringEpisodeMainList';
 import SelectDefaultSeasonsSort from './app/SelectDefaultSeasonsSort';
+import CustomSettingsTooltip from './etc/CustomSettingsTooltip';
 
 function SettingsMainTab({ view }: any) {
   if (view === 0) {
     return (
       <Box
         sx={{
-          height: 'calc( 100vh )',
+          height: 'calc(100vh)',
           width: '100%',
           overflowY: 'auto',
-          gridGap: '10px',
-          padding: '25px',
+          padding: '20px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '10px',
         }}
       >
+        <Box display="flex" flexDirection="row" gap="4px">
+          <Typography variant="h6">AniList Account</Typography>
+          <CustomSettingsTooltip
+            title={
+              <Box display="flex" flexDirection="column" gap={2}>
+                <Box
+                  component="img"
+                  src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListProfilePageTooltip.png?raw=true"
+                  sx={{ width: '400px' }}
+                />
+                <Box
+                  component="img"
+                  src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListTokenTooltip.png?raw=true"
+                  sx={{ width: '400px' }}
+                />
+              </Box>
+            }
+            placement="right"
+          >
+            <IconButton size="small">
+              <HelpIcon fontSize="small" />
+            </IconButton>
+          </CustomSettingsTooltip>
+        </Box>
         <AccountSection />
       </Box>
     );
@@ -47,22 +63,56 @@ function SettingsMainTab({ view }: any) {
     return (
       <Box
         sx={{
-          height: 'calc( 100vh )',
+          height: 'calc(100vh)',
           width: '100%',
           overflowY: 'auto',
-          gridGap: '20px',
-          padding: '25px',
+          padding: '20px',
           display: 'flex',
           flexDirection: 'column',
+          gap: '20px',
         }}
       >
-        <SelectLanguage />
-        <SelectDefaultView />
-        <SelectSeasonChange />
-        <SelectDefaultSeasonsSort />
-        <SelectDefaultLink />
-        <DefaultStatus />
-        <NextAiringEpisodeMainList />
+        <Box display="flex" flexDirection="column" gap="16px">
+          <Box>
+            <Typography variant="h6" gutterBottom>
+              Appearance
+            </Typography>
+            <Divider />
+          </Box>
+          <Grid container spacing={4}>
+            <Grid item sm={4}>
+              <SelectLanguage />
+            </Grid>
+            <Grid item sm={4}>
+              <NextAiringEpisodeMainList />
+            </Grid>
+          </Grid>
+        </Box>
+        <Box display="flex" flexDirection="column" gap="16px">
+          <Box>
+            <Typography variant="h6" gutterBottom>
+              Behavior
+            </Typography>
+            <Divider />
+          </Box>
+          <Grid container spacing={4}>
+            <Grid item sm={4}>
+              <SelectDefaultView />
+            </Grid>
+            <Grid item sm={8}>
+              <SelectSeasonChange />
+            </Grid>
+            <Grid item sm={4}>
+              <SelectDefaultLink />
+            </Grid>
+            <Grid item sm={4}>
+              <DefaultStatus />
+            </Grid>
+            <Grid item sm={4}>
+              <SelectDefaultSeasonsSort />
+            </Grid>
+          </Grid>
+        </Box>
       </Box>
     );
   }
@@ -73,8 +123,7 @@ function SettingsMainTab({ view }: any) {
           height: 'calc( 100vh )',
           width: '100%',
           overflowY: 'auto',
-          gridGap: '10px',
-          padding: '25px',
+          padding: '20px',
         }}
       >
         <AboutSection />
@@ -85,14 +134,35 @@ function SettingsMainTab({ view }: any) {
     return (
       <Box
         sx={{
-          height: 'calc( 100vh )',
+          height: 'calc(100vh)',
           width: '100%',
-          overflowY: 'auto',
-          gridGap: '10px',
-          padding: '25px',
+          position: 'relative',
+          padding: '20px',
         }}
       >
-        <ResetButton />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '20px',
+            left: '20px',
+          }}
+        >
+          <Typography variant="body1" gutterBottom>
+            If you are having issues with the app, try resetting it to the
+            default settings.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            transform: 'translateY(-8%)', // Adjust this value to move the button up
+          }}
+        >
+          <ResetButton />
+        </Box>
       </Box>
     );
   }

@@ -14,7 +14,7 @@ const SelectDefaultView = () => {
     <Box>
       <FormControl fullWidth>
         <InputLabel variant="standard" id="defaultLinkLabel">
-          Default View for Media Lists
+          List View Type
         </InputLabel>
         <NativeSelect
           id="defaultLinkSelect"

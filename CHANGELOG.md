@@ -1,3 +1,22 @@
+## 1.6.0
+
+### Main Changes
+
+- New Settings Menu
+- Settings tabs now have icons next to them.
+- A more compact look for the services section.
+- Application settings are now separated between appearance and behavior
+- Reset tab now has a message that tells the user to reset if they are having issues
+- Reset modal now uses a similar style to the modal used for deleting a media from the list.
+
+### Minor Changes
+
+- Rounded out all the borders for the advanced media view.
+
+### Bug fixes
+
+- Fixed an issue where the username would sometimes not authenticate properly. (Occurred only when username had previously been saved)
+
 ## 1.5.7
 
 - Changed label for "Plan to Watch/Plan to Read" to "Planning".

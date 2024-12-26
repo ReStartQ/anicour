@@ -1,11 +1,5 @@
 import { Box, Button, IconButton, Input, Typography } from '@mui/material';
-import TokenIcon from '@mui/icons-material/Token';
-import SaveIcon from '@mui/icons-material/Save';
-import { useState } from 'react';
-import InfoIcon from '@mui/icons-material/Info';
-import HtmlTooltip from 'renderer/components/app/etc/CustomTooltip1';
-import HelpIcon from '@mui/icons-material/Help';
-import CustomToolTipFixedWidth from 'renderer/components/app/etc/CustomTooltipFixedWidth';
+import { useEffect, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
@@ -30,6 +24,11 @@ export default function AccountSection() {
   const [notifcationOpen, setNotificationOpen] = useAtom(
     notificationOpenSettingsAtom,
   );
+
+  useEffect(() => {
+    setUsername(myUsername.AniListUsername);
+    setToken(myToken.AniListToken);
+  }, [myUsername, myToken]);
 
   const { data, refetch }: any = useTestSettings(
     myUsername.AniListUsername,
@@ -79,10 +78,7 @@ export default function AccountSection() {
 
   return (
     <Box display="flex" flexDirection="column" gap="15px">
-      <Box display="flex" flexDirection="row">
-        Account Information{' '}
-      </Box>
-      <Box display="flex" flexDirection="row">
+      <Box display="flex" flexDirection="row" gap="15px">
         <Input
           placeholder="Username"
           defaultValue={
@@ -95,24 +91,6 @@ export default function AccountSection() {
           spellCheck={false}
           sx={{ width: '100%' }}
         />
-        <CustomToolTipFixedWidth
-          title={
-            <>
-              <Box
-                component="img"
-                src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListProfilePageTooltip.png?raw=true"
-                sx={{ width: '550px' }}
-              />
-            </>
-          }
-          placement="left-start"
-        >
-          <IconButton sx={{ ml: 2 }}>
-            <HelpIcon fontSize="small" />
-          </IconButton>
-        </CustomToolTipFixedWidth>
-      </Box>
-      <Box display="flex" flexDirection="row">
         <Input
           placeholder="Token"
           inputProps={ariaLabel}
@@ -120,41 +98,26 @@ export default function AccountSection() {
           spellCheck={false}
           sx={{ width: '100%' }}
         />
-        <CustomToolTipFixedWidth
-          title={
-            <>
-              <Box
-                component="img"
-                src="https://github.com/ReStartQ/anicour/blob/main/images/help/AniListTokenTooltip.png?raw=true"
-              />
-            </>
-          }
-          placement="left-start"
-        >
-          <IconButton sx={{ ml: 2 }}>
-            <HelpIcon fontSize="small" />
-          </IconButton>
-        </CustomToolTipFixedWidth>
       </Box>
       <Box display="flex" flexDirection="row" gap="15px">
         <Button
-          variant="contained"
+          variant="outlined"
           color="primary"
           onClick={() => {
             window.electron.ipcRenderer.sendMessage('openExternalLink', [
               authLink,
             ]);
           }}
-          sx={{ width: '50%' }}
+          fullWidth
         >
           Get AniList Token
         </Button>
         <Button
-          variant="contained"
+          variant="outlined"
           color="success"
           disabled={isSave}
           onClick={handleSave}
-          sx={{ width: '50%' }}
+          fullWidth
         >
           Save
         </Button>

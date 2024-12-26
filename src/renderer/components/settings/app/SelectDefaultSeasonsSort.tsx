@@ -22,7 +22,7 @@ function SelectDefaultSeasonsSort() {
   return (
     <Box>
       <FormControl fullWidth>
-        <InputLabel variant="standard">Default seasonal list sort</InputLabel>
+        <InputLabel variant="standard">Seasonal Sort</InputLabel>
         <NativeSelect
           id="defaultSeasonSort"
           value={defaultSeasonSort}

@@ -56,11 +56,11 @@ const AboutSection = () => {
 
   return (
     <Box>
-      <Typography variant="subtitle2">Current Version: {appVersion}</Typography>
-      <br />
+      <Typography variant="subtitle1">Version: {appVersion}</Typography>
       <MDEditor
         value={markdown}
-        height="420px"
+        style={{ marginTop: '10px', marginBottom: '10px', padding: '15px' }}
+        height="460px"
         hideToolbar
         contentEditable={false}
         preview="preview"
@@ -77,10 +77,6 @@ const AboutSection = () => {
           },
         }}
       />
-      <br />
-      <Typography variant="subtitle2">
-        AniCour is developed and maintained by ReStartQ
-      </Typography>
     </Box>
   );
 };

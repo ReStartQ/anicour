@@ -28,17 +28,17 @@ function SelectSeasonChange() {
     <Box>
       <FormControl fullWidth>
         <InputLabel variant="standard" id="defaultLinkLabel">
-          Default Season Change
+          Season Change
         </InputLabel>
         <NativeSelect
           id="defaultSeasonChange"
           value={seasonChange}
           onChange={handleChange}
         >
-          <option value="Early">
-            Early (preview new season a month early)
+          <option value="Early">Early (beginning of Dec/Mar/Jun/Sep)</option>
+          <option value="Standard">
+            Standard (beginning of Jan/Apr/July/Oct)
           </option>
-          <option value="Standard">Standard (standard 3 month seasons)</option>
         </NativeSelect>
       </FormControl>
     </Box>

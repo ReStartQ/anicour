@@ -1,4 +1,4 @@
-import { CardContent, Tooltip, Typography } from '@mui/material';
+import { Card, CardContent, styled, Tooltip, Typography } from '@mui/material';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import {
   formatSeason,
@@ -8,6 +8,7 @@ import {
 } from 'renderer/functions/edit/formatInfo';
 import { infoTypeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
+import CardContentPaddingAdjusted from 'renderer/components/settings/etc/CardContentPaddingAdjusted';
 import AdvancedInformationDefault from './AdvancedInformationDefault';
 import AdvancedInformationTitles from './AdvancedInformationTitles';
 import AdvancedInformationThemes from './AdvancedInformationThemes';
@@ -18,100 +19,120 @@ const AdvancedInformation = () => {
   const [infoType, setInfoType] = useAtom(infoTypeAtom);
   if (infoType === 1) {
     return (
-      <CardContent
+      <Card
+        elevation={0}
         sx={{
           gridColumn: '1/2',
           gridRow: '5/6',
           border: '1px solid SteelBlue',
           height: '100%',
-          pt: '14px',
-          px: '14px',
-          pb: '14px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
+        variant="outlined"
       >
-        <AdvancedInformationTrailer />
-      </CardContent>
+        <CardContent>
+          <AdvancedInformationTrailer />
+        </CardContent>
+      </Card>
     );
   }
   if (infoType === 2) {
     return (
-      <CardContent
+      <Card
+        elevation={0}
         sx={{
           gridColumn: '1/2',
           gridRow: '5/6',
           border: '1px solid SteelBlue',
           height: '100%',
-          pt: '14px',
-          px: '14px',
-          pb: '14px',
           display: 'flex',
-          alignItems: 'center',
         }}
+        variant="outlined"
       >
-        <AdvancedInformationThemes />
-      </CardContent>
+        <CardContentPaddingAdjusted
+          sx={{
+            height: '100%',
+            width: '100%',
+          }}
+        >
+          <AdvancedInformationThemes />
+        </CardContentPaddingAdjusted>
+      </Card>
     );
   }
 
   if (infoType === 3) {
     return (
-      <CardContent
+      <Card
+        elevation={0}
         sx={{
           gridColumn: '1/2',
           gridRow: '5/6',
           border: '1px solid SteelBlue',
           height: '100%',
-          pt: '14px',
-          px: '14px',
-          pb: '14px',
           display: 'flex',
-          alignItems: 'center',
         }}
+        variant="outlined"
       >
-        <AdvancedInformationTitles />
-      </CardContent>
+        <CardContentPaddingAdjusted
+          sx={{
+            height: '100%',
+            width: '100%',
+          }}
+        >
+          <AdvancedInformationTitles />
+        </CardContentPaddingAdjusted>
+      </Card>
     );
   }
 
   if (infoType === 4) {
     return (
-      <CardContent
+      <Card
+        elevation={0}
         sx={{
           gridColumn: '1/2',
           gridRow: '5/6',
           border: '1px solid SteelBlue',
           height: '100%',
-          pt: '14px',
-          px: '14px',
-          pb: '14px',
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
         }}
+        variant="outlined"
       >
-        <AdvancedInformationDelete />
-      </CardContent>
+        <CardContentPaddingAdjusted
+          sx={{
+            height: '100%',
+            width: '100%',
+          }}
+        >
+          <AdvancedInformationDelete />
+        </CardContentPaddingAdjusted>
+      </Card>
     );
   }
   return (
-    <CardContent
+    <Card
+      elevation={0}
       sx={{
         gridColumn: '1/2',
         gridRow: '5/6',
         border: '1px solid SteelBlue',
         height: '100%',
-        pt: '14px',
-        px: '14px',
-        pb: '14px',
         display: 'flex',
-        alignItems: 'center',
       }}
+      variant="outlined"
     >
-      <AdvancedInformationDefault />
-    </CardContent>
+      <CardContentPaddingAdjusted
+        sx={{
+          height: '100%',
+          width: '100%',
+        }}
+      >
+        <AdvancedInformationDefault />
+      </CardContentPaddingAdjusted>
+    </Card>
   );
 };
 

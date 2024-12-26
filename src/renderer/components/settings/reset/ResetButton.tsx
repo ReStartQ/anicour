@@ -6,8 +6,9 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Typography,
 } from '@mui/material';
-import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import { SettingsBackupRestore } from '@mui/icons-material';
 
 export default function ResetButton() {
   const [open, setOpen] = React.useState(false);
@@ -26,42 +27,48 @@ export default function ResetButton() {
   return (
     <div>
       <Button
-        variant="contained"
+        variant="outlined"
         color="error"
         onClick={handleClickOpen}
         fullWidth
       >
-        <PowerSettingsNewIcon sx={{ mr: '5px' }} />
-        Reset Settings
+        <SettingsBackupRestore sx={{ mr: 1 }} />
+        <Typography>Reset to Default</Typography>
       </Button>
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        sx={{
+          '& .MuiPaper-root': {
+            background: '#121212',
+            border: '1px solid #2f2f2f',
+          },
+        }}
       >
         <DialogTitle id="alert-dialog-title">
-          Reset app data to default?
+          Reset app data to default
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            This will reset all settings to default.
-            <br />
-            Your account settings data will be reset and you will have to
-            reconnect your account to the app.
+          <DialogContentText id="alert-dialog-description2">
+            The app will be reset to the default settings.
+          </DialogContentText>
+          <DialogContentText id="alert-dialog-description3">
+            You will need to re-enter your AniList account information.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button
             onClick={() => handleClose(true)}
-            variant="contained"
+            variant="outlined"
             color="error"
           >
-            <PowerSettingsNewIcon sx={{ mr: '5px' }} />
-            Reset
+            <SettingsBackupRestore sx={{ mr: 1 }} />
+            <Typography>Reset to Default</Typography>
           </Button>
-          <Button onClick={() => handleClose(false)} variant="contained">
-            Cancel
+          <Button onClick={() => handleClose(false)} variant="outlined">
+            <Typography>Cancel</Typography>
           </Button>
         </DialogActions>
       </Dialog>

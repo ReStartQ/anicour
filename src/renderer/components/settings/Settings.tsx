@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,12 +12,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
-import AccessibilityIcon from '@mui/icons-material/Accessibility';
-import VisibilityIcon from '@mui/icons-material/Visibility';
 import InfoIcon from '@mui/icons-material/Info';
-import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import { useAtom } from 'jotai';
 import {
   appVersionAtom,
@@ -30,6 +25,11 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
+import {
+  Construction,
+  RestartAlt,
+  SettingsBackupRestore,
+} from '@mui/icons-material';
 import { useSidebarButton } from '../../context/SidebarContext';
 import SettingsMain from './SettingsMain';
 import { useTheme } from '../../context/ThemeContext';
@@ -50,7 +50,7 @@ const lightTheme = createTheme({
 
 function SideIcons({ view }: any) {
   if (view === 0) {
-    return <ManageAccountsIcon />;
+    return <Construction />;
   }
   if (view === 1) {
     return <SettingsApplicationsIcon />;
@@ -59,7 +59,7 @@ function SideIcons({ view }: any) {
     return <InfoIcon />;
   }
   if (view === 3) {
-    return <PowerSettingsNewIcon />;
+    return <SettingsBackupRestore />;
   }
   return <></>;
 }
@@ -173,10 +173,12 @@ export default function Settings() {
           sx={{
             width: `calc(100% - ${drawerWidth}px)`,
             ml: `${drawerWidth}px`,
+            backgroundColor: '#101218',
           }}
         >
           <Toolbar>
-            <Typography variant="h6" noWrap component="div">
+            <SideIcons view={sidebarValue.sidebar} />
+            <Typography variant="h5" noWrap component="div" sx={{ ml: 1 }}>
               {getSettingTitle(sidebarValue.sidebar, appVersion)}
             </Typography>
           </Toolbar>
@@ -195,24 +197,28 @@ export default function Settings() {
         >
           <Toolbar />
           <Divider />
-          <List>
+          <List disablePadding>
             {['Services', 'Application', 'About', 'Reset'].map(
               (text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton
-                    onClick={() => {
-                      console.log('settings tab changed');
-                      sidebarValue.setSidebar(index);
-                    }}
-                    selected={sidebarValue.sidebar === index}
-                    dense
-                  >
-                    <ListItemIcon>
-                      <SideIcons view={index} />
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
+                <>
+                  <ListItem key={text} disableGutters>
+                    <ListItemButton
+                      onClick={() => {
+                        console.log('settings tab changed');
+                        sidebarValue.setSidebar(index);
+                      }}
+                      selected={sidebarValue.sidebar === index}
+                      dense
+                      disableRipple
+                    >
+                      <ListItemIcon>
+                        <SideIcons view={index} />
+                      </ListItemIcon>
+                      <ListItemText primary={text} />
+                    </ListItemButton>
+                  </ListItem>
+                  {index < 3 && <Divider />}
+                </>
               ),
             )}
           </List>
