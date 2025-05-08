@@ -27,5 +27,27 @@
     "package-lock.json": true,
     "*.{css,sass,scss}.d.ts": true
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#161B1D",
+    "terminal.foreground": "#7EA2B4",
+    "terminalCursor.background": "#7EA2B4",
+    "terminalCursor.foreground": "#7EA2B4",
+    "terminal.ansiBlack": "#161B1D",
+    "terminal.ansiBlue": "#257FAD",
+    "terminal.ansiBrightBlack": "#5A7B8C",
+    "terminal.ansiBrightBlue": "#257FAD",
+    "terminal.ansiBrightCyan": "#2D8F6F",
+    "terminal.ansiBrightGreen": "#568C3B",
+    "terminal.ansiBrightMagenta": "#6B6BB8",
+    "terminal.ansiBrightRed": "#D22D72",
+    "terminal.ansiBrightWhite": "#EBF8FF",
+    "terminal.ansiBrightYellow": "#8A8A0F",
+    "terminal.ansiCyan": "#2D8F6F",
+    "terminal.ansiGreen": "#568C3B",
+    "terminal.ansiMagenta": "#6B6BB8",
+    "terminal.ansiRed": "#D22D72",
+    "terminal.ansiWhite": "#7EA2B4",
+    "terminal.ansiYellow": "#8A8A0F"
+  }
 }

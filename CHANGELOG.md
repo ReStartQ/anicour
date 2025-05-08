@@ -1,3 +1,24 @@
+## 1.7.0
+
+### Main Changes
+
+- Color changes for text in cards and tooltips for a more accessibility friendly experience
+- Disabled button border changed to a color that fits with the color scheme
+- Order and swapping information of media cards has been changed to make a more consistent UI among all the cards.
+- Status is now uniformally being represented by a colored dot throughout the app.
+- Score select component has been adjusted to a smaller size and centered text. Removed dropdown icon.
+- Status select has swapped places with score input in the advanced media window.
+- Removed progress bar from progress stepper.
+- Text color contrasts changes around the app for a better contrast ratio. Labels are a different color than the information text that it relates to. These changes can be seen in the media card texts, information in the advanced window, and some tooltips.
+
+### Minor Changes
+
+- 'Not yet released' status has been changed to 'Unreleased'
+- Small padding changes to media cards.
+- Advanced entry input update button size increased to match in size with bottom components.
+- Reset to default buttons variant changed to soft to distinguish it from other buttons.
+- Status colors has been lightly changed to different shades of the original.
+
 ## 1.6.0
 
 ### Main Changes

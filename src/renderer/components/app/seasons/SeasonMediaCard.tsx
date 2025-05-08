@@ -24,6 +24,7 @@ import { useAniListUsername } from 'renderer/context/services/AniListUsernameCon
 import { useAdult } from 'renderer/context/AdultContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
+import { Circle } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import DeleteModal from '../etc/DeleteModal';
 
@@ -169,8 +170,8 @@ export const SeasonMediaCard = ({ props }: any) => {
         sx={{
           gridRow: '1/3',
           gridColumn: '2/3',
-          paddingTop: '4px',
-          '&:last-child': { pb: '4px' },
+          paddingTop: '6px',
+          '&:last-child': { pb: '6px' },
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -182,48 +183,86 @@ export const SeasonMediaCard = ({ props }: any) => {
           fontWeight="bold"
           noWrap
           gutterBottom
-          color={getStatusColor(props.status)}
-          // onClick={() => handleClick(props.titleRomaji)}
+          className="title"
         >
           {getTitle(titlePreference.title, props)}
         </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
             Episodes:
           </Box>{' '}
-          {props.episodes !== null ? props.episodes : '?'}
-        </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
+          <Typography fontSize={12} noWrap className="information">
+            {props.episodes !== null ? props.episodes : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
             Studio:
           </Box>{' '}
-          {props.mainStudioIndex !== -1
-            ? props.studios[props.mainStudioIndex].node.name
-            : '?'}
-        </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
-            Genres:
-          </Box>{' '}
-          {props.genres.map((e: any, index: number) => {
-            if (index + 1 !== props.genres.length) {
-              return `${e}, `;
-            }
-            return `${e}`;
-          })}
-        </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
-            Score:{' '}
-          </Box>
-          {props.averageScore !== null ? `${props.averageScore}%` : '?'}
-        </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
+          <Typography fontSize={12} noWrap className="information">
+            {props.mainStudioIndex !== -1
+              ? props.studios[props.mainStudioIndex].node.name
+              : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="2px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
             Status:{'  '}
           </Box>
-          {props.status !== null ? formatStatus(props.status) : '?'}
-        </Typography>
+          <Circle
+            fontSize="inherit"
+            sx={{ padding: '2px', color: getStatusColor(props.status) }}
+          />
+          <Typography fontSize={12} noWrap className="information">
+            {props.status !== null ? formatStatus(props.status) : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
+            Score:{' '}
+          </Box>
+          <Typography fontSize={12} noWrap className="information">
+            {props.averageScore !== null ? `${props.averageScore}%` : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
+            Genres:
+          </Box>{' '}
+          <Typography fontSize={12} noWrap className="information">
+            {props.genres.map((e: any, index: number) => {
+              if (index + 1 !== props.genres.length) {
+                return `${e}, `;
+              }
+              return `${e}`;
+            })}
+          </Typography>
+        </Box>
         {/* <Typography fontSize={12} noWrap>
           <Box component="span" fontWeight="bold" fontSize={14}>
             Popularity:{' '}
@@ -239,6 +278,7 @@ export const SeasonMediaCard = ({ props }: any) => {
             WebkitLineClamp: '3',
             WebkitBoxOrient: 'vertical',
           }}
+          className="description"
         >
           {props.description !== null
             ? props.description.replace(/(<([^>]+)>)/gi, '')
@@ -272,3 +312,21 @@ export default SeasonMediaCard;
 /* {props.nextAiringEpisode !== null
   ? seasonAiringTime(props.nextAiringEpisode.timeUntilAiring)
   : null} */
+
+/*
+  <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+    <Box
+      component="span"
+      fontWeight="bold"
+      fontSize={14}
+      className="label-information"
+    >
+      Studio:
+    </Box>{' '}
+    <Typography fontSize={12} noWrap className="information">
+      {props.mainStudioIndex !== -1
+        ? props.studios[props.mainStudioIndex].node.name
+        : '?'}
+    </Typography>
+  </Box>
+*/

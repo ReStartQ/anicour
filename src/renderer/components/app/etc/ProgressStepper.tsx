@@ -156,7 +156,11 @@ export default function ProgressStepper({
       mr={1}
     >
       {props.nextAiringEpisode !== null ? (
-        <Typography fontSize={12} fontWeight="bold">
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          className="label-information"
+        >
           {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
           {/*         <NextAiringEpisodeIndicator
           props={props}
@@ -164,7 +168,11 @@ export default function ProgressStepper({
           /> */}
         </Typography>
       ) : (
-        <Typography fontSize={12} fontWeight="bold">
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          className="label-information"
+        >
           {props.type === 'ANIME' ? 'Episodes' : 'Chapters'}
         </Typography>
       )}
@@ -193,7 +201,11 @@ export default function ProgressStepper({
         >
           <RemoveIcon fontSize="inherit" />
         </IconButton>
-        <Typography fontSize={12} sx={{ flexGrow: 1, textAlign: 'center' }}>
+        <Typography
+          fontSize={12}
+          sx={{ flexGrow: 1, textAlign: 'center' }}
+          className="information"
+        >
           {formatProgress(
             props.type,
             advancedInput.progress,
@@ -225,6 +237,7 @@ export default function ProgressStepper({
           <AddIcon fontSize="inherit" />
         </IconButton>
       </Box>
+      {/*
       <Box
         display="flex"
         flexDirection="row"
@@ -257,7 +270,7 @@ export default function ProgressStepper({
           mediaType={props.type}
           type={0}
         />
-      </Box>
+      </Box> */}
     </Box>
   );
 }

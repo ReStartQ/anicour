@@ -49,14 +49,14 @@ const AdvancedInformationTitles = () => {
 
   const synonymsList = myAdvancedMedia.advancedMedia.synonyms.map(
     (name: any, index: number) => (
-      <Typography fontSize={12} key={name}>
+      <Typography fontSize={12} key={name} className="information">
         {name}
       </Typography>
     ),
   );
   const synonymsListNumbered = myAdvancedMedia.advancedMedia.synonyms.map(
     (name: any, index: number) => (
-      <Typography fontSize={12} key={name}>
+      <Typography fontSize={12} key={name} className="information">
         {`${index + 1}: ${name}`}
       </Typography>
     ),
@@ -66,7 +66,7 @@ const AdvancedInformationTitles = () => {
     <Box sx={{ overflowY: 'auto', height: '100%', width: '100%', pr: '10px' }}>
       <Tooltip
         title={
-          <Typography fontSize={12}>
+          <Typography fontSize={12} className="information-tooltip">
             {myAdvancedMedia.advancedMedia.titleRomaji !== null
               ? myAdvancedMedia.advancedMedia.titleRomaji
               : '?'}
@@ -82,10 +82,16 @@ const AdvancedInformationTitles = () => {
             fontWeight="bold"
             noWrap
             sx={{ textDecoration: 'underline' }}
+            className="label-information"
           >
             {`Romaji: `}
           </Typography>
-          <Typography fontSize={12} noWrap ref={textRomajiRef}>
+          <Typography
+            fontSize={12}
+            noWrap
+            ref={textRomajiRef}
+            className="information"
+          >
             {myAdvancedMedia.advancedMedia.titleRomaji !== null
               ? myAdvancedMedia.advancedMedia.titleRomaji
               : '?'}
@@ -94,7 +100,7 @@ const AdvancedInformationTitles = () => {
       </Tooltip>
       <Tooltip
         title={
-          <Typography fontSize={12}>
+          <Typography fontSize={12} className="information-tooltip">
             {myAdvancedMedia.advancedMedia.titleEnglish !== null
               ? myAdvancedMedia.advancedMedia.titleEnglish
               : '?'}
@@ -110,10 +116,16 @@ const AdvancedInformationTitles = () => {
             fontWeight="bold"
             noWrap
             sx={{ textDecoration: 'underline' }}
+            className="label-information"
           >
             {`English: `}
           </Typography>
-          <Typography fontSize={12} noWrap ref={textEnglishRef}>
+          <Typography
+            fontSize={12}
+            noWrap
+            ref={textEnglishRef}
+            className="information"
+          >
             {myAdvancedMedia.advancedMedia.titleEnglish !== null
               ? myAdvancedMedia.advancedMedia.titleEnglish
               : '?'}
@@ -122,7 +134,7 @@ const AdvancedInformationTitles = () => {
       </Tooltip>
       <Tooltip
         title={
-          <Typography fontSize={12}>
+          <Typography fontSize={12} className="information-tooltip">
             {myAdvancedMedia.advancedMedia.titleNative !== null
               ? myAdvancedMedia.advancedMedia.titleNative
               : '?'}
@@ -138,10 +150,16 @@ const AdvancedInformationTitles = () => {
             fontWeight="bold"
             noWrap
             sx={{ textDecoration: 'underline' }}
+            className="label-information"
           >
             {`Native: `}
           </Typography>
-          <Typography fontSize={12} noWrap ref={textNativeRef}>
+          <Typography
+            fontSize={12}
+            noWrap
+            ref={textNativeRef}
+            className="information"
+          >
             {myAdvancedMedia.advancedMedia.titleNative !== null
               ? myAdvancedMedia.advancedMedia.titleNative
               : '?'}
@@ -154,6 +172,7 @@ const AdvancedInformationTitles = () => {
           fontWeight="bold"
           noWrap
           sx={{ textDecoration: 'underline' }}
+          className="label-information"
         >
           {`Synonyms: `}
         </Typography>

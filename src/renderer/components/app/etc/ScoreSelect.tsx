@@ -1,9 +1,6 @@
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
-import { IconButton, NativeSelect, Typography } from '@mui/material';
+import { NativeSelect, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { useEffect, useState } from 'react';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { useEffect } from 'react';
 
 export default function ScoreSelect({
   props,
@@ -27,19 +24,17 @@ export default function ScoreSelect({
   }, [inputDispatch, props.mediaListEntry.score]);
 
   return (
-    <Box display="flex" flexDirection="column" sx={{ gridColumn: '1/2' }}>
-      <Typography fontSize={12} fontWeight="bold">
+    <Box display="flex" flexDirection="column">
+      <Typography fontSize={12} fontWeight="bold" className="label-information">
         Score{' '}
       </Typography>
       <NativeSelect
         value={advancedInput.score}
         size="small"
         sx={{
-          pt: '7px',
-          width: '55px',
-          height: '22px',
+          width: '36px',
+          height: '20px',
           fontSize: '12px',
-          textAlignLast: 'right',
           border: '1px solid #03a9f4',
           borderRadius: '5px',
           color: ' #81d4fa',
@@ -47,6 +42,15 @@ export default function ScoreSelect({
             backgroundColor: '#1F242F',
           },
           backgroundColor: '#0b0d0e',
+          textAlign: 'center', // Centers the text inside the select
+          textAlignLast: 'center', // Ensures the selected value is centered
+        }}
+        inputProps={{
+          style: {
+            padding: '0px',
+            paddingTop: '2px',
+            textAlign: 'center',
+          },
         }}
         disableUnderline
         onChange={onChange}

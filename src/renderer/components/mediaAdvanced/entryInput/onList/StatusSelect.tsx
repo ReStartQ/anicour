@@ -16,10 +16,11 @@ export default function StatusSelect() {
   };
 
   return (
-    <FormControl sx={{ gridColumn: '1/2', gridRow: '2/3' }}>
+    <FormControl sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
       <FormLabel
         id="select-field-demo-label"
         htmlFor="select-field-demo-button"
+        sx={{ marginLeft: '10px' }}
       >
         Status:
       </FormLabel>
@@ -42,7 +43,7 @@ export default function StatusSelect() {
         indicator={<KeyboardArrowDown />}
         onChange={onChange}
         size="sm"
-        sx={{ marginRight: '10px' }}
+        sx={{ marginLeft: '10px' }}
       >
         {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
           <Option value="CURRENT">Watching</Option>

@@ -120,6 +120,7 @@ export default function ProgressVolumesStepper({
             <AddIcon fontSize="inherit" />
           </IconButton>
         </Box>
+        {/*
         <Box
           display="flex"
           flexDirection="row"
@@ -137,6 +138,7 @@ export default function ProgressVolumesStepper({
             type={1}
           />
         </Box>
+        */}
       </Box>
     </>
   );

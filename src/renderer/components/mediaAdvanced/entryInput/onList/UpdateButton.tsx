@@ -115,7 +115,7 @@ export default function UpdateButton() {
       <Button
         variant="soft"
         color="primary"
-        size="sm"
+        size="lg"
         onClick={handleUpdate}
         sx={{
           alignSelf: 'end',

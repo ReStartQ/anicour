@@ -27,7 +27,7 @@ export default function ResetButton() {
   return (
     <div>
       <Button
-        variant="outlined"
+        variant="contained"
         color="error"
         onClick={handleClickOpen}
         fullWidth
@@ -61,7 +61,7 @@ export default function ResetButton() {
         <DialogActions>
           <Button
             onClick={() => handleClose(true)}
-            variant="outlined"
+            variant="contained"
             color="error"
           >
             <SettingsBackupRestore sx={{ mr: 1 }} />

@@ -14,6 +14,7 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
 import { nextAiringEpisodeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
+import { Circle } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import { MediaIcons } from '../etc/SvgIcons';
 import DeleteModal from '../etc/DeleteModal';
@@ -177,8 +178,16 @@ export default function MediaCardCompact({ props }: any) {
                   : '2',
               WebkitBoxOrient: 'vertical',
             }}
-            color={getStatusColor(props.status)}
+            className="title"
           >
+            <Circle
+              fontSize="inherit"
+              sx={{
+                pt: '4px',
+                pr: '2px',
+                color: getStatusColor(props.status),
+              }}
+            />
             {getTitle(titlePreference.title, props)}
           </Typography>
           {props.nextAiringEpisode !== null && nextAiringEpisode === 'Show' ? (

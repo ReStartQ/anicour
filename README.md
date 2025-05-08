@@ -34,7 +34,7 @@ _Note:_
 **This app does not have a code signing certificate and will give a warning message on installation.**
 
 1. Download the setup file from the latest releases. The setup file is labeled as AniCour-Setup-x.x.x.exe, where x.x.x will denote the version.
-   <br> **Example: AniCour-Setup-1.6.0.exe**
+   <br> **Example: AniCour-Setup-1.7.0.exe**
    <br> _Some browsers may give a warning when downloading the setup file as it does not use a code signing certificate._
    <br> _In this case, to allow the download use the alternate option they provide. (Example: keep file)_
 2. Run the setup file, Windows will give a message like below, click on **"More info"** <p align="center"><a href="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigningInitial.png"><img src="https://raw.githubusercontent.com/restartq/anicour/main/images/help/AniCourNoCodeSigningInitial.png" height="280"/></a></p>

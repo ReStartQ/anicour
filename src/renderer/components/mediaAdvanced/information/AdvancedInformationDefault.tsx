@@ -58,10 +58,20 @@ const AdvancedInformationDefault = () => {
   return (
     <Box sx={{ overflowY: 'auto', height: '100%', width: '100%' }}>
       <Typography fontSize={12} noWrap>
-        <Typography fontSize={12} fontWeight="bold" display="inline">
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          display="inline"
+          className="label-information"
+        >
           Type:{' '}
         </Typography>
-        <Typography fontSize={12} display="inline" noWrap>
+        <Typography
+          fontSize={12}
+          display="inline"
+          noWrap
+          className="information"
+        >
           {myAdvancedMedia.advancedMedia.format !== null
             ? formatType(myAdvancedMedia.advancedMedia.format)
             : '?'}
@@ -69,10 +79,20 @@ const AdvancedInformationDefault = () => {
       </Typography>
       {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Episodes:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline" noWrap>
+          <Typography
+            fontSize={12}
+            display="inline"
+            noWrap
+            className="information"
+          >
             {myAdvancedMedia.advancedMedia.episodes !== null
               ? myAdvancedMedia.advancedMedia.episodes
               : '?'}
@@ -81,10 +101,20 @@ const AdvancedInformationDefault = () => {
       ) : null}
       {myAdvancedMedia.advancedMedia.type === 'MANGA' ? (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Chapters:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline" noWrap>
+          <Typography
+            fontSize={12}
+            display="inline"
+            noWrap
+            className="information"
+          >
             {myAdvancedMedia.advancedMedia.chapters !== null
               ? myAdvancedMedia.advancedMedia.chapters
               : '?'}
@@ -93,10 +123,15 @@ const AdvancedInformationDefault = () => {
       ) : null}
       {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Duration:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline">
+          <Typography fontSize={12} display="inline" className="information">
             {myAdvancedMedia.advancedMedia.duration !== null
               ? `${myAdvancedMedia.advancedMedia.duration} mins / ep`
               : '?'}
@@ -105,10 +140,20 @@ const AdvancedInformationDefault = () => {
       ) : null}
       {myAdvancedMedia.advancedMedia.type === 'MANGA' ? (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Volumes:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline" noWrap>
+          <Typography
+            fontSize={12}
+            display="inline"
+            noWrap
+            className="information"
+          >
             {myAdvancedMedia.advancedMedia.volumes !== null
               ? myAdvancedMedia.advancedMedia.volumes
               : '?'}
@@ -116,10 +161,20 @@ const AdvancedInformationDefault = () => {
         </Typography>
       ) : null}
       <Typography fontSize={12} noWrap>
-        <Typography fontSize={12} fontWeight="bold" display="inline">
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          display="inline"
+          className="label-information"
+        >
           Status:{' '}
         </Typography>
-        <Typography fontSize={12} display="inline" noWrap>
+        <Typography
+          fontSize={12}
+          display="inline"
+          noWrap
+          className="information"
+        >
           <CircleIcon
             fontSize="inherit"
             sx={{
@@ -134,20 +189,40 @@ const AdvancedInformationDefault = () => {
         </Typography>
       </Typography>
       <Typography fontSize={12} noWrap>
-        <Typography fontSize={12} fontWeight="bold" display="inline">
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          display="inline"
+          className="label-information"
+        >
           Source:{' '}
         </Typography>
-        <Typography fontSize={12} display="inline" noWrap>
+        <Typography
+          fontSize={12}
+          display="inline"
+          noWrap
+          className="information"
+        >
           {myAdvancedMedia.advancedMedia.source !== null
             ? formatSource(myAdvancedMedia.advancedMedia.source)
             : '?'}
         </Typography>
       </Typography>
       <Typography fontSize={12} noWrap>
-        <Typography fontSize={12} fontWeight="bold" display="inline">
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          display="inline"
+          className="label-information"
+        >
           Avg Score:{' '}
         </Typography>
-        <Typography fontSize={12} display="inline" noWrap>
+        <Typography
+          fontSize={12}
+          display="inline"
+          noWrap
+          className="information"
+        >
           {myAdvancedMedia.advancedMedia.averageScore !== null
             ? `${myAdvancedMedia.advancedMedia.averageScore}%`
             : '?'}
@@ -155,10 +230,15 @@ const AdvancedInformationDefault = () => {
       </Typography>
       {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Season:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline">
+          <Typography fontSize={12} display="inline" className="information">
             {myAdvancedMedia.advancedMedia.season !== null &&
             myAdvancedMedia.advancedMedia.seasonYear !== null
               ? formatSeason(
@@ -170,10 +250,15 @@ const AdvancedInformationDefault = () => {
         </Typography>
       ) : (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Released:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline">
+          <Typography fontSize={12} display="inline" className="information">
             {formatReleaseDate(
               myAdvancedMedia.advancedMedia.startDay,
               myAdvancedMedia.advancedMedia.startMonth,
@@ -184,10 +269,15 @@ const AdvancedInformationDefault = () => {
       )}
       {myAdvancedMedia.advancedMedia.type === 'MANGA' ? (
         <Typography fontSize={12} noWrap>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Ended:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline">
+          <Typography fontSize={12} display="inline" className="information">
             {formatReleaseDate(
               myAdvancedMedia.advancedMedia.endDay,
               myAdvancedMedia.advancedMedia.endMonth,
@@ -203,10 +293,19 @@ const AdvancedInformationDefault = () => {
           myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
             <>
               <Typography fontSize={12}>
-                <Typography fontSize={12} fontWeight="bold" display="inline">
+                <Typography
+                  fontSize={12}
+                  fontWeight="bold"
+                  display="inline"
+                  className="label-information-tooltip"
+                >
                   Studio:{' '}
                 </Typography>
-                <Typography fontSize={12} display="inline">
+                <Typography
+                  fontSize={12}
+                  display="inline"
+                  className="information-tooltip"
+                >
                   {myAdvancedMedia.advancedMedia.mainStudioIndex !== -1
                     ? myAdvancedMedia.advancedMedia.studios[
                         myAdvancedMedia.advancedMedia.mainStudioIndex
@@ -214,10 +313,19 @@ const AdvancedInformationDefault = () => {
                     : '?'}
                 </Typography>
               </Typography>
-              <Typography fontSize={12} fontWeight="bold" display="inline">
+              <Typography
+                fontSize={12}
+                fontWeight="bold"
+                display="inline"
+                className="label-information-tooltip"
+              >
                 Producers:{' '}
               </Typography>
-              <Typography fontSize={12} display="inline">
+              <Typography
+                fontSize={12}
+                display="inline"
+                className="information-tooltip"
+              >
                 {myAdvancedMedia.advancedMedia.mainStudioIndex !== -1
                   ? myAdvancedMedia.advancedMedia.studios.map(
                       (e: any, index: any) => {
@@ -252,10 +360,20 @@ const AdvancedInformationDefault = () => {
       >
         {myAdvancedMedia.advancedMedia.type === 'ANIME' ? (
           <Typography fontSize={12} noWrap ref={textStudioRef}>
-            <Typography fontSize={12} fontWeight="bold" display="inline">
+            <Typography
+              fontSize={12}
+              fontWeight="bold"
+              display="inline"
+              className="label-information"
+            >
               Studio:{' '}
             </Typography>
-            <Typography fontSize={12} display="inline" noWrap>
+            <Typography
+              fontSize={12}
+              display="inline"
+              noWrap
+              className="information"
+            >
               {myAdvancedMedia.advancedMedia.mainStudioIndex !== -1
                 ? myAdvancedMedia.advancedMedia.studios[
                     myAdvancedMedia.advancedMedia.mainStudioIndex
@@ -272,10 +390,19 @@ const AdvancedInformationDefault = () => {
         color="primary"
         title={
           <Typography fontSize={12}>
-            <Typography fontSize={12} fontWeight="bold" display="inline">
+            <Typography
+              fontSize={12}
+              fontWeight="bold"
+              display="inline"
+              className="label-information-tooltip"
+            >
               Genres:{' '}
             </Typography>
-            <Typography fontSize={12} display="inline">
+            <Typography
+              fontSize={12}
+              display="inline"
+              className="information-tooltip"
+            >
               {myAdvancedMedia.advancedMedia.genres.map(
                 (e: any, index: number) => {
                   if (
@@ -310,10 +437,15 @@ const AdvancedInformationDefault = () => {
           noWrap
           ref={textGenresRef}
         >
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Genres:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline">
+          <Typography fontSize={12} display="inline" className="information">
             {myAdvancedMedia.advancedMedia.genres.map(
               (e: any, index: number) => {
                 if (index + 1 !== myAdvancedMedia.advancedMedia.genres.length) {
@@ -330,10 +462,19 @@ const AdvancedInformationDefault = () => {
         color="primary"
         title={
           <Typography fontSize={12}>
-            <Typography fontSize={12} fontWeight="bold" display="inline">
+            <Typography
+              fontSize={12}
+              fontWeight="bold"
+              display="inline"
+              className="label-information-tooltip"
+            >
               Tags:{' '}
             </Typography>
-            <Typography fontSize={12} display="inline">
+            <Typography
+              fontSize={12}
+              display="inline"
+              className="information-tooltip"
+            >
               {myAdvancedMedia.advancedMedia.tags.map(
                 (e: any, index: number) => {
                   if (index + 1 !== myAdvancedMedia.advancedMedia.tags.length) {
@@ -350,10 +491,15 @@ const AdvancedInformationDefault = () => {
         disableHoverListener={!isOverflowedTags}
       >
         <Typography fontSize={12} noWrap ref={textTagsRef}>
-          <Typography fontSize={12} fontWeight="bold" display="inline">
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            display="inline"
+            className="label-information"
+          >
             Tags:{' '}
           </Typography>
-          <Typography fontSize={12} display="inline">
+          <Typography fontSize={12} display="inline" className="information">
             {myAdvancedMedia.advancedMedia.tags.map((e: any, index: number) => {
               if (index + 1 !== myAdvancedMedia.advancedMedia.tags.length) {
                 return `${e.name}, `;

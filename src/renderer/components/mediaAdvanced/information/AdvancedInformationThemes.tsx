@@ -49,13 +49,13 @@ const AdvancedInformationThemes = () => {
   });
 
   const openingList = advancedThemeSongs.openings.map((theme: any) => (
-    <Typography fontSize={12} key={theme}>
+    <Typography fontSize={12} key={theme} className="information">
       {theme}
     </Typography>
   ));
 
   const endingList = advancedThemeSongs.endings.map((theme: any) => (
-    <Typography fontSize={12} key={theme}>
+    <Typography fontSize={12} key={theme} className="information">
       {theme}
     </Typography>
   ));
@@ -118,6 +118,7 @@ const AdvancedInformationThemes = () => {
           fontSize={12}
           fontWeight="bold"
           sx={{ textDecoration: 'underline' }}
+          className="label-information"
         >
           Openings:
         </Typography>
@@ -128,6 +129,7 @@ const AdvancedInformationThemes = () => {
           fontSize={12}
           fontWeight="bold"
           sx={{ textDecoration: 'underline' }}
+          className="label-information"
         >
           Endings:
         </Typography>

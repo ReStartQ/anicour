@@ -20,6 +20,7 @@ import { useAniListUsername } from 'renderer/context/services/AniListUsernameCon
 import { useAdult } from 'renderer/context/AdultContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
+import { Circle } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import DeleteModal from '../etc/DeleteModal';
 
@@ -149,8 +150,16 @@ export default function SeasonMediaCardCompact({ props }: any) {
               WebkitLineClamp: props.nextAiringEpisode !== null ? '1' : '2',
               WebkitBoxOrient: 'vertical',
             }}
-            color={getStatusColor(props.status)}
+            className="title"
           >
+            <Circle
+              fontSize="inherit"
+              sx={{
+                pt: '4px',
+                pr: '2px',
+                color: getStatusColor(props.status),
+              }}
+            />
             {getTitle(titlePreference.title, props)}
           </Typography>
           {props.nextAiringEpisode !== null ? (

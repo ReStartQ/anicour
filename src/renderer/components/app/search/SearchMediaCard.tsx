@@ -15,6 +15,7 @@ import {
   formatReleaseDate,
   formatReleaseDateNumbers,
   formatSeason,
+  formatSource,
   formatStartYear,
   formatStatus,
   formatType,
@@ -26,6 +27,7 @@ import { useAdult } from 'renderer/context/AdultContext';
 import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
+import { Circle } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import DeleteModal from '../etc/DeleteModal';
 
@@ -133,8 +135,8 @@ export default function SearchMediaCard({ props }: any) {
         sx={{
           gridRow: '1/3',
           gridColumn: '2/3',
-          paddingTop: '4px',
-          '&:last-child': { pb: '4px' },
+          paddingTop: '6px',
+          '&:last-child': { pb: '6px' },
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -144,132 +146,167 @@ export default function SearchMediaCard({ props }: any) {
           fontSize={14}
           fontWeight="bold"
           component="div"
-          color={getStatusColor(props.status)}
           noWrap
           gutterBottom
-          /* sx={{ cursor: 'pointer' }} */
-          /* onClick={() => handleClick(props.titleRomaji)} */
+          className="title"
         >
           {getTitle(titlePreference.title, props)}
         </Typography>
         {props.type === 'ANIME' ? (
-          <Typography fontSize={12} noWrap>
-            <Box component="span" fontWeight="bold" fontSize={14}>
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
               Episodes:{'  '}
             </Box>
-            {props.episodes !== null ? props.episodes : '?'}
-          </Typography>
+            <Typography fontSize={12} noWrap className="information">
+              {props.episodes !== null ? props.episodes : '?'}
+            </Typography>
+          </Box>
         ) : (
-          <Box>
-            <Typography fontSize={12} noWrap>
-              <Box component="span" fontWeight="bold" fontSize={14}>
-                Chapters:{'  '}
-              </Box>
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
+              Chapters:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
               {props.chapters !== null ? props.chapters : '?'}
             </Typography>
-            <Typography fontSize={12} noWrap>
-              <Box component="span" fontWeight="bold" fontSize={14}>
-                Volumes:{'  '}
-              </Box>
+          </Box>
+        )}
+        {props.type !== 'ANIME' ? (
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
+              Volumes:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
               {props.volumes !== null ? props.volumes : '?'}
             </Typography>
           </Box>
-        )}
-        {props.type === 'ANIME' ? (
-          <Typography fontSize={12} noWrap>
-            <Box component="span" fontWeight="bold" fontSize={14}>
-              Studio:{'  '}
-            </Box>
-            {props.mainStudioIndex !== -1
-              ? props.studios[props.mainStudioIndex].node.name
-              : '?'}
-          </Typography>
         ) : null}
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
-            Genres:{'  '}
+        {props.type === 'ANIME' ? (
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontSize={14}
+              fontWeight="bold"
+              className="label-information"
+            >
+              Type:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
+              {formatType(props.format)}
+            </Typography>
           </Box>
-          {props.genres.map((e: any, index: number) => {
-            if (index + 1 !== props.genres.length) {
-              return `${e}, `;
-            }
-            return `${e}`;
-          })}
-        </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
-            Score:{'  '}
-          </Box>
-          {props.averageScore !== null ? `${props.averageScore}%` : '?'}
-        </Typography>
-        <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
+        ) : null}
+        <Box display="flex" flexDirection="row" alignItems="center" gap="2px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
             Status:{'  '}
           </Box>
-          {props.status !== null ? formatStatus(props.status) : '?'}
-        </Typography>
+          <Circle
+            fontSize="inherit"
+            sx={{ padding: '2px', color: getStatusColor(props.status) }}
+          />
+          <Typography fontSize={12} noWrap className="information">
+            {props.status !== null ? formatStatus(props.status) : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
+            Score:{'  '}
+          </Box>
+          <Typography fontSize={12} noWrap className="information">
+            {props.averageScore !== null ? `${props.averageScore}%` : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
+            Genres:{'  '}
+          </Box>
+          <Typography fontSize={12} noWrap className="information">
+            {props.genres.map((e: any, index: number) => {
+              if (index + 1 !== props.genres.length) {
+                return `${e}, `;
+              }
+              return `${e}`;
+            })}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontSize={14}
+            fontWeight="bold"
+            className="label-information"
+          >
+            Source:{'  '}
+          </Box>
+          <Typography fontSize={12} noWrap className="information">
+            {formatSource(props.source)}
+          </Typography>
+        </Box>
         {props.type === 'ANIME' ? (
-          <Box>
-            <Typography fontSize={12} fontWeight="bold" display="inline">
-              Type:{'  '}
-            </Typography>
-            <Typography fontSize={12} display="inline" noWrap>
-              {formatType(props.format)}
-            </Typography>
-          </Box>
-        ) : (
-          <Box>
-            <Typography fontSize={12} fontWeight="bold" display="inline">
-              Type:{'  '}
-            </Typography>
-            <Typography fontSize={12} display="inline" noWrap>
-              {formatType(props.format)}
-            </Typography>
-          </Box>
-        )}
-        {/* <Typography fontSize={12} noWrap>
-          <Box component="span" fontWeight="bold" fontSize={14}>
-            Popularity:{'  '}
-          </Box>
-          {props.popularity} users
-        </Typography> */}
-        {props.type === 'ANIME' ? (
-          <Typography fontSize={12} noWrap>
-            <Box component="span" fontWeight="bold" fontSize={14}>
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
               Season:{'  '}
             </Box>
-            {props.season !== null && props.seasonYear !== null
-              ? formatSeason(props.season, props.seasonYear)
-              : formatStartYear(props.startYear)}
-          </Typography>
+            <Typography fontSize={12} noWrap className="information">
+              {props.season !== null && props.seasonYear !== null
+                ? formatSeason(props.season, props.seasonYear)
+                : formatStartYear(props.startYear)}
+            </Typography>
+          </Box>
         ) : (
-          <Typography fontSize={12} noWrap>
-            <Box component="span" fontWeight="bold" fontSize={14}>
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
               Released:{'  '}
             </Box>
-            {formatReleaseDateNumbers(
-              props.startDay,
-              props.startMonth,
-              props.startYear,
-            )}
-          </Typography>
+            <Typography fontSize={12} noWrap className="information">
+              {formatReleaseDateNumbers(
+                props.startDay,
+                props.startMonth,
+                props.startYear,
+              )}
+            </Typography>
+          </Box>
         )}
-        {/*
-          <Typography
-            fontSize={12}
-            sx={{
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitLineClamp: props.type === 'ANIME' ? 1 : 1,
-              WebkitBoxOrient: 'vertical',
-            }}
-          >
-            {props.description !== null
-              ? Parser(props.description.replace(/(<([^>]+)>)/gi, '')) // no formatting breaks or spaces
-              : null}
-          </Typography>
-          */}
       </CardContent>
       <ContextMenu
         props={props}
@@ -282,7 +319,6 @@ export default function SearchMediaCard({ props }: any) {
   );
 }
 
-// <ProgressStepper />
 // test image: https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx1-CXtrrkMpJ8Zq.png
 // 225/320 is medium image dimensions MAL.
 // 320/450 is large image dimensions MAL.
@@ -293,3 +329,21 @@ export default function SearchMediaCard({ props }: any) {
 // these are the two images that will be used
 // 230/326 is large image dimensions AniList
 // 225/320 is medium image dimensions MAL.
+
+/* props.type === 'ANIME' ? (
+  <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+    <Box
+      component="span"
+      fontWeight="bold"
+      fontSize={14}
+      className="label-information"
+    >
+      Studio:{'  '}
+    </Box>
+    <Typography fontSize={12} noWrap className="information">
+      {props.mainStudioIndex !== -1
+        ? props.studios[props.mainStudioIndex].node.name
+        : '?'}
+    </Typography>
+  </Box>
+) : null */

@@ -49,6 +49,7 @@ import { useCategory } from 'renderer/context/CategoryContext';
 import { Button, Tooltip } from '@mui/joy';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
+import { Circle } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -387,10 +388,11 @@ export default function MediaCard({ props }: any) {
         sx={{
           gridRow: '1/3',
           gridColumn: '2/3',
-          paddingTop: '4px',
-          '&:last-child': { pb: '4px' },
+          paddingTop: '6px',
+          '&:last-child': { pb: '6px' },
           display: 'grid',
-          gridTemplateRows: '26px 48px 42px 36px 1fr',
+          gridTemplateRows: '26px 42px 42px 42px 1fr',
+          alignItems: 'center',
           gridTemplateColumns: '96px 96px',
         }}
       >
@@ -399,7 +401,7 @@ export default function MediaCard({ props }: any) {
             fontSize="14px"
             fontWeight="bold"
             component="div"
-            color={getStatusColor(props.status)}
+            className="title"
             noWrap
             gutterBottom
             sx={{ gridColumn: '1/3' }}
@@ -422,76 +424,99 @@ export default function MediaCard({ props }: any) {
             />
           </>
         )}
-        {/* props.type === 'ANIME' ? (
-          <Box sx={{ gridColumn: '2/3' }}>
-            <Typography fontSize={12} fontWeight="bold">
-              Studio:{' '}
-            </Typography>
-            <Typography fontSize={12} noWrap>
-              {props.mainStudioIndex !== -1
-                ? props.studios[props.mainStudioIndex].node.name
-                : '?'}
-            </Typography>
-          </Box>
-              ) : null */}
-        <ScoreSelect
-          props={props}
-          advancedInput={myAdvancedInput}
-          inputDispatch={inputDispatch}
-        />
-        {props.type === 'ANIME' ? (
-          <Box sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
-            <Typography fontSize={12} fontWeight="bold">
-              Studio{'  '}
-            </Typography>
-            <Typography fontSize={12} noWrap>
-              {props.mainStudioIndex !== -1
-                ? props.studios[props.mainStudioIndex].node.name
-                : '?'}
-            </Typography>
-          </Box>
-        ) : (
-          <Box sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
-            <ProgressVolumesStepper
-              props={props}
-              advancedInput={myAdvancedInput}
-              inputDispatch={inputDispatch}
-            />
-          </Box>
-        )}
-        <Box>
-          <Typography fontSize={12} fontWeight="bold">
-            Type{' '}
+        <Box sx={{ gridColumn: '1/2', gridRow: '3/4' }}>
+          <ScoreSelect
+            props={props}
+            advancedInput={myAdvancedInput}
+            inputDispatch={inputDispatch}
+          />
+        </Box>
+        <Box sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
+          {props.type === 'ANIME' ? (
+            <Box>
+              <Typography
+                fontSize={12}
+                fontWeight="bold"
+                className="label-information"
+              >
+                Type{' '}
+              </Typography>
+              <Typography fontSize={12} noWrap className="information">
+                {props.format !== null ? formatType(props.format) : '?'}
+              </Typography>
+            </Box>
+          ) : (
+            <Box>
+              <ProgressVolumesStepper
+                props={props}
+                advancedInput={myAdvancedInput}
+                inputDispatch={inputDispatch}
+              />
+            </Box>
+          )}
+        </Box>
+        <Box sx={{ gridColumn: '1/2', gridRow: '4/5' }}>
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            className="label-information"
+          >
+            Source{'  '}
           </Typography>
-          <Typography fontSize={12} noWrap>
-            {props.format !== null ? formatType(props.format) : '?'}
+          <Typography fontSize={12} noWrap className="information">
+            {props.source !== null ? formatSource(props.source) : '?'}
           </Typography>
         </Box>
-        <Box>
-          <Typography fontSize={12} fontWeight="bold">
+        <Box sx={{ gridColumn: '2/3', gridRow: '3/4' }}>
+          <Typography
+            fontSize={12}
+            fontWeight="bold"
+            className="label-information"
+          >
             Status{' '}
           </Typography>
-          <Typography fontSize={12} noWrap>
-            {props.status !== null ? formatStatus(props.status) : '?'}
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '2px',
+              alignItems: 'center',
+            }}
+          >
+            <Circle
+              fontSize="inherit"
+              sx={{ padding: '2px', color: getStatusColor(props.status) }}
+            />
+            <Typography fontSize={12} noWrap className="information">
+              {props.status !== null ? formatStatus(props.status) : '?'}
+            </Typography>
+          </Box>
         </Box>
         {props.type === 'ANIME' ? (
-          <Box>
-            <Typography fontSize={12} fontWeight="bold">
+          <Box sx={{ gridColumn: '2/3', gridRow: '4/5' }}>
+            <Typography
+              fontSize={12}
+              fontWeight="bold"
+              className="label-information"
+            >
               Season{' '}
             </Typography>
-            <Typography fontSize={12} noWrap>
+            <Typography fontSize={12} noWrap className="information">
               {props.season !== null && props.seasonYear !== null
                 ? formatSeason(props.season, props.seasonYear)
                 : formatStartYear(props.startYear)}
             </Typography>
           </Box>
         ) : (
-          <Box>
-            <Typography fontSize={12} fontWeight="bold">
+          <Box sx={{ gridColumn: '2/3', gridRow: '4/5' }}>
+            <Typography
+              fontSize={12}
+              fontWeight="bold"
+              className="label-information"
+            >
               Released{' '}
             </Typography>
-            <Typography fontSize={12} noWrap>
+            <Typography fontSize={12} noWrap className="information">
               {formatReleaseDateNumbers(
                 props.startDay,
                 props.startMonth,
@@ -503,8 +528,7 @@ export default function MediaCard({ props }: any) {
         <Box
           sx={{
             gridColumn: '1/3',
-            mt: '3px',
-            mb: '5px',
+            gridRow: '5/6',
           }}
         >
           <Button
@@ -513,23 +537,30 @@ export default function MediaCard({ props }: any) {
             sx={{
               textTransform: 'none',
               '&:hover': {
-                backgroundColor: '#0a2744',
+                backgroundColor: '#1B3A57',
                 animation: 'none',
               },
               py: 0,
               height: '15px',
-              '@keyframes backgroundChange': {
-                '0%': { backgroundColor: '#121212' },
-                '50%': { backgroundColor: '#0a2744' },
-                '100%': { backgroundColor: '#121212' },
+              '@keyframes pulse': {
+                '0%': { borderColor: '#4281CB' }, // Start with the initial color
+                '50%': { borderColor: 'deepskyblue' }, // Transition to a lighter blue
+                '100%': { borderColor: '#4281CB' }, // Return to the initial color
               },
+              borderColor:
+                props.mediaListEntry.progress === myAdvancedInput.progress &&
+                props.mediaListEntry.progressVolumes ===
+                  myAdvancedInput.progressVolumes &&
+                props.mediaListEntry.score === Number(myAdvancedInput.score)
+                  ? '#4281CB' // Default muted blue when no update is needed
+                  : '#4281CB', // Initial border color for attention,
               animation:
                 props.mediaListEntry.progress === myAdvancedInput.progress &&
                 props.mediaListEntry.progressVolumes ===
                   myAdvancedInput.progressVolumes &&
                 props.mediaListEntry.score === Number(myAdvancedInput.score)
-                  ? 'none'
-                  : 'backgroundChange 2s infinite',
+                  ? 'none' // No animation when the condition is fulfilled
+                  : 'pulse 1.5s infinite', // Apply pulse animation when attention is needed,
             }}
             variant="outlined"
             onClick={handleUpdate}
@@ -559,3 +590,24 @@ export default function MediaCard({ props }: any) {
 // these are the two images that will be used
 // 230/326 is large image dimensions AniList
 // 225/320 is medium image dimensions MAL.
+
+/*
+This is a studio information component
+(
+  <Box>
+    <Typography
+      fontSize={12}
+      fontWeight="bold"
+      className="label-information"
+    >
+      Studio{'  '}
+    </Typography>
+    <Typography fontSize={12} noWrap className="information">
+      {props.mainStudioIndex !== -1
+        ? props.studios[props.mainStudioIndex].node.name
+        : '?'}
+    </Typography>
+  </Box>
+)
+
+*/

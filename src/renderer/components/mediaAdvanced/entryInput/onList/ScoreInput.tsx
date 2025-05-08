@@ -46,8 +46,8 @@ export default function ScoreInput() {
   };
 
   return (
-    <FormControl sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
-      <FormLabel sx={{ marginLeft: '10px' }}>Score:</FormLabel>
+    <FormControl sx={{ gridColumn: '1/2', gridRow: '2/3' }}>
+      <FormLabel sx={{ marginRight: '10px' }}>Score:</FormLabel>
       <Input
         size="sm"
         type="number"
@@ -62,7 +62,7 @@ export default function ScoreInput() {
             step: 0.1,
           },
         }}
-        sx={{ marginLeft: '10px' }}
+        sx={{ marginRight: '10px' }}
         onChange={onChange}
       />
     </FormControl>

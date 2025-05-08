@@ -42,8 +42,8 @@ export default function EntryInputOnList() {
           <ProgressVolumesInput />
         ) : null}
         <RepeatInput />
-        <StatusSelect />
         <ScoreInput />
+        <StatusSelect />
         <PrivateCheckBox />
         <MyDatePickerStartedAt />
         <MyDatePickerCompletedAt />

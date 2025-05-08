@@ -10,8 +10,9 @@ const TableStatus = ({ row }: any) => {
       <CircleIcon
         fontSize="inherit"
         sx={{
-          mt: '3px',
+          mt: '2px',
           ml: '10px',
+          padding: '2px',
           color: getStatusColor(row.original.status),
         }}
       />
