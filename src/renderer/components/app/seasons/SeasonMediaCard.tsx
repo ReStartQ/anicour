@@ -1,4 +1,3 @@
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -200,21 +199,6 @@ export const SeasonMediaCard = ({ props }: any) => {
             {props.episodes !== null ? props.episodes : '?'}
           </Typography>
         </Box>
-        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
-          <Box
-            component="span"
-            fontWeight="bold"
-            fontSize={14}
-            className="label-information"
-          >
-            Studio:
-          </Box>{' '}
-          <Typography fontSize={12} noWrap className="information">
-            {props.mainStudioIndex !== -1
-              ? props.studios[props.mainStudioIndex].node.name
-              : '?'}
-          </Typography>
-        </Box>
         <Box display="flex" flexDirection="row" alignItems="center" gap="2px">
           <Box
             component="span"
@@ -243,6 +227,21 @@ export const SeasonMediaCard = ({ props }: any) => {
           </Box>
           <Typography fontSize={12} noWrap className="information">
             {props.averageScore !== null ? `${props.averageScore}%` : '?'}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
+            Studio:
+          </Box>{' '}
+          <Typography fontSize={12} noWrap className="information">
+            {props.mainStudioIndex !== -1
+              ? props.studios[props.mainStudioIndex].node.name
+              : '?'}
           </Typography>
         </Box>
         <Box display="flex" flexDirection="row" alignItems="center" gap="5px">

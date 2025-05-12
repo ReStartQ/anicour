@@ -1,4 +1,3 @@
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -6,13 +5,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Parser from 'html-react-parser';
 import * as React from 'react';
 import { useState } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import {
-  formatReleaseDate,
   formatReleaseDateNumbers,
   formatSeason,
   formatSource,
@@ -156,6 +153,22 @@ export default function SearchMediaCard({ props }: any) {
           <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
             <Box
               component="span"
+              fontSize={14}
+              fontWeight="bold"
+              className="label-information"
+            >
+              Type:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
+              {formatType(props.format)}
+            </Typography>
+          </Box>
+        ) : null}
+
+        {props.type === 'ANIME' ? (
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
               fontWeight="bold"
               fontSize={14}
               className="label-information"
@@ -166,7 +179,8 @@ export default function SearchMediaCard({ props }: any) {
               {props.episodes !== null ? props.episodes : '?'}
             </Typography>
           </Box>
-        ) : (
+        ) : null}
+        {props.type !== 'ANIME' ? (
           <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
             <Box
               component="span"
@@ -180,7 +194,7 @@ export default function SearchMediaCard({ props }: any) {
               {props.chapters !== null ? props.chapters : '?'}
             </Typography>
           </Box>
-        )}
+        ) : null}
         {props.type !== 'ANIME' ? (
           <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
             <Box
@@ -193,21 +207,6 @@ export default function SearchMediaCard({ props }: any) {
             </Box>
             <Typography fontSize={12} noWrap className="information">
               {props.volumes !== null ? props.volumes : '?'}
-            </Typography>
-          </Box>
-        ) : null}
-        {props.type === 'ANIME' ? (
-          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
-            <Box
-              component="span"
-              fontSize={14}
-              fontWeight="bold"
-              className="label-information"
-            >
-              Type:{'  '}
-            </Box>
-            <Typography fontSize={12} noWrap className="information">
-              {formatType(props.format)}
             </Typography>
           </Box>
         ) : null}
@@ -241,54 +240,7 @@ export default function SearchMediaCard({ props }: any) {
             {props.averageScore !== null ? `${props.averageScore}%` : '?'}
           </Typography>
         </Box>
-        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
-          <Box
-            component="span"
-            fontWeight="bold"
-            fontSize={14}
-            className="label-information"
-          >
-            Genres:{'  '}
-          </Box>
-          <Typography fontSize={12} noWrap className="information">
-            {props.genres.map((e: any, index: number) => {
-              if (index + 1 !== props.genres.length) {
-                return `${e}, `;
-              }
-              return `${e}`;
-            })}
-          </Typography>
-        </Box>
-        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
-          <Box
-            component="span"
-            fontSize={14}
-            fontWeight="bold"
-            className="label-information"
-          >
-            Source:{'  '}
-          </Box>
-          <Typography fontSize={12} noWrap className="information">
-            {formatSource(props.source)}
-          </Typography>
-        </Box>
-        {props.type === 'ANIME' ? (
-          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
-            <Box
-              component="span"
-              fontWeight="bold"
-              fontSize={14}
-              className="label-information"
-            >
-              Season:{'  '}
-            </Box>
-            <Typography fontSize={12} noWrap className="information">
-              {props.season !== null && props.seasonYear !== null
-                ? formatSeason(props.season, props.seasonYear)
-                : formatStartYear(props.startYear)}
-            </Typography>
-          </Box>
-        ) : (
+        {props.type !== 'ANIME' ? (
           <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
             <Box
               component="span"
@@ -306,7 +258,73 @@ export default function SearchMediaCard({ props }: any) {
               )}
             </Typography>
           </Box>
-        )}
+        ) : null}
+        {props.type !== 'ANIME' ? (
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
+              Ended:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
+              {formatReleaseDateNumbers(
+                props.endDay,
+                props.endMonth,
+                props.endYear,
+              )}
+            </Typography>
+          </Box>
+        ) : null}
+        {props.type === 'ANIME' ? (
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
+              Season:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
+              {props.season !== null && props.seasonYear !== null
+                ? formatSeason(props.season, props.seasonYear)
+                : formatStartYear(props.startYear)}
+            </Typography>
+          </Box>
+        ) : null}
+        {props.type === 'ANIME' ? (
+          <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+            <Box
+              component="span"
+              fontWeight="bold"
+              fontSize={14}
+              className="label-information"
+            >
+              Studio:{'  '}
+            </Box>
+            <Typography fontSize={12} noWrap className="information">
+              {props.mainStudioIndex !== -1
+                ? props.studios[props.mainStudioIndex].node.name
+                : '?'}
+            </Typography>
+          </Box>
+        ) : null}
+        <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontSize={14}
+            fontWeight="bold"
+            className="label-information"
+          >
+            Source:{'  '}
+          </Box>
+          <Typography fontSize={12} noWrap className="information">
+            {formatSource(props.source)}
+          </Typography>
+        </Box>
       </CardContent>
       <ContextMenu
         props={props}
@@ -347,3 +365,22 @@ export default function SearchMediaCard({ props }: any) {
     </Typography>
   </Box>
 ) : null */
+
+/*         <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
+          <Box
+            component="span"
+            fontWeight="bold"
+            fontSize={14}
+            className="label-information"
+          >
+            Genres:{'  '}
+          </Box>
+          <Typography fontSize={12} noWrap className="information">
+            {props.genres.map((e: any, index: number) => {
+              if (index + 1 !== props.genres.length) {
+                return `${e}, `;
+              }
+              return `${e}`;
+            })}
+          </Typography>
+        </Box> */

@@ -186,14 +186,16 @@ export function formatReleaseDate(day: any, month: any, year: any) {
 
 export function formatReleaseDateNumbers(day: any, month: any, year: any) {
   if (day === null && month === null && year === null) {
-    return '?';
+    return '?'; // return ? if all are null
   }
   if ((day === null || month === null) && year !== null) {
-    return `${year}`;
+    return `${year}`; // return year if day or month is null
   }
-  return `${month !== null ? month : '?'}/${day !== null ? day : '?'}/${
-    year !== null ? year : '?'
-  }`;
+  // Ensure month and day are always two digits
+  const formattedMonth =
+    month !== null ? month.toString().padStart(2, '0') : '?';
+  const formattedDay = day !== null ? day.toString().padStart(2, '0') : '?';
+  return `${formattedMonth}/${formattedDay}/${year !== null ? year : '?'}`;
 }
 
 export function formatProgress(

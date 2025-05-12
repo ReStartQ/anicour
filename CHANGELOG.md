@@ -1,3 +1,10 @@
+## 1.7.1
+
+- Date format has single digit numbers now lead with a 0 in the text.
+- Reordered information properties in the advanced window.
+- Search and season media cards changed to similar reordered media properties.
+- Update button height changed to a smaller compact size.
+
 ## 1.7.0
 
 ### Main Changes

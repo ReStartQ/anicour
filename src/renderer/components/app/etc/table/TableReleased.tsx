@@ -1,5 +1,4 @@
 import { Typography } from '@mui/material';
-import React from 'react';
 import { formatReleaseDateNumbers } from 'renderer/functions/edit/formatInfo';
 
 const TableReleased = ({ row }: any) => {

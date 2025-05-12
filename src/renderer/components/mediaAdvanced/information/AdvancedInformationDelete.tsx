@@ -1,26 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import CircleIcon from '@mui/icons-material/Circle';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {
-  Box,
-  Button,
-  CardContent,
-  Divider,
-  IconButton,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Box } from '@mui/material';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import {
-  formatReleaseDate,
-  formatSeason,
-  formatSource,
-  formatStartYear,
-  formatStatus,
-  formatType,
-} from 'renderer/functions/edit/formatInfo';
-import getStatusColor from 'renderer/functions/StatusFunction';
-import AdvancedExtraSelect from '../extra/AdvancedExtraSelect';
 import DeleteButton from '../extra/DeleteButton';
 
 const AdvancedInformationDelete = () => {

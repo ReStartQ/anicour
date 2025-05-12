@@ -1,10 +1,4 @@
-import {
-  Alert,
-  CardActionArea,
-  IconButton,
-  Snackbar,
-  SvgIcon,
-} from '@mui/material';
+import { CardActionArea } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
-import RepeatOnIcon from '@mui/icons-material/RepeatOn';
 import RepeatIcon from '@mui/icons-material/Repeat';
-import StarIcon from '@mui/icons-material/Star';
 import {
   useEffect,
   useReducer,
@@ -28,7 +20,6 @@ import { useAniListUsername } from 'renderer/context/services/AniListUsernameCon
 import { AdvancedInputContextReducer } from 'renderer/context/advanced/AdvancedInputContext';
 import { useUpdateEntryData } from 'renderer/functions/api/mutations/updateEntry';
 import {
-  formatReleaseDate,
   formatReleaseDateNumbers,
   formatSeason,
   formatSource,
@@ -541,7 +532,8 @@ export default function MediaCard({ props }: any) {
                 animation: 'none',
               },
               py: 0,
-              height: '15px',
+              height: '26px',
+              minHeight: '26px',
               '@keyframes pulse': {
                 '0%': { borderColor: '#4281CB' }, // Start with the initial color
                 '50%': { borderColor: 'deepskyblue' }, // Transition to a lighter blue

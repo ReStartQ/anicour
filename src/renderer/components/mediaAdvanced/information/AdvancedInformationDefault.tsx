@@ -1,14 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CircleIcon from '@mui/icons-material/Circle';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import {
-  Box,
-  Button,
-  CardContent,
-  Divider,
-  IconButton,
-  Typography,
-} from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import {
   formatReleaseDate,
@@ -20,7 +12,6 @@ import {
 } from 'renderer/functions/edit/formatInfo';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { Tooltip } from '@mui/joy';
-import AdvancedExtraSelect from '../extra/AdvancedExtraSelect';
 
 const AdvancedInformationDefault = () => {
   const myAdvancedMedia: any = useAdvancedMedia();
@@ -133,7 +124,7 @@ const AdvancedInformationDefault = () => {
           </Typography>
           <Typography fontSize={12} display="inline" className="information">
             {myAdvancedMedia.advancedMedia.duration !== null
-              ? `${myAdvancedMedia.advancedMedia.duration} mins / ep`
+              ? `${myAdvancedMedia.advancedMedia.duration} mins/ep`
               : '?'}
           </Typography>
         </Typography>
@@ -185,26 +176,6 @@ const AdvancedInformationDefault = () => {
           />
           {myAdvancedMedia.advancedMedia.status !== null
             ? formatStatus(myAdvancedMedia.advancedMedia.status)
-            : '?'}
-        </Typography>
-      </Typography>
-      <Typography fontSize={12} noWrap>
-        <Typography
-          fontSize={12}
-          fontWeight="bold"
-          display="inline"
-          className="label-information"
-        >
-          Source:{' '}
-        </Typography>
-        <Typography
-          fontSize={12}
-          display="inline"
-          noWrap
-          className="information"
-        >
-          {myAdvancedMedia.advancedMedia.source !== null
-            ? formatSource(myAdvancedMedia.advancedMedia.source)
             : '?'}
         </Typography>
       </Typography>
@@ -385,6 +356,26 @@ const AdvancedInformationDefault = () => {
           <></>
         )}
       </Tooltip>
+      <Typography fontSize={12} noWrap>
+        <Typography
+          fontSize={12}
+          fontWeight="bold"
+          display="inline"
+          className="label-information"
+        >
+          Source:{' '}
+        </Typography>
+        <Typography
+          fontSize={12}
+          display="inline"
+          noWrap
+          className="information"
+        >
+          {myAdvancedMedia.advancedMedia.source !== null
+            ? formatSource(myAdvancedMedia.advancedMedia.source)
+            : '?'}
+        </Typography>
+      </Typography>
       <Tooltip
         variant="outlined"
         color="primary"

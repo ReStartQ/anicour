@@ -7,29 +7,17 @@ import {
   type MRT_Virtualizer,
 } from 'material-react-table';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  Menu,
-  MenuItem,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { Box, Divider, IconButton, MenuItem, Typography } from '@mui/material';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
 import {
-  formatReleaseDate,
   formatReleaseDateNumbers,
   formatSeason,
   formatStartYear,
-  formatStatus,
   formatType,
 } from 'renderer/functions/edit/formatInfo';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
-import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import CircleIcon from '@mui/icons-material/Circle';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import createMediaListEntryData from 'renderer/functions/data/generator/createMediaListEntryData';
@@ -40,7 +28,7 @@ import { useAddNewEntryData } from 'renderer/functions/api/mutations/addEntry';
 import { useAtom } from 'jotai';
 import { statusAddSelectAtom } from 'renderer/store';
 import { getMalLink } from 'renderer/functions/edit/getAdjustedSiteLink';
-import { StyledMenu, StyledMenuDark } from '../../styled/StyledComponents';
+import { StyledMenuDark } from '../../styled/StyledComponents';
 import { MediaIcons } from '../../etc/SvgIcons';
 
 export default function MainMediaTable({ props }: any) {

@@ -1,14 +1,11 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { Tooltip, Typography } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
-import NewReleasesIcon from '@mui/icons-material/NewReleases';
+import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import { useEffect, useState } from 'react';
 import { formatProgress } from 'renderer/functions/edit/formatInfo';
-import { Button, IconButton } from '@mui/joy';
-import NextAiringEpisodeIndicator from './NextAiringEpisodeIndicator';
+import { IconButton } from '@mui/joy';
 import MediaProgress from './MediaProgress';
 
 export default function ProgressStepper({
