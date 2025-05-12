@@ -12,7 +12,6 @@ import { useTitle } from 'renderer/context/TitleContext';
 import ErrorAPI from '../etc/ErrorAPI';
 import ErrorCredentials from '../etc/ErrorCredentials';
 import LoadingMessage from '../etc/LoadingMessage';
-import MainMediaTable from './tables/MainMediaTable';
 import MainTanstackTable from './tables/MainTanstackTable';
 
 const MainTabList = ({ props }: any) => {

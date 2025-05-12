@@ -1,5 +1,3 @@
-import { CircularProgress } from '@mui/joy';
-import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useAdult } from 'renderer/context/AdultContext';
 import { useCategory } from 'renderer/context/CategoryContext';

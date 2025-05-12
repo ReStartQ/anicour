@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';

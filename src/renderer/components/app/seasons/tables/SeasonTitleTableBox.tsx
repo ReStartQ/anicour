@@ -6,7 +6,6 @@ import { useSearchTerm } from 'renderer/context/SearchTermContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAdult } from 'renderer/context/AdultContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useSeasonsQuery } from 'renderer/functions/SeasonsFunctions';
 import { useSeasonInput } from 'renderer/context/SeasonInputContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';

@@ -1,9 +1,7 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import Parser from 'html-react-parser';
-import { wrap } from 'module';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import { getOtherTitles } from 'renderer/functions/view/TitlePreferenceFunctions';
 
 const AdvancedDescription = () => {
   const myAdvancedMedia: any = useAdvancedMedia();

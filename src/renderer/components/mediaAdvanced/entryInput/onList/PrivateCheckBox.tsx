@@ -1,7 +1,7 @@
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import Box from '@mui/joy/Box';
-import Checkbox, { checkboxClasses } from '@mui/joy/Checkbox';
+import Checkbox from '@mui/joy/Checkbox';
 import { FormControl, FormLabel } from '@mui/joy';
 
 export default function PrivateCheckBox() {

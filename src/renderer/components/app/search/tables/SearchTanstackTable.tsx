@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import '../../../../styles/tables.scss';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
 
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
@@ -14,26 +12,13 @@ import {
 
 import { useVirtualizer } from '@tanstack/react-virtual';
 
-import { Box, Typography } from '@mui/material';
-import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
-import getStatusColor from 'renderer/functions/StatusFunction';
-import CircleIcon from '@mui/icons-material/Circle';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
-import { IconButton } from '@mui/joy';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import { formatStatus } from 'renderer/functions/edit/formatInfo';
 import { useCategory } from 'renderer/context/CategoryContext';
-import { MediaIcons } from '../../etc/SvgIcons';
-import HtmlTooltip from '../../etc/CustomTooltip1';
-import ContextMenu from '../../etc/ContextMenu';
-import TableProgressStepper from '../../etc/table/TableProgressStepper';
-import TableTitleMain from '../../etc/table/TableTitleMain';
-import TableProgressVolumeStepper from '../../etc/table/TableProgressVolumeStepper';
 import TableSeason from '../../etc/table/TableSeason';
 import TableReleased from '../../etc/table/TableReleased';
 import TableStatus from '../../etc/table/TableStatus';
-import TableScore from '../../etc/table/TableScore';
 import TableType from '../../etc/table/TableType';
 import TanstackTableRow from '../../etc/table/TanstackTableRow';
 import TableTitleOther from '../../etc/table/TableTitleOther';

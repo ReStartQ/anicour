@@ -4,23 +4,15 @@ import { Box } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Paper from '@mui/material/Paper';
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from 'react';
+import { useState } from 'react';
 import { useFilter } from 'renderer/context/FilterContext';
 import { useSearchTerm } from 'renderer/context/SearchTermContext';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useTheme } from 'renderer/context/ThemeContext';
-import { getFilteredTerm } from 'renderer/functions/view/FilterFunctions';
 import * as _ from 'lodash';
 import { debounce } from '@mui/material/utils';
 import { useAtom } from 'jotai';
 import { filterTypeAtom, searchPrevAtom } from 'renderer/store';
-import FilterSelect from './FilterSelect';
 
 const Search = () => {
   const myFilter: any = useFilter();

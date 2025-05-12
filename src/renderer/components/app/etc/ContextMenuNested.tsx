@@ -1,5 +1,5 @@
-import { ContextMenu, IconMenuItem, NestedDropdown } from 'mui-nested-menu';
-import React, { useState } from 'react';
+import { ContextMenu } from 'mui-nested-menu';
+import { useState } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';

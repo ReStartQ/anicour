@@ -1,12 +1,9 @@
 import { Tooltip } from '@mui/joy';
 import { Card, CardContent, Typography } from '@mui/material';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import {
-  getOtherTitles,
-  getTitle,
-} from 'renderer/functions/view/TitlePreferenceFunctions';
+import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 
 export default function AdvancedTitle() {
   const myAdvancedMedia: any = useAdvancedMedia();

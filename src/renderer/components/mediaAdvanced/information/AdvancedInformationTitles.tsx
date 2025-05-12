@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Box, CardContent, Tooltip, Typography } from '@mui/material';
+import { Box, Tooltip, Typography } from '@mui/material';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import {
-  formatSeason,
-  formatSource,
-  formatStatus,
-  formatType,
-} from 'renderer/functions/edit/formatInfo';
-import { getOtherTitles } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
-import getStatusColor from 'renderer/functions/StatusFunction';
-import ThemeSongButton from '../extra/ThemeSongButton';
 
 const AdvancedInformationTitles = () => {
   const myAdvancedMedia: any = useAdvancedMedia();

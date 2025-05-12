@@ -1,11 +1,9 @@
 import { Card, CardContent, Divider, Link, Typography } from '@mui/material';
-import Box from '@mui/material/Box';
 import parse from 'html-react-parser';
 import { memo, useEffect } from 'react';
 import { useNewsInfo } from 'renderer/context/NewsInfoContext';
 import { useNewsServiceType } from 'renderer/context/NewsServiceTypeContext';
 import 'renderer/styles/NewsAdvanced.scss';
-import LoadingMessage from '../etc/LoadingMessage';
 import LoadingNews from '../etc/LoadingNews';
 
 const NewsAdvanced = memo(({ props }: any) => {

@@ -1,5 +1,5 @@
 import RefreshIcon from '@mui/icons-material/Refresh';
-import { IconButton, ToggleButton, Tooltip, Typography } from '@mui/material';
+import { ToggleButton, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useNews } from 'renderer/context/NewsContext';
 import { useNewsServiceType } from 'renderer/context/NewsServiceTypeContext';

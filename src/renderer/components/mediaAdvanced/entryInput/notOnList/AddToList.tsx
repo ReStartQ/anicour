@@ -1,16 +1,5 @@
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import { KeyboardArrowDown } from '@mui/icons-material';
-import {
-  Box,
-  Button,
-  Select,
-  Typography,
-  Option,
-  Dropdown,
-  MenuButton,
-  Menu,
-  MenuItem,
-} from '@mui/joy';
+import { Box, Button, Select, Typography, Option } from '@mui/joy';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
@@ -21,7 +10,6 @@ import createMediaListEntryData from 'renderer/functions/data/generator/createMe
 import { useAtom } from 'jotai';
 import { statusAddSelectAtom } from 'renderer/store';
 import { MouseEvent, useState } from 'react';
-import { StyledMenu } from 'renderer/components/app/styled/StyledComponents';
 
 export default function AddToList() {
   const myAdvancedInput: any = useAdvancedInput();

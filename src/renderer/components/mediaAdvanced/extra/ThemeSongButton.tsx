@@ -1,5 +1,4 @@
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import { Box, IconButton, Tooltip, Typography } from '@mui/material';
+import { Box, Tooltip, Typography } from '@mui/material';
 import MusicVideoIcon from '@mui/icons-material/MusicVideo';
 import axios from 'axios';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';

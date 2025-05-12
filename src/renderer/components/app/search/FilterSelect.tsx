@@ -1,9 +1,6 @@
 import * as React from 'react';
-import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import FilterListIcon from '@mui/icons-material/FilterList';
 import { useAtom } from 'jotai';
 import { filterTypeAtom } from 'renderer/store';
 import { Box, IconButton } from '@mui/material';

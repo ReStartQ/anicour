@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { decode } from 'html-entities';
 import { useAtom } from 'jotai';
 import { useNewsAdv } from 'renderer/context/NewsAdvContext';
-import { Link as RouterLink, useMatches } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { newsLocationYAtom } from 'renderer/store';
 import { useEffect, useRef } from 'react';
 

@@ -1,13 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CachedIcon from '@mui/icons-material/Cached';
 import SettingsIcon from '@mui/icons-material/Settings';
-import HistoryIcon from '@mui/icons-material/History';
-import {
-  ToggleButton,
-  ToggleButtonGroup,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
@@ -15,10 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useAtom } from 'jotai';
 import { sessionIdAtom } from 'renderer/store';
 import isOnline from 'is-online';
-import {
-  validateMainMediaList,
-  validateMainMediaListForListMediaEntry,
-} from 'renderer/functions/data/validation/ValidationFunctions';
+import { validateMainMediaListForListMediaEntry } from 'renderer/functions/data/validation/ValidationFunctions';
 import { useQueryClient } from '@tanstack/react-query';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';

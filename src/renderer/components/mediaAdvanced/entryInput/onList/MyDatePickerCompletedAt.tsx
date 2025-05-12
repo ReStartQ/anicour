@@ -4,7 +4,6 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import dayjs from 'dayjs';
 import { useAtom } from 'jotai';
-import { useEffect } from 'react';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { isValidCompleteDateAtom } from 'renderer/store';

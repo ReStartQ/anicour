@@ -1,5 +1,4 @@
 import { Card, CardContent } from '@mui/material';
-import { Divider } from '@mui/joy';
 import AddToList from './AddToList';
 
 export default function EntryInputNotOnList() {

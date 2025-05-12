@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import MessageIcon from '@mui/icons-material/Message';
 import RepeatIcon from '@mui/icons-material/Repeat';

@@ -3,8 +3,6 @@ import { useTheme } from 'renderer/context/ThemeContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { useAtomValue } from 'jotai';
 import { infoTypeAtom } from 'renderer/store';
-import AlternativeLink from './AlternativeLink';
-import InfoButton from './InfoButton';
 import ThemeSongButton from './ThemeSongButton';
 import TrailerButton from './TrailerButton';
 import AdvancedExtraSelect from './AdvancedExtraSelect';

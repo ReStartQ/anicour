@@ -1,8 +1,8 @@
-import { Box, TextField, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
-import React, { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { appVersionAtom } from 'renderer/store';
-import MDEditor, { selectWord } from '@uiw/react-md-editor';
+import MDEditor from '@uiw/react-md-editor';
 import axios from 'axios';
 
 const AboutSection = () => {

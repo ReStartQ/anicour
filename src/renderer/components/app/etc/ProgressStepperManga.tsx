@@ -1,11 +1,9 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { IconButton, Tooltip, Typography } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
-import NewReleasesIcon from '@mui/icons-material/NewReleases';
+import { IconButton, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/system';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { formatProgress } from 'renderer/functions/edit/formatInfo';
 import NextAiringEpisodeIndicator from './NextAiringEpisodeIndicator';
 import MediaProgress from './MediaProgress';

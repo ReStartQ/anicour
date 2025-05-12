@@ -1,5 +1,4 @@
 import { FormControl, FormLabel, Input, Tooltip } from '@mui/joy';
-import { forwardRef } from 'react';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { getMaxValueEpisodesOrChapters } from 'renderer/functions/input/InputFunctions';

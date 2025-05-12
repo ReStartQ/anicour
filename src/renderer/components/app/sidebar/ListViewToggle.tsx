@@ -1,10 +1,7 @@
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ViewCompactIcon from '@mui/icons-material/ViewCompact';
 import ListIcon from '@mui/icons-material/List';
-import HistoryIcon from '@mui/icons-material/History';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import { Tooltip, TooltipProps, Typography, styled } from '@mui/material';
+import { Typography, styled } from '@mui/material';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useMainView } from 'renderer/context/MainViewContext';

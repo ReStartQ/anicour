@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useNewsAdv } from 'renderer/context/NewsAdvContext';
-import { Link as RouterLink, useMatches } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function NewsCardANN({ props }: any) {
   const newsAdv: any = useNewsAdv();

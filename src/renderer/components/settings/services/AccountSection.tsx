@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Input, Typography } from '@mui/material';
+import { Box, Button, Input } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';

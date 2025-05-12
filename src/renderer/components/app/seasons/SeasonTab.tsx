@@ -1,7 +1,4 @@
-import { CircularProgress } from '@mui/joy';
-import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import { useState } from 'react';
 import { useAdult } from 'renderer/context/AdultContext';
 import { useCategory } from 'renderer/context/CategoryContext';
 import { useFilter } from 'renderer/context/FilterContext';

@@ -1,5 +1,5 @@
 import { useColorScheme as useJoyColorScheme } from '@mui/joy/styles';
-import { Card, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import { useColorScheme as useMaterialColorScheme } from '@mui/material/styles';
 import { useEffect } from 'react';
 import { useTheme } from 'renderer/context/ThemeContext';

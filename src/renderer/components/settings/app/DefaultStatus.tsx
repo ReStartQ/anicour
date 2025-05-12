@@ -1,12 +1,4 @@
-import {
-  Box,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  NativeSelect,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
+import { Box, FormControl, InputLabel, NativeSelect } from '@mui/material';
 import { useAtom } from 'jotai';
 import React from 'react';
 import { statusAddSelectAtom } from 'renderer/store';

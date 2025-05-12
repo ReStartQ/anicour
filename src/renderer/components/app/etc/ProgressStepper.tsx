@@ -3,7 +3,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/system';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { formatProgress } from 'renderer/functions/edit/formatInfo';
 import { IconButton } from '@mui/joy';
 import MediaProgress from './MediaProgress';

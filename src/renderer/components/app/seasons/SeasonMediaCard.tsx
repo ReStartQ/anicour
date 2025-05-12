@@ -15,8 +15,6 @@ import {
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { formatStatus } from 'renderer/functions/edit/formatInfo';
-import { useAtom } from 'jotai';
-import { reRenderHelperAtom } from 'renderer/store';
 import { useSeasonInput } from 'renderer/context/SeasonInputContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';

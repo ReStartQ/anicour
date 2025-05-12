@@ -1,18 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   MaterialReactTable,
-  useMaterialReactTable,
-  MRT_Table,
-  type MRT_ColumnDef,
   type MRT_SortingState,
   type MRT_Virtualizer,
 } from 'material-react-table';
-import { IconButton, Tooltip, Typography } from '@mui/material';
+import { Tooltip, Typography } from '@mui/material';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { formatSeason, formatType } from 'renderer/functions/edit/formatInfo';
-import { Fingerprint } from '@mui/icons-material';
 
 export default function MediaMuiReactTable({ props }: any) {
   const myTitlePreference: any = useTitle();

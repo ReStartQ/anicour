@@ -11,9 +11,7 @@ import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useTheme } from 'renderer/context/ThemeContext';
 import MainCategoryBar from './MainCategoryBar';
 import MainTab from './MainTab';
-import MainTabList from './MainTabList';
 import MainTabCompact from './MainTabCompact';
-import HistoryTab from '../history/HistoryTab';
 import MainTabLi from './MainTabLi';
 
 function MainTabView({ view }: any) {

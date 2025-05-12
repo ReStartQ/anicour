@@ -3,7 +3,6 @@ import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 import MessageIcon from '@mui/icons-material/Message';
 import CommentIcon from '@mui/icons-material/Comment';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export function MediaIcons({ type }: any) {
   console.log(type);

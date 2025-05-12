@@ -3,12 +3,9 @@ import { Box, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import SaveIcon from '@mui/icons-material/Save';
-import React, { useEffect, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { AdvancedInputContextReducer } from 'renderer/context/advanced/AdvancedInputContext';
-import {
-  formatProgress,
-  formatProgressVolumes,
-} from 'renderer/functions/edit/formatInfo';
+import { formatProgressVolumes } from 'renderer/functions/edit/formatInfo';
 import { useCategory } from 'renderer/context/CategoryContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';

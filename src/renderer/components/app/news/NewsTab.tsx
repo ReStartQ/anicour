@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-import { memo, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
+import { memo, useEffect } from 'react';
 import { useFilter } from 'renderer/context/FilterContext';
 import { useMainView } from 'renderer/context/MainViewContext';
 import { useNewsAdv } from 'renderer/context/NewsAdvContext';

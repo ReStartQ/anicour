@@ -1,16 +1,5 @@
-import SearchIcon from '@mui/icons-material/Search';
-import { KeyboardArrowDown } from '@mui/icons-material';
-import {
-  FormControl,
-  FormLabel,
-  Input,
-  Select,
-  Option,
-  Box,
-  Button,
-  IconButton,
-} from '@mui/joy';
-import { InputLabel, NativeSelect, Typography } from '@mui/material';
+import { FormControl, FormLabel, Input, Box, Button } from '@mui/joy';
+import { NativeSelect, Typography } from '@mui/material';
 import { useState } from 'react';
 import { useSeasonInput } from 'renderer/context/SeasonInputContext';
 

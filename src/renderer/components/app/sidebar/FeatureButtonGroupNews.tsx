@@ -1,20 +1,5 @@
-import { useEffect, useState } from 'react';
-import CachedIcon from '@mui/icons-material/Cached';
 import SettingsIcon from '@mui/icons-material/Settings';
-import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
-import DownloadIcon from '@mui/icons-material/Download';
-import FileOpenIcon from '@mui/icons-material/FileOpen';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
-import NoteAddIcon from '@mui/icons-material/NoteAdd';
-import {
-  ToggleButton,
-  ToggleButtonGroup,
-  Tooltip,
-  Typography,
-} from '@mui/material';
-import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
-import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
-import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
+import { ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import NewsRefresh from '../news/NewsRefresh';
 import HtmlTooltip from '../etc/CustomTooltip1';
 

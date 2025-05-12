@@ -17,13 +17,10 @@ import {
   searchPrevAtom,
   sessionIdAtom,
   sessionSearchIdAtom,
-  sessionSeasonIdAtom,
 } from 'renderer/store';
 import isOnline from 'is-online';
 import SearchCategoryBar from './SearchCategoryBar';
 import SearchTab from './SearchTab';
-import SearchTabList from './SearchTabList';
-import HistoryTab from '../history/HistoryTab';
 import SearchTabLi from './SearchTabLi';
 
 function SearchTabView({ view }: any) {

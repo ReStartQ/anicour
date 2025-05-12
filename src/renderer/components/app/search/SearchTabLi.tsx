@@ -1,21 +1,14 @@
-import Box from '@mui/material/Box';
 import { useCategory } from 'renderer/context/CategoryContext';
 import { useFilter } from 'renderer/context/FilterContext';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
-import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
-import {
-  MainTableView,
-  SearchTableView,
-} from 'renderer/functions/view/DataTableFunctions';
 import 'renderer/styles/MainArea.scss';
 import { useSort } from 'renderer/context/SortContext';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useSearchTerm } from 'renderer/context/SearchTermContext';
 import { useAdult } from 'renderer/context/AdultContext';
-import SearchMediaTable from './tables/SearchMediaTable';
 import LoadingMessage from '../etc/LoadingMessage';
 import ErrorCredentials from '../etc/ErrorCredentials';
 import ErrorAPI from '../etc/ErrorAPI';

@@ -1,6 +1,6 @@
-import { Box, CssBaseline, Paper } from '@mui/material';
+import { CssBaseline, Paper } from '@mui/material';
 import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from 'renderer/context/ThemeContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import {
@@ -16,8 +16,6 @@ import {
   extendTheme as joyExtendTheme,
   useColorScheme as useJoyColorScheme,
 } from '@mui/joy/styles';
-import { blue, green, grey, purple, red, yellow } from '@mui/material/colors';
-import { deepmerge } from '@mui/utils';
 import 'renderer/styles/Trailer.scss';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAtom, useSetAtom } from 'jotai';

@@ -1,6 +1,5 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
-import MessageIcon from '@mui/icons-material/Message';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 import { useTitle } from 'renderer/context/TitleContext';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';

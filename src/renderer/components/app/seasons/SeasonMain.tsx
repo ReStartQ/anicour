@@ -22,8 +22,6 @@ import {
 import isOnline from 'is-online';
 import SeasonCategoryBar from './SeasonCategoryBar';
 import SeasonTab from './SeasonTab';
-import SeasonTabList from './SeasonTabList';
-import HistoryTab from '../history/HistoryTab';
 import SeasonTabLi from './SeasonTabLi';
 
 function SeasonTabView({ view }: any) {

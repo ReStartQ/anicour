@@ -1,7 +1,5 @@
 import { Tooltip } from '@mui/joy';
 import InfoIcon from '@mui/icons-material/Info';
-import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import React, { useEffect, useState } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import MediaProgress from './MediaProgress';
 

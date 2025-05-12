@@ -1,12 +1,10 @@
 import { Card, CardContent, Divider } from '@mui/material';
-import Box from '@mui/material/Box';
 import parse from 'html-react-parser';
 import { memo, useEffect } from 'react';
 import { useNewsInfo } from 'renderer/context/NewsInfoContext';
 import { useNewsServiceType } from 'renderer/context/NewsServiceTypeContext';
 import 'renderer/styles/NewsAdvanced.scss';
 import { useNewsAnn } from 'renderer/context/NewsAnnContext';
-import LoadingMessage from '../etc/LoadingMessage';
 import LoadingNews from '../etc/LoadingNews';
 
 const NewsAdvancedAnn = memo(({ props }: any) => {

@@ -1,6 +1,5 @@
 import { FormControl, FormLabel, Input } from '@mui/joy';
 import { Box } from '@mui/material';
-import { useState } from 'react';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 

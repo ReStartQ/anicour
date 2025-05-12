@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-import { memo, useEffect, useMemo } from 'react';
+import { memo, useEffect } from 'react';
 import { useFilter } from 'renderer/context/FilterContext';
 import { useMainView } from 'renderer/context/MainViewContext';
 import { useNewsAdv } from 'renderer/context/NewsAdvContext';
@@ -8,7 +8,6 @@ import { useNewsAnn } from 'renderer/context/NewsAnnContext';
 import { useNewsServiceType } from 'renderer/context/NewsServiceTypeContext';
 import { useQueryClient } from '@tanstack/react-query';
 import { useNewsANNQuery } from 'renderer/functions/NewsFunctions';
-import NewsAdvancedAnn from './NewsAdvancedAnn';
 import NewsCardANN from './NewsCardANN';
 import LoadingMessage from '../etc/LoadingMessage';
 import ErrorNewsFetch from '../etc/ErrorNewsFetch';

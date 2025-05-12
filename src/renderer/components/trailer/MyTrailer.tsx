@@ -1,9 +1,4 @@
-import { Box, IconButton, Paper } from '@mui/material';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useTheme } from 'renderer/context/ThemeContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import 'renderer/styles/Trailer.scss';
 
 export default function MyTrailer({ props }: any) {

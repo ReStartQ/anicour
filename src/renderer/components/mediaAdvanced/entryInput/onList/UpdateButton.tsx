@@ -5,11 +5,9 @@ import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useUpdateEntryData } from 'renderer/functions/api/mutations/updateEntry';
-import SaveIcon from '@mui/icons-material/Save';
 import { useAtom } from 'jotai';
 import { isValidCompleteDateAtom, isValidStartDateAtom } from 'renderer/store';
 import { useState } from 'react';
-import PrivateCheckBox from './PrivateCheckBox';
 
 export default function UpdateButton() {
   const myAdvancedMedia: any = useAdvancedMedia();

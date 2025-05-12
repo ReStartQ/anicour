@@ -1,8 +1,5 @@
 import {
-  Box,
-  Divider,
   Drawer,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
@@ -10,11 +7,8 @@ import {
 } from '@mui/material';
 import { useNewsAdv } from 'renderer/context/NewsAdvContext';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import NoteAddIcon from '@mui/icons-material/NoteAdd';
-import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import { useNewsInfo } from 'renderer/context/NewsInfoContext';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function NewsBack({ props }: any) {
   const newsAdv: any = useNewsAdv();

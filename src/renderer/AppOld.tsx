@@ -1,8 +1,5 @@
 import {
   HashRouter as Router,
-  Routes,
-  Route,
-  ScrollRestoration,
   createHashRouter,
   RouterProvider,
 } from 'react-router-dom';
@@ -20,7 +17,7 @@ import {
   THEME_ID as MATERIAL_THEME_ID,
   useColorScheme as useMaterialColorScheme,
 } from '@mui/material/styles';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {
   QueryClient,
   QueryClientProvider,

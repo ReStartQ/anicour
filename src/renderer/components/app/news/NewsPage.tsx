@@ -1,15 +1,4 @@
-import {
-  Box,
-  CssBaseline,
-  Divider,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import React, { SyntheticEvent, useEffect } from 'react';
 import {
   CssVarsProvider as JoyCssVarsProvider,
@@ -25,7 +14,6 @@ import {
   useColorScheme as useMaterialColorScheme,
 } from '@mui/material/styles';
 import { useTheme } from 'renderer/context/ThemeContext';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNewsServiceType } from 'renderer/context/NewsServiceTypeContext';
 import { updateQueryClientLists } from 'renderer/functions/data/update/updateQueryClientLists';
 import { useAtom } from 'jotai';

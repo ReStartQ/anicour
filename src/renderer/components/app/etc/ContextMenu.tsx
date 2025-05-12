@@ -8,8 +8,7 @@ import { useDeleteEntryData } from 'renderer/functions/api/mutations/deleteEntry
 import createMediaListEntryData from 'renderer/functions/data/generator/createMediaListEntryData';
 import { getMalLink } from 'renderer/functions/edit/getAdjustedSiteLink';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
-import { Popover } from '@mui/material';
-import { SetStateAction, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useAtom } from 'jotai';
 import { reRenderHelperAtom, statusAddSelectAtom } from 'renderer/store';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';

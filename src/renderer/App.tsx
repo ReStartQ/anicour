@@ -1,8 +1,5 @@
 import {
   HashRouter as Router,
-  Routes,
-  Route,
-  ScrollRestoration,
   createHashRouter,
   RouterProvider,
 } from 'react-router-dom';
@@ -20,7 +17,7 @@ import {
   THEME_ID as MATERIAL_THEME_ID,
   useColorScheme as useMaterialColorScheme,
 } from '@mui/material/styles';
-import { SyntheticEvent, useEffect, useState } from 'react';
+import { SyntheticEvent, useEffect } from 'react';
 import {
   QueryClient,
   QueryClientProvider,
@@ -99,12 +96,10 @@ import {
   statusAddSelectAtom,
 } from './store';
 import NewsPage from './components/app/news/NewsPage';
-import NewsTabANN from './components/app/news/NewsTabANN';
 import { getTitle } from './functions/view/TitlePreferenceFunctions';
 import { getSnackbarType } from './functions/edit/componentTypes';
 import FilterSelect from './components/app/search/FilterSelect';
 import ResetMenuApp from './components/app/etc/ResetMenuApp';
-import HistoryButton from './components/app/history/HistoryButton';
 import HistoryTab from './components/app/history/HistoryTab';
 
 declare module '@mui/joy/styles' {

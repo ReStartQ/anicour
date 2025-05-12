@@ -7,29 +7,17 @@ import {
   type MRT_Virtualizer,
 } from 'material-react-table';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  Menu,
-  MenuItem,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { Box, Divider, IconButton, MenuItem, Typography } from '@mui/material';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
 import {
-  formatReleaseDate,
   formatReleaseDateNumbers,
   formatSeason,
   formatStartYear,
-  formatStatus,
   formatType,
 } from 'renderer/functions/edit/formatInfo';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
-import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import CircleIcon from '@mui/icons-material/Circle';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import createMediaListEntryData from 'renderer/functions/data/generator/createMediaListEntryData';
@@ -40,13 +28,11 @@ import { useAddNewEntryData } from 'renderer/functions/api/mutations/addEntry';
 import { useAtom } from 'jotai';
 import { statusAddSelectAtom } from 'renderer/store';
 import { getMalLink } from 'renderer/functions/edit/getAdjustedSiteLink';
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import { useCategory } from 'renderer/context/CategoryContext';
 import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useSearchTerm } from 'renderer/context/SearchTermContext';
 import { useAdult } from 'renderer/context/AdultContext';
-import { MediaIcons, OnListIcon } from '../../etc/SvgIcons';
-import { StyledMenu, StyledMenuDark } from '../../styled/StyledComponents';
+import { StyledMenuDark } from '../../styled/StyledComponents';
 import SearchTitleTableBox from './SearchTitleTableBox';
 
 export default function SearchMediaTable({ props }: any) {

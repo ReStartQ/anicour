@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 
 import {
-  ColumnDef,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
@@ -14,13 +10,10 @@ import {
 
 import { useVirtualizer } from '@tanstack/react-virtual';
 
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { getTitle } from 'renderer/functions/view/TitlePreferenceFunctions';
 import { useTitle } from 'renderer/context/TitleContext';
-import getStatusColor from 'renderer/functions/StatusFunction';
-import CircleIcon from '@mui/icons-material/Circle';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
-import { IconButton } from '@mui/joy';
 
 function createData(title: string, date: string) {
   return { title, date };

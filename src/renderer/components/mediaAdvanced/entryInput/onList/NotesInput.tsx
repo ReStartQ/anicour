@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, Input, Textarea } from '@mui/joy';
+import { Box, FormControl, FormLabel, Input } from '@mui/joy';
 import { useAdvancedInput } from 'renderer/context/advanced/AdvancedInputContext';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 

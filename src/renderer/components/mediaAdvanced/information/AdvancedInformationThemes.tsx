@@ -1,10 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { useAdvancedThemeSongs } from 'renderer/context/advanced/AdvancedThemeSongContext';
 import axios from 'axios';
-import LoadingMessage from 'renderer/components/app/etc/LoadingMessage';
-import ThemeSongButton from '../extra/ThemeSongButton';
 
 const AdvancedInformationThemes = () => {
   const myMediaAdvanced: any = useAdvancedMedia();

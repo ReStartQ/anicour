@@ -6,7 +6,6 @@ import { useColorScheme as useJoyColorScheme } from '@mui/joy/styles';
 import { useColorScheme as useMaterialColorScheme } from '@mui/material/styles';
 import { useTheme } from 'renderer/context/ThemeContext';
 import { useEffect, useState } from 'react';
-import TrailerButton from '../mediaAdvanced/extra/TrailerButton';
 
 export default function TrailerNotAvailablePage({ props }: any) {
   const myTheme: any = useTheme();

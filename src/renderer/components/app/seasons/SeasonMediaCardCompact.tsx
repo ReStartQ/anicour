@@ -1,11 +1,9 @@
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import PlaylistAddCheckCircleIcon from '@mui/icons-material/PlaylistAddCheckCircle';
 import { CardActionArea, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import { IconButtonProps } from '@mui/material/IconButton';
-import { useEffect, useState, MouseEvent, useRef } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import {
   getTime,

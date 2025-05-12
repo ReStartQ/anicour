@@ -1,11 +1,4 @@
-import { Card, CardContent, styled, Tooltip, Typography } from '@mui/material';
-import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import {
-  formatSeason,
-  formatSource,
-  formatStatus,
-  formatType,
-} from 'renderer/functions/edit/formatInfo';
+import { Card, CardContent } from '@mui/material';
 import { infoTypeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
 import CardContentPaddingAdjusted from 'renderer/components/settings/etc/CardContentPaddingAdjusted';

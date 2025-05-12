@@ -1,17 +1,8 @@
-import {
-  Box,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormGroup,
-  InputLabel,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
+import { Box, Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 import { useAdult } from 'renderer/context/AdultContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
-import { changeUserAdult, getUser } from 'renderer/functions/UserFunctions';
+import { getUser } from 'renderer/functions/UserFunctions';
 
 function AdultLabel() {
   const adult: any = useAdult();
