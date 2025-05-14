@@ -2,6 +2,10 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
+
+$label-color: #ffffff;
+$info-color: #e0e0e0;
+
 * {
   margin: 0;
   padding: 0;
@@ -34,23 +38,23 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .label-information {
-  color: #ffffff;
+  color: $label-color;
 }
 
 .information {
-  color: #e0e0e0;
+  color: $info-color;
 }
 
 .label-information-tooltip {
-  color: #ffffff;
+  color: $label-color;
 }
 
 .information-tooltip {
-  // color: #e0e0e0;
+  font-weight: 500;
 }
 
 .description {
-  color: #ffffff;
+  color: $label-color;
 }
 
 /* Use !important to override Material-UI styles */

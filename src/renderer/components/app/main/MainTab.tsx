@@ -8,7 +8,6 @@ import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
 import { MainCategoryView } from 'renderer/functions/view/MainViewFunctions';
-import 'renderer/styles/MainArea.scss';
 import { memo } from 'react';
 import { useMainView } from '../../../context/MainViewContext';
 import ErrorAPI from '../etc/ErrorAPI';

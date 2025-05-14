@@ -1,36 +1,26 @@
-#newsAdvanced img:not(.img-a-l) {
+$twitter-font-family: 'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif;
+$news-advanced-link-color: #90caf9;
+
+#news-advanced img:not(.img-a-l) {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 80%;
 }
 
-#newsAdvanced a:link {
-  color: #90caf9;
+#news-advanced a:link {
+  color: $news-advanced-link-color;
 }
 
-/* #newsAdvanced a:link {
-  color: #90caf9;
-  background-color: transparent;
-  text-decoration: none;
-}
- */
-
-#newsAdvanced iframe {
+#news-advanced iframe {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* #newsAdvanced #title {
-  a:link {
-    color: orange;
-  }
-} */
-
 blockquote.twitter-tweet {
   display: inline-block;
-  font-family: 'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif;
+  font-family: $twitter-font-family;
   font-size: 12px;
   font-weight: bold;
   line-height: 16px;

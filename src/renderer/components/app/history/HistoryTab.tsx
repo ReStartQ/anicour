@@ -86,9 +86,9 @@ const HistoryTab = ({ props }: any) => {
 
   // All important CSS styles are included as inline styles for this example. This is not recommended for your code.
   return (
-    <div className="mediatables" style={{ marginTop: 0 }}>
+    <div className="media-table" style={{ marginTop: 0 }}>
       <div
-        className="containerTable"
+        className="container-table"
         ref={tableContainerRef}
         style={{
           overflowY: 'auto', // our scrollable table container

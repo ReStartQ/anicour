@@ -5,7 +5,6 @@ import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { SeasonTableView } from 'renderer/functions/view/DataTableFunctions';
-import 'renderer/styles/MainArea.scss';
 import { useSort } from 'renderer/context/SortContext';
 import { useTitle } from 'renderer/context/TitleContext';
 import { useSearchTerm } from 'renderer/context/SearchTermContext';

@@ -28,7 +28,7 @@ const NewsAdvanced = memo(({ props }: any) => {
 
   return myNewsInfo.NewsInfo.title !== '' ? (
     <Card
-      id="newsAdvanced"
+      id="news-advanced"
       sx={{
         paddingTop: '24px',
         px: '10%',

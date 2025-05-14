@@ -4,7 +4,6 @@ import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { useAniListToken } from 'renderer/context/services/AniListTokenContext';
 import { useAniListUsername } from 'renderer/context/services/AniListUsernameContext';
 import { useMainMediaList } from 'renderer/functions/MainMediaListFunctions';
-import 'renderer/styles/MainArea.scss';
 import { useSort } from 'renderer/context/SortContext';
 import { useTitle } from 'renderer/context/TitleContext';
 import ErrorAPI from '../etc/ErrorAPI';

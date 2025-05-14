@@ -111,7 +111,7 @@ const TanstackTableRow = ({
       data-index={virtualRow.index} // needed for dynamic row height measurement
       ref={(node) => rowVirtualizer.measureElement(node)} // measure dynamic row height
       key={row.id}
-      className={rowSelection === row.id ? 'selectedRow' : 'normalRow'}
+      className={rowSelection === row.id ? 'selected-row' : 'normal-row'}
       style={{
         display: 'flex',
         position: 'absolute',
