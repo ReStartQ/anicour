@@ -1,5 +1,5 @@
 $table-border-color: #4f4f4f;
-$table-container-background: #181818;
+$table-container-background: #121212;
 
 table {
   border-collapse: collapse;
@@ -9,15 +9,15 @@ table {
 }
 
 thead {
-  background: #003151;
+  background: #1e3a5c; // #142F4C #0D223A #1A3556,
 }
 
 tbody tr:hover {
-  background: #2e2e2e !important;
+  background: #23272e !important; // #151617 original color
 }
 
 .selected-row:hover {
-  background: #33485b !important;
+  background: #263447 !important;
 }
 
 tr {
@@ -25,8 +25,12 @@ tr {
 }
 
 th {
-  padding: 2px 4px;
-  text-align: left;
+  padding: 4px;
+  padding-left: 6px;
+  text-align: start;
+  border-right: 1px solid $table-border-color;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 td {
@@ -35,11 +39,12 @@ td {
 
 .container-table {
   border: 1px solid $table-border-color;
-  margin: 1rem auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 4px;
   background: $table-container-background;
 }
 
 .media-table {
-  margin: 1rem auto;
   text-align: center;
 }

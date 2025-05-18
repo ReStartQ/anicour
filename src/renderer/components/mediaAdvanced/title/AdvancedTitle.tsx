@@ -38,7 +38,12 @@ export default function AdvancedTitle() {
           color="primary"
           size="sm"
         >
-          <Typography noWrap fontWeight="bold" ref={textElementRef}>
+          <Typography
+            noWrap
+            fontWeight="bold"
+            ref={textElementRef}
+            className="title"
+          >
             {getTitle(titlePreference.title, myAdvancedMedia.advancedMedia)}
           </Typography>
         </Tooltip>

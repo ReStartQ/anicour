@@ -1,3 +1,9 @@
+## 1.7.2
+
+- Redesign of the tables for a more modern and clean look.
+- All media titles are now represented with the same color for consistency across the app.
+- Performance improvements for the table view.
+
 ## 1.7.1
 
 - Date format has single digit numbers now lead with a 0 in the text.

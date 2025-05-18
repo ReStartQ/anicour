@@ -5,6 +5,7 @@
 
 $label-color: #ffffff;
 $info-color: #e0e0e0;
+$my-light-blue: #87ceeb;
 
 * {
   margin: 0;
@@ -23,7 +24,6 @@ $info-color: #e0e0e0;
 }
 
 *::-webkit-scrollbar-thumb {
-  // background-color: lightslategrey;
   background-color: deepskyblue;
   border-radius: 3px;
 }

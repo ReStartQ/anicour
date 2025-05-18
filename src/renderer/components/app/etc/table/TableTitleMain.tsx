@@ -14,7 +14,7 @@ const TableTitleMain = ({ row }: any) => {
   const mySidebar: any = useSidebarButton();
 
   return (
-    <Typography noWrap fontSize={12}>
+    <Typography noWrap fontSize={12} className="title">
       {row.mediaListEntry.notes !== null ? (
         <HtmlTooltip title={row.mediaListEntry.notes}>
           <MessageIcon fontSize="inherit" sx={{ mr: '5px' }} />

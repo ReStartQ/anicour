@@ -3,7 +3,7 @@ import React from 'react';
 
 const TableScore = ({ row }: any) => {
   return (
-    <Typography fontSize={12} pl={1}>
+    <Typography fontSize={12} px={1}>
       {row.mediaListEntry.score === 0 ? '' : row.mediaListEntry.score}
     </Typography>
   );

@@ -117,7 +117,7 @@ const TanstackTableRow = ({
         position: 'absolute',
         transform: `translateY(${virtualRow.start}px)`, // this should always be a `style` as it changes on scroll
         width: '100%',
-        background: rowSelection === row.id ? ' #243341' : '#1e1e1e', // #1e1e1e rgba(8, 132, 186, 0.637) #38444c #243341
+        background: rowSelection === row.id ? '#202A36' : '#151617',
       }}
       onClick={onClickHandler}
       // context menu

@@ -35,7 +35,7 @@ const TableTitleOther = ({ row }: any) => {
   );
 
   return (
-    <Typography noWrap fontSize={12}>
+    <Typography noWrap fontSize={12} className="title">
       {row.mediaListEntry !== null ? (
         <HtmlTooltip title="On List">
           <PlaylistAddCheckCircleIcon fontSize="inherit" sx={{ mr: '5px' }} />

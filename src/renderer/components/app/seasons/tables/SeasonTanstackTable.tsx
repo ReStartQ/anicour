@@ -52,7 +52,7 @@ function SeasonTanstackTable({ props, title }: any) {
         cell: (info: any) => info.getValue(),
         // header: () => <span>Title</span>,
         header: () => 'Title',
-        size: 390,
+        size: 370,
       },
       {
         accessorFn: (row: any) => {
@@ -84,7 +84,7 @@ function SeasonTanstackTable({ props, title }: any) {
         },
         header: 'Season',
         cell: (info: any) => info.getValue(),
-        size: 94, // 84
+        size: 110, // 94
       },
     ],
     [],
@@ -122,7 +122,7 @@ function SeasonTanstackTable({ props, title }: any) {
       navigator.userAgent.indexOf('Firefox') === -1
         ? (element) => element?.getBoundingClientRect().height
         : undefined,
-    overscan: 3,
+    overscan: 12,
   });
 
   // All important CSS styles are included as inline styles for this example. This is not recommended for your code.
@@ -134,7 +134,7 @@ function SeasonTanstackTable({ props, title }: any) {
         style={{
           overflowY: 'auto', // our scrollable table container
           position: 'relative', // needed for sticky header
-          height: 'calc(100vh - 124px)', // should be a fixed height 606 calc(100vh - 134px)
+          height: 'calc(100vh - 120px)', // should be a fixed height 606 calc(100vh - 134px)
           width: '100%',
           borderRadius: '3px',
         }}
