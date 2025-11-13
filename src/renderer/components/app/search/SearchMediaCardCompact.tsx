@@ -3,7 +3,7 @@ import { CardActionArea, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import { getMalLink } from 'renderer/functions/edit/getAdjustedSiteLink';
@@ -15,8 +15,11 @@ import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
 import { Circle } from '@mui/icons-material';
-import ContextMenu from '../etc/ContextMenu';
+import { useAtom } from 'jotai';
+import { nextAiringEpisodeAtom } from 'renderer/store';
+import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
 import DeleteModal from '../etc/DeleteModal';
+import ContextMenu from '../etc/ContextMenu';
 
 export default function SearchMediaCardCompact({ props }: any) {
   const titlePreference: any = useTitle();
@@ -43,6 +46,16 @@ export default function SearchMediaCardCompact({ props }: any) {
     mouseY: number;
   } | null>(null);
 
+  const [time, setTime] = useState(
+    props.nextAiringEpisode !== null
+      ? props.nextAiringEpisode.timeUntilAiring
+      : null,
+  );
+
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
+
   const handleContextMenu = (event: MouseEvent) => {
     event.preventDefault();
     setContextMenu(
@@ -58,44 +71,15 @@ export default function SearchMediaCardCompact({ props }: any) {
     );
   };
 
-  const handleClose = () => {
-    setContextMenu(null);
-  };
-
-  const handleCloseAdvanced = () => {
-    setContextMenu(null);
-    window.electron.ipcRenderer.sendMessage('advancedMedia', [
-      getTitle(titlePreference.title, props),
-      props,
-    ]);
-  };
-
-  const handleCloseTrailer = () => {
-    setContextMenu(null);
-    window.electron.ipcRenderer.sendMessage('advancedMedia', [
-      getTitle(titlePreference.title, props),
-      props,
-      'trailer',
-    ]);
-  };
-
-  const handleCloseMalPage = () => {
-    setContextMenu(null);
-    window.electron.ipcRenderer.sendMessage('openExternalLink', [
-      getMalLink(props.idMal, props.type),
-    ]);
-  };
-
-  const handleCloseAniListPage = () => {
-    setContextMenu(null);
-    window.electron.ipcRenderer.sendMessage('openExternalLink', [
-      props.siteUrl,
-    ]);
-  };
-
-  const handleCloseDelete = () => {
-    setContextMenu(null);
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (time !== null && time >= 0 && props.nextAiringEpisode !== null) {
+        // eslint-disable-next-line no-plusplus
+        setTime(getTime(props.nextAiringEpisode.airingAt));
+      }
+    }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [time]);
 
   return (
     <Card
@@ -158,11 +142,12 @@ export default function SearchMediaCardCompact({ props }: any) {
         >
           <Typography
             fontSize={12}
+            fontWeight="bold"
             sx={{
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               display: '-webkit-box',
-              WebkitLineClamp: '2',
+              WebkitLineClamp: '1',
               WebkitBoxOrient: 'vertical',
             }}
             className="title"
@@ -177,6 +162,21 @@ export default function SearchMediaCardCompact({ props }: any) {
             />
             {getTitle(titlePreference.title, props)}
           </Typography>
+          {props.nextAiringEpisode !== null && nextAiringEpisode === 'Show' ? (
+            <Typography variant="body2" fontSize={11} color="aliceblue" noWrap>
+              <Box
+                component="span"
+                style={{
+                  color: '#00FFFF',
+                  fontSize: 13,
+                  fontWeight: 'bold',
+                }}
+              >
+                {`EP${props.nextAiringEpisode.episode}:`}
+              </Box>{' '}
+              {`${getTimeFormat(props.nextAiringEpisode.airingAt)}`}
+            </Typography>
+          ) : null}
         </Box>
       </CardActionArea>
       <ContextMenu

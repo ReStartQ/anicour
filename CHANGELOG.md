@@ -1,3 +1,10 @@
+## 1.7.3
+
+- Added episode countdown for search media cards.
+- All media cards now follow the same standard except for the dedicated information based on the category.
+- Changed color for the EP# for the next airing episode countdown.
+- Title formatting changes for compact media cards.
+
 ## 1.7.2
 
 - Redesign of the tables for a more modern and clean look.

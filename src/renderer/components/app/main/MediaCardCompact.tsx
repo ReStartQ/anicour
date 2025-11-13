@@ -166,20 +166,7 @@ export default function MediaCardCompact({ props }: any) {
             height: '55px',
           }}
         >
-          <Typography
-            fontSize={12}
-            sx={{
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitLineClamp:
-                props.nextAiringEpisode !== null && nextAiringEpisode === 'Show'
-                  ? '1'
-                  : '2',
-              WebkitBoxOrient: 'vertical',
-            }}
-            className="title"
-          >
+          <Typography fontSize={12} fontWeight="bold" noWrap className="title">
             <Circle
               fontSize="inherit"
               sx={{
@@ -192,9 +179,17 @@ export default function MediaCardCompact({ props }: any) {
           </Typography>
           {props.nextAiringEpisode !== null && nextAiringEpisode === 'Show' ? (
             <Typography variant="body2" fontSize={11} color="aliceblue" noWrap>
-              {`EP${props.nextAiringEpisode.episode}: ${getTimeFormat(
-                props.nextAiringEpisode.airingAt,
-              )}`}
+              <Box
+                component="span"
+                style={{
+                  color: '#00FFFF',
+                  fontSize: 13,
+                  fontWeight: 'bold',
+                }}
+              >
+                {`EP${props.nextAiringEpisode.episode}:`}
+              </Box>{' '}
+              {`${getTimeFormat(props.nextAiringEpisode.airingAt)}`}
             </Typography>
           ) : null}
         </Box>

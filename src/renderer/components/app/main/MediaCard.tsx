@@ -316,10 +316,18 @@ export default function MediaCard({ props }: any) {
               padding: '10px',
             }}
           >
-            <Typography variant="body2" fontSize={11}>
-              {`EP${props.nextAiringEpisode.episode}: ${getTimeFormat(
-                props.nextAiringEpisode.airingAt,
-              )}`}
+            <Typography variant="body2" fontSize={11} noWrap>
+              <Box
+                component="span"
+                style={{
+                  color: '#00FFFF',
+                  fontSize: 13,
+                  fontWeight: 'bold',
+                }}
+              >
+                {`EP${props.nextAiringEpisode.episode}:`}
+              </Box>{' '}
+              {`${getTimeFormat(props.nextAiringEpisode.airingAt)}`}
             </Typography>
           </Box>
         ) : null}

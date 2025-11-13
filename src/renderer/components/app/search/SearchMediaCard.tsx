@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTitle } from 'renderer/context/TitleContext';
 import getStatusColor from 'renderer/functions/StatusFunction';
 import {
@@ -25,6 +25,9 @@ import { useSearchQuery } from 'renderer/functions/SearchFunctions';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
 import { Tooltip } from '@mui/joy';
 import { Circle } from '@mui/icons-material';
+import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
+import { nextAiringEpisodeAtom } from 'renderer/store';
+import { useAtom } from 'jotai';
 import ContextMenu from '../etc/ContextMenu';
 import DeleteModal from '../etc/DeleteModal';
 
@@ -57,6 +60,16 @@ export default function SearchMediaCard({ props }: any) {
     mouseY: number;
   } | null>(null);
 
+  const [time, setTime] = useState(
+    props.nextAiringEpisode !== null
+      ? props.nextAiringEpisode.timeUntilAiring
+      : null,
+  );
+
+  const [nextAiringEpisode, setNextAiringEpisode] = useAtom(
+    nextAiringEpisodeAtom,
+  );
+
   const handleContextMenu = (event: React.MouseEvent) => {
     event.preventDefault();
     setContextMenu(
@@ -71,6 +84,16 @@ export default function SearchMediaCard({ props }: any) {
           null,
     );
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (time !== null && time >= 0 && props.nextAiringEpisode !== null) {
+        // eslint-disable-next-line no-plusplus
+        setTime(getTime(props.nextAiringEpisode.airingAt));
+      }
+    }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [time]);
 
   return (
     <Card
@@ -112,6 +135,33 @@ export default function SearchMediaCard({ props }: any) {
             maxHeight: '200px',
           }}
         />
+        {props.nextAiringEpisode !== null && nextAiringEpisode === 'Show' ? (
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              bgcolor: 'rgba(0, 0, 0, 0.69)',
+              color: 'white',
+              padding: '10px',
+            }}
+          >
+            <Typography variant="body2" fontSize={11} noWrap>
+              <Box
+                component="span"
+                style={{
+                  color: '#00FFFF',
+                  fontSize: 13,
+                  fontWeight: 'bold',
+                }}
+              >
+                {`EP${props.nextAiringEpisode.episode}:`}
+              </Box>{' '}
+              {`${getTimeFormat(props.nextAiringEpisode.airingAt)}`}
+            </Typography>
+          </Box>
+        ) : null}
         {props.mediaListEntry !== null ? (
           <Tooltip title="On List" arrow variant="outlined" color="primary">
             <PlaylistAddCheckCircleIcon
