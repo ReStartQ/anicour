@@ -2,9 +2,7 @@
 
 # AniCour
 
-AniCour is an anime, manga, and light novel tracking app that helps you discover, manage and track your lists from your desktop.
-<br />
-This app utilizes [AniList](https://anilist.co) for its tracking service to keep your anime and manga lists up-to-date.
+AniCour is a tracking app that helps you discover, manage, and track your anime, manga, and light novel lists from your desktop, utilizing [AniList](https://anilist.co) as its tracking service to keep your lists up-to-date.
 
 ## Features
 
