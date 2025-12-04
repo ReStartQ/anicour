@@ -147,6 +147,26 @@ ipcMain.on('resetLogin', async (event, val) => {
   await session.defaultSession.clearStorageData();
 });
 
+function getVideoIdFromStringSplit(embedSrc: string | undefined | null) {
+  if (embedSrc) {
+    // Split the URL string by the '/embed/' delimiter
+    const parts = embedSrc.split('/embed/');
+
+    // The part containing the ID and potential query parameters will be the second element
+    const idWithParams = parts[1];
+
+    if (idWithParams) {
+      // The ID stops either at the end of the string or at the first '?' character
+      const videoId = idWithParams.split('?')[0];
+      return videoId;
+    }
+
+    return null; // Return null if the /embed/ delimiter wasn't found
+  } else {
+    return null;
+  }
+}
+
 async function getNewsAdv(url: string, myTitle: string) {
   const result: any = {};
   if (url.startsWith('https://myanimelist.net/')) {
@@ -167,13 +187,34 @@ async function getNewsAdv(url: string, myTitle: string) {
           $(this).attr('href', newSrc);
         }
       }); */
+
+      /* Remove iframe for now because youtube embeds no longer work with file protocol (Happened sometime in 11-2025)
       $('iframe').each(function () {
-        /* const iframeChildren = $(this).children();
-        console.log(iframeChildren);
-        $(iframeChildren).empty(); */
         $(this).attr('allowfullscreen', 'true');
         $(this).attr('loading', 'lazy');
-        // $(this).attr('allow', 'geolocation *');
+        $(this).attr('referrerpolicy', 'strict-origin-when-cross-origin');
+      });
+      */
+      // remove all iframes
+      $('iframe').each(function () {
+        const $iframe = $(this);
+        const videoUrl = $iframe.attr('src'); // Get the src attribute
+
+        const videoID = getVideoIdFromStringSplit(videoUrl);
+
+        if (videoUrl) {
+          // Replace the iframe element with the new link
+          $(this).attr({
+            src: `https://www.youtube.ttools.io/watch?v=${videoID}`,
+            referrerPolicy: 'strict-origin-when-cross-origin',
+            scrolling: 'no',
+            width: '560px',
+            height: '345px',
+          });
+        } else {
+          // Optionally handle iframes with no src attribute (e.g., remove them or replace with placeholder)
+          $iframe.replaceWith('<p>[Video link unavailable]</p>');
+        }
       });
 
       $('.show_button').each(function () {
@@ -243,6 +284,7 @@ async function getNewsAdv(url: string, myTitle: string) {
             $(this).attr('href', newSrc);
           }
         }); */
+
         $('iframe').each(function () {
           $(this).attr('allowfullscreen', 'true');
           $(this).attr('loading', 'lazy');
@@ -432,6 +474,7 @@ const createNewSettingsWindow = async () => {
         : path.join(__dirname, '../../.erb/dll/preload.js'),
       // devTools: false,
       webviewTag: false,
+      webSecurity: false,
     },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
@@ -583,6 +626,8 @@ const createWindow = async () => {
   // resolveHtmlPath('index.html', 0)
   // 'http://localhost:1212/settings'
   mainWindow.loadURL(resolveHtmlPath('index.html', 0));
+
+  console.log('Serving at ' + resolveHtmlPath('index.html', 0));
 
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {

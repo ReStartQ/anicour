@@ -34,7 +34,7 @@ export default function TrailerAvailablePage({ props }: any) {
           display: 'inline-block',
           width: 'fit-content',
           height: 'fit-content',
-          margin: '5px',
+          margin: '10px',
         }}
       >
         <IconButton size="small">

@@ -319,8 +319,8 @@ export default function MediaCard({ props }: any) {
             <Typography variant="body2" fontSize={11} noWrap>
               <Box
                 component="span"
+                className="episode"
                 style={{
-                  color: '#00FFFF',
                   fontSize: 13,
                   fontWeight: 'bold',
                 }}

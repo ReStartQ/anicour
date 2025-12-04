@@ -10,9 +10,15 @@ export default function MyTrailer({ props }: any) {
         title="trailer"
         id="youtube"
         width={560}
-        height={340}
-        src={`https://www.youtube.com/embed/${myAdvancedMedia.advancedMedia.trailer.id}`}
+        height={345}
+        src={`https://www.youtube.ttools.io/watch?v=${myAdvancedMedia.advancedMedia.trailer.id}`}
+        referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
+        style={{
+          border: 0,
+          marginTop: '86px',
+        }}
+        scrolling="no"
       />
     );
   }

@@ -1,3 +1,10 @@
+## 1.7.4
+
+- Fixed youtube embed for anime trailers. Caused by youtube changing their referrer policy for where the origin of the request came from.
+  The app uses a file protocol in production and it was expecting the origin to be https with a referrer policy that was not same-origin.
+  Fix implemented by changing source to another https server that would embed the video.
+- Color change for the episode indicator to a slightly darker blue.
+
 ## 1.7.3
 
 - Added episode countdown for search media cards.

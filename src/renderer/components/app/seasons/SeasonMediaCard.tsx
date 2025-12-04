@@ -158,8 +158,8 @@ export const SeasonMediaCard = ({ props }: any) => {
             <Typography variant="body2" fontSize={11} noWrap>
               <Box
                 component="span"
+                className="episode"
                 style={{
-                  color: '#00FFFF',
                   fontSize: 13,
                   fontWeight: 'bold',
                 }}
