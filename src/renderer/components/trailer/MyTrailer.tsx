@@ -10,8 +10,8 @@ export default function MyTrailer({ props }: any) {
         title="trailer"
         id="youtube"
         width={560}
-        height={345}
-        src={`https://www.youtube.ttools.io/watch?v=${myAdvancedMedia.advancedMedia.trailer.id}`}
+        height={340}
+        src={`https://anicour-embed-video.pages.dev/youtube/${myAdvancedMedia.advancedMedia.trailer.id}`}
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
         style={{
@@ -47,3 +47,4 @@ export default function MyTrailer({ props }: any) {
   );
 }
 // check if trailer is null + on youtube
+// Backup: src={`https://www.youtube.ttools.io/watch?v=${myAdvancedMedia.advancedMedia.trailer.id}`}

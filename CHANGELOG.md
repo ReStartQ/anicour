@@ -1,3 +1,7 @@
+## 1.7.5
+
+- Site used to embed videos has been changed to anicour-video-embed.pages.dev
+
 ## 1.7.4
 
 - Fixed youtube embed for anime trailers. Caused by youtube changing their referrer policy for where the origin of the request came from.

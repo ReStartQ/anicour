@@ -205,7 +205,7 @@ async function getNewsAdv(url: string, myTitle: string) {
         if (videoUrl) {
           // Replace the iframe element with the new link
           $(this).attr({
-            src: `https://www.youtube.ttools.io/watch?v=${videoID}`,
+            src: `https://anicour-embed-video.pages.dev/youtube/${videoID}`,
             referrerPolicy: 'strict-origin-when-cross-origin',
             scrolling: 'no',
             width: '560px',
