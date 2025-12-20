@@ -1,6 +1,6 @@
 ## 1.7.5
 
-- Site used to embed videos has been changed to anicour-video-embed.pages.dev
+- Site used to embed videos has been changed to [anicour-embed-video.pages.dev](https://anicour-embed-video.pages.dev/)
 
 ## 1.7.4
 
