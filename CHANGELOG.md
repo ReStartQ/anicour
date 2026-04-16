@@ -1,3 +1,7 @@
+## 1.7.6
+
+- Fixed low quality image issue with news cards.
+
 ## 1.7.5
 
 - Site used to embed videos has been changed to [anicour-embed-video.pages.dev](https://anicour-embed-video.pages.dev/)

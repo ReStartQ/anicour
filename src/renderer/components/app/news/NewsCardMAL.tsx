@@ -57,11 +57,7 @@ export default function NewsCardMAL({ props, reference, listValue }: any) {
           }}
           sx={{ height: 320, width: 225 }}
         >
-          <CardMedia
-            component="img"
-            image={props.image}
-            sx={{ height: 320, width: 225 }}
-          />
+          <CardMedia component="img" image={props.image} />
         </CardActionArea>
       </RouterLink>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
