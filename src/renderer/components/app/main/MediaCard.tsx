@@ -47,6 +47,7 @@ import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
 import ScoreSelect from '../etc/ScoreSelect';
 import { MediaIcons } from '../etc/SvgIcons';
 import DeleteModal from '../etc/DeleteModal';
+import MediaDropdownOptions from './cards/MediaDropdownOptions';
 
 export default function MediaCard({ props }: any) {
   const titlePreference: any = useTitle();
@@ -528,12 +529,16 @@ export default function MediaCard({ props }: any) {
           sx={{
             gridColumn: '1/3',
             gridRow: '5/6',
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
           }}
         >
           <Button
             size="sm"
             fullWidth
             sx={{
+              marginRight: '5px',
               textTransform: 'none',
               '&:hover': {
                 backgroundColor: '#1B3A57',
