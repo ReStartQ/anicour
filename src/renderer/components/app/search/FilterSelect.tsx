@@ -1,6 +1,7 @@
 import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { FilterList } from '@mui/icons-material';
 import { useAtom } from 'jotai';
 import { filterTypeAtom } from 'renderer/store';
 import { Box, IconButton } from '@mui/material';
@@ -61,7 +62,7 @@ export default function FilterSelect() {
           sx={{ mx: '3px', borderRadius: 1 }}
           size="small"
         >
-          <MoreVertIcon
+          <FilterList
             fontSize="small"
             sx={{ color: filterType === 'All' ? 'white' : '#ffeb3b' }}
           />

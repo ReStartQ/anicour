@@ -73,9 +73,11 @@ const MediaProgress = ({
       valueBuffer={buffer}
       color="info"
       sx={{
-        border: '1px solid deepskyblue',
+        border: '1px solid #417fc1',
+        borderRadius: '2px',
         width: '100%',
-        height: '6px',
+        mx: '2px',
+        height: '8px',
         '& .MuiLinearProgress-dashed': {
           animation: 'none',
           backgroundImage: 'none',

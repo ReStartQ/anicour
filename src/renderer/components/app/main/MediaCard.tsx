@@ -409,21 +409,13 @@ export default function MediaCard({ props }: any) {
             {getTitle(titlePreference.title, props)}
           </Typography>
         </Box>
-        {props.type === 'ANIME' ? (
+        <Box sx={{ gridColumn: '1/2', gridRow: '2/3', height: '100%' }}>
           <ProgressStepper
             props={props}
             advancedInput={myAdvancedInput}
             inputDispatch={inputDispatch}
           />
-        ) : (
-          <>
-            <ProgressStepper
-              props={props}
-              advancedInput={myAdvancedInput}
-              inputDispatch={inputDispatch}
-            />
-          </>
-        )}
+        </Box>
         <Box sx={{ gridColumn: '1/2', gridRow: '3/4' }}>
           <ScoreSelect
             props={props}
@@ -431,7 +423,7 @@ export default function MediaCard({ props }: any) {
             inputDispatch={inputDispatch}
           />
         </Box>
-        <Box sx={{ gridColumn: '2/3', gridRow: '2/3' }}>
+        <Box sx={{ gridColumn: '2/3', gridRow: '2/3', height: '100%' }}>
           {props.type === 'ANIME' ? (
             <Box>
               <Typography
@@ -538,7 +530,7 @@ export default function MediaCard({ props }: any) {
             size="sm"
             fullWidth
             sx={{
-              marginRight: '5px',
+              marginRight: '4px',
               textTransform: 'none',
               '&:hover': {
                 backgroundColor: '#1B3A57',
@@ -572,6 +564,7 @@ export default function MediaCard({ props }: any) {
           >
             Update
           </Button>
+          <MediaDropdownOptions handleContextMenu={handleContextMenu} />
         </Box>
       </CardContent>
       <ContextMenu

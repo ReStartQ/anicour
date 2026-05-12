@@ -1,3 +1,8 @@
+## 1.7.7
+
+- Filter icon uses a different icon (funnel).
+- Added a more options button for grid cards as an alternative to open the context menu.
+
 ## 1.7.6
 
 - Fixed low quality image issue with news cards.

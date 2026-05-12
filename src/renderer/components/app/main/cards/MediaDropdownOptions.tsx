@@ -6,7 +6,7 @@ export default function MediaDropdownOptions({ handleContextMenu }) {
   return (
     <IconButton
       size="small"
-      sx={{ borderRadius: '5px', py: '3px' }}
+      sx={{ borderRadius: '3px', py: '3px', px: '1px' }}
       onClick={handleContextMenu}
     >
       <MoreVert />
