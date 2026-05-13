@@ -1,3 +1,10 @@
+## 1.7.8
+
+- Re-added progress bar for media grid cards.
+- Changed color of scrollbar to a different color because it uses a similar color to the progress bar.
+- Moved Filter button to left of search bar
+- Styling changes for more options and filter buttons
+
 ## 1.7.7
 
 - Filter icon uses a different icon (funnel).

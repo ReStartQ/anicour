@@ -234,7 +234,6 @@ export default function ProgressStepper({
           <AddIcon fontSize="inherit" />
         </IconButton>
       </Box>
-      {/*
       <Box
         display="flex"
         flexDirection="row"
@@ -267,7 +266,7 @@ export default function ProgressStepper({
           mediaType={props.type}
           type={0}
         />
-      </Box> */}
+      </Box>
     </Box>
   );
 }

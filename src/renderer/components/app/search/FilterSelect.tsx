@@ -6,7 +6,7 @@ import { useAtom } from 'jotai';
 import { filterTypeAtom } from 'renderer/store';
 import { Box, IconButton } from '@mui/material';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
-import { Tooltip } from '@mui/joy';
+import { Button, Tooltip } from '@mui/joy';
 import { StyledMenu } from '../styled/StyledComponents';
 
 const options = [
@@ -43,7 +43,7 @@ export default function FilterSelect() {
   };
 
   return (
-    <Box sx={{ ml: '3px' }}>
+    <Box sx={{ ml: '4px', mr: '4px' }}>
       <Tooltip
         title={
           filterType === 'All' ? 'Filter by' : `Filtered by: ${filterType}`
@@ -52,21 +52,29 @@ export default function FilterSelect() {
         variant="outlined"
         color="primary"
       >
-        <IconButton
+        <Button
           aria-label="more"
           id="long-button"
           aria-controls={open ? 'long-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-haspopup="true"
           onClick={handleClick}
-          sx={{ mx: '3px', borderRadius: 1 }}
-          size="small"
+          sx={{
+            mx: '3px',
+            borderRadius: '8px',
+            height: '34px',
+            width: '34px',
+            backgroundColor: '#1C2636',
+            '&:hover': { bgcolor: '#121A26' },
+          }}
+          size="sm"
+          variant="outlined"
         >
           <FilterList
             fontSize="small"
             sx={{ color: filterType === 'All' ? 'white' : '#ffeb3b' }}
           />
-        </IconButton>
+        </Button>
       </Tooltip>
       <StyledMenu
         id="long-menu"

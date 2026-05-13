@@ -391,7 +391,7 @@ export default function MediaCard({ props }: any) {
           paddingTop: '6px',
           '&:last-child': { pb: '6px' },
           display: 'grid',
-          gridTemplateRows: '26px 42px 42px 42px 1fr',
+          gridTemplateRows: '26px 48px 42px 42px 1fr',
           alignItems: 'center',
           gridTemplateColumns: '96px 96px',
         }}
@@ -530,7 +530,6 @@ export default function MediaCard({ props }: any) {
             size="sm"
             fullWidth
             sx={{
-              marginRight: '4px',
               textTransform: 'none',
               '&:hover': {
                 backgroundColor: '#1B3A57',

@@ -501,8 +501,8 @@ const Hello = () => {
                   justifyContent: 'end',
                 }}
               >
-                <Search />
                 <FilterSelect />
+                <Search />
                 {/* <HistoryButton /> */}
               </Toolbar>
               <Divider />

@@ -33,7 +33,12 @@ const Search = () => {
   };
 
   return (
-    <Box display="flex" justifySelf="flex-end" alignSelf="center">
+    <Box
+      display="flex"
+      justifySelf="flex-end"
+      alignSelf="center"
+      sx={{ mr: 1 }}
+    >
       <Paper sx={{ display: 'flex', width: '220px' }}>
         <InputBase
           sx={{ ml: 1, flex: 1 }}

@@ -77,7 +77,7 @@ const MediaProgress = ({
         borderRadius: '2px',
         width: '100%',
         mx: '2px',
-        height: '8px',
+        height: '6px',
         '& .MuiLinearProgress-dashed': {
           animation: 'none',
           backgroundImage: 'none',
