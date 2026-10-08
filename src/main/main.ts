@@ -10,7 +10,14 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import { app, session, BrowserWindow, shell, ipcMain } from 'electron';
+import {
+  app,
+  session,
+  BrowserWindow,
+  shell,
+  ipcMain,
+  clipboard,
+} from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import Store from 'electron-store';
@@ -741,4 +748,20 @@ app
 ipcMain.on('appVersion', async (event, arg: any) => {
   console.log('appVersion');
   settingsWindow?.webContents.send('appVersion', [app.getVersion()]);
+});
+
+// Clipboard listener
+ipcMain.on('copyToClipboard', (event, arg) => {
+  const [type, text] = arg;
+
+  // copy to clipboard
+  clipboard.writeText(text);
+
+  // send message back to appropriate window
+  if (mainWindow !== null && type == 0) {
+    mainWindow.webContents.send('copyToClipboard', text);
+  }
+  if (mediaWindow !== null && type == 1) {
+    mediaWindow.webContents.send('copyToClipboard', text);
+  }
 });

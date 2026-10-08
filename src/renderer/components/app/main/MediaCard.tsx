@@ -40,7 +40,7 @@ import { useCategory } from 'renderer/context/CategoryContext';
 import { Button, Tooltip } from '@mui/joy';
 import { useSidebarButton } from 'renderer/context/SidebarContext';
 import { getTime, getTimeFormat } from 'renderer/functions/SeasonsFunctions';
-import { Circle } from '@mui/icons-material';
+import { Circle, ContentCopy } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import ProgressStepper from '../etc/ProgressStepper';
 import ProgressVolumesStepper from '../etc/ProgressVolumesStepper';
@@ -48,6 +48,7 @@ import ScoreSelect from '../etc/ScoreSelect';
 import { MediaIcons } from '../etc/SvgIcons';
 import DeleteModal from '../etc/DeleteModal';
 import MediaDropdownOptions from './cards/MediaDropdownOptions';
+import CopyButton from '../etc/copy/CopyButton';
 
 export default function MediaCard({ props }: any) {
   const titlePreference: any = useTitle();
@@ -63,6 +64,8 @@ export default function MediaCard({ props }: any) {
     notificationMediaNamesAtom,
   );
   const [open, setOpen] = useState(false);
+
+  const [titleHover, setTitleHover] = useState(true);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -408,6 +411,13 @@ export default function MediaCard({ props }: any) {
           >
             {getTitle(titlePreference.title, props)}
           </Typography>
+          <CopyButton
+            type={0}
+            text={getTitle(titlePreference.title, props)}
+            height={18}
+            width={18}
+            show
+          />
         </Box>
         <Box sx={{ gridColumn: '1/2', gridRow: '2/3', height: '100%' }}>
           <ProgressStepper

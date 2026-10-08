@@ -74,10 +74,10 @@ const Search = () => {
         <IconButton
           type="button"
           size="small"
-          aria-label="search"
           sx={{
             borderRadius: 1,
             marginLeft: 1,
+            marginRight: 1,
             backgroundColor: '#1873CC',
             ':hover': { backgroundColor: 'dodgerblue' },
           }}
@@ -94,10 +94,10 @@ const Search = () => {
         <IconButton
           type="button"
           size="small"
-          aria-label="search"
           sx={{
             borderRadius: 1,
             marginLeft: 1,
+            marginRight: 1,
             backgroundColor: '#1873CC',
             ':hover': { backgroundColor: 'dodgerblue' },
           }}

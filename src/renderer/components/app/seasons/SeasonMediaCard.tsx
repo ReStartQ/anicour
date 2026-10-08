@@ -24,6 +24,7 @@ import { Tooltip } from '@mui/joy';
 import { Circle } from '@mui/icons-material';
 import ContextMenu from '../etc/ContextMenu';
 import DeleteModal from '../etc/DeleteModal';
+import CopyButton from '../etc/copy/CopyButton';
 
 export const SeasonMediaCard = ({ props }: any) => {
   const titlePreference: any = useTitle();
@@ -181,17 +182,26 @@ export const SeasonMediaCard = ({ props }: any) => {
           flexDirection: 'column',
         }}
       >
-        <Typography
-          component="div"
-          variant="h6"
-          fontSize={14}
-          fontWeight="bold"
-          noWrap
-          gutterBottom
-          className="title"
-        >
-          {getTitle(titlePreference.title, props)}
-        </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+          <Typography
+            component="div"
+            variant="h6"
+            fontSize={14}
+            fontWeight="bold"
+            noWrap
+            gutterBottom
+            className="title"
+          >
+            {getTitle(titlePreference.title, props)}
+          </Typography>
+          <CopyButton
+            type={0}
+            text={getTitle(titlePreference.title, props)}
+            height={18}
+            width={18}
+            show
+          />
+        </Box>
         <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
           <Box
             component="span"

@@ -15,7 +15,8 @@ export type Channels =
   | 'updateAdvancedFromMain'
   | 'openExternalLink'
   | 'adultFlag'
-  | 'appVersion';
+  | 'appVersion'
+  | 'copyToClipboard';
 
 const electronHandler = {
   ipcRenderer: {

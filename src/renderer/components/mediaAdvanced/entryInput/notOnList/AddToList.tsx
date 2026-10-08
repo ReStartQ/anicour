@@ -111,7 +111,7 @@ export default function AddToList() {
         </Option>
       </Select>
       <Button
-        variant="soft"
+        variant="outlined"
         size="sm"
         onClick={handleOnClick}
         aria-controls={open ? 'basic-menu' : undefined}

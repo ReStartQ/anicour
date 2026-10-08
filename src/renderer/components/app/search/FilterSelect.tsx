@@ -68,7 +68,6 @@ export default function FilterSelect() {
             '&:hover': { bgcolor: '#121A26' },
           }}
           size="sm"
-          variant="outlined"
         >
           <FilterList
             fontSize="small"

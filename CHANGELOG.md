@@ -1,3 +1,11 @@
+## 1.8.0
+
+- Quick access feature: Copy to Clipboard button for title. Used in grid cards and advanced media window.
+- Title uses a more readable color.
+- Advanced media window buttons are now outlined for a more consistent look.
+- Fixed issue with getting OP/ED themes. Previous API was discontinued on Oct 1 and the app now uses an equivalent API.
+- Account section authentification bug has been fixed to properly check if the token belongs to the username. Was only checking for token validation before and would give false positives in the notification message. Solution was to change the old testing query to documented viewer query.
+
 ## 1.7.8
 
 - Re-added progress bar for media grid cards.

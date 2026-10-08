@@ -15,7 +15,10 @@ const AdvancedInformationThemes = () => {
   const getData = async () => {
     const { data, status } = await axios
       .get(
-        `https://api.jikan.moe/v4/anime/${myMediaAdvanced.advancedMedia.idMal}/themes`,
+        `https://api.tenrai.org/v1/anime/${myMediaAdvanced.advancedMedia.idMal}/themes`,
+        /* `https://api.jikan.moe/v4/anime/${myMediaAdvanced.advancedMedia.idMal}/themes`,
+            Replacing discontinued jikan.moe with tenrai.org solution
+        */
       )
       .then((response) => {
         return response;

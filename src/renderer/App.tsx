@@ -86,9 +86,11 @@ import { AdvancedMoreInfoContextProvider } from './context/advanced/AdvancedMore
 import { AdvancedThemeSongsContextProvider } from './context/advanced/AdvancedThemeSongContext';
 import {
   appResetDialogOpenAtom,
+  messageIDAtom,
   myStore,
   nextAiringEpisodeAtom,
   notificationAltOpenAtom,
+  notificationCopyOpenAtom,
   notificationMediaNamesAtom,
   notificationOpenAtom,
   notificationTypeAtom,
@@ -101,6 +103,7 @@ import { getSnackbarType } from './functions/edit/componentTypes';
 import FilterSelect from './components/app/search/FilterSelect';
 import ResetMenuApp from './components/app/etc/ResetMenuApp';
 import HistoryTab from './components/app/history/HistoryTab';
+import ClipboardNotification from './components/app/etc/copy/ClipboardNotification';
 
 declare module '@mui/joy/styles' {
   interface PaletteWarningOverrides {
@@ -265,6 +268,12 @@ const Hello = () => {
     nextAiringEpisodeAtom,
   );
 
+  const [notifcationCopyOpen, setNotificationCopyOpen] = useAtom(
+    notificationCopyOpenAtom,
+  );
+
+  const [messageID, setMessageID] = useAtom(messageIDAtom);
+
   const handleClose = (event?: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
@@ -280,6 +289,23 @@ const Hello = () => {
 
     setNotificationAltOpen(false);
   };
+
+  useEffect(() => {
+    const removeEventListener = window.electron.ipcRenderer.on(
+      'copyToClipboard',
+      (arg: any) => {
+        // eslint-disable-next-line no-console
+        console.log(`text copied: ${arg}`);
+
+        setMessageID(arg);
+        // send message to user that text has been copied to clipboard
+        setNotificationCopyOpen(true);
+      },
+    );
+    return () => {
+      removeEventListener();
+    };
+  }, [notifcationCopyOpen, setNotificationCopyOpen, setMessageID, messageID]);
 
   useEffect(() => {
     const removeEventListener = window.electron.ipcRenderer.on(
@@ -480,6 +506,7 @@ const Hello = () => {
                 </Alert>
               </Snackbar>
             </Box>
+            <ClipboardNotification />
             <Box sx={{ width: 0, height: 0 }}>
               <ResetMenuApp />
             </Box>

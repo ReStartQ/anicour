@@ -30,6 +30,7 @@ import { nextAiringEpisodeAtom } from 'renderer/store';
 import { useAtom } from 'jotai';
 import ContextMenu from '../etc/ContextMenu';
 import DeleteModal from '../etc/DeleteModal';
+import CopyButton from '../etc/copy/CopyButton';
 
 export default function SearchMediaCard({ props }: any) {
   const titlePreference: any = useTitle();
@@ -188,17 +189,26 @@ export default function SearchMediaCard({ props }: any) {
           flexDirection: 'column',
         }}
       >
-        <Typography
-          variant="h6"
-          fontSize={14}
-          fontWeight="bold"
-          component="div"
-          noWrap
-          gutterBottom
-          className="title"
-        >
-          {getTitle(titlePreference.title, props)}
-        </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+          <Typography
+            variant="h6"
+            fontSize={14}
+            fontWeight="bold"
+            component="div"
+            noWrap
+            gutterBottom
+            className="title"
+          >
+            {getTitle(titlePreference.title, props)}
+          </Typography>
+          <CopyButton
+            type={0}
+            text={getTitle(titlePreference.title, props)}
+            height={18}
+            width={18}
+            show
+          />
+        </Box>
         {props.type === 'ANIME' ? (
           <Box display="flex" flexDirection="row" alignItems="center" gap="5px">
             <Box

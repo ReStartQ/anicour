@@ -111,7 +111,7 @@ export default function UpdateButton() {
       }}
     >
       <Button
-        variant="soft"
+        variant="outlined"
         color="primary"
         size="lg"
         onClick={handleUpdate}

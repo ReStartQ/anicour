@@ -141,10 +141,15 @@ myStore.set(notificationMediaNamesAtom, {
   titleEnglish: '',
   titleNative: '',
 });
+
+export const messageIDAtom = atom('_');
+myStore.set(messageIDAtom, '_');
 export const notificationOpenAtom = atom(false);
 myStore.set(notificationOpenAtom, false);
 export const notificationAltOpenAtom = atom(false);
 myStore.set(notificationAltOpenAtom, false);
+export const notificationCopyOpenAtom = atom(false);
+myStore.set(notificationCopyOpenAtom, false);
 
 export const statusAddSelectAtom = atom(
   window.electron.store.get('defaultAddStatus'),

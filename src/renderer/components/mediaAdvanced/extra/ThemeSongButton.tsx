@@ -2,7 +2,6 @@ import { Box, Tooltip, Typography } from '@mui/material';
 import MusicVideoIcon from '@mui/icons-material/MusicVideo';
 import axios from 'axios';
 import { useAdvancedMedia } from 'renderer/context/advanced/AdvancedMediaContext';
-import { useState } from 'react';
 import { useAdvancedThemeSongs } from 'renderer/context/advanced/AdvancedThemeSongContext';
 import { Button } from '@mui/joy';
 
@@ -12,7 +11,10 @@ export default function ThemeSongButton({ props }: any) {
     useAdvancedThemeSongs();
   const getData = async () => {
     const { data } = await axios.get(
-      `https://api.jikan.moe/v4/anime/${myMediaAdvanced.advancedMedia.idMal}/themes`,
+      `https://api.tenrai.org/v1/anime/${myMediaAdvanced.advancedMedia.idMal}/themes`,
+      /* `https://api.jikan.moe/v4/anime/${myMediaAdvanced.advancedMedia.idMal}/themes`,
+            Replacing discontinued jikan.moe with tenrai.org solution
+      */
     );
     console.log(data);
     setAdvancedThemeSongs(data.data);

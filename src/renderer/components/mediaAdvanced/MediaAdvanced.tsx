@@ -21,7 +21,9 @@ import {
   infoTypeAtom,
   isValidCompleteDateAtom,
   isValidStartDateAtom,
+  messageIDAtom,
   notificationAltOpenAtom,
+  notificationCopyOpenAtom,
   notificationMediaNamesAtom,
   notificationOpenAtom,
   notificationTypeAtom,
@@ -33,6 +35,7 @@ import { useTitle } from 'renderer/context/TitleContext';
 import { useAdvancedMedia } from '../../context/advanced/AdvancedMediaContext';
 import AdvancedMain from './AdvancedMain';
 import AdvancedMainNOL from './AdvancedMainNOL';
+import ClipboardNotification from '../app/etc/copy/ClipboardNotification';
 
 const materialTheme = materialExtendTheme({
   colorSchemes: {
@@ -111,6 +114,11 @@ export default function MediaAdvancedView() {
   const [notifcationMediaNames, setNotificationMediaNames] = useAtom(
     notificationMediaNamesAtom,
   );
+  const [notifcationCopyOpen, setNotificationCopyOpen] = useAtom(
+    notificationCopyOpenAtom,
+  );
+
+  const [messageID, setMessageID] = useAtom(messageIDAtom);
 
   const handleClose = (event?: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
@@ -127,6 +135,23 @@ export default function MediaAdvancedView() {
 
     setNotificationAltOpen(false);
   };
+
+  useEffect(() => {
+    const removeEventListener = window.electron.ipcRenderer.on(
+      'copyToClipboard',
+      (arg: any) => {
+        // eslint-disable-next-line no-console
+        console.log(`text copied: ${arg}`);
+
+        setMessageID(arg);
+        // send message to user that text has been copied to clipboard
+        setNotificationCopyOpen(true);
+      },
+    );
+    return () => {
+      removeEventListener();
+    };
+  }, [notifcationCopyOpen, setNotificationCopyOpen, setMessageID, messageID]);
 
   useEffect(() => {
     const removeEventListener = window.electron.ipcRenderer.on(
@@ -268,6 +293,7 @@ export default function MediaAdvancedView() {
               </Alert>
             </Snackbar>
           </Box>
+          <ClipboardNotification />
           {myAdvancedInput.advancedInput !== null ? (
             <AdvancedMain />
           ) : (

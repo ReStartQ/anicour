@@ -29,26 +29,27 @@ export const useTestSettings = (
         url,
         {
           query: `
-          query ($userName: String){
-                  MediaListCollection(userName:$userName, type:ANIME, sort:UPDATED_TIME_DESC){
-                      lists{
-                          name
-                      }
-                  }
+            query {
+              Viewer {
+                id
+                name
               }
+            }
           `,
-          variables: {
-            userName: myUserName,
-          },
         },
         headers,
-      ).then((res) => res.data.data.MediaListCollection.lists);
+      ).then((res) => res.data.data.Viewer.name);
       console.log(myQuery);
-      return [];
+      return [myQuery];
     },
-    onSuccess: () => {
-      console.log('Success');
-      setNotificationOpen(true);
+    onSuccess: (data: any) => {
+      if (data[0].trim().toLowerCase() === myUserName.trim().toLowerCase()) {
+        console.log('Success');
+        setNotificationOpen(true);
+      } else {
+        console.log('Failed, this token belongs to another username');
+        setNotificationAltOpen(true);
+      }
     },
     onError: () => {
       console.log('Failed');

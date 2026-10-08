@@ -15,7 +15,7 @@ export default function TrailerButton({ props }: any) {
         alignSelf: 'center',
       }}
     >
-      <Button variant="soft">
+      <Button variant="outlined">
         <YouTubeIcon sx={{ mr: 1 }} fontSize="medium" />
         <Typography>Watch Trailer</Typography>
       </Button>
